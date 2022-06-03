@@ -1,0 +1,29 @@
+format = "$directory $git_branch$git_commit$git_state$character"
+right_format = "$cmd_duration"
+
+add_newline = false
+
+[character]
+success_symbol = "[](green)" 
+error_symbol = "[](red)"
+vicmd_symbol = "[](purple)"
+
+[directory]
+home_symbol = " "
+read_only = ""
+format = "[$read_only](yellow)[$path](red)"
+
+[cmd_duration]
+format = "[  $duration](bright-black)"
+
+[package]
+disabled = true
+
+[line_break]
+disabled = true
+
+[git_state]
+disabled = false
+
+[git_commit]
+disabled = false
