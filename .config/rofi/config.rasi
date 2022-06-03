@@ -1,0 +1,12 @@
+configuration {
+	display-drun: "";
+	display-window: "";
+	drun-display-format: "{icons} {name}";
+	font: "Dejavu Sans 10";
+	modi: "drun,run,window";
+	show-icons: true;
+	icon-theme: "Tela";
+}
+
+@theme "~/.config/rofi/theme"
+

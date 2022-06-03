@@ -1,0 +1,107 @@
+configuration {
+
+	drun {
+		display-name: "";
+	}
+
+	run {
+		display-name: "";
+	}
+
+	window {
+		display-name: "";
+	}
+
+	emoji {
+		display-name: "";
+	}
+
+}
+
+* {
+    font:   "DejaVu Sans 12";
+
+    bg0:    #1d1f27b0;
+    bg1:    #1d1f27b0;
+    bg2:    #b75566aa;
+
+    fg0:    #b0b0b0;
+    fg1:    #FFFFFF;
+    fg2:    #4f4f4f;
+
+    background-color:   transparent;
+    text-color:         @fg0;
+
+    margin:     0;
+    padding:    0;
+    spacing:    0;
+
+}
+
+window {
+    background-color:   @bg0;
+
+    location:       center;
+    width:          640;
+    y-offset:       -200;
+    border-radius:  0;
+}
+
+inputbar {
+    font:       "DejaVu Sans 20";
+    padding:    12px;
+    spacing:    12px;
+    children:   [ prompt, entry ];
+}
+
+prompt {
+  font: "FantasqueSansMono Nerd Font 18";
+  background-color: inherit;
+  padding: 10px 15px;
+}
+
+entry {
+    font:   inherit;
+    placeholder-color   : @fg2;
+	 padding: 5px;
+	 
+}
+
+message {
+    border:             2px 0 0;
+    border-color:       @bg1;
+    background-color:   @bg1;
+}
+
+listview {
+    lines:      3;
+    columns:    1;
+
+    fixed-height:   false;
+    border:         1px 0 0;
+    border-color:   @bg1;
+}
+
+element {
+    padding:            14px 16px;
+    spacing:            16px;
+    background-color:   transparent;
+}
+
+element normal active {
+    text-color: @bg2;
+}
+
+element selected normal, element selected active {
+    background-color:   @bg2;
+    text-color:         @fg1;
+}
+
+element-icon {
+    size:   1.5em;
+}
+
+element-text {
+    text-color: inherit;
+	 padding: 10px 0px;
+}
