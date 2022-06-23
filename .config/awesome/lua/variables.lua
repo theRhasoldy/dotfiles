@@ -7,7 +7,6 @@ awful = require("awful")
 require("awful.autofocus")
 
 -- Statusbar & Layouts
-lain = require("lain")
 wibox = require("wibox")
 
 -- Theme handling library

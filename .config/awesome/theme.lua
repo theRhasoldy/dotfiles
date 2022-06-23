@@ -10,7 +10,7 @@ local theme = {}
 wiboxBg = "#11121Daa"
 
 -- Fonts
-theme.taglist_font  = "FantasqueSansMono Nerd Font 10"
+theme.taglist_font  = "FantasqueSansMono Nerd Font 9"
 theme.font          = "Dejavu Sans 8"
 
 -- Bg
@@ -28,15 +28,19 @@ theme.fg_minimize   = "#000000"
 theme.useless_gap   = dpi(3)
 theme.border_width  = dpi(1.5)
 theme.border_normal = "#151515"
-theme.border_focus  = "#b75566"
+theme.border_focus  = "#4f2749"
 theme.border_marked = "#91231c"
 
 theme.menu_bg_normal = "#ff0000"
 theme.menu_bg_focus  = "#ff0000"
 
-theme.taglist_fg_focus = "#b75566"
+theme.taglist_fg_focus = "#9f6096"
 
 theme.bg_systray    = theme.bg_normal
+
+beautiful.notification_bg = "#11121d"
+beautiful.border_normal = "#4f2749"
+beautiful.notification_fg = "#ffffff"
 
 -- There are other variable sets
 -- overriding the default one when
@@ -52,7 +56,7 @@ theme.bg_systray    = theme.bg_normal
 --theme.taglist_bg_focus = "#ff0000"
 
 -- Generate taglist squares:
-local taglist_square_size = dpi(4)
+local taglist_square_size = dpi(3)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
     taglist_square_size, theme.fg_normal
 )

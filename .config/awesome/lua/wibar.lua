@@ -19,19 +19,9 @@ local userText = wibox.widget {
 	font = "FantasqueSansMono Nerd Font 13"
 }
 
-local volIcon = wibox.widget {
-	widget = wibox.widget.textbox,
-	markup = " ",
-	font = theme.taglist_font
-}
+local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 
-local volume = lain.widget.pulse {
-	 timeout = 0,
-    settings = function()
-        vlevel = volume_now.left
-        widget:set_markup(lain.util.markup(theme.fg_normal,vlevel))
-    end
-}
+local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
 
 local tray = wibox.widget.systray()
 
@@ -66,7 +56,7 @@ awful.screen.connect_for_each_screen(function(s)
    }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = 25, ontop = false, bg = wiboxBg})
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = 20, ontop = false, bg = wiboxBg})
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -83,8 +73,18 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             tray,
 				sep,
-				volIcon,
-				volume,
+				spotify_widget({
+					font = beautiful.font,
+					dim_when_paused = true,
+					dim_opacity = 0.5,
+					max_length = -1,
+					timeout = 0
+				}),
+				sep,
+				volume_widget({
+					widget_type = "icon",
+					device = "pulse",
+				}),
 				sep,
 				mytextdate,
 				sep,
@@ -101,3 +101,4 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
 end)
+
