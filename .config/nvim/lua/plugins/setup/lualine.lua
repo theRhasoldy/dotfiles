@@ -11,25 +11,25 @@ require('lualine').setup {
 	sections = {
 		lualine_a = {'mode'},
 		lualine_b = {
-		{
-			'filetype',
-			colored = true,   -- Displays filetype icon in color if set to true
-			icon_only = true, -- Display only an icon for filetype
-		}
+			{
+				'filetype',
+				colored = true,   -- Displays filetype icon in color if set to true
+				icon_only = true, -- Display only an icon for filetype
+			}
+		},
+		lualine_c = {'filename'},
+		lualine_x = {'branch', 'diff', 'diagnostics', 'encoding'},
+		lualine_y = {'location'},
+		lualine_z = {}
 	},
-	lualine_c = {'filename'},
-	lualine_x = {'branch', 'diff', 'diagnostics', 'encoding'},
-	lualine_y = {'location'},
-	lualine_z = {}
-},
-inactive_sections = {
-	lualine_a = {},
-	lualine_b = {},
-	lualine_c = {},
-	lualine_x = {},
-	lualine_y = {},
-	lualine_z = {}
-},
-tabline = {},
-extensions = {}
+	inactive_sections = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {}
+	},
+	tabline = {},
+	extensions = {}
 }
