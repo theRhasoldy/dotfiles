@@ -2,8 +2,8 @@ configuration {
 	display-drun: "";
 	display-window: "";
 	drun-display-format: "{icons} {name}";
-	font: "Dejavu Sans 10";
-	modi: "drun,run,window";
+	font: "Dejavu Sans 8";
+	modi: "drun,run,window,emoji";
 	show-icons: true;
 	icon-theme: "Tela";
 }

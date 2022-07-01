@@ -4,17 +4,17 @@ right_format = "$cmd_duration"
 add_newline = false
 
 [character]
-success_symbol = "[](green)" 
-error_symbol = "[](red)"
+success_symbol = "[](bright-green)" 
+error_symbol = "[](bright-red)"
 vicmd_symbol = "[](purple)"
 
 [directory]
 home_symbol = " "
 read_only = ""
-format = "[$read_only](yellow)[$path](red)"
+format = "[$read_only](bright-red)[$path](bright-yellow)"
 
 [cmd_duration]
-format = "[  $duration](bright-black)"
+format = "[  $duration](white)"
 
 [package]
 disabled = true

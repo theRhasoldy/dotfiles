@@ -46,73 +46,78 @@ packer.startup(function()
 	})
 
 	-- Treesitter {{{
-		use({
-			"nvim-treesitter/nvim-treesitter",
-			run = ":TSUpdate",
-			config = function()
-				require "plugins.setup.treesitter"
-			end
-		})
-		-- }}}
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
+		config = function()
+			require "plugins.setup.treesitter"
+		end
+	})
+	-- }}}
 
-		-- Theme
-		use "Matsuuu/pinkmare"
+	-- Theme
+	use "Matsuuu/pinkmare"
+	use "ntk148v/vim-horizon"
+	use "heraldofsolace/nisha-vim"
+	use 'rose-pine/neovim'
 
-		use "kyazdani42/nvim-web-devicons"
+	use "kyazdani42/nvim-web-devicons"
 
-		use ({
+	use ({
 			"kyazdani42/nvim-tree.lua",
 			config = function()
 				require "plugins.setup.nvim-tree"
 			end
-		})
+	})
 
-		use {
-			'nvim-lualine/lualine.nvim',
-			requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-			config = function()
-				require "plugins.setup.lualine"
-			end
-		}
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+		config = function()
+			require "plugins.setup.lualine"
+		end
+	}
 
-		use ({
-			'nvim-telescope/telescope.nvim',
-			requires = { {'nvim-lua/plenary.nvim'} },
-			config = function()
-				require "plugins.setup.telescope"
-			end
-		})
+	use ({
+		'nvim-telescope/telescope.nvim',
+		requires = { {'nvim-lua/plenary.nvim'} },
+		config = function()
+			require "plugins.setup.telescope"
+		end
+	})
 
-		use ({
-			"windwp/nvim-autopairs",
-			config = function()
-				require "plugins.setup.nvim-autopairs"
-			end
-		})
+	use ({
+		"windwp/nvim-autopairs",
+		config = function()
+			require "plugins.setup.nvim-autopairs"
+		end
+	})
 
-		use "windwp/nvim-ts-autotag"
+	use "windwp/nvim-ts-autotag"
 
-		-- LSP {{{ (Oh boy)
-		use ({
-			"neovim/nvim-lspconfig",
-			config = function()
-				require "plugins.setup.lsp-config"
-			end
-		})
+	-- LSP {{{ (Oh boy)
+	use ({
+		"neovim/nvim-lspconfig",
+		config = function()
+			require "plugins.setup.lsp-config"
+		end
+	})
 
-		use "williamboman/nvim-lsp-installer"
+	use "williamboman/nvim-lsp-installer"
 
-		use ({
-			"hrsh7th/nvim-cmp",
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path"
-		})
+	use ({
+		"hrsh7th/nvim-cmp",
+		"hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-path"
+	})
 
-		use "L3MON4D3/LuaSnip"
-		use "rafamadriz/friendly-snippets"
-		use { 'saadparwaiz1/cmp_luasnip' }
-		-- }}}
+	use "L3MON4D3/LuaSnip"
+	use "rafamadriz/friendly-snippets"
+	use { 'saadparwaiz1/cmp_luasnip' }
+	-- }}}
+
+	use "lukas-reineke/indent-blankline.nvim"
 
 	end
 	)

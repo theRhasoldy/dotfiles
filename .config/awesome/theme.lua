@@ -7,40 +7,41 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-wiboxBg = "#11121Daa"
+wiboxBg = "#00000000"
 
 -- Fonts
 theme.taglist_font  = "FantasqueSansMono Nerd Font 9"
 theme.font          = "Dejavu Sans 8"
 
 -- Bg
-theme.bg_normal     = "#11121D"
+theme.bg_normal     = "#131519"
 theme.bg_focus      = "#11121D"
 
-theme.titlebar_bg_normal = "#11121Dee"
-theme.titlebar_bg_focus = "#11121Dee"
+theme.fg_normal     = "#dedede"
+theme.fg_focus      = "#dedede"
+theme.fg_urgent     = "#dedede"
+theme.fg_minimize   = "#dedede"
 
-theme.fg_normal     = "#ffffff"
-theme.fg_focus      = "#fdf0ed"
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#000000"
-
-theme.useless_gap   = dpi(3)
-theme.border_width  = dpi(1.5)
-theme.border_normal = "#151515"
-theme.border_focus  = "#4f2749"
-theme.border_marked = "#91231c"
+theme.useless_gap   = dpi(4.5)
+theme.border_width  = dpi(2)
+theme.border_normal = "#171A1F"
+theme.border_focus  = "#6d4836"
+theme.border_marked = "#6d4836"
 
 theme.menu_bg_normal = "#ff0000"
 theme.menu_bg_focus  = "#ff0000"
 
-theme.taglist_fg_focus = "#9f6096"
+theme.taglist_fg_focus = "#CD7245"
 
 theme.bg_systray    = theme.bg_normal
 
 beautiful.notification_bg = "#11121d"
 beautiful.border_normal = "#4f2749"
 beautiful.notification_fg = "#ffffff"
+
+beautiful.tooltip_bg = "#11121daa"
+beautiful.tooltip_fg = "#ffffff"
+beautiful.tooltip_font = "Dejavu Sans 8"
 
 -- There are other variable sets
 -- overriding the default one when
@@ -58,10 +59,10 @@ beautiful.notification_fg = "#ffffff"
 -- Generate taglist squares:
 local taglist_square_size = dpi(3)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-    taglist_square_size, theme.fg_normal
+taglist_square_size, theme.fg_normal
 )
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
-    taglist_square_size, theme.fg_normal
+taglist_square_size, theme.fg_normal
 )
 
 -- Variables set for theming notifications:

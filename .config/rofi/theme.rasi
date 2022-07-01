@@ -21,12 +21,12 @@ configuration {
 * {
     font:   "DejaVu Sans 12";
 
-    bg0:    #1d1f27b0;
-    bg1:    #1d1f27b0;
-    bg2:    #b75566aa;
+    bg0:    #131519cc;
+    bg1:    #131519cc;
+    bg2:    #131519cc;
 
-    fg0:    #b0b0b0;
-    fg1:    #FFFFFF;
+    fg0:    #dbdbdb;
+    fg1:    #dbdbdb;
     fg2:    #4f4f4f;
 
     background-color:   transparent;
@@ -42,13 +42,13 @@ window {
     background-color:   @bg0;
 
     location:       center;
-    width:          640;
+    width:          620;
     y-offset:       -200;
     border-radius:  0;
 }
 
 inputbar {
-    font:       "DejaVu Sans 20";
+    font:       "DejaVu Sans Bold 20";
     padding:    12px;
     spacing:    12px;
     children:   [ prompt, entry ];
@@ -56,6 +56,7 @@ inputbar {
 
 prompt {
   font: "FantasqueSansMono Nerd Font 18";
+  text-color: #dedede;
   background-color: inherit;
   padding: 10px 15px;
 }
@@ -98,7 +99,7 @@ element selected normal, element selected active {
 }
 
 element-icon {
-    size:   1.5em;
+    size:   1.8em;
 }
 
 element-text {
