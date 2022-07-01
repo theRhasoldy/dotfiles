@@ -6,12 +6,12 @@ add_newline = false
 [character]
 success_symbol = "[](bright-green)" 
 error_symbol = "[](bright-red)"
-vicmd_symbol = "[](purple)"
+vicmd_symbol = "[](blue)"
 
 [directory]
 home_symbol = " "
 read_only = ""
-format = "[$read_only](bright-red)[$path](bright-yellow)"
+format = "[$read_only](bright-red)[$path](bright-purple)"
 
 [cmd_duration]
 format = "[  $duration](white)"
