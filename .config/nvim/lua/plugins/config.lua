@@ -39,10 +39,10 @@ packer.startup(function()
 
 	-- Core plugins, run at startup
 	use({
-		'wbthomason/packer.nvim',
-		'lewis6991/impatient.nvim',
-		'nathom/filetype.nvim',
-		'nvim-lua/plenary.nvim',
+		"wbthomason/packer.nvim",
+		"lewis6991/impatient.nvim",
+		"nathom/filetype.nvim",
+		"nvim-lua/plenary.nvim",
 	})
 
 	-- Treesitter {{{
@@ -57,17 +57,15 @@ packer.startup(function()
 
 	-- Theme
 	use "Matsuuu/pinkmare"
-	use "ntk148v/vim-horizon"
 	use "heraldofsolace/nisha-vim"
-	use 'rose-pine/neovim'
 
 	use "kyazdani42/nvim-web-devicons"
 
 	use ({
-			"kyazdani42/nvim-tree.lua",
-			config = function()
-				require "plugins.setup.nvim-tree"
-			end
+		"kyazdani42/nvim-tree.lua",
+		config = function()
+			require "plugins.setup.nvim-tree"
+		end
 	})
 
 	use {
@@ -79,7 +77,7 @@ packer.startup(function()
 	}
 
 	use ({
-		'nvim-telescope/telescope.nvim',
+		"nvim-telescope/telescope.nvim",
 		requires = { {'nvim-lua/plenary.nvim'} },
 		config = function()
 			require "plugins.setup.telescope"
@@ -112,13 +110,43 @@ packer.startup(function()
 		"hrsh7th/cmp-path"
 	})
 
+	use ({
+		"glepnir/lspsaga.nvim",
+		config = function()
+			require "plugins.setup.lspsaga"
+		end
+	})
+
+	use "onsails/lspkind.nvim"
+
 	use "L3MON4D3/LuaSnip"
 	use "rafamadriz/friendly-snippets"
-	use { 'saadparwaiz1/cmp_luasnip' }
+	use "saadparwaiz1/cmp_luasnip"
 	-- }}}
 
-	use "lukas-reineke/indent-blankline.nvim"
+	-- File Manipulation
+	use "tpope/vim-surround"
+	use "b3nj5m1n/kommentary"
+
+	-- Flutter
+	use "akinsho/flutter-tools.nvim"
+	use "dart-lang/dart-vim-plugin"
+	use "thosakwe/vim-flutter"
+	use "natebosch/vim-lsc"
+	use "natebosch/vim-lsc-dart"
+
+	-- Aesthetics
+	use "RRethy/vim-illuminate"
+
+	use ({
+		"ziontee113/color-picker.nvim",
+		config = function()
+			require("plugins.setup.color-picker")
+		end,
+	})
+
+	use "vimwiki/vimwiki"
 
 	end
-	)
+)
 

@@ -12,6 +12,10 @@ cmd([[
 		autocmd!
 		autocmd CursorMoved * normal! zz
 	augroup END
+
+	set nocompatible
+	filetype plugin on
+	syntax on
 ]])
 
 --Show relative numbers
@@ -55,3 +59,5 @@ opt.clipboard = "unnamedplus"
 opt.laststatus = 3
 
 vim.g.did_load_filetypes = 1
+
+vim.g.vimwiki_list = {{path = '~/Universe', syntax = 'markdown', ext = '.md'}}

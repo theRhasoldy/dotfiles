@@ -44,7 +44,7 @@ local lsp_flags = {
 	debounce_text_changes = 150,
 }
 
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+local signs = { Error = " ", Warn = " ", Hint = "", Info = " " }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl})
@@ -52,7 +52,7 @@ end
 
 require("plugins.setup.cmp-config")
 
--- Servers Setup {{{
+	-- Servers Setup {{{
 	require("lspconfig")["sumneko_lua"].setup{
 		on_attach = on_attach,
 		autostart = true,
@@ -97,7 +97,7 @@ require("plugins.setup.cmp-config")
 		capabilities = capabilities,
 	}
 
-	require("lspconfig")["grammarly"].setup{
+	require("lspconfig")["marksman"].setup{
 		on_attach = on_attach,
 		flags = lsp_flags,
 		capabilities = capabilities,
@@ -127,18 +127,6 @@ require("plugins.setup.cmp-config")
 		capabilities = capabilities,
 	}
 
-	require("lspconfig")["ltex"].setup{
-		on_attach = on_attach,
-		flags = lsp_flags,
-		capabilities = capabilities,
-	}
-
-	require("lspconfig")["prosemd_lsp"].setup{
-		on_attach = on_attach,
-		flags = lsp_flags,
-		capabilities = capabilities,
-	}
-
 	require("lspconfig")["pyright"].setup{
 		on_attach = on_attach,
 		flags = lsp_flags,
@@ -146,12 +134,6 @@ require("plugins.setup.cmp-config")
 	}
 
 	require("lspconfig")["sqls"].setup{
-		on_attach = on_attach,
-		flags = lsp_flags,
-		capabilities = capabilities,
-	}
-
-	require("lspconfig")["tailwindcss"].setup{
 		on_attach = on_attach,
 		flags = lsp_flags,
 		capabilities = capabilities,
@@ -170,6 +152,18 @@ require("plugins.setup.cmp-config")
 	}
 
 	require("lspconfig")["yamlls"].setup{
+		on_attach = on_attach,
+		flags = lsp_flags,
+		capabilities = capabilities,
+	}
+
+	require("lspconfig")["dartls"].setup{
+		on_attach = on_attach,
+		flags = lsp_flags,
+		capabilities = capabilities,
+	}
+
+	require("lspconfig")["emmet_ls"].setup{
 		on_attach = on_attach,
 		flags = lsp_flags,
 		capabilities = capabilities,
