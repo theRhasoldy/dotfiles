@@ -23,10 +23,10 @@ configuration {
 
     bg0:    #131519cc;
     bg1:    #131519cc;
-    bg2:    #131519cc;
+    bg2:    #7A5C9C44;
 
-    fg0:    #dbdbdb;
-    fg1:    #dbdbdb;
+    fg0:    #dedede;
+    fg1:    #dedede;
     fg2:    #4f4f4f;
 
     background-color:   transparent;
@@ -44,21 +44,21 @@ window {
     location:       center;
     width:          620;
     y-offset:       -200;
-    border-radius:  0;
+    border-radius:  8;
 }
 
 inputbar {
-    font:       "DejaVu Sans Bold 20";
-    padding:    12px;
-    spacing:    12px;
-    children:   [ prompt, entry ];
+	font:       "DejaVu Sans Bold 20";
+	padding:    12px;
+	spacing:    12px;
+	children:   [ prompt, entry ];
 }
 
 prompt {
-  font: "FantasqueSansMono Nerd Font 18";
-  text-color: #dedede;
-  background-color: inherit;
-  padding: 10px 15px;
+	text-color: @fg1;
+	font: "FantasqueSansMono Nerd Font 18";
+	background-color: inherit;
+	padding: 10px 15px;
 }
 
 entry {
@@ -95,7 +95,7 @@ element normal active {
 
 element selected normal, element selected active {
     background-color:   @bg2;
-    text-color:         @fg1;
+    text-color:         #ffffff;
 }
 
 element-icon {
@@ -103,6 +103,7 @@ element-icon {
 }
 
 element-text {
+	 background-color: #00000000;
     text-color: inherit;
 	 padding: 10px 0px;
 }
