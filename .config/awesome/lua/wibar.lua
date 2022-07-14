@@ -15,15 +15,11 @@ local mytextclock = wibox.widget {
 	font = "Dejavu Sans bold 8"
 }
 
-local userText = wibox.widget {
-	widget = wibox.widget.textbox,
-	markup = "R",
-	font = "FantasqueSansMono Nerd Font 13"
-}
-
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 
 local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
+
+local layoutbox = awful.widget.layoutbox(s)
 
 local tray = wibox.widget.systray()
 
@@ -46,7 +42,7 @@ awful.screen.connect_for_each_screen(function(s)
 		buttons = taglist_buttons,
 		widget_template = {
 			widget = wibox.container.background,
-			forced_width = 28,
+			forced_width = 32,
 			{
 				layout = wibox.layout.flex.horizontal,
 				{
@@ -58,7 +54,7 @@ awful.screen.connect_for_each_screen(function(s)
 	}
 
 	-- Create the wibox
-	s.mywibox = awful.wibar({ position = "top", screen = s, height = 22, ontop = false, bg = wiboxBg, fg = "#0E1720"})
+	s.mywibox = awful.wibar({ position = "top", screen = s, height = 22, ontop = false, bg = beautiful.wibar_bg, fg = "#0E1720"})
 
 	-- Add widgets to the wibox
 	s.mywibox:setup {
@@ -68,7 +64,7 @@ awful.screen.connect_for_each_screen(function(s)
 			{ -- Left widgets
 			layout = wibox.layout.fixed.horizontal,
 			sep,
-			userText
+			layoutbox
 		},
 		nil,
 		{ -- Right widgets

@@ -12,17 +12,12 @@ client.connect_signal("manage", function (c)
 		awful.placement.no_offscreen(c)
 	end
 
-	-- Rounded Corners
-	c.shape = function(cr,w,h)
-		gears.shape.rounded_rect(cr,w,h,8)
-	end
+	--[[ c.shape = function(cr,w,h)
+		gears.shape.rounded_rect(cr,w,h,10)
+	end ]]
 
 end)
 
--- Enable on click focus
-client.connect_signal("mouse::click", function(c)
-	c:emit_signal("request::activate", "mouse_click", {raise = true})
-end)
 
 -- No border for maximized clients
 function border_adjust(c)
@@ -83,6 +78,11 @@ awful.rules.rules = {
  },
 
 }
+
+-- Enable on click raise
+client.connect_signal("mouse::click", function(c)
+	c:emit_signal("request::activate", "mouse_click", {raise = true})
+end)
 
 -- Sloppy focus
 client.connect_signal("mouse::enter", function(c)

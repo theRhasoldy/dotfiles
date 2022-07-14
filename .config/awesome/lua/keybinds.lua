@@ -2,6 +2,7 @@ local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 
 globalkeys = gears.table.join(
 	-- System {{{
+
 	awful.key({ modkey, "Control" }, "r", awesome.restart,
 	{description = "Reload awesome", group = "system"}),
 
@@ -57,14 +58,14 @@ globalkeys = gears.table.join(
 	end,
 	{description = "Focus right", group = "client"}),
 	-- }}}
-    awful.key({ modkey,           }, "Tab",
+    awful.key({ modkey,           }, "x",
         function ()
             awful.client.focus.history.previous()
             if client.focus then
                 client.focus:raise()
             end
         end,
-        {description = "go back", group = "client"}),
+	{description = "go back", group = "client"}),
 	-- }}}
 
 	-- Directional swap {{{
@@ -103,6 +104,9 @@ globalkeys = gears.table.join(
 	-- }}}
 
 	-- Apps {{{
+	awful.key({ modkey, "Shift" }, "/",      hotkeys_popup.show_help,
+	{description="show help", group="awesome"}),
+
 	awful.key({ modkey,           }, "Return",
 	function () awful.spawn( terminal ) end,
 	{description = "Launch Terminal", group = "apps"}),
@@ -185,7 +189,15 @@ end
 clientkeys = gears.table.join(
 	awful.key({ modkey, "Control"   }, "q",
 	function (c) c:kill() end,
-	{description = "Close client with focus", group = "client"})
+	{description = "Close client with focus", group = "client"}),
+
+	awful.key({ modkey, "Shift" }, "t", function (c) c.sticky = not c.sticky end,
+	{description = "Make window sticky", group = "client"}),
+
+    awful.key({ modkey,         }, "Tab", function () awful.layout.inc( 1) end,
+        {description = "select next", group = "layout"}),
+    awful.key({ modkey, "Shift" }, "Tab", function () awful.layout.inc(-1) end,
+        {description = "select previous", group = "layout"})
 )
 -- }}}
 

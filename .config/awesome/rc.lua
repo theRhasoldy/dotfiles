@@ -39,19 +39,19 @@ run_once({ "unclutter -root" }) -- entries must be comma-separated
 -- }}}
 
 -- Theme {{{
-	beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
-	-- }}}
+beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
+-- }}}
 
+-- Layouts
+awful.layout.layouts = {
+	awful.layout.suit.tile,
+	awful.layout.suit.tile.left,
+	awful.layout.suit.fair,
+	awful.layout.suit.max.fullscreen
+}
+-- }}}
 
-	-- Layouts
-	awful.layout.layouts = {
-		--awful.layout.suit.floating,
-		--awful.layout.suit.tile,
-		awful.layout.suit.fair,
-	}
-	-- }}}
-
-	-- Tags {{{
-		awful.tag({ "", "", "", "", "", ""}, s, awful.layout.layouts[1])
-		-- }}}
+-- Tags {{{
+awful.tag({ "", "", "", "", "", "", ""}, s, awful.layout.layouts[1])
+-- }}}
 
