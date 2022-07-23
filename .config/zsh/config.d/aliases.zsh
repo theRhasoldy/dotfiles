@@ -5,6 +5,8 @@ alias ll="exa -l --icons"
 alias lla="ll -a"
 alias llt="exa -l -T --icons"
 
+alias rm="rm -v"
+
 alias %=""
 
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
@@ -18,3 +20,4 @@ alias matrix="unimatrix -c magenta -s 96 -a -l s"
 alias wiki="cd ~/Universe && nvim -c VimwikiIndex"
 
 alias npm="sudo npm"
+
