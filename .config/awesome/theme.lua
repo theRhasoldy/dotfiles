@@ -9,6 +9,9 @@ local theme = {}
 
 -- Fonts
 theme.font          = "Dejavu Sans 8"
+theme.notification_font = "Dejavu Sans 8"
+theme.taglist_font  = "FantasqueSansMono Nerd Font 9"
+beautiful.tooltip_font = "Dejavu Sans 8"
 
 --Main UI
 theme.bg_normal     = "#131519"
@@ -27,22 +30,19 @@ theme.border_normal = "#16181B"
 theme.border_focus  = "#2F283Acc"
 theme.border_Marked = "#2F283Acc"
 
-beautiful.border_normal = "#171A1F"
-
 -- Menu
 theme.menu_bg_normal = "#ff0000"
 theme.menu_bg_focus  = "#ff0000"
 
-
+-- Notification
 theme.notification_bg = "#11121dcc"
-beautiful.notification_fg = "#ffffff"
+theme.notification_fg = "#dedede"
 
-beautiful.tooltip_bg = "#11121daa"
+-- Tooltip
+beautiful.tooltip_bg = "#11121d"
 beautiful.tooltip_fg = "#ffffff"
-beautiful.tooltip_font = "Dejavu Sans 8"
 
 -- Wibox
-theme.taglist_font  = "FantasqueSansMono Nerd Font 9"
 beautiful.wibar_bg = "#00000000"
 theme.taglist_fg_focus = "#D98594"
 theme.taglist_fg_urgent = "#9272b2"
