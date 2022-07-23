@@ -4,8 +4,8 @@ require("lua/autostart")
 require("lua/keybinds")
 require("lua/titlebar")
 require("lua/clients")
+require("lua/notifications")
 require("awful.hotkeys_popup.keys")
--- }}}
 
 -- {{{ Error handling
 if awesome.startup_errors then

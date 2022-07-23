@@ -15,9 +15,9 @@ local mytextclock = wibox.widget {
 	font = "Dejavu Sans bold 8"
 }
 
-local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+local volume_widget = require('widgets.volume-widget.volume')
 
-local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
+local spotify_widget = require("widgets.spotify-widget.spotify")
 
 local layoutbox = awful.widget.layoutbox(s)
 

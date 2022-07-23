@@ -1,0 +1,3 @@
+return {
+    scratchpad = require(... .. ".scratchpad"),
+}

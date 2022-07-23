@@ -70,12 +70,7 @@ awful.rules.rules = {
 			 "ConfigManager",  -- Thunderbird's about:config.
 			 "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
 		 }
-	 }, properties = { floating = true }},
-
-	 -- Add titlebars to normal clients and dialogs
-	 { rule_any = {type = { "normal", "dialog" }
- }, properties = { titlebars_enabled = true }
- },
+	 }, properties = { floating = true }}
 
 }
 

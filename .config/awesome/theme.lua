@@ -27,13 +27,14 @@ theme.border_normal = "#16181B"
 theme.border_focus  = "#2F283Acc"
 theme.border_Marked = "#2F283Acc"
 
+beautiful.border_normal = "#171A1F"
+
 -- Menu
 theme.menu_bg_normal = "#ff0000"
 theme.menu_bg_focus  = "#ff0000"
 
 
-beautiful.notification_bg = "#11121d"
-beautiful.border_normal = "#171A1F"
+theme.notification_bg = "#11121dcc"
 beautiful.notification_fg = "#ffffff"
 
 beautiful.tooltip_bg = "#11121daa"
@@ -45,7 +46,7 @@ theme.taglist_font  = "FantasqueSansMono Nerd Font 9"
 beautiful.wibar_bg = "#00000000"
 theme.taglist_fg_focus = "#D98594"
 theme.taglist_fg_urgent = "#9272b2"
-theme.taglist_fg_empty = "#0E172070"
+theme.taglist_fg_empty = "#0E172045"
 theme.taglist_fg_occupied = "#0E1720"
 
 -- Generate taglist squares:

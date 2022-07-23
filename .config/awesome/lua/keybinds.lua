@@ -1,4 +1,5 @@
-local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+local volume_widget = require('widgets.volume-widget.volume')
+require("lua.scratch")
 
 globalkeys = gears.table.join(
 	-- System {{{
@@ -65,7 +66,7 @@ globalkeys = gears.table.join(
                 client.focus:raise()
             end
         end,
-	{description = "go back", group = "client"}),
+	{description = "Go back", group = "client"}),
 	-- }}}
 
 	-- Directional swap {{{
@@ -129,7 +130,25 @@ globalkeys = gears.table.join(
 
 	awful.key({ modkey,           }, "c",
 	function () awful.spawn.with_shell("colorpicker --one-shot --short | xclip -selection clipboard") end,
-	{description = "Pick color and copy it to clipboard", group = "apps"})
+	{description = "Pick color and copy it to clipboard", group = "apps"}),
+
+	awful.key({ modkey,           }, "s",
+	function () awful.spawn.with_shell("flameshot gui") end,
+	{description = "Launch flameshot", group = "apps"}),
+
+	awful.key({ modkey,           }, "i",
+	function () awful.spawn.with_shell("firefox") end,
+	{description = "Launch firefox", group = "apps"}),
+	-- }}}
+
+	-- Scratchpads {{{
+	awful.key({ modkey,           }, "t",
+	function () term_scratch:toggle() end,
+	{description = "Launch terminal scratchpad", group = "scratchpads"}),
+
+	awful.key({ modkey,           }, "m",
+	function () spotify_scratch:toggle() end,
+	{description = "Launch spotify scratchpad", group = "scratchpads"})
 	-- }}}
 )
 
