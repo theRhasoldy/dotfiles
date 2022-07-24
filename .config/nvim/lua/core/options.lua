@@ -61,3 +61,4 @@ opt.laststatus = 3
 vim.g.did_load_filetypes = 1
 
 vim.g.vimwiki_list = {{path = '~/Universe', syntax = 'markdown', ext = '.md'}}
+

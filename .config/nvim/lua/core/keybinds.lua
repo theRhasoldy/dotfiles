@@ -12,8 +12,7 @@ local opts = vim.opts
 map("n", "<space>", "")
 vim.g.mapleader = " "
 
--- Fast source
-map("n", "<leader>r", ":source<CR>")
+map("n", "<leader>r", ":source<CR>") -- Fast source
 
 map("i", "<C-j>", "")
 map("i", "<C-k>", "")
@@ -41,9 +40,15 @@ map("n", "<Leader>k", "<C-W>K")
 map("n", "<Leader>l", "<C-W>L")
 -- }}}
 
+-- Line Manipulation {{{
 -- Switch lines
 map("n", "<A-j>", ":m .+1<CR>==")
 map("n", "<A-k>", ":m .-2<CR>==")
+
+-- Add newline
+map("n", "<A-o>", "o<Esc>")
+map("n", "<A-S-o>", "O<Esc>")
+-- }}}
 
 -- Nvim tree
 map("n", "<Leader>n", ":NvimTreeToggle<CR>")

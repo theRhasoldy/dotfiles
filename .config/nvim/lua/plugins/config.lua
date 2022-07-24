@@ -49,9 +49,6 @@ packer.startup(function()
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
-		config = function()
-			require "plugins.setup.treesitter"
-		end
 	})
 	-- }}}
 
@@ -61,47 +58,29 @@ packer.startup(function()
 
 	use "kyazdani42/nvim-web-devicons"
 
-	use ({
-		"kyazdani42/nvim-tree.lua",
-		config = function()
-			require "plugins.setup.nvim-tree"
-		end
-	})
+	use "kyazdani42/nvim-tree.lua"
 
 	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-		config = function()
-			require "plugins.setup.lualine"
-		end
+		"nvim-lualine/lualine.nvim",
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
 
 	use ({
 		"nvim-telescope/telescope.nvim",
-		requires = { {'nvim-lua/plenary.nvim'} },
-		config = function()
-			require "plugins.setup.telescope"
-		end
+		requires = { {'nvim-lua/plenary.nvim'} }
 	})
 
-	use ({
-		"windwp/nvim-autopairs",
-		config = function()
-			require "plugins.setup.nvim-autopairs"
-		end
-	})
+	use "windwp/nvim-autopairs"
 
 	use "windwp/nvim-ts-autotag"
 
 	-- LSP {{{ (Oh boy)
-	use ({
-		"neovim/nvim-lspconfig",
-		config = function()
-			require "plugins.setup.lsp-config"
-		end
-	})
+	use "neovim/nvim-lspconfig"
 
-	use "williamboman/nvim-lsp-installer"
+	use ({ 
+		"williamboman/mason.nvim", 
+		"williamboman/mason-lspconfig.nvim" 
+	})
 
 	use ({
 		"hrsh7th/nvim-cmp",
@@ -110,12 +89,7 @@ packer.startup(function()
 		"hrsh7th/cmp-path"
 	})
 
-	use ({
-		"glepnir/lspsaga.nvim",
-		config = function()
-			require "plugins.setup.lspsaga"
-		end
-	})
+	use "glepnir/lspsaga.nvim"
 
 	use "onsails/lspkind.nvim"
 
@@ -138,15 +112,10 @@ packer.startup(function()
 	-- Aesthetics
 	use "RRethy/vim-illuminate"
 
-	use ({
-		"ziontee113/color-picker.nvim",
-		config = function()
-			require("plugins.setup.color-picker")
-		end,
-	})
+	use "ziontee113/color-picker.nvim"
 
 	use "vimwiki/vimwiki"
+	use "nvim-treesitter/playground"
 
 	end
 )
-
