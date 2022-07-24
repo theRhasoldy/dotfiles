@@ -1,7 +1,7 @@
 local function map(mode, lhs, rhs, opts)
 	local options = { noremap = true, silent = true }
 	if opts then
-		options = vim.tbl_extend('force', options, opts)
+		options = vim.tbl_extend("force", options, opts)
 	end
 	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
@@ -60,4 +60,3 @@ map("n", "<Leader>f", ":Telescope find_files<CR>")
 -- Colorpicker
 vim.keymap.set("n", "<C-c>", "<cmd>PickColor<cr>", opts)
 vim.keymap.set("i", "<C-c>", "<cmd>PickColorInsert<cr>", opts)
-

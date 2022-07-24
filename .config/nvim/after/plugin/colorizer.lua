@@ -1,7 +1,6 @@
 local opts = { noremap = true, silent = true }
 
--- vim.keymap.set("n", "your_keymap", "<cmd>ConvertHEXandRGB<cr>", opts)
--- vim.keymap.set("n", "your_keymap", "<cmd>ConvertHEXandHSL<cr>", opts)
+require("colorizer").setup()
 
 require("color-picker").setup({ -- for changing icons & mappings
 	-- ["icons"] = { "ﱢ", "" },
@@ -16,4 +15,3 @@ require("color-picker").setup({ -- for changing icons & mappings
 		["O"] = "<Plug>Slider5Increase",
 	},
 })
-

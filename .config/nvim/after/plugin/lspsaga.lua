@@ -1,4 +1,4 @@
-local saga = require 'lspsaga'
+local saga = require("lspsaga")
 
 -- use custom config
 saga.init_lsp_saga({
@@ -8,7 +8,7 @@ saga.init_lsp_saga({
 	--transparent background. Values between 0-30 are typically most useful.
 	saga_winblend = 0,
 	-- when cursor in saga window you config these to move
-	move_in_saga = { prev = '<C-p>',next = '<C-n>'},
+	move_in_saga = { prev = "<C-p>", next = "<C-n>" },
 	-- Error, Warn, Info, Hint
 	-- use emoji like
 	-- { "🙀", "😿", "😾", "😺" }
@@ -37,9 +37,9 @@ saga.init_lsp_saga({
 	},
 	-- finder icons
 	finder_icons = {
-		def = '  ',
-		ref = '諭 ',
-		link = '  ',
+		def = "  ",
+		ref = "諭 ",
+		link = "  ",
 	},
 	-- preview lines of lsp_finder and definition preview
 	max_preview_lines = 10,
@@ -62,20 +62,20 @@ saga.init_lsp_saga({
 	symbol_in_winbar = {
 		in_custom = false,
 		enable = false,
-		separator = ' ',
+		separator = " ",
 		show_file = true,
 		click_support = false,
 	},
 	-- show outline
 	show_outline = {
-		win_position = 'right',
+		win_position = "right",
 		-- set the special filetype in there which in left like nvimtree neotree defx
-		left_with = '',
+		left_with = "",
 		win_width = 30,
 		auto_enter = true,
 		auto_preview = true,
-		virt_text = '┃',
-		jump_key = 'o',
+		virt_text = "┃",
+		jump_key = "o",
 		-- auto refresh when change buffer
 		auto_refresh = true,
 	},

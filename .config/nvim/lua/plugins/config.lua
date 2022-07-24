@@ -18,19 +18,19 @@ local execute = api.nvim_command
 local fn = vim.fn
 
 -- ensure that packer is installed
-local install_path = fn.stdpath("data").."/site/pack/packer/opt/packer.nvim"
+local install_path = fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-	execute("!git clone https://github.com/wbthomason/packer.nvim "..install_path)
-	execute "packadd packer.nvim"
+	execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
+	execute("packadd packer.nvim")
 end
 
 cmd("packadd packer.nvim")
 
-local packer = require"packer"
-local util = require"packer.util"
+local packer = require("packer")
+local util = require("packer.util")
 
 packer.init({
-	package_root = util.join_paths(vim.fn.stdpath("data"), "site", "pack")
+	package_root = util.join_paths(vim.fn.stdpath("data"), "site", "pack"),
 })
 
 --Plugins
@@ -53,69 +53,67 @@ packer.startup(function()
 	-- }}}
 
 	-- Theme
-	use "Matsuuu/pinkmare"
-	use "heraldofsolace/nisha-vim"
+	use("Matsuuu/pinkmare")
+	use("heraldofsolace/nisha-vim")
 
-	use "kyazdani42/nvim-web-devicons"
+	use("kyazdani42/nvim-web-devicons")
 
-	use "kyazdani42/nvim-tree.lua"
+	use("kyazdani42/nvim-tree.lua")
 
-	use {
+	use({
 		"nvim-lualine/lualine.nvim",
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-	}
-
-	use ({
-		"nvim-telescope/telescope.nvim",
-		requires = { {'nvim-lua/plenary.nvim'} }
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
 
-	use "windwp/nvim-autopairs"
+	use("nvim-telescope/telescope.nvim")
 
-	use "windwp/nvim-ts-autotag"
+	use("windwp/nvim-autopairs")
+
+	use("windwp/nvim-ts-autotag")
 
 	-- LSP {{{ (Oh boy)
-	use "neovim/nvim-lspconfig"
+	use("neovim/nvim-lspconfig")
 
-	use ({ 
-		"williamboman/mason.nvim", 
-		"williamboman/mason-lspconfig.nvim" 
+	use({
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
 	})
 
-	use ({
+	use({
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
-		"hrsh7th/cmp-path"
+		"hrsh7th/cmp-path",
 	})
 
-	use "glepnir/lspsaga.nvim"
+	use("glepnir/lspsaga.nvim")
 
-	use "onsails/lspkind.nvim"
+	use("onsails/lspkind.nvim")
 
-	use "L3MON4D3/LuaSnip"
-	use "rafamadriz/friendly-snippets"
-	use "saadparwaiz1/cmp_luasnip"
+	use("L3MON4D3/LuaSnip")
+	use("rafamadriz/friendly-snippets")
+	use("saadparwaiz1/cmp_luasnip")
+
+	use("jose-elias-alvarez/null-ls.nvim")
 	-- }}}
 
 	-- File Manipulation
-	use "tpope/vim-surround"
-	use "b3nj5m1n/kommentary"
+	use("tpope/vim-surround")
+	use("b3nj5m1n/kommentary")
 
 	-- Flutter
-	use "akinsho/flutter-tools.nvim"
-	use "dart-lang/dart-vim-plugin"
-	use "thosakwe/vim-flutter"
-	use "natebosch/vim-lsc"
-	use "natebosch/vim-lsc-dart"
+	use("akinsho/flutter-tools.nvim")
+	use("dart-lang/dart-vim-plugin")
+	use("thosakwe/vim-flutter")
+	use("natebosch/vim-lsc")
+	use("natebosch/vim-lsc-dart")
 
 	-- Aesthetics
-	use "RRethy/vim-illuminate"
+	use("RRethy/vim-illuminate")
 
-	use "ziontee113/color-picker.nvim"
+	use("ziontee113/color-picker.nvim")
+	use("norcalli/nvim-colorizer.lua")
 
-	use "vimwiki/vimwiki"
-	use "nvim-treesitter/playground"
-
-	end
-)
+	use("vimwiki/vimwiki")
+	use("nvim-treesitter/playground")
+end)

@@ -1,9 +1,9 @@
-require("mason").setup {}
+require("mason").setup({})
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Mappings.
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
@@ -15,6 +15,7 @@ local on_attach = function(client, bufnr)
 	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
 	end
+
 	local function buf_set_option(...)
 		vim.api.nvim_buf_set_option(bufnr, ...)
 	end
@@ -37,7 +38,6 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
 	buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
 	buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
-
 end
 
 local lsp_flags = {
@@ -47,11 +47,11 @@ local lsp_flags = {
 local signs = { Error = " ", Warn = " ", Hint = "", Info = " " }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl})
+	vim.fn.sign_define(hl, { text = icon, texthl = hl })
 end
 
 -- Servers Setup {{{
-require("lspconfig")["sumneko_lua"].setup{
+require("lspconfig")["sumneko_lua"].setup({
 	on_attach = on_attach,
 	autostart = true,
 	flags = lsp_flags,
@@ -59,111 +59,111 @@ require("lspconfig")["sumneko_lua"].setup{
 	settings = {
 		Lua = {
 			diagnostics = {
-				globals = { "vim" }
-			}
-		}
-	}
-}
+				globals = { "vim" },
+			},
+		},
+	},
+})
 
-require("lspconfig")["tsserver"].setup{
+require("lspconfig")["tsserver"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 
-require("lspconfig")["bashls"].setup{
+require("lspconfig")["bashls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 
-require("lspconfig")["cssls"].setup{
+require("lspconfig")["cssls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 
-require("lspconfig")["cssmodules_ls"].setup{
+require("lspconfig")["cssmodules_ls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 
-require("lspconfig")["eslint"].setup{
+require("lspconfig")["eslint"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 
-require("lspconfig")["marksman"].setup{
+require("lspconfig")["marksman"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 
-require("lspconfig")["html"].setup{
+require("lspconfig")["html"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 
-require("lspconfig")["intelephense"].setup{
+require("lspconfig")["intelephense"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 
-require("lspconfig")["jsonls"].setup{
+require("lspconfig")["jsonls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 
-require("lspconfig")["lemminx"].setup{
+require("lspconfig")["lemminx"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 
-require("lspconfig")["pyright"].setup{
+require("lspconfig")["pyright"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 
-require("lspconfig")["sqls"].setup{
+require("lspconfig")["sqls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 
-require("lspconfig")["tsserver"].setup{
+require("lspconfig")["tsserver"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 
-require("lspconfig")["vimls"].setup{
+require("lspconfig")["vimls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 
-require("lspconfig")["yamlls"].setup{
+require("lspconfig")["yamlls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 
-require("lspconfig")["dartls"].setup{
+require("lspconfig")["dartls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 
-require("lspconfig")["emmet_ls"].setup{
+require("lspconfig")["emmet_ls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
-}
+})
 -- }}}

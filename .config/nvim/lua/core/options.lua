@@ -42,7 +42,7 @@ opt.scrolljump = 1
 
 --User Interface
 opt.wildmenu = true
-opt.winbar="%f" --New in neovim 0.8
+opt.winbar = "%f" --New in neovim 0.8
 vim.opt.showmode = false
 --Files
 opt.confirm = true
@@ -51,6 +51,7 @@ opt.dir = "~/.cache/nvim"
 opt.swapfile = false
 
 --Misc
+vim.opt.termguicolors = true
 opt.hidden = true
 opt.history = 10000
 opt.mouse = "a"
@@ -60,5 +61,4 @@ opt.laststatus = 3
 
 vim.g.did_load_filetypes = 1
 
-vim.g.vimwiki_list = {{path = '~/Universe', syntax = 'markdown', ext = '.md'}}
-
+vim.g.vimwiki_list = { { path = "~/Universe", syntax = "markdown", ext = ".md" } }
