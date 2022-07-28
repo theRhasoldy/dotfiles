@@ -1,8 +1,8 @@
-local naughty = require('naughty')
-local gears = require('gears')
-local beautiful = require('beautiful')
-
+local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
+
+local naughty = require("naughty")
+local gears = require("gears")
 
 -- Default config
 naughty.config.spacing = dpi(4)
@@ -13,9 +13,8 @@ naughty.config.defaults.max_width = dpi(350)
 -- naughty.config.defaults.max_height = dpi(20)
 naughty.config.defaults.icon_size = 64
 naughty.config.defaults.shape = function(cr, width, height)
-    gears.shape.rounded_rect(cr, width, height, dpi(10))
+	gears.shape.rounded_rect(cr, width, height, dpi(10))
 end
-
 
 -- Presets
 naughty.config.presets.low.timeout = 5

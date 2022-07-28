@@ -1,21 +1,26 @@
-local sep = wibox.widget {
+local wibox = require("wibox")
+local awful = require("awful")
+local gears = require("gears")
+local beautiful = require("beautiful")
+
+local sep = wibox.widget({
 	widget = wibox.widget.textbox,
 	markup = "	",
-}
+})
 
-local mytextdate = wibox.widget {
+local mytextdate = wibox.widget({
 	widget = wibox.widget.textclock,
 	format = "%a %b %d",
-	font = "Dejavu Sans bold 8"
-}
+	font = "Dejavu Sans bold 8",
+})
 
-local mytextclock = wibox.widget {
+local mytextclock = wibox.widget({
 	widget = wibox.widget.textclock,
 	format = "%R",
-	font = "Dejavu Sans bold 8"
-}
+	font = "Dejavu Sans bold 8",
+})
 
-local volume_widget = require('widgets.volume-widget.volume')
+local volume_widget = require("widgets.volume-widget.volume")
 
 local spotify_widget = require("widgets.spotify-widget.spotify")
 
@@ -31,72 +36,85 @@ awful.screen.connect_for_each_screen(function(s)
 	-- We need one layoutbox per screen.
 	s.mylayoutbox = awful.widget.layoutbox(s)
 	s.mylayoutbox:buttons(gears.table.join(
-	awful.button({ }, 1, function () awful.layout.inc( 1) end),
-	awful.button({ }, 3, function () awful.layout.inc(-1) end),
-	awful.button({ }, 4, function () awful.layout.inc( 1) end),
-	awful.button({ }, 5, function () awful.layout.inc(-1) end)))
+		awful.button({}, 1, function()
+			awful.layout.inc(1)
+		end),
+		awful.button({}, 3, function()
+			awful.layout.inc(-1)
+		end),
+		awful.button({}, 4, function()
+			awful.layout.inc(1)
+		end),
+		awful.button({}, 5, function()
+			awful.layout.inc(-1)
+		end)
+	))
 	-- Create a taglist widget
-	s.mytaglist = awful.widget.taglist {
-		screen  = s,
-		filter  = awful.widget.taglist.filter.all,
-		buttons = taglist_buttons,
+	s.mytaglist = awful.widget.taglist({
+		screen = s,
+		filter = awful.widget.taglist.filter.all,
 		widget_template = {
 			widget = wibox.container.background,
 			forced_width = 32,
 			{
 				layout = wibox.layout.flex.horizontal,
 				{
-					id = 'text_role',
+					id = "text_role",
 					widget = wibox.widget.textbox,
 				},
 			},
-		}
-	}
+		},
+	})
 
 	-- Create the wibox
-	s.mywibox = awful.wibar({ position = "top", screen = s, height = 22, ontop = false, bg = beautiful.wibar_bg, fg = "#0E1720"})
+	s.mywibox = awful.wibar({
+		position = "top",
+		screen = s,
+		height = 22,
+		ontop = false,
+		bg = beautiful.wibar_bg,
+		fg = "#0E1720",
+	})
 
 	-- Add widgets to the wibox
-	s.mywibox:setup {
+	s.mywibox:setup({
 		layout = wibox.layout.stack,
 		{
 			layout = wibox.layout.align.horizontal,
 			{ -- Left widgets
-			layout = wibox.layout.fixed.horizontal,
-			sep,
-			layoutbox
+				layout = wibox.layout.fixed.horizontal,
+				sep,
+				layoutbox,
+			},
+			nil,
+			{ -- Right widgets
+				layout = wibox.layout.fixed.horizontal,
+				tray,
+				sep,
+				spotify_widget({
+					font = beautiful.font,
+					dim_when_paused = true,
+					dim_opacity = 0.5,
+					max_length = -1,
+					timeout = 0,
+				}),
+				sep,
+				volume_widget({
+					widget_type = "icon",
+					device = "pulse",
+				}),
+				sep,
+				mytextdate,
+				sep,
+				mytextclock,
+				sep,
+			},
 		},
-		nil,
-		{ -- Right widgets
-		layout = wibox.layout.fixed.horizontal,
-		tray,
-		sep,
-		spotify_widget({
-			font = beautiful.font,
-			dim_when_paused = true,
-			dim_opacity = 0.5,
-			max_length = -1,
-			timeout = 0
-		}),
-		sep,
-		volume_widget({
-			widget_type = "icon",
-			device = "pulse",
-		}),
-		sep,
-		mytextdate,
-		sep,
-		mytextclock,
-		sep,
-	},
-},
-{
-	s.mytaglist,
-	valign = "center",
-	halign = "center",
-	layout = wibox.container.place
-}
-	 }
-
- end)
-
+		{
+			s.mytaglist,
+			valign = "center",
+			halign = "center",
+			layout = wibox.container.place,
+		},
+	})
+end)

@@ -1,28 +1,42 @@
-require("lua/variables")
-require("lua/wibar")
-require("lua/autostart")
-require("lua/keybinds")
-require("lua/titlebar")
-require("lua/clients")
-require("lua/notifications")
+local gears = require("gears")
+local awful = require("awful")
+local naughty = require("naughty")
+local beautiful = require("beautiful")
+local awesome = require("awesome")
+
+pcall(require, "luarocks.loader")
+
+local theme = require("theme")
+
+require("lua.wibar")
+require("lua.autostart")
+require("lua.keybinds")
+require("lua.clients")
+require("lua.notifications")
 require("awful.hotkeys_popup.keys")
 
 -- {{{ Error handling
 if awesome.startup_errors then
-	naughty.notify({ preset = naughty.config.presets.critical,
-	title = "Oops, there were errors during startup!",
-	text = awesome.startup_errors })
+	naughty.notify({
+		preset = naughty.config.presets.critical,
+		title = "Oops, there were errors during startup!",
+		text = awesome.startup_errors,
+	})
 end
 
 do
 	local in_error = false
-	awesome.connect_signal("debug::error", function (err)
-		if in_error then return end
+	awesome.connect_signal("debug::error", function(err)
+		if in_error then
+			return
+		end
 		in_error = true
 
-		naughty.notify({ preset = naughty.config.presets.critical,
-		title = "Oops, an error happened!",
-		text = tostring(err) })
+		naughty.notify({
+			preset = naughty.config.presets.critical,
+			title = "Oops, an error happened!",
+			text = tostring(err),
+		})
 		in_error = false
 	end)
 end
@@ -47,11 +61,10 @@ awful.layout.layouts = {
 	awful.layout.suit.tile,
 	awful.layout.suit.tile.left,
 	awful.layout.suit.fair,
-	awful.layout.suit.max.fullscreen
+	awful.layout.suit.max.fullscreen,
 }
 -- }}}
 
 -- Tags {{{
-awful.tag({ "", "", "", "", "", "", ""}, s, awful.layout.layouts[1])
+awful.tag({ "", "", "", "", "", "", "" }, s, awful.layout.layouts[1])
 -- }}}
-
