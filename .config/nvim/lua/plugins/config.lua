@@ -60,12 +60,10 @@ packer.startup(function()
 
 	use("kyazdani42/nvim-tree.lua")
 
-	use({
-		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-	})
+	use("feline-nvim/feline.nvim")
 
 	use("nvim-telescope/telescope.nvim")
+	use("nvim-telescope/telescope-live-grep-args.nvim")
 
 	use("windwp/nvim-autopairs")
 
@@ -79,6 +77,8 @@ packer.startup(function()
 		"williamboman/mason-lspconfig.nvim",
 	})
 
+	use("ray-x/lsp_signature.nvim")
+
 	use({
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-nvim-lsp",
@@ -87,7 +87,6 @@ packer.startup(function()
 	})
 
 	use("glepnir/lspsaga.nvim")
-
 	use("onsails/lspkind.nvim")
 
 	use("L3MON4D3/LuaSnip")
@@ -113,6 +112,10 @@ packer.startup(function()
 
 	use("ziontee113/color-picker.nvim")
 	use("norcalli/nvim-colorizer.lua")
+	use({
+		"folke/todo-comments.nvim",
+		event = { "BufRead", "BufNewFile" },
+	})
 
 	use("vimwiki/vimwiki")
 	use("nvim-treesitter/playground")

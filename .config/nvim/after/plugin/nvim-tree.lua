@@ -62,12 +62,12 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
 				folder = {
 					arrow_closed = "",
 					arrow_open = "",
-					default = "",
-					open = "",
-					empty = "",
-					empty_open = "",
-					symlink = "",
-					symlink_open = "",
+					default = " ",
+					open = " ",
+					empty = " ",
+					empty_open = " ",
+					symlink = " ",
+					symlink_open = " ",
 				},
 				git = {
 					unstaged = "✗",

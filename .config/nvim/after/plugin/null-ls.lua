@@ -7,7 +7,9 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null.setup({
 	debug = false,
 	sources = {
-		formatting.prettier.with({ extra_args = { "--no-semi", "--double-quote", "--jsx-double-quote" } }),
+		formatting.prettier.with({
+			extra_args = { "--double-quote", "--jsx-double-quote", "--tab-width 4", "--use-tabs" },
+		}),
 		formatting.stylua,
 		diagnostics.eslint,
 	},

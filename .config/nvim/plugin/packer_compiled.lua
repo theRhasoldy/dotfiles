@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/dart-vim-plugin",
     url = "https://github.com/dart-lang/dart-vim-plugin"
   },
+  ["feline.nvim"] = {
+    loaded = true,
+    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/feline.nvim",
+    url = "https://github.com/feline-nvim/feline.nvim"
+  },
   ["filetype.nvim"] = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/filetype.nvim",
@@ -129,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/kommentary",
     url = "https://github.com/b3nj5m1n/kommentary"
   },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
@@ -138,11 +148,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "https://github.com/glepnir/lspsaga.nvim"
-  },
-  ["lualine.nvim"] = {
-    loaded = true,
-    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -224,10 +229,22 @@ _G.packer_plugins = {
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["telescope-live-grep-args.nvim"] = {
+    loaded = true,
+    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/telescope-live-grep-args.nvim",
+    url = "https://github.com/nvim-telescope/telescope-live-grep-args.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["todo-comments.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/opt/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
   },
   ["vim-flutter"] = {
     loaded = true,
@@ -262,6 +279,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufNewFile * ++once lua require("packer.load")({'todo-comments.nvim'}, { event = "BufNewFile *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'todo-comments.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 end)

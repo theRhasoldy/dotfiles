@@ -15,6 +15,7 @@ local options = {
 			"--with-filename",
 			"--line-number",
 			"--smart-case",
+			"--column",
 		},
 		prompt_prefix = "   ",
 		selection_caret = "  ",
@@ -56,6 +57,11 @@ local options = {
 		},
 	},
 
+	extensions = {
+		live_grep_args = {
+			auto_quoting = true, -- enable/disable auto-quoting
+		},
+	},
 	extensions_list = { "themes", "terms" },
 }
 

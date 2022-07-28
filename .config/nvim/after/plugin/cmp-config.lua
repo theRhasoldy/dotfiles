@@ -57,7 +57,6 @@ cmp.setup({
 	formatting = {
 		format = lspkind.cmp_format({
 
-			mode = "symbol",
 			maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
 			before = function(entry, vim_item)
@@ -71,16 +70,8 @@ cmp.setup({
 require("lspkind").init({
 	-- default: symbol
 	-- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
-	mode = "text",
+	mode = "text_symbol",
 
-	-- default symbol map
-	-- can be either 'default' (requires nerd-fonts font) or
-	-- 'codicons' for codicon preset (requires vscode-codicons font)
-	--
-	-- default: 'default'
-	-- override preset symbols
-	--
-	-- default: {}
 	symbol_map = {
 		Text = "",
 		Method = "",
@@ -96,16 +87,16 @@ require("lspkind").init({
 		Value = "",
 		Enum = "",
 		Keyword = "",
-		Snippet = "",
+		Snippet = "",
 		Color = "",
 		File = "",
 		Reference = "",
-		Folder = "",
+		Folder = "",
 		EnumMember = "",
 		Constant = "",
 		Struct = "פּ",
 		Event = "",
 		Operator = "",
-		TypeParameter = "",
+		TypeParameter = "",
 	},
 })

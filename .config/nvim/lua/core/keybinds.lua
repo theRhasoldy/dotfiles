@@ -55,7 +55,8 @@ map("n", "<Leader>n", ":NvimTreeToggle<CR>")
 map("n", "<C-n>", ":NvimTreeFocus<CR>")
 
 -- Telescope
-map("n", "<Leader>f", ":Telescope find_files<CR>")
+map("n", "<Leader>ff", ":Telescope find_files<CR>")
+map("n", "<Leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 
 -- Colorpicker
 vim.keymap.set("n", "<C-c>", "<cmd>PickColor<cr>", opts)

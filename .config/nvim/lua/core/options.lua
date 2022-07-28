@@ -26,9 +26,9 @@ opt.cursorline = true
 --Indetation
 opt.autoindent = true
 opt.smarttab = true
-opt.shiftwidth = 3
-opt.softtabstop = 3
-opt.tabstop = 3
+opt.shiftwidth = 4
+opt.softtabstop = 4
+opt.tabstop = 4
 opt.shiftround = true
 
 --Search
