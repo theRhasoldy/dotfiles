@@ -19,5 +19,3 @@ alias matrix="unimatrix -c magenta -s 96 -a -l s"
 
 alias wiki="cd ~/Universe && nvim -c VimwikiIndex"
 
-alias npm="sudo npm"
-

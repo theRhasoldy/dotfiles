@@ -11,25 +11,27 @@ require("lua.scratch")
 local modkey = "Mod4"
 local alt = "Mod1"
 local ctrl = "Control"
+local shift = "Shift"
 
 local globalkeys = gears.table.join(
+
 	-- System {{{
 
-	awful.key({ modkey, "Control" }, "r", awesome.restart, { description = "Reload awesome", group = "system" }),
+	awful.key({ modkey, ctrl }, "r", awesome.restart, { description = "Reload awesome", group = "system" }),
 
-	awful.key({ modkey, "Shift", "Control" }, "q", awesome.quit, { description = "Quit awesome", group = "system" }),
+	awful.key({ modkey, shift, ctrl }, "q", awesome.quit, { description = "Quit awesome", group = "system" }),
 
 	-- Volume Manipulation {{{
 	awful.key({ modkey }, "]", function()
-		volume_widget:inc(5)
+		Volume_widget:inc(5)
 	end, { description = "Increment volume", group = "volume" }),
 
 	awful.key({ modkey }, "[", function()
-		volume_widget:dec(5)
+		Volume_widget:dec(5)
 	end, { description = "Decrement volume", group = "volume" }),
 
 	awful.key({ modkey }, "\\", function()
-		volume_widget:toggle()
+		Volume_widget:toggle()
 	end, { description = "Mute volume", group = "volume" }),
 	-- }}}
 
@@ -81,28 +83,28 @@ local globalkeys = gears.table.join(
 	-- }}}
 
 	-- Directional swap {{{
-	awful.key({ modkey, "Shift" }, "j", function()
+	awful.key({ modkey, shift }, "j", function()
 		awful.client.swap.global_bydirection("down")
 		if client.focus then
 			client.focus:raise()
 		end
 	end, { description = "Focus down", group = "client" }),
 
-	awful.key({ modkey, "Shift" }, "k", function()
+	awful.key({ modkey, shift }, "k", function()
 		awful.client.swap.global_bydirection("up")
 		if client.focus then
 			client.focus:raise()
 		end
 	end, { description = "Focus up", group = "client" }),
 
-	awful.key({ modkey, "Shift" }, "h", function()
+	awful.key({ modkey, shift }, "h", function()
 		awful.client.swap.global_bydirection("left")
 		if client.focus then
 			client.focus:raise()
 		end
 	end, { description = "Focus left", group = "client" }),
 
-	awful.key({ modkey, "Shift" }, "l", function()
+	awful.key({ modkey, shift }, "l", function()
 		awful.client.swap.global_bydirection("right")
 		if client.focus then
 			client.focus:raise()
@@ -110,7 +112,7 @@ local globalkeys = gears.table.join(
 	end, { description = "Focus right", group = "client" }),
 
 	awful.key(
-		{ modkey, "Shift" },
+		{ modkey, ctrl },
 		"f",
 		awful.client.floating.toggle,
 		{ description = "Toggle floating", group = "client" }
@@ -118,7 +120,7 @@ local globalkeys = gears.table.join(
 	-- }}}
 
 	-- Apps {{{
-	awful.key({ modkey, "Shift" }, "/", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
+	awful.key({ modkey, shift }, "/", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
 
 	awful.key({ modkey }, "Return", function()
 		awful.spawn(Terminal)
@@ -154,13 +156,17 @@ local globalkeys = gears.table.join(
 	-- }}}
 
 	-- Scratchpads {{{
-	awful.key({ modkey }, "t", function()
-		term_scratch:toggle()
+	awful.key({ modkey }, "a", function()
+		Term_scratch:toggle()
 	end, { description = "Launch terminal scratchpad", group = "scratchpads" }),
 
 	awful.key({ modkey }, "m", function()
-		spotify_scratch:toggle()
-	end, { description = "Launch spotify scratchpad", group = "scratchpads" })
+		Spotify_scratch:toggle()
+	end, { description = "Launch spotify scratchpad", group = "scratchpads" }),
+
+	awful.key({ modkey }, "d", function()
+		Dev_scratch:toggle()
+	end, { description = "Launch development terminal", group = "scratchpads" })
 	-- }}}
 )
 
@@ -178,7 +184,7 @@ for i = 1, 9 do
 		end, { description = "view tag #" .. i, group = "tag" }),
 
 		-- Toggle tag display.
-		awful.key({ modkey, "Control" }, "#" .. i + 9, function()
+		awful.key({ modkey, ctrl }, "#" .. i + 9, function()
 			local screen = awful.screen.focused()
 			local tag = screen.tags[i]
 			if tag then
@@ -187,7 +193,7 @@ for i = 1, 9 do
 		end, { description = "toggle tag #" .. i, group = "tag" }),
 
 		-- Move client to tag.
-		awful.key({ modkey, "Shift" }, "#" .. i + 9, function()
+		awful.key({ modkey, shift }, "#" .. i + 9, function()
 			if client.focus then
 				local tag = client.focus.screen.tags[i]
 				if tag then
@@ -197,7 +203,7 @@ for i = 1, 9 do
 		end, { description = "move focused client to tag #" .. i, group = "tag" }),
 
 		-- Toggle tag on focused client.
-		awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9, function()
+		awful.key({ modkey, ctrl, shift }, "#" .. i + 9, function()
 			if client.focus then
 				local tag = client.focus.screen.tags[i]
 				if tag then
@@ -211,20 +217,33 @@ end
 
 -- Client {{{
 clientkeys = gears.table.join(
-	awful.key({ modkey, "Control" }, "q", function(c)
+	awful.key({ modkey, ctrl }, "q", function(c)
 		c:kill()
 	end, { description = "Close client with focus", group = "client" }),
 
-	awful.key({ modkey, "Shift" }, "t", function(c)
+	awful.key({ modkey, ctrl }, "t", function(c)
 		c.sticky = not c.sticky
 	end, { description = "Make window sticky", group = "client" }),
 
 	awful.key({ modkey }, "Tab", function()
 		awful.layout.inc(1)
 	end, { description = "select next", group = "layout" }),
-	awful.key({ modkey, "Shift" }, "Tab", function()
+	awful.key({ modkey, shift }, "Tab", function()
 		awful.layout.inc(-1)
-	end, { description = "select previous", group = "layout" })
+	end, { description = "select previous", group = "layout" }),
+
+	-- Scratchpads {{{
+	awful.key({ modkey }, "a", function()
+		Term_scratch:toggle()
+	end, { description = "Launch terminal scratchpad", group = "scratchpads" }),
+
+	awful.key({ modkey }, "m", function()
+		Spotify_scratch:toggle()
+	end, { description = "Launch spotify scratchpad", group = "scratchpads" }),
+
+	awful.key({ modkey }, "d", function()
+		Dev_scratch:toggle()
+	end, { description = "Launch development terminal", group = "scratchpads" })
 )
 -- }}}
 

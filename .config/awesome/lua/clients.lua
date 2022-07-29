@@ -48,9 +48,7 @@ awful.rules.rules = {
 	-- Floating clients.
 	{
 		rule_any = {
-			instance = {
-				"copyq", -- Includes session name in class.
-			},
+			instance = {},
 			class = {
 				"Sxiv",
 			},
@@ -66,15 +64,10 @@ awful.rules.rules = {
 	},
 
 	{
-		rule = { name = "Picture-in-Picture" },
-		properties = { floating = true, sticky = true },
+		rule = { name = "Picture-in-Picture", instance = { "spad", "dev" } },
+		properties = { floating = true, sticky = true, ontop = true },
 	},
 }
-
--- Enable on click raise
-client.connect_signal("mouse::click", function(c)
-	c:emit_signal("request::activate", "mouse_click", { raise = true })
-end)
 
 -- Sloppy focus
 client.connect_signal("mouse::enter", function(c)

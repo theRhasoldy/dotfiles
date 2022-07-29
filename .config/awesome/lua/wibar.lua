@@ -20,7 +20,7 @@ local mytextclock = wibox.widget({
 	font = "Dejavu Sans bold 8",
 })
 
-local volume_widget = require("widgets.volume-widget.volume")
+Volume_widget = require("widgets.volume-widget.volume")
 
 local spotify_widget = require("widgets.spotify-widget.spotify")
 
@@ -99,7 +99,7 @@ awful.screen.connect_for_each_screen(function(s)
 					timeout = 0,
 				}),
 				sep,
-				volume_widget({
+				Volume_widget({
 					widget_type = "icon",
 					device = "pulse",
 				}),
