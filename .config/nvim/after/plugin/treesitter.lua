@@ -15,13 +15,14 @@ require("nvim-treesitter.configs").setup({
 		"yaml",
 		"rasi",
 		"comment",
+		"dart",
 	},
 	highlight = {
 		enable = true,
 	},
-	autotag = {
+	--[[ autotag = {
 		enable = true,
-	},
+	}, ]]
 	playground = {
 		enable = true,
 		disable = {},

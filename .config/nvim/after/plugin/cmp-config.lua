@@ -25,11 +25,11 @@ cmp.setup({
 	end,
 
 	mapping = cmp.mapping.preset.insert({
-		["<C-J>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-		["<C-K>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+		["<C-J>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+		["<C-K>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
 		["<C-u>"] = cmp.mapping.scroll_docs(4),
 		["<C-d>"] = cmp.mapping.scroll_docs(-4),
-		["<c-space>"] = cmp.mapping({
+		["<A-space>"] = cmp.mapping({
 			i = cmp.mapping.complete(),
 			c = function(
 				_ --[[fallback]]
@@ -68,10 +68,8 @@ cmp.setup({
 
 -- Lspkind
 require("lspkind").init({
-	-- default: symbol
 	-- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
 	mode = "text_symbol",
-
 	symbol_map = {
 		Text = "",
 		Method = "",

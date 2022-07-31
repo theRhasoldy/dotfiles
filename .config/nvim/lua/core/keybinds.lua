@@ -59,5 +59,5 @@ map("n", "<Leader>ff", ":Telescope find_files<CR>")
 map("n", "<Leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 
 -- Colorpicker
-vim.keymap.set("n", "<C-c>", "<cmd>PickColor<cr>", opts)
-vim.keymap.set("i", "<C-c>", "<cmd>PickColorInsert<cr>", opts)
+map("n", "<C-c>", "<cmd>PickColor<cr>", opts)
+map("i", "<C-c>", "<cmd>PickColorInsert<cr>", opts)

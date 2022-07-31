@@ -23,7 +23,6 @@ local on_attach = function(client, bufnr)
 	buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
 	-- Mappings.
-	local opts = { noremap = true, silent = true }
 	buf_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	buf_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	buf_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
@@ -64,6 +63,12 @@ require("lspconfig")["sumneko_lua"].setup({
 		},
 	},
 })
+
+vim.diagnostic.config({
+	virtual_text = false,
+})
+
+require("lsp_lines").setup()
 
 require("lspconfig")["tsserver"].setup({
 	on_attach = on_attach,
@@ -131,13 +136,13 @@ require("lspconfig")["pyright"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["sqls"].setup({
+require("lspconfig")["dartls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
 })
 
-require("lspconfig")["tsserver"].setup({
+require("lspconfig")["sqls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
@@ -150,12 +155,6 @@ require("lspconfig")["vimls"].setup({
 })
 
 require("lspconfig")["yamlls"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
-
-require("lspconfig")["dartls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,

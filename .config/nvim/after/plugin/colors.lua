@@ -12,6 +12,8 @@ api.nvim_set_hl(0, "LineNr", { bg = nil, fg = "#3e3e3e" })
 api.nvim_set_hl(0, "CursorLineNr", { bg = nil, fg = "#707070", bold = true })
 api.nvim_set_hl(0, "CursorLine", { bg = "#23262e" })
 
+api.nvim_set_hl(0, "LspFloatWinNormal", { bg = "#0F1115" })
+
 -- Diagnostics
 api.nvim_set_hl(0, "DiagnosticWarn", { fg = "#ffc38d", bold = true })
 api.nvim_set_hl(0, "DiagnosticError", { fg = "#ff4d66", bold = true })

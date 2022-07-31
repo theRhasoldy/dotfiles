@@ -52,8 +52,11 @@ packer.startup(function()
 	})
 	-- }}}
 
+	-- Tmux {{{
+	use("christoomey/vim-tmux-navigator")
+	-- }}}
+
 	-- Theme
-	use("Matsuuu/pinkmare")
 	use("heraldofsolace/nisha-vim")
 
 	use("kyazdani42/nvim-web-devicons")
@@ -70,6 +73,8 @@ packer.startup(function()
 	use("windwp/nvim-ts-autotag")
 
 	-- LSP {{{ (Oh boy)
+	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
+
 	use("neovim/nvim-lspconfig")
 
 	use({
@@ -77,17 +82,17 @@ packer.startup(function()
 		"williamboman/mason-lspconfig.nvim",
 	})
 
-	use("ray-x/lsp_signature.nvim")
-
 	use({
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-nvim-lsp-signature-help",
 	})
 
 	use("glepnir/lspsaga.nvim")
 	use("onsails/lspkind.nvim")
+	use("folke/trouble.nvim")
 
 	use("L3MON4D3/LuaSnip")
 	use("rafamadriz/friendly-snippets")
@@ -99,13 +104,6 @@ packer.startup(function()
 	-- File Manipulation
 	use("tpope/vim-surround")
 	use("b3nj5m1n/kommentary")
-
-	-- Flutter
-	use("akinsho/flutter-tools.nvim")
-	use("dart-lang/dart-vim-plugin")
-	use("thosakwe/vim-flutter")
-	use("natebosch/vim-lsc")
-	use("natebosch/vim-lsc-dart")
 
 	-- Aesthetics
 	use("RRethy/vim-illuminate")
