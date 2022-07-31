@@ -162,11 +162,7 @@ local globalkeys = gears.table.join(
 
 	awful.key({ modkey }, "m", function()
 		Spotify_scratch:toggle()
-	end, { description = "Launch spotify scratchpad", group = "scratchpads" }),
-
-	awful.key({ modkey }, "d", function()
-		Dev_scratch:toggle()
-	end, { description = "Launch development terminal", group = "scratchpads" })
+	end, { description = "Launch spotify scratchpad", group = "scratchpads" })
 	-- }}}
 )
 

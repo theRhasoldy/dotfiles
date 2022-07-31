@@ -64,7 +64,7 @@ awful.rules.rules = {
 	},
 
 	{
-		rule = { name = "Picture-in-Picture", instance = { "spad", "dev" } },
+		rule = { name = "Picture-in-Picture", class = { "spad", "dev" } },
 		properties = { floating = true, sticky = true, ontop = true },
 	},
 }
