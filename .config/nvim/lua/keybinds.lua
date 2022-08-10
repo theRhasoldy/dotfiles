@@ -17,7 +17,7 @@ map("n", "<Leader>r", ":luafile $MYVIMRC<CR>")
 map("i", "<C-j>", "")
 map("i", "<C-k>", "")
 
-map("i", "<Esc>", "jEsc><Esc>") -- Exit cmp and insert mode
+map("i", "<Esc>", "<Esc><Esc>") -- Exit cmp and insert mode
 
 map("n", "o", "zzo")
 
