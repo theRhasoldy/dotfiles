@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  CamelCaseMotion = {
+    loaded = true,
+    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/CamelCaseMotion",
+    url = "https://github.com/bkad/CamelCaseMotion"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -99,10 +104,10 @@ _G.packer_plugins = {
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["color-picker.nvim"] = {
+  ["colortils.nvim"] = {
     loaded = true,
-    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/color-picker.nvim",
-    url = "https://github.com/ziontee113/color-picker.nvim"
+    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/colortils.nvim",
+    url = "https://github.com/nvim-colortils/colortils.nvim"
   },
   ["feline.nvim"] = {
     loaded = true,
@@ -118,6 +123,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  ["hop.nvim"] = {
+    loaded = true,
+    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/hop.nvim",
+    url = "https://github.com/phaazon/hop.nvim"
   },
   ["impatient.nvim"] = {
     loaded = true,
@@ -177,7 +187,12 @@ _G.packer_plugins = {
   ["nvim-colorizer.lua"] = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
-    url = "https://github.com/norcalli/nvim-colorizer.lua"
+    url = "https://github.com/NvChad/nvim-colorizer.lua"
+  },
+  ["nvim-dahlia"] = {
+    loaded = true,
+    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/nvim-dahlia",
+    url = "https://github.com/theRhasoldy/nvim-dahlia"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -203,6 +218,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["oxocarbon-lua.nvim"] = {
+    loaded = true,
+    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/oxocarbon-lua.nvim",
+    url = "https://github.com/B4mbus/oxocarbon-lua.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -236,10 +256,10 @@ _G.packer_plugins = {
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/opt/todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
   },
-  ["trouble.nvim"] = {
+  ["vim-horizon"] = {
     loaded = true,
-    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/trouble.nvim",
-    url = "https://github.com/folke/trouble.nvim"
+    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/vim-horizon",
+    url = "https://github.com/ntk148v/vim-horizon"
   },
   ["vim-illuminate"] = {
     loaded = true,
@@ -268,8 +288,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufNewFile * ++once lua require("packer.load")({'todo-comments.nvim'}, { event = "BufNewFile *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'todo-comments.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufNewFile * ++once lua require("packer.load")({'todo-comments.nvim'}, { event = "BufNewFile *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

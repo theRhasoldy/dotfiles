@@ -33,7 +33,7 @@ packer.init({
 	package_root = util.join_paths(vim.fn.stdpath("data"), "site", "pack"),
 })
 
---Plugins
+-- Plugins {{{
 packer.startup(function()
 	local use = require("packer").use
 
@@ -45,19 +45,21 @@ packer.startup(function()
 		"nvim-lua/plenary.nvim",
 	})
 
-	-- Treesitter {{{
+	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
-	-- }}}
+	use("nvim-treesitter/playground")
 
-	-- Tmux {{{
+	-- Tmux
 	use("christoomey/vim-tmux-navigator")
-	-- }}}
 
 	-- Theme
 	use("heraldofsolace/nisha-vim")
+	use("B4mbus/oxocarbon-lua.nvim")
+	use("theRhasoldy/nvim-dahlia")
+	use("ntk148v/vim-horizon")
 
 	use("kyazdani42/nvim-web-devicons")
 
@@ -65,23 +67,23 @@ packer.startup(function()
 
 	use("feline-nvim/feline.nvim")
 
+	use("phaazon/hop.nvim")
+	use("bkad/CamelCaseMotion")
+
+	-- Telescope
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-live-grep-args.nvim")
 
 	use("windwp/nvim-autopairs")
-
 	use("windwp/nvim-ts-autotag")
 
-	-- LSP {{{ (Oh boy)
+	-- LSP (Oh boy)
 	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
-
 	use("neovim/nvim-lspconfig")
-
 	use({
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 	})
-
 	use({
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-nvim-lsp",
@@ -89,17 +91,12 @@ packer.startup(function()
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-nvim-lsp-signature-help",
 	})
-
 	use("glepnir/lspsaga.nvim")
 	use("onsails/lspkind.nvim")
-	use("folke/trouble.nvim")
-
 	use("L3MON4D3/LuaSnip")
 	use("rafamadriz/friendly-snippets")
 	use("saadparwaiz1/cmp_luasnip")
-
 	use("jose-elias-alvarez/null-ls.nvim")
-	-- }}}
 
 	-- File Manipulation
 	use("tpope/vim-surround")
@@ -108,13 +105,12 @@ packer.startup(function()
 	-- Aesthetics
 	use("RRethy/vim-illuminate")
 
-	use("ziontee113/color-picker.nvim")
-	use("norcalli/nvim-colorizer.lua")
+	use("nvim-colortils/colortils.nvim")
+	use("NvChad/nvim-colorizer.lua")
 	use({
 		"folke/todo-comments.nvim",
 		event = { "BufRead", "BufNewFile" },
 	})
 
 	use("vimwiki/vimwiki")
-	use("nvim-treesitter/playground")
 end)

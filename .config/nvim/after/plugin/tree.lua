@@ -1,4 +1,9 @@
-require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
+local status, tree = pcall(require, "nvim-tree")
+if not status then
+	return
+end
+
+tree.setup({
 	create_in_closed_folder = true,
 	disable_netrw = false,
 	open_on_setup = true,

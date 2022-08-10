@@ -1,3 +1,8 @@
+local status, feline = pcall(require, "feline")
+if not status then
+	return
+end
+
 local lsp = require("feline.providers.lsp")
 local vi_mode_utils = require("feline.providers.vi_mode")
 
@@ -336,7 +341,7 @@ winbar_components.active[3][4] = {
 }
 -- }}}
 
-require("feline").setup({
+feline.setup({
 	theme = colors,
 	default_bg = bg,
 	default_fg = fg,
@@ -345,7 +350,7 @@ require("feline").setup({
 	force_inactive = force_inactive,
 })
 
-require("feline").winbar.setup({
+feline.winbar.setup({
 	components = winbar_components,
 	force_inactive = force_inactive,
 })

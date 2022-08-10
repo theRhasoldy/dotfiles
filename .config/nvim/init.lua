@@ -1,13 +1,7 @@
--- Core {{{
-require("core.options")
-require("core.keybinds")
--- }}}
+require("options")
+require("keybinds")
 
--- Plugins {{{
 require("impatient").enable_profile() --Optimize plugins
-require("plugins.config")
--- }}}
+require("plugins")
 
--- UI {{{
 
--- }}}

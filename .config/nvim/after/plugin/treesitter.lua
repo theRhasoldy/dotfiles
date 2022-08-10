@@ -1,4 +1,9 @@
-require("nvim-treesitter.configs").setup({
+local status, ts = pcall(require, "nvim-treesitter.configs")
+if not status then
+	return
+end
+
+ts.setup({
 	ensure_installed = {
 		"bash",
 		"css",
@@ -17,12 +22,16 @@ require("nvim-treesitter.configs").setup({
 		"comment",
 		"dart",
 	},
+	indent = {
+		enable = true,
+		disable = {},
+	},
 	highlight = {
 		enable = true,
 	},
-	--[[ autotag = {
+	autotag = {
 		enable = true,
-	}, ]]
+	},
 	playground = {
 		enable = true,
 		disable = {},
