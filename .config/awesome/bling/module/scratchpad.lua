@@ -69,8 +69,8 @@ local function abort_if_tag_was_switched(self)
 	-- Switch to tag 2
 	-- Outcome: The client will remain on tag 1 and will instead be removed from tag 2
 	if self.turning_off
-		and (self.screen_on_toggled_scratchpad and self.screen_on_toggled_scratchpad.selected_tag)
-		~= self.tag_on_toggled_scratchpad
+			and (self.screen_on_toggled_scratchpad and self.screen_on_toggled_scratchpad.selected_tag)
+			~= self.tag_on_toggled_scratchpad
 	then
 		if self.rubato.x then
 			self.rubato.x:abort()
@@ -136,7 +136,7 @@ function Scratchpad:new(args)
 
 		ret.rubato.x.ended:subscribe(function()
 			if ((ret.rubato.y and ret.rubato.y.state == false) or (ret.rubato.y == nil))
-				and ret.turning_off == true
+					and ret.turning_off == true
 			then
 				on_animate_turn_off_end(ret)
 			end
@@ -152,7 +152,7 @@ function Scratchpad:new(args)
 
 		ret.rubato.y.ended:subscribe(function()
 			if ((ret.rubato.x and ret.rubato.x.state == false) or (ret.rubato.x == nil))
-				and ret.turning_off == true
+					and ret.turning_off == true
 			then
 				on_animate_turn_off_end(ret)
 			end

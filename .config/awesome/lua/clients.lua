@@ -2,6 +2,7 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 local awesome = require("awesome")
 local client = require("client")
+-- local gears = require("gears")
 require("awful.autofocus")
 
 awful.mouse.snap.edge_enabled = false
@@ -11,6 +12,10 @@ client.connect_signal("manage", function(c)
 		-- Prevent clients from being unreachable after screen count changes.
 		awful.placement.no_offscreen(c)
 	end
+
+	--[[ c.shape = function(cr, w, h)
+		gears.shape.rounded_rect(cr, w, h, 5)
+	end ]]
 end)
 
 -- No border for maximized clients

@@ -103,4 +103,3 @@ function utils.extract_sinks_and_sources(pacmd_output)
 end
 
 return utils
-

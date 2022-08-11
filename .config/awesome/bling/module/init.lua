@@ -1,3 +1,3 @@
 return {
-    scratchpad = require(... .. ".scratchpad"),
+	scratchpad = require(... .. ".scratchpad"),
 }

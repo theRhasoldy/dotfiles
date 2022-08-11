@@ -16,29 +16,29 @@ theme.taglist_font = "FantasqueSansMono Nerd Font 9"
 beautiful.tooltip_font = "Dejavu Sans 8"
 
 --Main UI
-theme.bg_normal = "#131519"
-theme.bg_focus = "#11121D"
+theme.bg_normal = "#0F1115"
+theme.bg_focus = "#15171c"
 
-theme.fg_normal = "#dedede"
-theme.fg_focus = "#dedede"
-theme.fg_urgent = "#dedede"
-theme.fg_minimize = "#dedede"
+theme.fg_normal = "#eeeeee"
+theme.fg_focus = "#eeeeee"
+theme.fg_urgent = "#eeeeee"
+theme.fg_minimize = "#eeeeee"
 
 -- Window
 theme.useless_gap = dpi(4)
 
 theme.border_width = dpi(2)
-theme.border_normal = "#16181B"
+theme.border_normal = "#0F1115"
 theme.border_focus = "#2F283Acc"
 theme.border_Marked = "#2F283Acc"
 
 -- Notification
-theme.notification_bg = "#11121dcc"
-theme.notification_fg = "#dedede"
+theme.notification_bg = "#15171ccc"
+theme.notification_fg = "#eeeeee"
 
 -- Tooltip
-beautiful.tooltip_bg = "#11121d"
-beautiful.tooltip_fg = "#dedede"
+beautiful.tooltip_bg = "#15171c"
+beautiful.tooltip_fg = "#eeeeee"
 
 -- Wibox
 beautiful.wibar_bg = "#00000000"

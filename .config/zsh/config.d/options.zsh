@@ -20,16 +20,16 @@ KEYTIMEOUT=1
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
+if [[ ${KEYMAP} == vicmd ]] ||
+	[[ $1 = 'block' ]]; then
+	echo -ne '\e[1 q'
 
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
-  fi
+elif [[ ${KEYMAP} == main ]] ||
+	[[ ${KEYMAP} == viins ]] ||
+	[[ ${KEYMAP} = '' ]] ||
+	[[ $1 = 'beam' ]]; then
+	echo -ne '\e[5 q'
+fi
 }
 zle -N zle-keymap-select
 
@@ -38,7 +38,7 @@ echo -ne '\e[5 q'
 
 # Use beam shape cursor for each new prompt.
 precmd() {
-   echo -ne '\e[5 q'
+	echo -ne '\e[5 q'
 }
 
 eval "$(starship init zsh)"
