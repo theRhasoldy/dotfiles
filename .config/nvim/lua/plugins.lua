@@ -50,6 +50,7 @@ packer.startup(function()
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+	use("nvim-treesitter/nvim-treesitter-context")
 	use("nvim-treesitter/playground")
 
 	-- Tmux
@@ -57,8 +58,9 @@ packer.startup(function()
 
 	-- Theme
 	use("heraldofsolace/nisha-vim")
+	use("~/Projects/lua/nvim-dahlia/")
 	use("B4mbus/oxocarbon-lua.nvim")
-	use("theRhasoldy/nvim-dahlia")
+	-- use("theRhasoldy/nvim-dahlia")
 	use("ntk148v/vim-horizon")
 
 	use("kyazdani42/nvim-web-devicons")
@@ -105,7 +107,7 @@ packer.startup(function()
 	-- Aesthetics
 	use("RRethy/vim-illuminate")
 
-	use("nvim-colortils/colortils.nvim")
+	use("ziontee113/color-picker.nvim")
 	use("NvChad/nvim-colorizer.lua")
 	use({
 		"folke/todo-comments.nvim",

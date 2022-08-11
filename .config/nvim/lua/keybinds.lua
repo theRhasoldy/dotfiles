@@ -26,9 +26,6 @@ map("n", "s", '"_s') -- Don't yank with x
 
 map("n", "<C-a>", "gg<S-v>G") -- Select all
 
-map("n", "gg", "G")
-map("n", "G", "gg")
-
 -- Increment/decrement
 map("n", "+", "<C-a>") -- Don't yank with x
 map("n", "-", "<C-x>") -- Don't yank with x
@@ -82,7 +79,8 @@ map("n", "<Leader>ff", ":Telescope find_files<CR>")
 map("n", "<Leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 
 -- Colorpicker
-map("n", "<C-c>", "<cmd>Colortils picker<CR>")
+map("n", "<C-c>", "<cmd>PickColor<cr>", opts)
+map("i", "<C-c>", "<cmd>PickColorInsert<cr>", opts)
 
 -- Hop
 map("", "<Space><Space>", ":HopWord<CR>", {})

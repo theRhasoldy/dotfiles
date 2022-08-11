@@ -104,10 +104,10 @@ _G.packer_plugins = {
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["colortils.nvim"] = {
+  ["color-picker.nvim"] = {
     loaded = true,
-    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/colortils.nvim",
-    url = "https://github.com/nvim-colortils/colortils.nvim"
+    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/color-picker.nvim",
+    url = "https://github.com/ziontee113/color-picker.nvim"
   },
   ["feline.nvim"] = {
     loaded = true,
@@ -192,7 +192,7 @@ _G.packer_plugins = {
   ["nvim-dahlia"] = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/nvim-dahlia",
-    url = "https://github.com/theRhasoldy/nvim-dahlia"
+    url = "/home/rhasoldy/Projects/lua/nvim-dahlia/"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -208,6 +208,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-treesitter-context"] = {
+    loaded = true,
+    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
   },
   ["nvim-ts-autotag"] = {
     loaded = true,
