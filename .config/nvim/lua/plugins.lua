@@ -114,5 +114,7 @@ packer.startup(function()
 		event = { "BufRead", "BufNewFile" },
 	})
 
+	use("lewis6991/gitsigns.nvim")
+
 	use("vimwiki/vimwiki")
 end)

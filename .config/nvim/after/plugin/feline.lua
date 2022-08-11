@@ -26,32 +26,32 @@ local colors = {
 	bg = "#15171C",
 	black = "#0F1115",
 	grey = "#707070",
-	yellow = "#e8c19b",
-	cyan = "#99b7c2",
-	oceanblue = "#8dc2e3",
-	green = "#6bc29a",
-	orange = "#dd816a",
-	violet = "#ea93c2",
-	magenta = "#a27fc2",
-	white = "#dedede",
-	fg = "#dedede",
-	red = "#ff4d66",
+	yellow = "#fbb45e",
+	turqoise = "#3dc3ad",
+	blue = "#2b9cc1",
+	green = "#4dcb8f",
+	orange = "#f38337",
+	magenta = "#da7893",
+	purple = "#c77cd1",
+	white = "#eeeeee",
+	fg = "#eeeeee",
+	red = "#dd4e6d",
 }
 
 local vi_mode_colors = {
-	NORMAL = "magenta",
+	NORMAL = "purple",
 	OP = "green",
-	INSERT = "green",
+	INSERT = "blue",
 	CONFIRM = "red",
 	VISUAL = "red",
 	LINES = "red",
 	BLOCK = "red",
-	REPLACE = "violet",
-	["V-REPLACE"] = "violet",
-	ENTER = "cyan",
-	MORE = "cyan",
+	REPLACE = "yellow",
+	["V-REPLACE"] = "yellow",
+	ENTER = "turqoise",
+	MORE = "turqoise",
 	SELECT = "orange",
-	COMMAND = "orange",
+	COMMAND = "green",
 	SHELL = "green",
 	TERM = "green",
 	NONE = "yellow",
@@ -144,12 +144,15 @@ components.active[1][3] = {
 -- MID
 -- }}}
 
+-- RIGHT {{{
+
 -- gitBranch
 components.active[3][1] = {
 	provider = "git_branch",
 	hl = {
 		fg = "yellow",
 		bg = "bg",
+		left_sep = "  ",
 		-- style = "bold",
 	},
 }
@@ -159,6 +162,7 @@ components.active[3][2] = {
 	hl = {
 		fg = "green",
 		bg = "bg",
+		left_sep = "  ",
 		-- style = "bold",
 	},
 }
@@ -168,6 +172,7 @@ components.active[3][3] = {
 	hl = {
 		fg = "orange",
 		bg = "bg",
+		left_sep = "  ",
 		-- style = "bold",
 	},
 }
@@ -177,11 +182,10 @@ components.active[3][4] = {
 	hl = {
 		fg = "red",
 		bg = "bg",
+		left_sep = "  ",
 		-- style = "bold",
 	},
 }
-
--- RIGHT
 
 -- fileIcon
 components.active[3][5] = {
@@ -208,6 +212,7 @@ components.active[3][5] = {
 		-- val.style = "bold"
 		return val
 	end,
+	left_sep = "   ",
 	right_sep = "   ",
 }
 
@@ -255,6 +260,7 @@ components.active[3][9] = {
 		bg = "bg",
 	},
 }
+-- }}}
 
 -- INACTIVE
 
@@ -263,14 +269,14 @@ components.inactive[1][1] = {
 	provider = "file_type",
 	hl = {
 		fg = "black",
-		bg = "cyan",
+		bg = "magenta",
 		-- style = "bold",
 	},
 	left_sep = {
 		str = " ",
 		hl = {
 			fg = "NONE",
-			bg = "cyan",
+			bg = "magenta",
 		},
 	},
 	right_sep = {
@@ -278,7 +284,7 @@ components.inactive[1][1] = {
 			str = " ",
 			hl = {
 				fg = "NONE",
-				bg = "cyan",
+				bg = "magenta",
 			},
 		},
 		" ",
@@ -324,7 +330,7 @@ winbar_components.active[3][3] = {
 		return lsp.diagnostics_exist(vim.diagnostic.severity.HINT)
 	end,
 	hl = {
-		fg = "cyan",
+		fg = "turqoise",
 		style = "bold",
 	},
 }
