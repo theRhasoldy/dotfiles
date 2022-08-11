@@ -28,9 +28,9 @@ opt.cursorline = true
 opt.ai = true
 opt.si = true
 opt.smarttab = true
-opt.shiftwidth = 4
-opt.softtabstop = 4
-opt.tabstop = 4
+opt.shiftwidth = 2
+opt.softtabstop = 2
+opt.tabstop = 2
 opt.shiftround = true
 
 --Search

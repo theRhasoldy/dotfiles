@@ -11,7 +11,7 @@ null.setup({
 	debug = false,
 	sources = {
 		formatting.prettier.with({
-			extra_args = { "--double-quote", "--jsx-double-quote", "--tab-width 4", "--use-tabs" },
+			extra_args = { "--double-quote", "--jsx-double-quote", "--tab-width 2", "--use-tabs" },
 		}),
 		formatting.stylua,
 		diagnostics.eslint,
