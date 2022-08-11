@@ -19,7 +19,7 @@ client.connect_signal("manage", function(c)
 end)
 
 -- No border for maximized clients
-function border_adjust(c)
+local function border_adjust(c)
 	if c.maximized then -- no borders if only 1 client visible
 		c.border_width = 0
 	elseif #awful.screen.focused().clients > 1 then
@@ -60,6 +60,7 @@ awful.rules.rules = {
 			name = {
 				"Event Tester", -- xev.
 				"Emulator",
+				"Picture-in-Picture",
 			},
 			role = {
 				"pop-up",
@@ -68,9 +69,16 @@ awful.rules.rules = {
 		properties = { floating = true },
 	},
 
+	-- Sticky Clients
 	{
-		rule = { name = "Picture-in-Picture", class = { "spad", "dev" } },
-		properties = { floating = true, sticky = true, ontop = true },
+		rule_any = { name = { "Picture-in-Picture" } },
+		properties = { sticky = true },
+	},
+
+	-- onTop Clients
+	{
+		rule_any = { name = { "Picture-in-Picture", "Emulator" } },
+		properties = { ontop = true },
 	},
 }
 
