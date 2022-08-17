@@ -21,8 +21,8 @@ configuration {
 * {
 	font:   "DejaVu Sans 12";
 
-	bg0:    #15171Ccc;
-	bg1:    #15171Ccc;
+	bg0:    #13151ccc;
+	bg1:    #13151Ccc;
 	bg2:    #7A5C9C44;
 
 	fg0:    #eeeeee;
@@ -43,7 +43,6 @@ window {
 
 	location:       center;
 	width:          620;
-	y-offset:       -200;
 	border-radius:  10;
 
 }
