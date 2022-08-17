@@ -1,8 +1,6 @@
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local gears = require("gears")
-local client = require("client")
-local awesome = require("awesome")
 
 Terminal = "kitty"
 

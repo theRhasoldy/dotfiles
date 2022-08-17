@@ -5,8 +5,8 @@ local naughty = require("naughty")
 local gears = require("gears")
 
 -- Default config
-naughty.config.spacing = dpi(4)
-naughty.config.padding = dpi(30)
+naughty.config.spacing = dpi(10)
+naughty.config.padding = dpi(50)
 naughty.config.defaults.margin = dpi(10)
 naughty.config.defaults.border_width = beautiful.border_width
 naughty.config.defaults.border_color = beautiful.border_normal

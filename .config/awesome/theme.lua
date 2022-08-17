@@ -14,10 +14,11 @@ theme.font = "Dejavu Sans 8"
 theme.notification_font = "Dejavu Sans 8"
 theme.taglist_font = "FantasqueSansMono Nerd Font 9"
 beautiful.tooltip_font = "Dejavu Sans 8"
+beautiful.wibar_font = "Dejavu Sans bold 8"
 
 --Main UI
 theme.bg_normal = "#0F1115"
-theme.bg_focus = "#15171c"
+theme.bg_focus = "#13151c"
 
 theme.fg_normal = "#eeeeee"
 theme.fg_focus = "#eeeeee"
@@ -33,11 +34,11 @@ theme.border_focus = "#2F283Acc"
 theme.border_Marked = "#2F283Acc"
 
 -- Notification
-theme.notification_bg = "#15171ccc"
+theme.notification_bg = "#13151ccc"
 theme.notification_fg = "#eeeeee"
 
 -- Tooltip
-beautiful.tooltip_bg = "#15171c"
+beautiful.tooltip_bg = "#13151c"
 beautiful.tooltip_fg = "#eeeeee"
 
 -- Wibox

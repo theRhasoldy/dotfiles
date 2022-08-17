@@ -1,22 +1,35 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
-local awesome = require("awesome")
-local client = require("client")
--- local gears = require("gears")
+local gears = require("gears")
 require("awful.autofocus")
 
+-- Disable snapping
 awful.mouse.snap.edge_enabled = false
+awful.mouse.snap.client_enabled = false
+
+local border_radius = 10
 
 client.connect_signal("manage", function(c)
 	if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
 		-- Prevent clients from being unreachable after screen count changes.
 		awful.placement.no_offscreen(c)
 	end
-
-	--[[ c.shape = function(cr, w, h)
-		gears.shape.rounded_rect(cr, w, h, 5)
-	end ]]
+	c.shape = function(cr, w, h)
+		gears.shape.rounded_rect(cr, w, h, border_radius)
+	end
 end)
+
+local function rounded_borders(c)
+	if c.fullscreen then
+		c.shape = function(cr, w, h)
+			gears.shape.rectangle(cr, w, h)
+		end
+	else
+		c.shape = function(cr, w, h)
+			gears.shape.rounded_rect(cr, w, h, border_radius)
+		end
+	end
+end
 
 -- No border for maximized clients
 local function border_adjust(c)
@@ -30,6 +43,7 @@ end
 
 client.connect_signal("focus", border_adjust)
 client.connect_signal("property::maximized", border_adjust)
+client.connect_signal("property::fullscreen", rounded_borders)
 client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
 end)
@@ -80,9 +94,13 @@ awful.rules.rules = {
 		rule_any = { name = { "Picture-in-Picture", "Emulator" } },
 		properties = { ontop = true },
 	},
+	{
+		rule_any = { name = { "Firefox" } },
+		properties = { maximized = false },
+	},
 }
 
 -- Sloppy focus
 client.connect_signal("mouse::enter", function(c)
-	c:activate({ context = "mouse_enter", raise = false })
+	c:emit_signal("request::activate", "mouse_enter", { raise = false })
 end)

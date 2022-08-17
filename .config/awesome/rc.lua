@@ -2,7 +2,6 @@ local gears = require("gears")
 local awful = require("awful")
 local naughty = require("naughty")
 local beautiful = require("beautiful")
-local awesome = require("awesome")
 
 pcall(require, "luarocks.loader")
 

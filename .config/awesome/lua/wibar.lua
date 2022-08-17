@@ -5,19 +5,19 @@ local beautiful = require("beautiful")
 
 local sep = wibox.widget({
 	widget = wibox.widget.textbox,
-	markup = "	",
+	markup = "       ",
 })
 
 local mytextdate = wibox.widget({
 	widget = wibox.widget.textclock,
 	format = "%a %b %d",
-	font = "Dejavu Sans bold 8",
+	font = beautiful.wibar_font,
 })
 
 local mytextclock = wibox.widget({
 	widget = wibox.widget.textclock,
 	format = "%R",
-	font = "Dejavu Sans bold 8",
+	font = beautiful.wibar_font,
 })
 
 Volume_widget = require("widgets.volume-widget.volume")
@@ -55,7 +55,7 @@ awful.screen.connect_for_each_screen(function(s)
 		filter = awful.widget.taglist.filter.all,
 		widget_template = {
 			widget = wibox.container.background,
-			forced_width = 32,
+			forced_width = 34.5,
 			{
 				layout = wibox.layout.flex.horizontal,
 				{
@@ -73,7 +73,7 @@ awful.screen.connect_for_each_screen(function(s)
 		height = 22,
 		ontop = false,
 		bg = beautiful.wibar_bg,
-		fg = "#0E1720",
+		fg = "#0f1115",
 	})
 
 	-- Add widgets to the wibox
@@ -101,7 +101,7 @@ awful.screen.connect_for_each_screen(function(s)
 				sep,
 				Volume_widget({
 					widget_type = "icon",
-					device = "pulse",
+					device = "pipewire",
 				}),
 				sep,
 				mytextdate,
