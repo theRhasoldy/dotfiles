@@ -15,3 +15,5 @@ export DART_SDK="$XDG_DATA_HOME/dart/sdk"
 export ZK_NOTEBOOK_DIR=$HOME/Mind
 
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
+
+export WINEPREFIX="$XDG_DATA_HOME"/wine

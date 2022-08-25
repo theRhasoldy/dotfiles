@@ -1,6 +1,5 @@
 source ~/.config/zsh/plugins/alias-tips/alias-tips.plugin.zsh
 
-
 source ~/.config/zsh/plugins/zsh-autopair/autopair.zsh
 
 source ~/.config/zsh/plugins/zsh-lazyload/zsh-lazyload.zsh
