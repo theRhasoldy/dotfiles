@@ -16,6 +16,10 @@ configuration {
 		display-name: "";
 	}
 
+	clipboard {
+		display-name: "";
+	}
+
 }
 
 * {
