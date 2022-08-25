@@ -17,6 +17,9 @@ cmd([[
 
 	set nocompatible
 	set signcolumn=yes
+
+	syntax on
+	filetype plugin on
 ]])
 
 --Show relative numbers
@@ -42,7 +45,7 @@ opt.path:append({ "**" }) -- Finding Files
 --Text Rendering
 opt.linebreak = true
 opt.scrolljump = 1
-opt.wrap = false
+opt.wrap = true
 
 --User Interface
 opt.wildmenu = true
@@ -70,5 +73,3 @@ opt.shortmess:append("c")
 opt.laststatus = 3
 
 vim.g.did_load_filetypes = 1
-
-vim.g.vimwiki_list = { { path = "~/Universe", syntax = "markdown", ext = ".md" } }

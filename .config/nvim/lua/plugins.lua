@@ -43,6 +43,7 @@ packer.startup(function()
 		"lewis6991/impatient.nvim",
 		"nathom/filetype.nvim",
 		"nvim-lua/plenary.nvim",
+		"MunifTanjim/nui.nvim",
 	})
 
 	-- Treesitter
@@ -53,19 +54,18 @@ packer.startup(function()
 	use("nvim-treesitter/nvim-treesitter-context")
 	use("nvim-treesitter/playground")
 
+	use("folke/twilight.nvim")
+
 	-- Tmux
 	use("christoomey/vim-tmux-navigator")
 
 	-- Theme
-	use("heraldofsolace/nisha-vim")
 	use("~/Projects/lua/nvim-dahlia/")
-	use("B4mbus/oxocarbon-lua.nvim")
 	-- use("theRhasoldy/nvim-dahlia")
-	use("ntk148v/vim-horizon")
 
 	use("kyazdani42/nvim-web-devicons")
 
-	use("kyazdani42/nvim-tree.lua")
+	use("nvim-neo-tree/neo-tree.nvim")
 
 	use("feline-nvim/feline.nvim")
 
@@ -98,6 +98,7 @@ packer.startup(function()
 	use("L3MON4D3/LuaSnip")
 	use("rafamadriz/friendly-snippets")
 	use("saadparwaiz1/cmp_luasnip")
+
 	use("jose-elias-alvarez/null-ls.nvim")
 
 	-- File Manipulation
@@ -109,12 +110,8 @@ packer.startup(function()
 
 	use("ziontee113/color-picker.nvim")
 	use("NvChad/nvim-colorizer.lua")
-	use({
-		"folke/todo-comments.nvim",
-		event = { "BufRead", "BufNewFile" },
-	})
 
 	use("lewis6991/gitsigns.nvim")
 
-	use("vimwiki/vimwiki")
+	use("mickael-menu/zk-nvim")
 end)

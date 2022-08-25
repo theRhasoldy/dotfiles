@@ -3,4 +3,6 @@ if not status then
 	return
 end
 
-hop.setup()
+hop.setup({
+	extend_visual = true,
+})

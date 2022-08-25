@@ -4,7 +4,6 @@ if not status then
 end
 
 lspkind.init({
-	mode = "text_symbol",
 	symbol_map = {
 		Text = "",
 		Method = "",

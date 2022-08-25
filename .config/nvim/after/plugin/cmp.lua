@@ -3,6 +3,7 @@ if not status then
 	return
 end
 local lspkind = require("lspkind")
+local luasnip = require("luasnip")
 
 require("luasnip/loaders/from_vscode").lazy_load()
 require("luasnip").filetype_extend("all", { "_)" })
@@ -39,7 +40,7 @@ cmp.setup({
 		["<C-a>"] = cmp.mapping({
 			i = cmp.mapping.complete(),
 			c = function(
-				_ --[[fallback]]
+			  _ --[[fallback]]
 			)
 				if cmp.visible() then
 					if not cmp.confirm({ select = true }) then
@@ -52,14 +53,34 @@ cmp.setup({
 		}),
 		["<C-s>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		["<C-n>"] = cmp.mapping(function(fallback)
+			if luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
+		["<C-S-n>"] = cmp.mapping(function(fallback)
+			if luasnip.jumpable(-1) then
+				luasnip.jump(-1)
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
 	}),
 	sources = cmp.config.sources({
+		{ name = "luasnip", keyword_length = 3 },
 		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
 		{ name = "path" },
-		{ name = "buffer" },
+		{ name = "buffer", keyword_length = 5 },
 	}),
 	formatting = {
-		format = lspkind.cmp_format({ wirth_text = true, maxwidth = 50 }),
+		format = lspkind.cmp_format({
+			mode = "symbol_text", -- show only symbol annotations
+			maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+			before = function(entry, vim_item)
+				return vim_item
+			end,
+		}),
 	},
 })

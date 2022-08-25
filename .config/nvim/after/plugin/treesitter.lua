@@ -28,6 +28,7 @@ ts.setup({
 	},
 	highlight = {
 		enable = true,
+		additional_vim_regex_highlighting = { "markdown", "md" },
 	},
 	autotag = {
 		enable = true,

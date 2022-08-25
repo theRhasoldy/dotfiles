@@ -12,6 +12,9 @@ local opts = vim.opts
 map("n", "<Space>", "")
 vim.g.mapleader = " "
 
+map("n", "<C-b>", "")
+map("n", "<C-n>", "")
+
 map("n", "<Leader>r", ":luafile $MYVIMRC<CR>")
 
 map("i", "<C-j>", "")
@@ -20,6 +23,9 @@ map("i", "<C-k>", "")
 map("i", "<Esc>", "<Esc><Esc>") -- Exit cmp and insert mode
 
 map("n", "o", "zzo")
+
+map("", "gg", "G")
+map("", "G", "gg")
 
 map("n", "x", '"_x') -- Don't yank with x
 map("n", "s", '"_s') -- Don't yank with x
@@ -43,6 +49,8 @@ map("n", "db", "v<Plug>CamelCaseMotion_bd")
 -- Make Split
 map("n", "<Leader>-", "<C-w>s")
 map("n", "<Leader>=", "<C-w>v")
+
+map("n", "<CR>", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 
 -- Navigate Split
 map("n", "<C-h>", "<C-W>h")
@@ -71,26 +79,28 @@ map("n", "<A-S-o>", "O<Esc>")
 -- }}}
 
 -- Nvim tree
-map("n", "<Leader>n", ":NvimTreeToggle<CR>")
-map("n", "<C-n>", ":NvimTreeFocus<CR>")
+map("n", "<Leader>n", "<cmd>NeoTreeFloatToggle<CR>")
 
 -- Telescope
-map("n", "<Leader>ff", ":Telescope find_files<CR>")
-map("n", "<Leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+map("n", "<Leader>ff", "<cmd>Telescope find_files<CR>")
+map("n", "<Leader>fn", "<cmd>Telescope zk notes<CR>")
+map("n", "<Leader>fg", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 
 -- Colorpicker
 map("n", "<C-c>", "<cmd>PickColor<cr>", opts)
 map("i", "<C-c>", "<cmd>PickColorInsert<cr>", opts)
 
 -- Hop
-map("", "<Space><Space>", ":HopWord<CR>", {})
+map("", "<Space><Space>", "<cmd>HopWord<CR>", {})
 
 -- Lsp
-map("n", "gd", ":Telescope lsp_references<CR>")
 map("n", "gD", "<cmd>Lspsaga preview_definition<CR>")
-map("n", "gs", ":Telescope diagnostics<CR>")
+map("n", "gd", "<cmd>Telescope lsp_references<CR>")
+map("n", "gs", "<cmd>Telescope diagnostics<CR>")
 map("n", "g]", "<cmd>lua vim.diagnostic.goto_next()<CR>_")
 map("n", "g[", "<cmd>lua vim.diagnostic.goto_prev()<CR>_")
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 map("n", "ga", "<cmd>Lspsaga code_action<CR>")
 map("n", "gr", "<cmd>Lspsaga rename<CR>")
+
+map("n", ";", "<cmd>Twilight<CR>")

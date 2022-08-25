@@ -76,9 +76,16 @@ lspconfig["eslint"].setup({
 
 lspconfig["marksman"].setup({
 	on_attach = on_attach,
+	filetypes = { "markdown", "md", "vimwiki" },
 	flags = lsp_flags,
 	capabilities = capabilities,
 })
+
+--[[ lspconfig["zk"].setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+}) ]]
 
 lspconfig["html"].setup({
 	on_attach = on_attach,

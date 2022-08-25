@@ -58,7 +58,7 @@ telescope.setup({
 			},
 		},
 	},
-	extensions_list = { "themes", "terms" },
+	extensions_list = { "themes", "terms", "live_grep_args" },
 })
 
 -- load extensions

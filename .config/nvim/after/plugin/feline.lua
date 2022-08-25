@@ -23,7 +23,7 @@ local components = {
 }
 
 local colors = {
-	bg = "#15171C",
+	bg = "#13151C",
 	black = "#0F1115",
 	grey = "#707070",
 	yellow = "#fbb45e",
@@ -92,9 +92,10 @@ local checkwidth = function()
 end
 
 force_inactive.filetypes = {
-	"NvimTree",
+	"NeoTree",
 	"TelescopePrompt",
 	"packer",
+	"Mason",
 }
 
 force_inactive.buftypes = {
@@ -110,12 +111,13 @@ components.active[1][1] = {
 
 		val.bg = vi_mode_utils.get_mode_color()
 		val.fg = "black"
-		-- val.style = "bold"
+		val.style = "bold"
 
 		return val
 	end,
 	right_sep = "  ",
 }
+
 -- vi-symbol
 components.active[1][2] = {
 	provider = function()
@@ -130,10 +132,11 @@ components.active[1][2] = {
 	end,
 	right_sep = "  ",
 }
+
 -- filename
 components.active[1][3] = {
 	provider = function()
-		return vim.fn.expand("%:F")
+		return vim.fn.expand("%:T")
 	end,
 	hl = {
 		fg = "grey",
@@ -292,17 +295,8 @@ components.inactive[1][1] = {
 }
 
 -- Winbar {{{
--- LspName
-winbar_components.active[1][1] = {
-	provider = "lsp_client_names",
-	hl = {
-		fg = "grey",
-		-- style = "bold",
-	},
-}
-
 -- diagnosticErrors
-winbar_components.active[3][1] = {
+winbar_components.active[1][1] = {
 	provider = "diagnostic_errors",
 	enabled = function()
 		return lsp.diagnostics_exist(vim.diagnostic.severity.ERROR)
@@ -313,7 +307,7 @@ winbar_components.active[3][1] = {
 	},
 }
 -- diagnosticWarn
-winbar_components.active[3][2] = {
+winbar_components.active[1][2] = {
 	provider = "diagnostic_warnings",
 	enabled = function()
 		return lsp.diagnostics_exist(vim.diagnostic.severity.WARN)
@@ -324,7 +318,7 @@ winbar_components.active[3][2] = {
 	},
 }
 -- diagnosticHint
-winbar_components.active[3][3] = {
+winbar_components.active[1][3] = {
 	provider = "diagnostic_hints",
 	enabled = function()
 		return lsp.diagnostics_exist(vim.diagnostic.severity.HINT)
@@ -335,7 +329,7 @@ winbar_components.active[3][3] = {
 	},
 }
 -- diagnosticInfo
-winbar_components.active[3][4] = {
+winbar_components.active[1][4] = {
 	provider = "diagnostic_info",
 	enabled = function()
 		return lsp.diagnostics_exist(vim.diagnostic.severity.INFO)
@@ -343,6 +337,14 @@ winbar_components.active[3][4] = {
 	hl = {
 		fg = "grey",
 		style = "bold",
+	},
+}
+-- LspName
+winbar_components.active[3][1] = {
+	provider = "lsp_client_names",
+	hl = {
+		fg = "grey",
+		-- style = "bold",
 	},
 }
 -- }}}
