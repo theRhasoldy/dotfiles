@@ -10,6 +10,16 @@ Term_scratch = modules.module.scratchpad({
 	reapply = true,
 })
 
+Pop_scratch = modules.module.scratchpad({
+	command = "kitty --class pop",
+	rule = { instance = "pop" },
+	sticky = true,
+	autoclose = false,
+	floating = true,
+	geometry = { x = 700, y = 70, height = 100, width = 500 },
+	reapply = true,
+})
+
 Spotify_scratch = modules.module.scratchpad({
 	command = "spotify",
 	rule = { instance = "spotify" },

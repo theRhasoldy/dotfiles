@@ -1,7 +1,9 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
 local gears = require("gears")
+
 require("awful.autofocus")
+require("widgets.wallpaper-blur")
 
 -- Disable snapping
 awful.mouse.snap.edge_enabled = false
@@ -91,11 +93,11 @@ awful.rules.rules = {
 
 	-- onTop Clients
 	{
-		rule_any = { name = { "Picture-in-Picture", "Emulator" } },
+		rule_any = { name = { "Picture-in-Picture", "Emulator" }, class = { "pop" } },
 		properties = { ontop = true },
 	},
 	{
-		rule_any = { name = { "Firefox" } },
+		rule_any = { class = { "Firefox", "Vivaldi-stable" } },
 		properties = { maximized = false },
 	},
 }

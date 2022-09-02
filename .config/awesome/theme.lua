@@ -29,12 +29,12 @@ theme.fg_minimize = "#eeeeee"
 theme.useless_gap = dpi(4)
 
 theme.border_width = dpi(2)
-theme.border_normal = "#0F1115"
+theme.border_normal = "#13151c"
 theme.border_focus = "#2F283Acc"
 theme.border_Marked = "#2F283Acc"
 
 -- Notification
-theme.notification_bg = "#13151ccc"
+theme.notification_bg = "#181a21cc"
 theme.notification_fg = "#eeeeee"
 
 -- Tooltip
@@ -53,10 +53,6 @@ local taglist_square_size = dpi(3)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
 
-theme.menu_submenu_icon = themes_path .. "default/submenu.png"
-theme.menu_height = dpi(15)
-theme.menu_width = dpi(100)
-
 -- Define the image to load
 theme.layout_fairv = "~/.config/awesome/icons/wibar/tile.png"
 theme.layout_tile = "~/.config/awesome/icons/wibar/suitInv.png"
@@ -64,6 +60,6 @@ theme.layout_tileleft = "~/.config/awesome/icons/wibar/suit.png"
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = "/usr/share/icons/Flat-Remix-Grey-Dark"
+theme.icon_theme = "/usr/share/icons/Delight-gray/"
 
 return theme

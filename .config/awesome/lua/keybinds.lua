@@ -137,7 +137,11 @@ local globalkeys = gears.table.join(
 	end, { description = "Launch Rofi run", group = "apps" }),
 
 	awful.key({ modkey }, ".", function()
-		awful.spawn(string.format("rofi -show emoji"))
+		awful.spawn(string.format("rofi -modi emoji -show emoji -emoji-format '{emoji} {name}'"))
+	end, { description = "Launch Rofi emoji selector", group = "apps" }),
+
+	awful.key({ modkey }, "v", function()
+		awful.spawn(string.format("rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"))
 	end, { description = "Launch Rofi emoji selector", group = "apps" }),
 
 	awful.key({ modkey }, "c", function()
@@ -149,14 +153,18 @@ local globalkeys = gears.table.join(
 	end, { description = "Launch flameshot", group = "apps" }),
 
 	awful.key({ modkey }, "i", function()
-		awful.spawn.with_shell("firefox")
-	end, { description = "Launch firefox", group = "apps" }),
+		awful.spawn.with_shell("vivaldi-stable")
+	end, { description = "Launch browser", group = "apps" }),
 	-- }}}
 
 	-- Scratchpads {{{
 	awful.key({ modkey }, "a", function()
 		Term_scratch:toggle()
 	end, { description = "Launch terminal scratchpad", group = "scratchpads" }),
+
+	awful.key({ modkey }, "z", function()
+		Pop_scratch:toggle()
+	end, { description = "Launch terminal popup", group = "scratchpads" }),
 
 	awful.key({ modkey }, "m", function()
 		Spotify_scratch:toggle()
@@ -224,16 +232,7 @@ clientkeys = gears.table.join(
 	end, { description = "select next", group = "layout" }),
 	awful.key({ modkey, shift }, "Tab", function()
 		awful.layout.inc(-1)
-	end, { description = "select previous", group = "layout" }),
-
-	-- Scratchpads {{{
-	awful.key({ modkey }, "a", function()
-		Term_scratch:toggle()
-	end, { description = "Launch terminal scratchpad", group = "scratchpads" }),
-
-	awful.key({ modkey }, "m", function()
-		Spotify_scratch:toggle()
-	end, { description = "Launch spotify scratchpad", group = "scratchpads" })
+	end, { description = "select previous", group = "layout" })
 )
 -- }}}
 

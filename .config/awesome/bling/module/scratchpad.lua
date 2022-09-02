@@ -251,6 +251,7 @@ function Scratchpad:turn_on()
 				},
 				callback = function(c)
 					-- For a reason I can't quite get the gemotery rules will fail to apply unless we use this timer
+
 					gears.timer({
 						timeout = 0.15,
 						autostart = true,
