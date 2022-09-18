@@ -19,10 +19,12 @@ map("n", "<Leader>r", ":luafile $MYVIMRC<CR>")
 
 map("i", "<C-j>", "")
 map("i", "<C-k>", "")
+map("i", "<C-l>", "<Right>")
+map("i", "<C-h>", "<Left>")
 
 map("i", "<Esc>", "<Esc><Esc>") -- Exit cmp and insert mode
 
-map("n", "o", "zzo")
+map("n", "<Leader>rn", ":set rnu!<CR>") -- Switch between line number modes
 
 map("", "gg", "G")
 map("", "G", "gg")
@@ -33,22 +35,19 @@ map("n", "s", '"_s') -- Don't yank with x
 map("n", "<C-a>", "gg<S-v>G") -- Select all
 
 -- Increment/decrement
-map("n", "+", "<C-a>") -- Don't yank with x
-map("n", "-", "<C-x>") -- Don't yank with x
+map("n", "+", "<C-a>")
+map("n", "-", "<C-x>")
 
 -- CamelCase Movement
-map("n", "w", "<Plug>CamelCaseMotion_w")
-map("n", "b", "<Plug>CamelCaseMotion_b")
-map("n", "e", "<Plug>CamelCaseMotion_e")
-map("n", "ge", "<Plug>CamelCaseMotion_ge")
-map("n", "de", "v<Plug>CamelCaseMotion_ed")
-map("n", "dw", "v<Plug>CamelCaseMotion_wd")
-map("n", "db", "v<Plug>CamelCaseMotion_bd")
+map("", "w", "<Plug>CamelCaseMotion_w")
+map("", "b", "<Plug>CamelCaseMotion_b")
+map("", "e", "<Plug>CamelCaseMotion_e")
 
 -- Splits {{{
 -- Make Split
 map("n", "<Leader>-", "<C-w>s")
 map("n", "<Leader>=", "<C-w>v")
+map("n", "<Space>+", "<C-w>=")
 
 map("n", "<CR>", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 
@@ -92,15 +91,31 @@ map("i", "<C-c>", "<cmd>PickColorInsert<cr>", opts)
 
 -- Hop
 map("", "<Space><Space>", "<cmd>HopWord<CR>", {})
+-- Hop to different parentheses
+map("", "<Leader>(", "<cmd>HopChar1<CR>(", {})
+map("", "<Leader>{", "<cmd>HopChar1<CR>{", {})
+map("", "<Leader>[", "<cmd>HopChar1<CR>[", {})
+map("", "<Leader>)", "<cmd>HopChar1<CR>)", {})
+map("", "<Leader>}", "<cmd>HopChar1<CR>}", {})
+map("", "<Leader>]", "<cmd>HopChar1<CR>]", {})
 
 -- Lsp
 map("n", "gD", "<cmd>Lspsaga preview_definition<CR>")
-map("n", "gd", "<cmd>Telescope lsp_references<CR>")
-map("n", "gs", "<cmd>Telescope diagnostics<CR>")
-map("n", "g]", "<cmd>lua vim.diagnostic.goto_next()<CR>_")
-map("n", "g[", "<cmd>lua vim.diagnostic.goto_prev()<CR>_")
+map("n", "gs", "<cmd>Telescope lsp_references<CR>")
+
+map("n", "gd", "<cmd>Telescope diagnostics<CR>")
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>")
+
+map("n", "k", "k<cmd>Lspsaga show_line_diagnostics<CR>")
+map("n", "j", "j<cmd>Lspsaga show_line_diagnostics<CR>")
+
 map("n", "ga", "<cmd>Lspsaga code_action<CR>")
 map("n", "gr", "<cmd>Lspsaga rename<CR>")
 
+-- Twilight
 map("n", ";", "<cmd>Twilight<CR>")
+
+-- Harpoon
+map("n", "m", "")
+map("n", "m", "<cmd>lua require('harpoon.mark').add_file()<CR>")
+map("n", "<Leader>m", "<cmd>Telescope harpoon marks<CR>")

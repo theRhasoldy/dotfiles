@@ -11,7 +11,7 @@ saga.init_lsp_saga({
 	code_action_lightbulb = {
 		enable = false,
 	},
-	rename_action_quit = "<Escape>",
+	rename_action_quit = "<Escape><Escape>",
 	code_action_keys = {
 		quit = "<Escape>",
 		exec = "<CR>",

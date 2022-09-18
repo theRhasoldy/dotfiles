@@ -5,13 +5,8 @@ local cmd = vim.cmd
 cmd([[
 	augroup FormatOptions
 		autocmd!
-		autocmd FileType * set fo=tj
+		autocmd FileType * set fo=tj wrap
 	augroup end
-
-	augroup CenterCursorNormal
-		autocmd!
-		autocmd CursorMoved * normal! zz
-	augroup END
 
 	au FocusGained,BufEnter * :checktime
 
@@ -43,9 +38,11 @@ opt.smartcase = true
 opt.path:append({ "**" }) -- Finding Files
 
 --Text Rendering
-opt.linebreak = true
+opt.display = "lastline"
 opt.scrolljump = 1
-opt.wrap = true
+vim.wo.wrap = true
+vim.wo.linebreak = true
+opt.showbreak = "﬌"
 
 --User Interface
 opt.wildmenu = true
@@ -66,10 +63,10 @@ opt.history = 10000
 opt.mouse = "a"
 opt.clipboard = "unnamedplus"
 opt.backspace = "start,eol,indent"
+opt.timeoutlen = 1000
 
 opt.completeopt = "menu,menuone,noselect,noinsert"
 opt.shortmess:append("c")
-
 opt.laststatus = 3
 
 vim.g.did_load_filetypes = 1

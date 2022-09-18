@@ -70,17 +70,19 @@ packer.startup(function()
 	use("feline-nvim/feline.nvim")
 
 	use("phaazon/hop.nvim")
+	use("arnamak/stay-centered.nvim")
 	use("bkad/CamelCaseMotion")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-live-grep-args.nvim")
 
+	use("ThePrimeagen/harpoon")
+
 	use("windwp/nvim-autopairs")
 	use("windwp/nvim-ts-autotag")
 
-	-- LSP (Oh boy)
-	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
+	-- LSP
 	use("neovim/nvim-lspconfig")
 	use({
 		"williamboman/mason.nvim",

@@ -23,7 +23,7 @@ local components = {
 }
 
 local colors = {
-	bg = "#13151C",
+	bg = "#0F1115",
 	black = "#0F1115",
 	grey = "#707070",
 	yellow = "#fbb45e",
@@ -153,10 +153,9 @@ components.active[1][3] = {
 components.active[3][1] = {
 	provider = "git_branch",
 	hl = {
-		fg = "yellow",
+		fg = "purple",
 		bg = "bg",
-		left_sep = "  ",
-		-- style = "bold",
+		style = "bold",
 	},
 }
 -- diffAdd

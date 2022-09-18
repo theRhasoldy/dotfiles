@@ -40,7 +40,7 @@ cmp.setup({
 		["<C-a>"] = cmp.mapping({
 			i = cmp.mapping.complete(),
 			c = function(
-			  _ --[[fallback]]
+				_ --[[fallback]]
 			)
 				if cmp.visible() then
 					if not cmp.confirm({ select = true }) then
@@ -69,8 +69,8 @@ cmp.setup({
 		end, { "i", "s" }),
 	}),
 	sources = cmp.config.sources({
-		{ name = "luasnip", keyword_length = 3 },
 		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
 		{ name = "path" },
 		{ name = "buffer", keyword_length = 5 },
 	}),

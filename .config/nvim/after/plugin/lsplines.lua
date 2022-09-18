@@ -1,9 +1,9 @@
-local status, lsplines = pcall(require, "lsp_lines")
+--[[ local status, lsplines = pcall(require, "lsp_lines")
 if not status then
 	return
-end
+end ]]
 
-lsplines.setup()
+-- lsplines.setup()
 
 vim.diagnostic.config({
 	virtual_text = false,

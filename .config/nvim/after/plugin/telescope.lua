@@ -5,6 +5,8 @@ end
 
 vim.g.theme_switcher_loaded = true
 
+require("telescope").load_extension("harpoon")
+
 telescope.setup({
 	defaults = {
 		vimgrep_arguments = {
@@ -31,11 +33,10 @@ telescope.setup({
 			},
 		},
 	},
-
 	pickers = {
 		diagnostics = {
 			initial_mode = "normal",
-			theme = "cursor",
+			theme = "ivy",
 		},
 		find_files = {
 			no_ignore = false,
@@ -43,7 +44,9 @@ telescope.setup({
 		},
 		lsp_references = {
 			initial_mode = "normal",
-			theme = "cursor",
+			theme = "ivy",
+			-- layout_strategy = "horizontal",
+			layout_config = { width = 0.95 },
 		},
 	},
 
@@ -58,7 +61,7 @@ telescope.setup({
 			},
 		},
 	},
-	extensions_list = { "themes", "terms", "live_grep_args" },
+	extensions_list = { "themes", "terms", "live_grep_args", "harpoon" },
 })
 
 -- load extensions

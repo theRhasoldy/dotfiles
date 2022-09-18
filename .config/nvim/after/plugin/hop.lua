@@ -5,4 +5,5 @@ end
 
 hop.setup({
 	extend_visual = true,
+	uppercase_labels = true,
 })
