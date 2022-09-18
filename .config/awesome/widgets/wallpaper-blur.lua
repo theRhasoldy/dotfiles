@@ -33,7 +33,7 @@ local wallpaper = "/usr/share/backgrounds/cityscapes.png"
 local blurredWallpaper = config_dir .. "/blurredWallpaper.png"
 
 -- Set initial wallpaper
-awful.spawn.with_shell("feh --bg-fill " .. wallpaper)
+awful.spawn.with_shell("feh --no-fehbg --bg-fill " .. wallpaper)
 
 --- Check if a file or directory exists in this path
 local function exists(file)
@@ -65,7 +65,7 @@ end
 -- changes to blurred wallpaper
 function blur()
 	if not blurred then
-		awful.spawn.with_shell("feh --bg-fill " .. blurredWallpaper)
+		awful.spawn.with_shell("feh --no-fehbg --bg-fill " .. blurredWallpaper)
 		blurred = true
 	end
 end
@@ -73,7 +73,7 @@ end
 -- changes to normal wallpaper
 function unblur()
 	if blurred then
-		awful.spawn.with_shell("feh --bg-fill " .. wallpaper)
+		awful.spawn.with_shell("feh --no-fehbg --bg-fill " .. wallpaper)
 		blurred = false
 	end
 end

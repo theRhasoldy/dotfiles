@@ -97,7 +97,7 @@ awful.rules.rules = {
 		properties = { ontop = true },
 	},
 	{
-		rule_any = { class = { "Firefox", "Vivaldi-stable" } },
+		rule_any = { class = { "Thunar", "Vivaldi-stable" } },
 		properties = { maximized = false },
 	},
 }
