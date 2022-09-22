@@ -76,13 +76,16 @@ awful.rules.rules = {
 			instance = {},
 			class = {
 				"Sxiv",
+				"Arandr",
 			},
 			name = {
 				"Event Tester", -- xev.
 				"Emulator",
-				"Picture-in-Picture",
+				"Picture in picture",
 			},
 			role = {
+				"AlarmWindow",
+				"ConfigManager",
 				"pop-up",
 			},
 		},
@@ -91,19 +94,24 @@ awful.rules.rules = {
 
 	-- Sticky Clients
 	{
-		rule_any = { name = { "Picture-in-Picture" } },
+		rule_any = { name = { "Picture in picture" }, class = { "spad", "pop", "Spotify" } },
 		properties = { sticky = true },
 	},
 
 	-- onTop Clients
 	{
-		rule_any = { name = { "Picture-in-Picture", "Emulator" }, class = { "pop" } },
+		rule_any = { name = { "Picture in picture", "Emulator" }, class = { "pop" } },
 		properties = { ontop = true },
 	},
+
+	-- not maximized Clients
 	{
 		rule_any = { class = { "Thunar", "Vivaldi-stable" } },
 		properties = { maximized = false },
 	},
+
+	-- Client tag rules
+	{ rule = { class = "Vivaldi-stable" }, properties = { screen = 1, tag = "" } },
 }
 
 -- Sloppy focus

@@ -26,8 +26,6 @@ local spotify_widget = require("widgets.spotify-widget.spotify")
 
 local layoutbox = awful.widget.layoutbox(s)
 
-local tray = wibox.widget.systray()
-
 awful.screen.connect_for_each_screen(function(s)
 	-- Create a promptbox for each screen
 	s.mypromptbox = awful.widget.prompt()
@@ -73,7 +71,7 @@ awful.screen.connect_for_each_screen(function(s)
 		height = 22,
 		ontop = false,
 		bg = beautiful.wibar_bg,
-		fg = "#0f1115",
+		fg = beautiful.wibar_fg,
 	})
 
 	-- Add widgets to the wibox
@@ -89,12 +87,10 @@ awful.screen.connect_for_each_screen(function(s)
 			nil,
 			{ -- Right widgets
 				layout = wibox.layout.fixed.horizontal,
-				tray,
-				sep,
 				spotify_widget({
-					font = beautiful.font,
+					font = beautiful.wibar_font,
 					dim_when_paused = true,
-					dim_opacity = 0.5,
+					dim_opacity = 0.45,
 					max_length = -1,
 					timeout = 0,
 				}),

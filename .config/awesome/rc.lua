@@ -57,9 +57,9 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 
 -- Layouts
 awful.layout.layouts = {
+	awful.layout.suit.fair,
 	awful.layout.suit.tile,
 	awful.layout.suit.tile.left,
-	awful.layout.suit.fair,
 	awful.layout.suit.max.fullscreen,
 }
 -- }}}

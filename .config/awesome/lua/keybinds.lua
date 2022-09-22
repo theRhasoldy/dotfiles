@@ -13,7 +13,7 @@ local shift = "Shift"
 
 local globalkeys = gears.table.join(
 
--- System {{{
+	-- System {{{
 
 	awful.key({ modkey, ctrl }, "r", awesome.restart, { description = "Reload awesome", group = "system" }),
 
@@ -113,12 +113,6 @@ local globalkeys = gears.table.join(
 		end
 	end, { description = "Focus right", group = "client" }),
 
-	awful.key(
-		{ modkey, ctrl },
-		"f",
-		awful.client.floating.toggle,
-		{ description = "Toggle floating", group = "client" }
-	),
 	-- }}}
 
 	-- Apps {{{
@@ -173,7 +167,7 @@ local globalkeys = gears.table.join(
 	awful.key({ modkey }, "m", function()
 		Spotify_scratch:toggle()
 	end, { description = "Launch spotify scratchpad", group = "scratchpads" })
--- }}}
+	-- }}}
 )
 
 -- Change Tabs {{{
@@ -187,7 +181,7 @@ for i = 1, 9 do
 			if tag then
 				tag:view_only()
 			end
-		end, { description = "view tag #" .. i, group = "tag" }),
+		end, { description = "View tag #" .. i, group = "tag" }),
 
 		-- Toggle tag display.
 		awful.key({ modkey, ctrl }, "#" .. i + 9, function()
@@ -196,7 +190,7 @@ for i = 1, 9 do
 			if tag then
 				awful.tag.viewtoggle(tag)
 			end
-		end, { description = "toggle tag #" .. i, group = "tag" }),
+		end, { description = "Toggle tag #" .. i, group = "tag" }),
 
 		-- Move client to tag.
 		awful.key({ modkey, shift }, "#" .. i + 9, function()
@@ -204,19 +198,22 @@ for i = 1, 9 do
 				local tag = client.focus.screen.tags[i]
 				if tag then
 					client.focus:move_to_tag(tag)
+					local screen = awful.screen.focused()
+					local tag2 = screen.tags[i]
+					tag2:view_only()
 				end
 			end
-		end, { description = "move focused client to tag #" .. i, group = "tag" }),
+		end, { description = "Move client to tag and focus it" .. i, group = "tag" }),
 
 		-- Toggle tag on focused client.
 		awful.key({ modkey, ctrl, shift }, "#" .. i + 9, function()
 			if client.focus then
 				local tag = client.focus.screen.tags[i]
 				if tag then
-					client.focus:toggle_tag(tag)
+					client.focus:move_to_tag(tag)
 				end
 			end
-		end, { description = "toggle focused client on tag #" .. i, group = "tag" })
+		end, { description = "Move client to tag without focusing it" .. i, group = "tag" })
 	)
 end
 -- }}}
@@ -230,6 +227,10 @@ clientkeys = gears.table.join(
 	awful.key({ modkey, ctrl }, "t", function(c)
 		c.sticky = not c.sticky
 	end, { description = "Make window sticky", group = "client" }),
+
+	awful.key({ modkey, ctrl }, "f", function(c)
+		c.floating = not c.floating
+	end, { description = "Make window floating", group = "client" }),
 
 	awful.key({ modkey }, "Tab", function()
 		awful.layout.inc(1)

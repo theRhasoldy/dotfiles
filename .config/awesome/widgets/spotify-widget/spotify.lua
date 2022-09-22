@@ -49,6 +49,7 @@ local function worker(user_args)
 		},
 		{
 			id = "icon",
+			resize = false,
 			widget = wibox.widget.imagebox,
 		},
 		{
@@ -62,7 +63,7 @@ local function worker(user_args)
 				widget = wibox.widget.textbox,
 			},
 		},
-		layout = wibox.layout.align.horizontal,
+		layout = wibox.layout.fixed.horizontal,
 		set_status = function(self, is_playing)
 			self.icon.image = (is_playing and play_icon or pause_icon)
 			if dim_when_paused then
@@ -94,7 +95,7 @@ local function worker(user_args)
 
 		local escaped = string.gsub(stdout, "&", "&amp;")
 		local album, _, artist, title =
-		string.match(escaped, "Album%s*(.*)\nAlbumArtist%s*(.*)\nArtist%s*(.*)\nTitle%s*(.*)\n")
+			string.match(escaped, "Album%s*(.*)\nAlbumArtist%s*(.*)\nArtist%s*(.*)\nTitle%s*(.*)\n")
 
 		if album ~= nil and title ~= nil and artist ~= nil then
 			cur_title = title
@@ -102,6 +103,7 @@ local function worker(user_args)
 			cur_artist = artist
 			cur_album = album
 
+			widget:set_text("", title)
 			widget:set_visible(true)
 		end
 	end
@@ -136,11 +138,11 @@ local function worker(user_args)
 
 		spotify_widget:connect_signal("mouse::enter", function()
 			spotify_tooltip.markup = "<b>Song</b>: "
-					.. cur_title
-					.. "\n<b>Album</b>: "
-					.. cur_album
-					.. "\n<b>Artist</b>: "
-					.. cur_artist
+				.. cur_title
+				.. "\n<b>Album</b>: "
+				.. cur_album
+				.. "\n<b>Artist</b>: "
+				.. cur_artist
 		end)
 	end
 
