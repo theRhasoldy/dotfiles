@@ -4,13 +4,13 @@ right_format = "$cmd_duration"
 add_newline = false
 
 [character]
-success_symbol = "[](bright-green)" 
-error_symbol = "[](bright-red)"
-vicmd_symbol = "[](blue)"
+success_symbol = "[ ](bright-green)" 
+error_symbol = "[ ](bright-red)"
+vicmd_symbol = "[異](cyan)"
 
 [directory]
 home_symbol = " "
-read_only = ""
+read_only = " "
 format = "[$read_only](bright-yellow)[$path](bright-purple)"
 
 [cmd_duration]
