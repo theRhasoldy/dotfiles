@@ -3,7 +3,7 @@ local beautiful = require("beautiful")
 local gears = require("gears")
 
 require("awful.autofocus")
-require("widgets.wallpaper-blur")
+require("lua.wibar")
 
 -- Disable snapping
 awful.mouse.snap.edge_enabled = false
@@ -34,7 +34,10 @@ local function rounded_borders(c)
 end
 
 -- No border for maximized clients
-local function border_adjust(c)
+local function adjust(c)
+	if c.fullscreen then
+		mouse.screen.mywibox.visible = false
+	end
 	if c.maximized then -- no borders if only 1 client visible
 		c.border_width = 0
 	elseif #awful.screen.focused().clients > 1 then
@@ -43,11 +46,12 @@ local function border_adjust(c)
 	end
 end
 
-client.connect_signal("focus", border_adjust)
-client.connect_signal("property::maximized", border_adjust)
+client.connect_signal("focus", adjust)
+client.connect_signal("property::maximized", adjust)
 client.connect_signal("property::fullscreen", rounded_borders)
 client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
+	mouse.screen.mywibox.visible = true
 end)
 
 awful.rules.rules = {

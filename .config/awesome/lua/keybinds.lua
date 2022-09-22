@@ -13,11 +13,15 @@ local shift = "Shift"
 
 local globalkeys = gears.table.join(
 
-	-- System {{{
+-- System {{{
 
 	awful.key({ modkey, ctrl }, "r", awesome.restart, { description = "Reload awesome", group = "system" }),
 
 	awful.key({ modkey, shift, ctrl }, "q", awesome.quit, { description = "Quit awesome", group = "system" }),
+
+	awful.key({ modkey, ctrl }, "l", function()
+		awful.spawn("archlinux-logout")
+	end, { description = "Launch Rofi app selector", group = "apps" }),
 
 	-- Volume Manipulation {{{
 	awful.key({ modkey }, "]", function()
@@ -169,7 +173,7 @@ local globalkeys = gears.table.join(
 	awful.key({ modkey }, "m", function()
 		Spotify_scratch:toggle()
 	end, { description = "Launch spotify scratchpad", group = "scratchpads" })
-	-- }}}
+-- }}}
 )
 
 -- Change Tabs {{{
