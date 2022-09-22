@@ -5,7 +5,7 @@ export XDG_STATE_HOME=$HOME/.local/state/
 export XDG_CACHE_HOME=$HOME/.cache/
 # }}}
 
-export PATH="~/.pub-cache/bin:$PATH"
+source /usr/share/zsh/plugins/zsh-lazyload/zsh-lazyload.zsh
 
 # Load seperated config files 
 for conf in "$HOME/.config/zsh/config.d/"*.zsh; do

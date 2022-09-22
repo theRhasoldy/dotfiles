@@ -1,4 +1,4 @@
-HISTFILE=~/.cache/zsh/.histzsh
+HISTFILE=~/.cache/zsh/hist
 
 HISTSIZE=10000
 SAVEHIST=10000
