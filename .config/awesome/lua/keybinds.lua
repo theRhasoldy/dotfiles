@@ -13,7 +13,7 @@ local shift = "Shift"
 
 local globalkeys = gears.table.join(
 
-	-- System {{{
+-- System {{{
 
 	awful.key({ modkey, ctrl }, "r", awesome.restart, { description = "Reload awesome", group = "system" }),
 
@@ -96,6 +96,14 @@ local globalkeys = gears.table.join(
 			client.focus:raise()
 		end
 	end, { description = "Go back", group = "client" }),
+
+	awful.key({ modkey }, "n", function()
+		awful.client.focus.byidx(1)
+	end, { description = "Focus next by index", group = "client" }),
+
+	awful.key({ modkey, shift }, "n", function()
+		awful.client.focus.byidx(-1)
+	end, { description = "Focus previous by index", group = "client" }),
 	-- }}}
 
 	-- Directional swap {{{
@@ -181,7 +189,7 @@ local globalkeys = gears.table.join(
 	awful.key({ modkey }, "m", function()
 		Spotify_scratch:toggle()
 	end, { description = "Launch spotify scratchpad", group = "scratchpads" })
-	-- }}}
+-- }}}
 )
 
 -- Change Tabs {{{

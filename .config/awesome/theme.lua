@@ -11,7 +11,7 @@ local theme = {}
 
 -- Fonts
 theme.font = "Dejavu Sans 7"
-theme.notification_font = "Dejavu Sans 7"
+theme.notification_font = "Dejavu Sans 9"
 theme.taglist_font = "Symbols Nerd Font 7.5"
 beautiful.tooltip_font = "Dejavu Sans 7"
 beautiful.wibar_font = "Dejavu Sans bold 7"
@@ -45,7 +45,7 @@ beautiful.tooltip_fg = "#eeeeee"
 beautiful.wibar_bg = "#00000000"
 beautiful.wibar_fg = "#0E1720"
 theme.taglist_fg_focus = "#D98594"
-theme.taglist_fg_urgent = "#745494"
+theme.taglist_fg_urgent = "#c37dbf"
 theme.taglist_fg_empty = "#0E172045"
 theme.taglist_fg_occupied = "#0E1720"
 
@@ -58,7 +58,7 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_
 theme.layout_fairv = "~/.config/awesome/icons/wibar/tile.png"
 theme.layout_tile = "~/.config/awesome/icons/wibar/suitInv.png"
 theme.layout_tileleft = "~/.config/awesome/icons/wibar/suit.png"
-theme.layout_fullscreen = "~/.config/awesome/icons/wibar/full.png"
+theme.layout_max = "~/.config/awesome/icons/wibar/full.png"
 
 theme.icon_theme = "/usr/share/icons/Delight-gray"
 
