@@ -3,28 +3,60 @@ local awful = require("awful")
 local gears = require("gears")
 local beautiful = require("beautiful")
 
+-- Seperator {{{
 local sep = wibox.widget({
 	widget = wibox.widget.textbox,
 	markup = "       ",
 })
+-- }}}
 
+-- Date {{{
 local mytextdate = wibox.widget({
 	widget = wibox.widget.textclock,
 	format = "%a %b %d",
 	font = beautiful.wibar_font,
 })
+-- }}}
 
+-- Clock {{{
 local mytextclock = wibox.widget({
 	widget = wibox.widget.textclock,
 	format = "%R",
 	font = beautiful.wibar_font,
 })
+-- }}}
 
+-- Volume {{{
 Volume_widget = require("widgets.volume-widget.volume")
+-- }}}
 
+-- Spotify {{{
 local spotify_widget = require("widgets.spotify-widget.spotify")
+-- }}}
 
+-- Layout box {{{
 local layoutbox = awful.widget.layoutbox(s)
+-- }}}
+
+-- Uptime {{{
+local uptime_text = wibox.widget.textbox()
+awful.widget.watch("uptime -p", 60, function(_, stdout)
+	-- Remove trailing whitespaces
+	local out = stdout:gsub("^%s*(.-)%s*$", "%1")
+	uptime_text.text = out
+end)
+
+local uptime_widget = wibox.widget({
+	{
+		align = "center",
+		valign = "center",
+		font = beautiful.wibar_font,
+		widget = uptime_text,
+	},
+	spacing = 10,
+	layout = wibox.layout.fixed.horizontal,
+})
+-- }}}
 
 awful.screen.connect_for_each_screen(function(s)
 	-- Create a promptbox for each screen
@@ -103,6 +135,8 @@ awful.screen.connect_for_each_screen(function(s)
 				mytextdate,
 				sep,
 				mytextclock,
+				sep,
+				uptime_widget,
 				sep,
 			},
 		},
