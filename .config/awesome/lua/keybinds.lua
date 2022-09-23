@@ -37,6 +37,20 @@ local globalkeys = gears.table.join(
 	end, { description = "Mute volume", group = "volume" }),
 	-- }}}
 
+	-- Spotify {{{
+	awful.key({ modkey }, "-", function()
+		awful.spawn("sp play")
+	end, { description = "Play/Pause Music", group = "spotify" }),
+
+	awful.key({ modkey }, "9", function()
+		awful.spawn("sp prev")
+	end, { description = "Play/Pause Music", group = "spotify" }),
+
+	awful.key({ modkey }, "0", function()
+		awful.spawn("sp next")
+	end, { description = "Play/Pause Music", group = "spotify" }),
+	--}}}
+
 	-- Tags {{{
 	awful.key(
 		{ modkey },
@@ -143,7 +157,7 @@ local globalkeys = gears.table.join(
 	end, { description = "Launch Rofi emoji selector", group = "apps" }),
 
 	awful.key({ modkey }, "c", function()
-		awful.spawn.with_shell("colorpicker --one-shot --short | xclip -selection clipboard")
+		awful.spawn.with_shell('notify-send "$(colorpicker --one-shot --short --preview | xclip -selection clipboard)"')
 	end, { description = "Pick color and copy it to clipboard", group = "apps" }),
 
 	awful.key({ modkey }, "s", function()
