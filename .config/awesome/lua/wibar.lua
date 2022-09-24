@@ -40,7 +40,7 @@ local layoutbox = awful.widget.layoutbox(s)
 
 -- Uptime {{{
 local uptime_text = wibox.widget.textbox()
-awful.widget.watch("uptime -p", 60, function(_, stdout)
+awful.widget.watch("upt", 60, function(_, stdout) -- fetchutils https://github.com/kiedtl/fetchutils
 	-- Remove trailing whitespaces
 	local out = stdout:gsub("^%s*(.-)%s*$", "%1")
 	uptime_text.text = out

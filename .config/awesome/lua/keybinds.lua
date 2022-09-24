@@ -13,7 +13,7 @@ local shift = "Shift"
 
 local globalkeys = gears.table.join(
 
--- System {{{
+	-- System {{{
 
 	awful.key({ modkey, ctrl }, "r", awesome.restart, { description = "Reload awesome", group = "system" }),
 
@@ -173,7 +173,7 @@ local globalkeys = gears.table.join(
 	end, { description = "Launch flameshot", group = "apps" }),
 
 	awful.key({ modkey }, "i", function()
-		awful.spawn.with_shell("vivaldi-stable")
+		awful.spawn.with_shell("vivaldi-stable && rm -rf .pki")
 	end, { description = "Launch browser", group = "apps" }),
 	-- }}}
 
@@ -189,7 +189,7 @@ local globalkeys = gears.table.join(
 	awful.key({ modkey }, "m", function()
 		Spotify_scratch:toggle()
 	end, { description = "Launch spotify scratchpad", group = "scratchpads" })
--- }}}
+	-- }}}
 )
 
 -- Change Tabs {{{

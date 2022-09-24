@@ -86,7 +86,6 @@ awful.rules.rules = {
 			role = {
 				"AlarmWindow",
 				"ConfigManager",
-				"pop-up",
 			},
 		},
 		properties = { floating = true },
@@ -106,7 +105,7 @@ awful.rules.rules = {
 
 	-- not maximized Clients
 	{
-		rule_any = { class = { "Thunar", "Vivaldi-stable" } },
+		rule_any = { class = { "Thunar", "Vivaldi-stable" }, role = "pop-up" },
 		properties = { maximized = false },
 	},
 
