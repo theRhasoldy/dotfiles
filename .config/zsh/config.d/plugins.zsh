@@ -1,4 +1,4 @@
-source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh #FIXME: not working?
+source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
 
 # Vi Mode {{{
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.zsh
@@ -24,5 +24,6 @@ ZSH_HIGHLIGHT_STYLES[alias]="fg=6"
 ZSH_HIGHLIGHT_STYLES[builtin]="fg=12"
 ZSH_HIGHLIGHT_STYLES[path]="fg=13"
 ZSH_HIGHLIGHT_STYLES[autodirectory]="fg=13"
+ZSH_HIGHLIGHT_STYLES[line]='bg=6'
 # }}}
 

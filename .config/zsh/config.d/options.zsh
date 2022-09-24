@@ -2,7 +2,7 @@ setopt autocd extendedglob nomatch
 
 export LC_CTYPE=en_US.UTF-8
 
-# unsetopt beep notify 
+unsetopt beep notify 
 
 # Basic auto/tab complete:
 autoload -U compinit
