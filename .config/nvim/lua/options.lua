@@ -45,10 +45,11 @@ vim.wo.linebreak = true
 opt.showbreak = "﬌"
 
 --User Interface
-opt.wildmenu = true
+opt.wildmenu = false -- Handeled by wilder plugin
 opt.wildignore:append({ "*/node_modules/*" })
 -- opt.winbar = "%f" --New in neovim 0.8
 opt.showmode = false
+opt.cmdheight = 1
 
 --Files
 opt.confirm = true

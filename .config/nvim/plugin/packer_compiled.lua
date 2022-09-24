@@ -207,7 +207,7 @@ _G.packer_plugins = {
   ["nvim-dahlia"] = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/nvim-dahlia",
-    url = "/home/rhasoldy/Projects/lua/nvim-dahlia/"
+    url = "/home/rhasoldy/Projects/Lua/nvim-dahlia/"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -283,6 +283,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
+  ["wilder.nvim"] = {
+    loaded = true,
+    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/wilder.nvim",
+    url = "https://github.com/gelguy/wilder.nvim"
   },
   ["zk-nvim"] = {
     loaded = true,

@@ -60,7 +60,7 @@ packer.startup(function()
 	use("christoomey/vim-tmux-navigator")
 
 	-- Theme
-	use("~/Projects/lua/nvim-dahlia/")
+	use("~/Projects/Lua/nvim-dahlia/")
 	-- use("theRhasoldy/nvim-dahlia")
 
 	use("kyazdani42/nvim-web-devicons")
@@ -68,6 +68,7 @@ packer.startup(function()
 	use("nvim-neo-tree/neo-tree.nvim")
 
 	use("feline-nvim/feline.nvim")
+	use("gelguy/wilder.nvim")
 
 	use("phaazon/hop.nvim")
 	use("arnamak/stay-centered.nvim")
