@@ -1,5 +1,6 @@
 export TERMINAL="kitty"
 export EDITOR=nvim
+export BROWSER=vivaldi-snapshot
 
 # XDG {{{
 export XDG_DATA_HOME=$HOME/.local/share
@@ -32,3 +33,4 @@ export GNUPGHOME=$XDG_DATA_HOME/gnupg/
 export LESSHISTFILE=$XDG_CACHE_HOME/history
 export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
 export WINEPREFIX=$XDG_DATA_HOME/wine
+export GOPATH=$XDG_DATA_HOME/go
