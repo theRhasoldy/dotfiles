@@ -1,12 +1,10 @@
-local cmd = vim.cmd
 local api = vim.api
+local cmd = vim.api.nvim_command
 
-cmd([[
-augroup packer_user_config
-autocmd!
-autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-augroup end
-]])
+cmd([[augroup packer_user_config]])
+cmd([[autocmd!]])
+cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
+cmd([[augroup end]])
 
 function get_setup(name)
 	return string.format("require('setup/%s')", name)
@@ -117,4 +115,6 @@ packer.startup(function()
 	use("lewis6991/gitsigns.nvim")
 
 	use("mickael-menu/zk-nvim")
+
+	use("monaqa/dial.nvim")
 end)
