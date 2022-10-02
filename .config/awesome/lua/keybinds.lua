@@ -165,7 +165,7 @@ local globalkeys = gears.table.join(
 	end, { description = "Launch Rofi emoji selector", group = "apps" }),
 
 	awful.key({ modkey }, "c", function()
-		awful.spawn.with_shell('notify-send "$(colorpicker --one-shot --short --preview | xclip -selection clipboard)"')
+		awful.spawn.with_shell("bash ~/.config/scripts/colorpick.sh")
 	end, { description = "Pick color and copy it to clipboard", group = "apps" }),
 
 	awful.key({ modkey }, "s", function()
@@ -173,7 +173,7 @@ local globalkeys = gears.table.join(
 	end, { description = "Launch flameshot", group = "apps" }),
 
 	awful.key({ modkey }, "i", function()
-		awful.spawn.with_shell("vivaldi-stable && rm -rf .pki")
+		awful.spawn.with_shell("$BROWSER && rm -rf .pki")
 	end, { description = "Launch browser", group = "apps" }),
 	-- }}}
 

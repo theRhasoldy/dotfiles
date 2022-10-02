@@ -11,7 +11,7 @@ local theme = {}
 
 -- Fonts
 theme.font = "Dejavu Sans 7"
-theme.notification_font = "Dejavu Sans 9"
+theme.notification_font = "Dejavu Sans 8"
 theme.taglist_font = "Symbols Nerd Font 7.5"
 beautiful.tooltip_font = "Dejavu Sans 7"
 beautiful.wibar_font = "Dejavu Sans bold 7"

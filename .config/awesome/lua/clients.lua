@@ -105,12 +105,12 @@ awful.rules.rules = {
 
 	-- not maximized Clients
 	{
-		rule_any = { class = { "Thunar", "Vivaldi-stable" }, role = "pop-up" },
+		rule_any = { class = { "Thunar" }, role = { "pop-up", "browser" } },
 		properties = { maximized = false },
 	},
 
 	-- Client tag rules
-	{ rule = { class = "Vivaldi-stable" }, properties = { screen = 1, tag = "" } },
+	{ rule = { role = "browser" }, properties = { screen = 1, tag = "" } },
 }
 
 -- Sloppy focus
