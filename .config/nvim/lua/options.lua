@@ -1,21 +1,12 @@
 local opt = vim.opt
-local cmd = vim.cmd
+local cmd = vim.api.nvim_command
 
 -- Format Options
-cmd([[
-	augroup FormatOptions
-		autocmd!
-		autocmd FileType * set fo=tj wrap
-	augroup end
-
-	au FocusGained,BufEnter * :checktime
-
-	set nocompatible
-	set signcolumn=yes
-
-	syntax on
-	filetype plugin on
-]])
+cmd([[augroup FormatOptions]])
+cmd([[autocmd!]])
+cmd([[autocmd FileType * set fo=tj wrap]])
+cmd([[augroup end]])
+cmd([[au FocusGained,BufEnter * :checktime]])
 
 --Show relative numbers
 opt.relativenumber = true
@@ -50,6 +41,7 @@ opt.wildignore:append({ "*/node_modules/*" })
 -- opt.winbar = "%f" --New in neovim 0.8
 opt.showmode = false
 opt.cmdheight = 1
+opt.signcolumn = "yes"
 
 --Files
 opt.confirm = true
