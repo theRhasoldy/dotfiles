@@ -16,4 +16,7 @@ saga.init_lsp_saga({
 		quit = "<Escape>",
 		exec = "<CR>",
 	},
+	symbol_in_winbar = {
+		in_custom = true,
+	},
 })
