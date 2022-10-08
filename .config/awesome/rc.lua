@@ -65,5 +65,5 @@ awful.layout.layouts = {
 -- }}}
 
 -- Tags {{{
-awful.tag({ "", "", "", "", "", "", "" }, s, awful.layout.layouts[1])
+awful.tag({ "", "", "", "", "", "", "", "" }, s, awful.layout.layouts[1])
 -- }}}

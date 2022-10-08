@@ -105,12 +105,15 @@ awful.rules.rules = {
 
 	-- not maximized Clients
 	{
-		rule_any = { class = { "Thunar" }, role = { "pop-up", "browser" } },
+		rule_any = { class = { "Thunar", "Inkscape" }, role = { "pop-up", "browser" } },
 		properties = { maximized = false },
 	},
 
 	-- Client tag rules
 	{ rule = { role = "browser" }, properties = { screen = 1, tag = "" } },
+	{ rule = { class = "Inkscape" }, properties = { screen = 1, tag = "" } },
+	{ rule = { name = "GNU Image Manipulation Program" }, properties = { screen = 1, tag = "" } },
+	{ rule = { name = "Todoist*" }, properties = { screen = 1, tag = "" } },
 }
 
 -- Sloppy focus
