@@ -84,6 +84,7 @@ awful.rules.rules = {
 				"Picture in picture",
 			},
 			role = {
+				"pop-up",
 				"AlarmWindow",
 				"ConfigManager",
 			},
@@ -111,6 +112,7 @@ awful.rules.rules = {
 
 	-- Client tag rules
 	{ rule = { role = "browser" }, properties = { screen = 1, tag = "" } },
+	{ rule = { class = "figma-linux" }, properties = { screen = 1, tag = "" } },
 	{ rule = { class = "Inkscape" }, properties = { screen = 1, tag = "" } },
 	{ rule = { name = "GNU Image Manipulation Program" }, properties = { screen = 1, tag = "" } },
 	{ rule = { name = "Todoist*" }, properties = { screen = 1, tag = "" } },
