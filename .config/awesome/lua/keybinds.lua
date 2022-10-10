@@ -23,32 +23,32 @@ local globalkeys = gears.table.join(
 		awful.spawn("archlinux-logout")
 	end, { description = "Launch Rofi app selector", group = "apps" }),
 
-	-- Volume Manipulation {{{
+	-- Spotify {{{
 	awful.key({ modkey }, "]", function()
-		Volume_widget:inc(5)
-	end, { description = "Increment volume", group = "volume" }),
+		awful.spawn("sp next")
+	end, { description = "Next song", group = "spotify" }),
 
 	awful.key({ modkey }, "[", function()
+		awful.spawn("sp prev")
+	end, { description = "Previous song", group = "spotify" }),
+
+	awful.key({ modkey }, "\\", function()
+		awful.spawn("sp play")
+	end, { description = "Play/Pause Music", group = "spotify" }),
+	-- }}}
+
+	-- Volume Manipulation {{{
+	awful.key({ modkey }, "-", function()
+		Volume_widget:toggle()
+	end, { description = "Mute volume", group = "volume" }),
+
+	awful.key({ modkey }, "9", function()
 		Volume_widget:dec(5)
 	end, { description = "Decrement volume", group = "volume" }),
 
-	awful.key({ modkey }, "\\", function()
-		Volume_widget:toggle()
-	end, { description = "Mute volume", group = "volume" }),
-	-- }}}
-
-	-- Spotify {{{
-	awful.key({ modkey }, "-", function()
-		awful.spawn("sp play")
-	end, { description = "Play/Pause Music", group = "spotify" }),
-
-	awful.key({ modkey }, "9", function()
-		awful.spawn("sp prev")
-	end, { description = "Play/Pause Music", group = "spotify" }),
-
 	awful.key({ modkey }, "0", function()
-		awful.spawn("sp next")
-	end, { description = "Play/Pause Music", group = "spotify" }),
+		Volume_widget:inc(5)
+	end, { description = "Increment volume", group = "volume" }),
 	--}}}
 
 	-- Tags {{{
