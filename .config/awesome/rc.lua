@@ -55,11 +55,12 @@ run_once({ "unclutter -root" }) -- entries must be comma-separated
 beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 -- }}}
 
+-- awful.layout.suit.tile.mirror = true
+
 -- Layouts
 awful.layout.layouts = {
-	awful.layout.suit.fair,
 	awful.layout.suit.tile,
-	awful.layout.suit.tile.left,
+	awful.layout.suit.fair,
 	awful.layout.suit.max,
 }
 -- }}}

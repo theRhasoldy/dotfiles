@@ -57,7 +57,6 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_
 -- Define the image to load
 theme.layout_fairv = "~/.config/awesome/icons/wibar/tile.png"
 theme.layout_tile = "~/.config/awesome/icons/wibar/suitInv.png"
-theme.layout_tileleft = "~/.config/awesome/icons/wibar/suit.png"
 theme.layout_max = "~/.config/awesome/icons/wibar/full.png"
 
 theme.icon_theme = "/usr/share/icons/Delight-gray"
