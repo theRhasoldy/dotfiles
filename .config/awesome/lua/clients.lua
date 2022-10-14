@@ -12,6 +12,11 @@ awful.mouse.snap.client_enabled = false
 local border_radius = 10
 
 client.connect_signal("manage", function(c)
+	-- Priotrize master client when splitting
+	if not awesome.startup then
+		awful.client.setslave(c)
+	end
+
 	if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
 		-- Prevent clients from being unreachable after screen count changes.
 		awful.placement.no_offscreen(c)
@@ -106,7 +111,7 @@ awful.rules.rules = {
 
 	-- not maximized Clients
 	{
-		rule_any = { class = { "Thunar", "Inkscape" }, role = { "pop-up", "browser" } },
+		rule_any = { class = { "Thunar", "Inkscape", "Blender" }, role = { "pop-up", "browser" } },
 		properties = { maximized = false },
 	},
 
@@ -114,6 +119,7 @@ awful.rules.rules = {
 	{ rule = { role = "browser" }, properties = { screen = 1, tag = "" } },
 	{ rule = { class = "figma-linux" }, properties = { screen = 1, tag = "" } },
 	{ rule = { class = "Inkscape" }, properties = { screen = 1, tag = "" } },
+	{ rule = { class = "Blender" }, properties = { screen = 1, tag = "" } },
 	{ rule = { name = "GNU Image Manipulation Program" }, properties = { screen = 1, tag = "" } },
 	{ rule = { name = "Todoist*" }, properties = { screen = 1, tag = "" } },
 }
