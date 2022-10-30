@@ -115,6 +115,11 @@ awful.rules.rules = {
 		properties = { maximized = false },
 	},
 
+	{
+		rule_any = { class = { "league of legends.exe" } },
+		properties = { fullscreen = false },
+	},
+
 	-- Client tag rules
 	{ rule = { role = "browser" }, properties = { screen = 1, tag = "" } },
 	{ rule = { class = "figma-linux" }, properties = { screen = 1, tag = "" } },
