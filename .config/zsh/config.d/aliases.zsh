@@ -21,6 +21,6 @@ alias wiki="cd ~/Universe && nvim -c VimwikiIndex"
 
 alias update-android="paru -Syu android-emulator android-google-apis android-ndk android-platform android-sdk android-sdk-build-tools android-google-apis-x86-64-system-image"
 
-alias git-token='echo "$(cat Mind/tokens.md)" | xclip -selection clipboard && echo "Git token copied to clipboard :)"'
+alias git-token='echo "$(cat ~/Mind/tokens.md)" | xclip -selection clipboard && echo "Git token copied to clipboard :)"'
 
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
