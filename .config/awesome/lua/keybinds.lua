@@ -175,6 +175,10 @@ local globalkeys = gears.table.join(
 	awful.key({ modkey }, "i", function()
 		awful.spawn.with_shell("$BROWSER && rm -rf .pki")
 	end, { description = "Launch browser", group = "apps" }),
+
+	awful.key({ modkey }, "o", function()
+		awful.spawn.with_shell("obsidian")
+	end, { description = "Launch obsidian", group = "apps" }),
 	-- }}}
 
 	-- Scratchpads {{{
