@@ -60,6 +60,7 @@ packer.startup(function()
 	-- Theme
 	use("~/Projects/Lua/nvim-dahlia/")
 	-- use("theRhasoldy/nvim-dahlia")
+	use("catppuccin/nvim")
 
 	use("kyazdani42/nvim-web-devicons")
 

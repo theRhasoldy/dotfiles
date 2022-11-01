@@ -194,6 +194,11 @@ _G.packer_plugins = {
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
+  nvim = {
+    loaded = true,
+    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/nvim",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
