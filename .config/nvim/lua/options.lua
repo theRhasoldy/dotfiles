@@ -3,10 +3,19 @@ local cmd = vim.api.nvim_command
 
 -- Format Options
 cmd([[augroup FormatOptions]])
+
 cmd([[autocmd!]])
 cmd([[autocmd FileType * set fo=tj wrap]])
 cmd([[augroup end]])
+
+-- Auto reload files on changing buffers
 cmd([[au FocusGained,BufEnter * :checktime]])
+
+-- Show cursor line only on active buffer
+cmd([[au BufEnter * setlocal cursorline]])
+cmd([[au BufLeave * setlocal nocursorline]])
+cmd([[au WinEnter * setlocal cursorline]])
+cmd([[au WinLeave * setlocal nocursorline]])
 
 --Show relative numbers
 opt.relativenumber = true
