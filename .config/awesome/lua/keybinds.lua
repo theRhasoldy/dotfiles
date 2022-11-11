@@ -54,7 +54,7 @@ local globalkeys = gears.table.join(
 	-- Tags {{{
 	awful.key(
 		{ modkey },
-		"`",
+		"Tab",
 		awful.tag.history.restore,
 		{ description = "Go to previous tag in history", group = "tag" }
 	),
@@ -258,10 +258,10 @@ clientkeys = gears.table.join(
 		c.floating = not c.floating
 	end, { description = "Make window floating", group = "client" }),
 
-	awful.key({ modkey }, "Tab", function()
+	awful.key({ modkey }, "`", function()
 		awful.layout.inc(1)
 	end, { description = "select next", group = "layout" }),
-	awful.key({ modkey, shift }, "Tab", function()
+	awful.key({ modkey, shift }, "`", function()
 		awful.layout.inc(-1)
 	end, { description = "select previous", group = "layout" })
 )
