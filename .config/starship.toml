@@ -1,5 +1,5 @@
-format = "$directory $git_branch$git_commit$git_state$character"
-right_format = "$cmd_duration"
+format = "$directory $all$git_branch$git_commit$git_state$git_status$character"
+right_format = "$package $cmd_duration"
 
 add_newline = false
 
@@ -14,10 +14,11 @@ read_only = " "
 format = "[$read_only](bright-yellow)[$path](bright-purple)"
 
 [cmd_duration]
-format = "[  $duration](bright-black)"
+format = "[神 $duration](bright-black)"
 
 [package]
-disabled = true
+format = "[  $version](bright-black) "
+disabled = false
 
 [line_break]
 disabled = true
@@ -25,5 +26,25 @@ disabled = true
 [git_state]
 disabled = false
 
+[git_status]
+modified = "柳"
+deleted = ""
+renamed = ""
+untracked = ""
+staged = ""
+conflicted = ""
+
 [git_commit]
 disabled = false
+
+[lua]
+format = "via [ $version](bold blue) "
+
+[dart]
+format = "via [ $version](bold red) "
+
+[nodejs]
+format = "via [ $version](bold green) "
+
+[java]
+format = "via [ $version](bold orange) "
