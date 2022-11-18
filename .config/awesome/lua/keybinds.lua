@@ -173,7 +173,7 @@ local globalkeys = gears.table.join(
 	end, { description = "Launch flameshot", group = "apps" }),
 
 	awful.key({ modkey }, "i", function()
-		awful.spawn.with_shell("$BROWSER && rm -rf .pki")
+		awful.spawn.with_shell("vivaldi-snapshot && rm -rf .pki")
 	end, { description = "Launch browser", group = "apps" }),
 
 	awful.key({ modkey }, "o", function()
