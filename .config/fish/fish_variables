@@ -31,7 +31,7 @@ SETUVAR _fisher_plugins:jorgebucaran/autopair\x2efish\x1epatrickf1/fzf\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
-SETUVAR fish_color_command:blue
+SETUVAR fish_color_command:brgreen
 SETUVAR fish_color_comment:red
 SETUVAR fish_color_cwd:green
 SETUVAR fish_color_cwd_root:red
