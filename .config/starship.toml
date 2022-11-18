@@ -1,5 +1,5 @@
 format = "$directory $all$git_branch$git_commit$git_state$git_status$character"
-right_format = "$package $cmd_duration"
+right_format = "$package$cmd_duration$sudo"
 
 add_newline = false
 
@@ -8,13 +8,18 @@ success_symbol = "[ ](bright-green)"
 error_symbol = "[ ](bright-red)"
 vicmd_symbol = "[異](cyan)"
 
+[sudo]
+format = "[  ](bright-yellow)"
+disabled = false
+
 [directory]
+truncation_length = 3
 home_symbol = " "
 read_only = " "
 format = "[$read_only](bright-yellow)[$path](bright-purple)"
 
 [cmd_duration]
-format = "[神 $duration](bright-black)"
+format = "[ 神 $duration](bright-black)"
 
 [package]
 format = "[  $version](bright-black) "
@@ -33,6 +38,7 @@ renamed = ""
 untracked = ""
 staged = ""
 conflicted = ""
+style = "bright-black"
 
 [git_commit]
 disabled = false
