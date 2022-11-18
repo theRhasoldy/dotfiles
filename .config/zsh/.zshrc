@@ -13,4 +13,5 @@ for conf in "$HOME/.config/zsh/config.d/"*.zsh; do
 done
 unset conf
 
+setxkbmap -option caps:swapescape
 bfetch
