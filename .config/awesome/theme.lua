@@ -14,7 +14,7 @@ theme.font = "Dejavu Sans 7"
 theme.notification_font = "Dejavu Sans 8"
 theme.taglist_font = "Symbols Nerd Font 7.5"
 beautiful.tooltip_font = "Dejavu Sans 7"
-beautiful.wibar_font = "Dejavu Sans bold 7"
+beautiful.wibar_font = "Dejavu Sans bold 8"
 
 --Main UI
 theme.bg_normal = "#0F1115"
@@ -43,11 +43,12 @@ beautiful.tooltip_fg = "#eeeeee"
 
 -- Wibox
 beautiful.wibar_bg = "#00000000"
-beautiful.wibar_fg = "#0E1720"
+-- beautiful.wibar_fg = "#0E1720"
+beautiful.wibar_fg = "#0a131c"
 theme.taglist_fg_focus = "#D98594"
 theme.taglist_fg_urgent = "#c37dbf"
 theme.taglist_fg_empty = "#0E172045"
-theme.taglist_fg_occupied = "#0E1720"
+theme.taglist_fg_occupied = "#0a131c"
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(3)
