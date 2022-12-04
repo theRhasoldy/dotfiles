@@ -7,6 +7,9 @@ add_newline = false
 success_symbol = "[ ](bright-green)" 
 error_symbol = "[ ](bright-red)"
 vicmd_symbol = "[異](cyan)"
+vimcmd_replace_one_symbol = "[ ](blue)"
+vimcmd_replace_symbol = "[ ](blue)"
+vimcmd_visual_symbol = "[ ](bright-purple)"
 
 [sudo]
 format = "[  ](bright-yellow)"
