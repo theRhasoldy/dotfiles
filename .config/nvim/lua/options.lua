@@ -71,4 +71,4 @@ opt.completeopt = "menu,menuone,noselect,noinsert"
 opt.shortmess:append("c")
 opt.laststatus = 3
 
-vim.g.did_load_filetypes = 1
+-- vim.g.did_load_filetypes = 1

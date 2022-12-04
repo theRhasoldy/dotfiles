@@ -124,11 +124,6 @@ _G.packer_plugins = {
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/feline.nvim",
     url = "https://github.com/feline-nvim/feline.nvim"
   },
-  ["filetype.nvim"] = {
-    loaded = true,
-    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/filetype.nvim",
-    url = "https://github.com/nathom/filetype.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -194,11 +189,6 @@ _G.packer_plugins = {
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
-  nvim = {
-    loaded = true,
-    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/nvim",
-    url = "https://github.com/catppuccin/nvim"
-  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -244,6 +234,11 @@ _G.packer_plugins = {
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["oxocarbon-lua.nvim"] = {
+    loaded = true,
+    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/oxocarbon-lua.nvim",
+    url = "https://github.com/B4mbus/oxocarbon-lua.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -258,6 +253,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["seoul256.nvim"] = {
+    loaded = true,
+    path = "/home/rhasoldy/.local/share/nvim/site/pack/packer/start/seoul256.nvim",
+    url = "https://github.com/shaunsingh/seoul256.nvim"
   },
   ["stay-centered.nvim"] = {
     loaded = true,

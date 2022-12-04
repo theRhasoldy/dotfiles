@@ -22,6 +22,10 @@ map("i", "<C-k>", "")
 map("i", "<C-l>", "<Right>")
 map("i", "<C-h>", "<Left>")
 
+-- Faster jump to beginning and end of line
+map("", "H", "^")
+map("", "L", "$")
+
 map("i", "<Esc>", "<Esc><Esc>") -- Exit cmp and insert mode
 
 map("n", "<Leader>rn", ":set rnu!<CR>") -- Switch between line number modes

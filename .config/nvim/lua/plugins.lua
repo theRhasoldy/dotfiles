@@ -39,7 +39,7 @@ packer.startup(function()
 	use({
 		"wbthomason/packer.nvim",
 		"lewis6991/impatient.nvim",
-		"nathom/filetype.nvim",
+		-- "nathom/filetype.nvim",
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
 	})
@@ -60,7 +60,8 @@ packer.startup(function()
 	-- Theme
 	use("~/Projects/Lua/nvim-dahlia/")
 	-- use("theRhasoldy/nvim-dahlia")
-	use("catppuccin/nvim")
+	use("B4mbus/oxocarbon-lua.nvim")
+	use("shaunsingh/seoul256.nvim")
 
 	use("kyazdani42/nvim-web-devicons")
 
