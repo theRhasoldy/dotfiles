@@ -1,10 +1,10 @@
 #ls --> exa
 alias exa "exa --color=auto --icons"
 
-alias ls "exa -xF"
+alias ls "exa -x"
 alias lsa "ls -a"
 
-alias ll "exa -l@mF --no-permissions --git"
+alias ll "exa -l@m --no-permissions --git"
 alias lla "ll -a"
 
 alias llt "ll -T"
