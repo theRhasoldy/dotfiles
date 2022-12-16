@@ -152,6 +152,10 @@ local globalkeys = gears.table.join(
 		awful.spawn(string.format("rofi -show drun"))
 	end, { description = "Launch Rofi app selector", group = "apps" }),
 
+	awful.key({ modkey }, "w", function()
+		awful.spawn(string.format("rofi -show window"))
+	end, { description = "Launch Rofi window selector", group = "apps" }),
+
 	awful.key({ modkey }, "r", function()
 		awful.spawn(string.format("rofi -show run"))
 	end, { description = "Launch Rofi run", group = "apps" }),
