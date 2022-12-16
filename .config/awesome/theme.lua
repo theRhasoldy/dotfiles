@@ -10,11 +10,12 @@ local themes_path = gfs.get_themes_dir()
 local theme = {}
 
 -- Fonts
-theme.font = "Dejavu Sans 7"
-theme.notification_font = "Dejavu Sans 8"
+theme.font = "Ubuntu Bold 9"
+theme.notification_font = "Ubuntu Bold 9"
 theme.taglist_font = "Symbols Nerd Font 7.5"
-beautiful.tooltip_font = "Dejavu Sans 7"
-beautiful.wibar_font = "Dejavu Sans bold 8"
+beautiful.tooltip_font = "Ubuntu Bold 9"
+-- beautiful.wibar_font = "Dejavu Sans bold 8"
+beautiful.wibar_font = "Ubuntu Bold 9"
 
 --Main UI
 theme.bg_normal = "#0F1115"
@@ -30,8 +31,8 @@ theme.useless_gap = dpi(2.5)
 
 theme.border_width = dpi(2)
 theme.border_normal = "#13151c"
-theme.border_focus = "#2F283Acc"
-theme.border_Marked = "#2F283Acc"
+theme.border_focus = "#2f283acc"
+theme.border_marked = "#2f283acc"
 
 -- Notification
 theme.notification_bg = "#181a21cc"
@@ -42,13 +43,13 @@ beautiful.tooltip_bg = "#13151c"
 beautiful.tooltip_fg = "#eeeeee"
 
 -- Wibox
+beautiful.wibar_panel_bg = "#4F375C59"
 beautiful.wibar_bg = "#00000000"
--- beautiful.wibar_fg = "#0E1720"
-beautiful.wibar_fg = "#0a131c"
+beautiful.wibar_fg = "#0F1115"
 theme.taglist_fg_focus = "#D98594"
 theme.taglist_fg_urgent = "#c37dbf"
 theme.taglist_fg_empty = "#0E172045"
-theme.taglist_fg_occupied = "#0a131c"
+theme.taglist_fg_occupied = "#000000"
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(3)
