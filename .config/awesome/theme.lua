@@ -13,7 +13,7 @@ local theme = {}
 theme.font = "Ubuntu Bold 9"
 theme.notification_font = "Ubuntu Bold 9"
 theme.taglist_font = "Symbols Nerd Font 7.5"
-beautiful.tooltip_font = "Ubuntu Bold 9"
+beautiful.tooltip_font = "Ubuntu 9"
 -- beautiful.wibar_font = "Dejavu Sans bold 8"
 beautiful.wibar_font = "Ubuntu Bold 9"
 
@@ -36,20 +36,20 @@ theme.border_marked = "#2f283acc"
 
 -- Notification
 theme.notification_bg = "#894E72CC"
-theme.notification_fg = "#000000"
+theme.notification_fg = "#cd94b7"
 
 -- Tooltip
-beautiful.tooltip_bg = "#13151c"
-beautiful.tooltip_fg = "#eeeeee"
+beautiful.tooltip_bg = "#682d51cc"
+beautiful.tooltip_fg = "#cd94b7"
 
 -- Wibox
 beautiful.wibar_panel_bg = "#894E72CC"
 beautiful.wibar_bg = "#00000000"
-beautiful.wibar_fg = "#0F1115"
-theme.taglist_fg_focus = "#D98594"
-theme.taglist_fg_urgent = "#c37dbf"
-theme.taglist_fg_empty = "#0E172045"
-theme.taglist_fg_occupied = "#000000"
+beautiful.wibar_fg = "#cd94b7"
+theme.taglist_fg_urgent = "#cda9e0"
+theme.taglist_fg_focus = "#e5759b"
+theme.taglist_fg_empty = "#cd94b755"
+theme.taglist_fg_occupied = "#cd94b7"
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(3)

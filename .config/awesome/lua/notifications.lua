@@ -26,13 +26,14 @@ local function notif_template(n)
 	})
 
 	local time = os.date("%H:%M")
+	local notif_header = "#b1789b"
 
 	local time_widget = wibox.widget.textbox()
-	time_widget.markup = "<span foreground = '#5d2446'>" .. time .. "</span>"
+	time_widget.markup = "<span foreground = " .. "'" .. notif_header .. "'>" .. time .. "</span>"
 	time_widget.align = "right"
 
 	local app = wibox.widget.textbox()
-	app.markup = "<span foreground = '#5d2446'>" .. n.app_name .. "</span>"
+	app.markup = "<span foreground = " .. "'" .. notif_header .. "'>" .. n.app_name .. "</span>"
 	app.align = "left"
 
 	local icon_visibility
