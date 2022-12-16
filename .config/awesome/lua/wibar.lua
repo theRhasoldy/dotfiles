@@ -35,7 +35,6 @@ local layoutbox = awful.widget.layoutbox(s)
 
 -- Time Panel {{{
 local timepanel = wibox.widget({
-	type = "normal",
 	{
 		layout = wibox.layout.margin,
 		left = 15,

@@ -25,13 +25,14 @@ local function notif_template(n)
 		forced_width = dpi(20),
 	})
 
-	local time = wibox.widget.textclock()
-	time.format = "%R"
-	time.align = "right"
-	time.fg = "#b75566"
+	local time = os.date("%H:%M")
+
+	local time_widget = wibox.widget.textbox()
+	time_widget.markup = "<span foreground = '#5d2446'>" .. time .. "</span>"
+	time_widget.align = "right"
 
 	local app = wibox.widget.textbox()
-	app.text = n.app_name
+	app.markup = "<span foreground = '#5d2446'>" .. n.app_name .. "</span>"
 	app.align = "left"
 
 	local icon_visibility
@@ -110,7 +111,7 @@ local function notif_template(n)
 					nil,
 					{ -- Right widgets
 						layout = wibox.layout.fixed.horizontal,
-						time,
+						time_widget,
 					},
 				},
 			},

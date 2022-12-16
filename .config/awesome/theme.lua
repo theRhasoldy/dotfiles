@@ -35,15 +35,15 @@ theme.border_focus = "#2f283acc"
 theme.border_marked = "#2f283acc"
 
 -- Notification
-theme.notification_bg = "#181a21cc"
-theme.notification_fg = "#eeeeee"
+theme.notification_bg = "#894E72CC"
+theme.notification_fg = "#000000"
 
 -- Tooltip
 beautiful.tooltip_bg = "#13151c"
 beautiful.tooltip_fg = "#eeeeee"
 
 -- Wibox
-beautiful.wibar_panel_bg = "#4F375C59"
+beautiful.wibar_panel_bg = "#894E72CC"
 beautiful.wibar_bg = "#00000000"
 beautiful.wibar_fg = "#0F1115"
 theme.taglist_fg_focus = "#D98594"
