@@ -54,8 +54,9 @@ packer.startup(function()
 
 	use("folke/twilight.nvim")
 
-	-- Tmux
-	use("christoomey/vim-tmux-navigator")
+	-- kitty support
+	-- use("christoomey/vim-tmux-navigator")
+	use("knubie/vim-kitty-navigator")
 
 	-- Theme
 	use("~/Projects/Lua/nvim-dahlia/")
@@ -115,8 +116,6 @@ packer.startup(function()
 	use("NvChad/nvim-colorizer.lua")
 
 	use("lewis6991/gitsigns.nvim")
-
-	use("mickael-menu/zk-nvim")
 
 	use("monaqa/dial.nvim")
 end)

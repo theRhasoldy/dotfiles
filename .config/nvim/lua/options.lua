@@ -8,6 +8,8 @@ cmd([[autocmd!]])
 cmd([[autocmd FileType * set fo=tj wrap]])
 cmd([[augroup end]])
 
+cmd([[let g:kitty_navigator_no_mappings = 1]])
+
 -- Auto reload files on changing buffers
 cmd([[au FocusGained,BufEnter * :checktime]])
 
@@ -57,6 +59,7 @@ opt.confirm = true
 opt.autoread = true
 opt.dir = "~/.cache/nvim"
 opt.swapfile = false
+opt.undofile = true
 
 --Misc
 opt.termguicolors = true

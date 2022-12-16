@@ -55,11 +55,18 @@ map("n", "<Space>+", "<C-w>=")
 
 map("n", "<CR>", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 
--- Navigate Split
-map("n", "<C-h>", "<C-W>h")
+-- Navigate Split (other terminals)
+--[[ map("n", "<C-h>", "<C-W>h")
 map("n", "<C-j>", "<C-W>j")
 map("n", "<C-k>", "<C-W>k")
 map("n", "<C-l>", "<C-W>l")
+map("n", "<C-x>", "<C-W>p") ]]
+
+-- Navigate Split (with kitty)
+map("n", "<C-h>", ":KittyNavigateLeft<cr>")
+map("n", "<C-j>", ":KittyNavigateDown<cr>")
+map("n", "<C-k>", ":KittyNavigateUp<cr>")
+map("n", "<C-l>", ":KittyNavigateRight<cr>")
 map("n", "<C-x>", "<C-W>p")
 
 -- Manipulate Splits
