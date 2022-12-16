@@ -49,6 +49,7 @@ local function worker(user_args)
 		},
 		{
 			id = "icon",
+			valign = "center",
 			resize = false,
 			widget = wibox.widget.imagebox,
 		},
