@@ -1,5 +1,6 @@
 set fish_greeting ""
-setxkbmap -option caps:swapescape
+# setxkbmap -option caps:swapescape
+xset r rate 200 40
 
 # Set the cursor shapes for the different vi modes.
 set fish_cursor_default block blink
