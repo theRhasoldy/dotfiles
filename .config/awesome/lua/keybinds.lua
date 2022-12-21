@@ -19,9 +19,9 @@ local globalkeys = gears.table.join(
 
 	awful.key({ modkey, shift, ctrl }, "q", awesome.quit, { description = "Quit awesome", group = "system" }),
 
-	awful.key({ modkey, ctrl }, "l", function()
+	awful.key({ modkey, ctrl }, "u", function()
 		awful.spawn("archlinux-logout")
-	end, { description = "Launch Rofi app selector", group = "apps" }),
+	end, { description = "Launch logout modal", group = "apps" }),
 
 	-- Spotify {{{
 	awful.key({ modkey }, "]", function()
