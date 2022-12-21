@@ -1,5 +1,7 @@
 keymap:
   - name: Vi Movement Everything
+    application:
+      not: kitty
     remap:
       C-h: left
       C-j: down
