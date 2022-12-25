@@ -8,8 +8,6 @@ configuration {
 	icon-theme: "Delight";
 	kb-remove-to-eol: "";
 	kb-accept-entry: "Return";
-	kb-row-up: "Control-k";
-	kb-row-down: "Control-j";
 
   timeout {
       action: "kb-cancel";
