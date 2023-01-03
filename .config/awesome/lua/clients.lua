@@ -11,21 +11,6 @@ awful.mouse.snap.client_enabled = false
 
 local border_radius = 10
 
-client.connect_signal("manage", function(c)
-	-- Priotrize master client when splitting
-	if not awesome.startup then
-		awful.client.setslave(c)
-	end
-
-	if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
-		-- Prevent clients from being unreachable after screen count changes.
-		awful.placement.no_offscreen(c)
-	end
-	c.shape = function(cr, w, h)
-		gears.shape.rounded_rect(cr, w, h, border_radius)
-	end
-end)
-
 local function rounded_borders(c)
 	if c.fullscreen then
 		c.shape = function(cr, w, h)
@@ -38,11 +23,27 @@ local function rounded_borders(c)
 	end
 end
 
+client.connect_signal("manage", function(c)
+	-- Priotrize master client when splitting
+	if not awesome.startup then
+		awful.client.setslave(c)
+	end
+
+	if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
+		-- Prevent clients from being unreachable after screen count changes.
+		awful.placement.no_offscreen(c)
+	end
+
+	rounded_borders(c)
+end)
+
 -- No border for maximized clients
 local function adjust(c)
+	-- Hide wibox full fullscreen clients
 	if c.fullscreen then
 		mouse.screen.mywibox.visible = false
 	end
+
 	if c.maximized then -- no borders if only 1 client visible
 		c.border_width = 0
 	elseif #awful.screen.focused().clients > 1 then
@@ -53,13 +54,14 @@ end
 
 client.connect_signal("focus", adjust)
 client.connect_signal("property::maximized", adjust)
-client.connect_signal("property::fullscreen", rounded_borders)
+client.connect_signal("property::fullscreen", adjust)
 client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
 	mouse.screen.mywibox.visible = true
 end)
 
 awful.rules.rules = {
+
 	-- All clients will match this rule.
 	{
 		rule = {},
@@ -99,22 +101,28 @@ awful.rules.rules = {
 
 	-- Sticky Clients
 	{
-		rule_any = { name = { "Picture in picture" }, class = { "spad", "pop", "Spotify" } },
+		rule_any = { name = { "Picture in picture" } },
 		properties = { sticky = true },
+	},
+
+	{
+		rule_any = { role = { "menu" } },
+		properties = { border_width = false },
 	},
 
 	-- onTop Clients
 	{
-		rule_any = { name = { "Picture in picture", "Emulator" }, class = { "pop" } },
+		rule_any = { name = { "Picture in picture", "Emulator" } },
 		properties = { ontop = true },
 	},
 
 	-- not maximized Clients
 	{
-		rule_any = { class = { "Thunar", "Inkscape", "Blender" }, role = { "pop-up", "browser" } },
+		rule_any = { class = { "Thunar", "Inkscape", "Blender" }, role = { "browser" } },
 		properties = { maximized = false },
 	},
 
+	-- not fullscreen Clients
 	{
 		rule_any = { class = { "league of legends.exe" } },
 		properties = { fullscreen = false },
