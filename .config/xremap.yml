@@ -5,14 +5,6 @@ keymap:
       C-j: down
       C-k: up
       C-l: right
-  - name: Kitty
-    application:
-      only: kitty
-    remap:
-      C-h: C-h
-      C-j: C-j
-      C-k: C-k
-      C-l: C-l
 modmap:
   - name: Switch Caps and ESC
     remap:
