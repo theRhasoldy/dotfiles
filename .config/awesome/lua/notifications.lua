@@ -1,7 +1,7 @@
 local beautiful = require("beautiful")
-local dpi = beautiful.xresources.apply_dpi
+local xresources = require("beautiful.xresources")
+local dpi = xresources.apply_dpi
 local wibox = require("wibox")
-
 local naughty = require("naughty")
 local gears = require("gears")
 
@@ -26,14 +26,16 @@ local function notif_template(n)
 	})
 
 	local time = os.date("%H:%M")
-	local notif_header = "#b1789b"
+	local header_color = "#eeeeee80"
 
 	local time_widget = wibox.widget.textbox()
-	time_widget.markup = "<span foreground = " .. "'" .. notif_header .. "'>" .. time .. "</span>"
+	time_widget.markup = "<span foreground = " .. "'" .. header_color .. "'>" .. time .. "</span>"
+	time_widget.font = beautiful.notification_info_font
 	time_widget.align = "right"
 
 	local app = wibox.widget.textbox()
-	app.markup = "<span foreground = " .. "'" .. notif_header .. "'>" .. n.app_name .. "</span>"
+	app.markup = "<span foreground = " .. "'" .. header_color .. "'>" .. n.app_name .. "</span>"
+	app.font = beautiful.notification_info_font
 	app.align = "left"
 
 	local icon_visibility
@@ -44,13 +46,13 @@ local function notif_template(n)
 		icon_visibility = true
 	end
 
-	-- Action widget
+	-- Action widget {{{
 	local action_widget = {
 		{
 			{
 				id = "text_role",
 				align = "center",
-				font = "Ubuntu Bold 9",
+				font = beautiful.notification_header_font,
 				widget = wibox.widget.textbox,
 			},
 			margins = { left = dpi(6), right = dpi(6) },
@@ -58,6 +60,7 @@ local function notif_template(n)
 		},
 		widget = wibox.container.background,
 	}
+	-- }}}
 
 	-- Apply action widget ^
 	local actions = wibox.widget({
@@ -69,15 +72,16 @@ local function notif_template(n)
 		widget_template = action_widget,
 		widget = naughty.list.actions,
 	})
+	-- }}}
 
 	-- Make other widgets
 	local title = wibox.widget.textbox()
-	title.font = "Ubuntu bold 9"
+	title.font = beautiful.notification_header_font
 	title.align = "left"
 	title.markup = n.title
 
 	local message = wibox.widget.textbox()
-	message.font = "Ubuntu 9"
+	message.font = beautiful.notification_font
 	message.align = "left"
 	message.markup = n.message
 
@@ -98,6 +102,7 @@ local function notif_template(n)
 		expand = "none",
 		layout = wibox.layout.align.vertical,
 	})
+	-- }}}
 
 	local container = wibox.widget({
 		{
@@ -139,9 +144,9 @@ local function notif_template(n)
 	naughty.layout.box({
 		notification = n,
 		type = "notification",
-		spacing = 100,
+		spacing = 200,
 		shape = function(cr, w, h)
-			gears.shape.rounded_rect(cr, w, h, dpi(15))
+			gears.shape.rounded_rect(cr, w, h, dpi(20))
 		end,
 		widget_template = {
 			{
@@ -150,15 +155,18 @@ local function notif_template(n)
 						widget = container,
 					},
 					strategy = "max",
-					width = dpi(620),
+					width = dpi(380),
 					widget = wibox.container.constraint,
 				},
 				strategy = "min",
-				width = dpi(280),
+				width = dpi(380),
 				height = dpi(80),
 				widget = wibox.container.constraint,
 			},
-			bg = beautiful.bg,
+			bg = beautiful.notification_bg,
+			border_width = 1,
+			border_color = beautiful.border_normal,
+
 			widget = wibox.container.background,
 		},
 	})
