@@ -7,27 +7,21 @@ local dpi = xresources.apply_dpi
 
 local space = dpi(20)
 
--- Seperator {{{
-local sep = wibox.widget({
+-- Left and right bounds {{{
+local bound = wibox.widget({
 	widget = wibox.widget.seperator,
-	forced_width = dpi(10),
+	forced_width = dpi(8),
 })
 -- }}}
 
+-- Uptime {{{
 local uptime_text = wibox.widget.textbox()
 awful.widget.watch("upt", 60, function(_, stdout) -- fetchutils https://github.com/kiedtl/fetchutils
 	-- Remove trailing whitespaces
 	local out = stdout:gsub("^%s*(.-)%s*$", "%1")
 	uptime_text.text = out
 end)
-
-local uptime_widget = wibox.widget({
-	{
-		font = beautiful.wibar_font,
-		widget = uptime_text,
-	},
-	layout = wibox.layout.margin,
-})
+-- }}}
 
 -- Layout box {{{
 local layoutbox = awful.widget.layoutbox(s)
@@ -37,8 +31,8 @@ local layoutbox = awful.widget.layoutbox(s)
 local timepanel = wibox.widget({
 	{
 		layout = wibox.layout.margin,
-		left = 15,
-		right = 15,
+		left = dpi(15),
+		right = dpi(15),
 		{
 			layout = wibox.layout.fixed.horizontal,
 			spacing = space,
@@ -75,8 +69,8 @@ local mediapanel = wibox.widget({
 	type = "normal",
 	{
 		layout = wibox.layout.margin,
-		left = 15,
-		right = 15,
+		left = dpi(15),
+		right = dpi(15),
 		{
 			layout = wibox.layout.fixed.horizontal,
 			forced_height = 22,
@@ -84,7 +78,7 @@ local mediapanel = wibox.widget({
 			spotify_widget({
 				font = beautiful.wibar_font,
 				dim_when_paused = true,
-				dim_opacity = 0.45,
+				dim_opacity = 0.50,
 				max_length = 100,
 				timeout = 0,
 			}),
@@ -100,12 +94,11 @@ local mediapanel = wibox.widget({
 })
 -- }}}
 
+-- Create a promptbox for each screen {{{
 awful.screen.connect_for_each_screen(function(s)
-	-- Create a promptbox for each screen
 	s.mypromptbox = awful.widget.prompt()
 
 	-- Create an imagebox widget which will contain an icon indicating which layout we're using.
-	-- We need one layoutbox per screen.
 	s.mylayoutbox = awful.widget.layoutbox(s)
 	s.mylayoutbox:buttons(gears.table.join(
 		awful.button({}, 1, function()
@@ -128,8 +121,8 @@ awful.screen.connect_for_each_screen(function(s)
 		filter = awful.widget.taglist.filter.all,
 		widget_template = {
 			widget = wibox.container.background,
-			forced_width = 34.5,
-			forced_height = 30,
+			forced_width = dpi(34.5),
+			forced_height = dpi(30),
 			{
 				layout = wibox.layout.flex.horizontal,
 				{
@@ -145,8 +138,8 @@ awful.screen.connect_for_each_screen(function(s)
 		type = "normal",
 		{
 			layout = wibox.layout.margin,
-			left = 15,
-			right = 15,
+			left = dpi(15),
+			right = dpi(15),
 			{
 				layout = wibox.layout.fixed.horizontal,
 				s.mytaglist,
@@ -161,7 +154,7 @@ awful.screen.connect_for_each_screen(function(s)
 	s.mywibox = awful.wibar({
 		position = "top",
 		screen = s,
-		height = 32,
+		height = dpi(32),
 		ontop = false,
 		bg = beautiful.wibar_bg,
 		fg = beautiful.wibar_fg,
@@ -171,22 +164,22 @@ awful.screen.connect_for_each_screen(function(s)
 	s.mywibox:setup({
 		layout = wibox.layout.margin,
 		valign = "center",
-		top = dpi(5),
+		top = dpi(6),
 		{
 			layout = wibox.layout.stack,
 			{
 				layout = wibox.layout.align.horizontal,
 				{ -- Left widgets
 					layout = wibox.layout.fixed.horizontal,
-					sep,
+					bound,
 					mediapanel,
 				},
 				nil,
 				{ -- Right widgets
 					layout = wibox.layout.fixed.horizontal,
-					sep,
+					bound,
 					timepanel,
-					sep,
+					bound,
 				},
 			},
 			{
@@ -198,3 +191,4 @@ awful.screen.connect_for_each_screen(function(s)
 		},
 	})
 end)
+-- }}}
