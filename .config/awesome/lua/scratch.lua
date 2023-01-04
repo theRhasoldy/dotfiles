@@ -16,7 +16,7 @@ Pop_scratch = modules.module.scratchpad({
 	sticky = true,
 	autoclose = false,
 	floating = true,
-	geometry = { x = 700, y = 70, height = 100, width = 500 },
+	geometry = { x = 600, y = 70, height = 70, width = 700 },
 	reapply = true,
 })
 
