@@ -35,4 +35,7 @@ alias update-android "paru -Syu android-emulator android-google-apis android-ndk
 
 alias git-token 'echo "$(cat $HOME/Documents/protected/tokens.md)" | xclip -selection clipboard && echo "Git token copied to clipboard :)"'
 
-alias dotfiles "/usr/bin/git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME"
+alias dot "/usr/bin/git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME"
+alias dots "dot status"
+alias dota "dot add"
+alias dotc "dot commit -m"

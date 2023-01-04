@@ -18,6 +18,7 @@ SETUVAR --export LANG:en_US\x2eUTF\x2d8
 SETUVAR --export LESSHISTFILE:/home/rhasoldy/\x2ecache//history
 SETUVAR --export NPM_CONFIG_USERCONFIG:/home/rhasoldy/\x2econfig//npm/npmrc
 SETUVAR --export PUB_CACHE:/home/rhasoldy/\x2ecache//flutter/pub/
+SETUVAR --export SSH_AUTH_SOCK:
 SETUVAR --export TERMINAL:kitty
 SETUVAR --export WINEPREFIX:/home/rhasoldy/\x2elocal/share/wine
 SETUVAR --export XAUTHORITY:/home/rhasoldy/\x2econfig//X11/Xauthority
@@ -31,7 +32,6 @@ SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/home/rhasoldy/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/home/rhasoldy/\x2elocal/share/z
 SETUVAR Z_EXCLUDE:\x5e/home/rhasoldy\x24
-SETUVAR --export _JAVA_OPTIONS:\x2dDjava\x2eutil\x2eprefs\x2euserRoot\x3d/home/rhasoldy/\x2econfig//java
 SETUVAR --export __ABBR_TIPS_KEYS:a__\x2e\x2e\x2e\x1ea__\x2e\x2e\x2e\x2e\x1ea__\x2e\x2e\x2e\x2e\x2e\x1ea__\x2e\x2e\x2e\x2e\x2e\x2e\x1ea__cp\x1ea__dotfiles\x1ea__exa\x1ea__git\x2dtoken\x1ea__grep\x1ea__ll\x1ea__lla\x1ea__llt\x1ea__ls\x1ea__lsa\x1ea__matrix\x1ea__mv\x1ea__nano\x1ea__pacman\x1ea__rm\x1ea__suspend\x1ea__update\x2dandroid\x1ea__vi\x1ea__vim
 SETUVAR --export __ABBR_TIPS_VALUES:cd\x20\x2e\x2e/\x2e\x2e\x1ecd\x20\x2e\x2e/\x2e\x2e/\x2e\x2e\x1ecd\x20\x2e\x2e/\x2e\x2e/\x2e\x2e/\x2e\x2e\x1ecd\x20\x2e\x2e/\x2e\x2e/\x2e\x2e/\x2e\x2e/\x2e\x2e\x1ersync\x20\x2dahv\x20\x2d\x2dinfo\x3dprogress2\x1e/usr/bin/git\x20\x2d\x2dgit\x2ddir\x3d/home/rhasoldy/\x2econfig/dotfiles/\x20\x2d\x2dwork\x2dtree\x3d/home/rhasoldy\x1eexa\x20\x2d\x2dcolor\x3dauto\x20\x2d\x2dicons\x1eecho\x20\x22\x24\x28cat\x20\x24HOME/Documents/protected/tokens\x2emd\x29\x22\x20\x7c\x20xclip\x20\x2dselection\x20clipboard\x20\x26\x26\x20echo\x20\x22Git\x20token\x20copied\x20to\x20clipboard\x20\x3a\x29\x22\x1egrep\x20\x2d\x2dcolor\x3dauto\x1eexa\x20\x2dl\x40mF\x20\x2d\x2dno\x2dpermissions\x20\x2d\x2dgit\x1ell\x20\x2da\x1ell\x20\x2dT\x1eexa\x20\x2dxF\x1els\x20\x2da\x1eunimatrix\x20\x2dc\x20magenta\x20\x2ds\x2096\x20\x2da\x20\x2dl\x20s\x1emv\x20\x2dvi\x1envim\x1esudo\x20pacman\x1erm\x20\x2dvI\x1esystemctl\x20suspend\x1eparu\x20\x2dSyu\x20android\x2demulator\x20android\x2dgoogle\x2dapis\x20android\x2dndk\x20android\x2dplatform\x20android\x2dsdk\x20android\x2dsdk\x2dbuild\x2dtools\x20android\x2dgoogle\x2dapis\x2dx86\x2d64\x2dsystem\x2dimage\x1envim\x1envim
 SETUVAR __fish_initialized:3400
