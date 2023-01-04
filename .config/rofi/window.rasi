@@ -1,69 +1,9 @@
 @theme "~/.config/rofi/config.rasi"
 
-window {
-	background-color:   @bg0;
-
-	location:       center;
-	width:          620;
-	border-radius:  20;
-
-}
-
-inputbar {
-	font:       "Ubuntu Bold 16";
-	padding:    12px;
-	spacing:    12px;
-	children:   [ prompt, entry ];
-}
-
-prompt {
-	text-color: @fg1;
-	font: "Symbols Nerd Font 18";
-	background-color: inherit;
-	padding: 10px 5px;
-}
-
-entry {
-	font:   inherit;
-	placeholder-color   : @fg2;
-	padding: 10px;
-
-}
-
-message {
-	border-color:       @bg1;
-	background-color:   @bg1;
-}
-
 listview {
 	lines:      3;
 	columns:    6;
 
 	fixed-height:   false;
 	border-color:   @bg1;
-}
-
-element {
-	padding:            14px 16px;
-	spacing:            16px;
-	background-color:   transparent;
-}
-
-element normal active {
-	text-color: @bg2;
-}
-
-element selected normal, element selected active {
-	background-color:   @bg2;
-	text-color:         #eeeeee;
-}
-
-element-icon {
-	size:   1.8em;
-}
-
-element-text {
-	background-color: #00000000;
-	text-color: inherit;
-	padding: 10px 0px;
 }
