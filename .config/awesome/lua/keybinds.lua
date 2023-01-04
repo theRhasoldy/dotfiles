@@ -149,23 +149,27 @@ local globalkeys = gears.table.join(
 	end, { description = "Launch file manager", group = "apps" }),
 
 	awful.key({ modkey }, "space", function()
-		awful.spawn(string.format("rofi -show drun"))
+		awful.spawn.with_shell("rofi -config $HOME/.config/rofi/app.rasi -show drun")
 	end, { description = "Launch Rofi app selector", group = "apps" }),
 
 	awful.key({ modkey }, "w", function()
-		awful.spawn(string.format("rofi -show window"))
+		awful.spawn.with_shell("rofi -config $HOME/.config/rofi/window.rasi -show window")
 	end, { description = "Launch Rofi window selector", group = "apps" }),
 
 	awful.key({ modkey }, "r", function()
-		awful.spawn(string.format("rofi -show run"))
+		awful.spawn.with_shell("rofi -config $HOME/.config/rofi/app.rasi -show run")
 	end, { description = "Launch Rofi run", group = "apps" }),
 
 	awful.key({ modkey }, ".", function()
-		awful.spawn(string.format("rofi -modi emoji -show emoji -emoji-format '{emoji} {name}'"))
+		awful.spawn.with_shell(
+			"rofi -config $HOME/.config/rofi/emoji.rasi -modi emoji -show emoji -emoji-format '{emoji}'"
+		)
 	end, { description = "Launch Rofi emoji selector", group = "apps" }),
 
 	awful.key({ modkey }, "v", function()
-		awful.spawn(string.format("rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"))
+		awful.spawn.with_shell(
+			"rofi -config $HOME/.config/rofi/clipboard.rasi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
+		)
 	end, { description = "Launch Rofi emoji selector", group = "apps" }),
 
 	awful.key({ modkey }, "c", function()

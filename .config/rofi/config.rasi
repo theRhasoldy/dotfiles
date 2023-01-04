@@ -13,8 +13,44 @@ configuration {
       action: "kb-cancel";
       delay:  5;
   }
+
+	drun {
+		display-name: "";
+	}
+
+	run {
+		display-name: "";
+	}
+
+	window {
+		display-name: "";
+	}
+
+	emoji {
+		display-name: "";
+	}
+
+	clipboard {
+		display-name: "";
+	}
 }
 
+* {
+	font:   "Ubuntu 11";
 
-@theme "~/.config/rofi/theme"
+	bg0:    #141313CC;
+	bg1:    #14131CCC;
+	bg2:    #e5759b44;
 
+	fg0:    #eeeeee;
+	fg1:    #eeeeee;
+	fg2:    #eeeeee80;
+
+	background-color:   transparent;
+	text-color:         @fg0;
+
+	margin:     0;
+	padding:    0;
+	spacing:    0;
+
+}

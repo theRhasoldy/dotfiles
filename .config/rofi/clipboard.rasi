@@ -1,58 +1,16 @@
-configuration {
-
-	drun {
-		display-name: "";
-	}
-
-	run {
-		display-name: "";
-	}
-
-	window {
-		display-name: "";
-	}
-
-	emoji {
-		display-name: "";
-	}
-
-	clipboard {
-		display-name: "";
-	}
-
-}
-
-* {
-	font:   "DejaVu Sans 12";
-
-	bg0:    #13151ccc;
-	bg1:    #13151Ccc;
-	bg2:    #7A5C9C44;
-
-	fg0:    #eeeeee;
-	fg1:    #eeeeee;
-	fg2:    #4f4f4f;
-
-	background-color:   transparent;
-	text-color:         @fg0;
-
-	margin:     0;
-	padding:    0;
-	spacing:    0;
-
-}
+@theme "~/.config/rofi/config.rasi"
 
 window {
 	background-color:   @bg0;
 
 	location:       center;
 	width:          620;
-	border-radius:  10;
+	border-radius:  20;
 
 }
 
 inputbar {
-	font:       "DejaVu Sans Bold 20";
+	font:       "Ubuntu Bold 16";
 	padding:    12px;
 	spacing:    12px;
 	children:   [ prompt, entry ];
@@ -60,30 +18,29 @@ inputbar {
 
 prompt {
 	text-color: @fg1;
-	font: "FantasqueSansMono Nerd Font 18";
+	font: "Symbols Nerd Font 18";
 	background-color: inherit;
-	padding: 10px 15px;
+	padding: 10px 5px;
 }
 
 entry {
 	font:   inherit;
 	placeholder-color   : @fg2;
-	padding: 5px;
+	padding: 10px;
 
 }
 
 message {
-	border:             2px 0 0;
 	border-color:       @bg1;
 	background-color:   @bg1;
 }
 
 listview {
-	lines:      3;
+	lines:      5;
 	columns:    1;
+	height: 30px;
 
 	fixed-height:   false;
-	border:         1px 0 0;
 	border-color:   @bg1;
 }
 
@@ -99,7 +56,7 @@ element normal active {
 
 element selected normal, element selected active {
 	background-color:   @bg2;
-	text-color:         #ffffff;
+	text-color:         #eeeeee;
 }
 
 element-icon {
