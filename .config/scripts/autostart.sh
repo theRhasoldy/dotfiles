@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-xremap $HOME/.config/xremap.yml &
 
 run_once () {
 	if ! pgrep -x "$1" > /dev/null
@@ -8,6 +7,7 @@ run_once () {
 	fi
 }
 
+xremap $HOME/.config/xremap.yml &
 run_once "xbanish" " -t 10"
 run_once "greenclip" "daemon"
 run_once "lxsession" ""
