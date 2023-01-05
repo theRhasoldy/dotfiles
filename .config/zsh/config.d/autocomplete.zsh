@@ -6,6 +6,8 @@ source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 
 autoload -Uz compinit
+_comp_options+=(globdots)
+
 zstyle ':completion:*' menu select
 zstyle ':completion:*:*:git:*' script ~/.config/zsh/config.d/git-completion.bash
 
@@ -35,7 +37,6 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/zcompdump"
 zmodload zsh/complist
 compinit
-_comp_options+=(globdots)
 
 bindkey -M menuselect '^[' send-break
 bindkey -M menuselect '\n' accept-line
