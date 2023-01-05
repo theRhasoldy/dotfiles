@@ -12,3 +12,6 @@ if status --is-interactive
 	eval "$(starship init fish)"
 	bfetch
 end
+
+# ~/.config/fish/completions/git.fish
+source $__fish_data_dir/completions/git.fish

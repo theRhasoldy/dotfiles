@@ -39,3 +39,4 @@ alias dot "/usr/bin/git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME"
 alias dots "dot status"
 alias dota "dot add"
 alias dotc "dot commit -m"
+
