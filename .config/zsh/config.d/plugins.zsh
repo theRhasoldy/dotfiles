@@ -1,9 +1,6 @@
 source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
 
 # Vi Mode {{{
-source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.zsh
-ZVM_KEYTIMEOUT=0
-ZVM_ESCAPE_KEYTIMEOUT=0
 # }}}
 
 source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
@@ -27,3 +24,5 @@ ZSH_HIGHLIGHT_STYLES[autodirectory]="fg=13"
 ZSH_HIGHLIGHT_STYLES[line]='bg=6'
 # }}}
 
+source /usr/share/zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh
+ZSH_SYSTEM_CLIPBOARD_METHOD="xcc"
