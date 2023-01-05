@@ -37,12 +37,15 @@ client.connect_signal("manage", function(c)
 	rounded_borders(c)
 end)
 
--- No border for maximized clients
+-- Hide wibox full fullscreen clients
 local function adjust(c)
-	-- Hide wibox full fullscreen clients
 	if c.fullscreen then
 		mouse.screen.mywibox.visible = false
+	else
+		mouse.screen.mywibox.visible = true
 	end
+
+	-- No border for maximized clients
 	--[[
 	if c.maximized then -- no borders if only 1 client visible
 		c.border_width = 0
