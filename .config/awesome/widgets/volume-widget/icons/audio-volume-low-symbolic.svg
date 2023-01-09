@@ -22,9 +22,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="25.868323"
-     inkscape:cx="0.36724453"
-     inkscape:cy="7.712135"
+     inkscape:zoom="36.583333"
+     inkscape:cx="4.5649203"
+     inkscape:cy="6.4510251"
      inkscape:window-width="1920"
      inkscape:window-height="1058"
      inkscape:window-x="0"
@@ -32,11 +32,11 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2568" />
   <path
-     style="fill:#cd94b7;fill-opacity:1;stroke-width:0.635934"
+     style="fill:#e5759b;fill-opacity:1;stroke-width:0.635934"
      d="M 5.176471,0 1.9411764,3.125 H 0 v 3.75 H 1.9411764 L 5.176471,10 Z"
      id="path2564" />
   <path
-     style="opacity:0.2;fill:#cd94b7;fill-opacity:1;stroke-width:0.635934"
+     style="opacity:0.3;fill:#e5759b;fill-opacity:1;stroke-width:0.635934"
      d="M 6.470588,0 V 1.25 C 8.326599,1.7785687 9.705882,3.1642875 9.705882,5 c 0,1.835713 -1.37929,3.221431 -3.235294,3.75 V 10 C 8.990591,9.442857 11,7.428568 11,5 11,2.5714312 8.990591,0.5571437 6.470588,0 Z m 0,2.5 v 5 c 0,0 1.941306,-0.625 1.941176,-2.5 C 8.411636,3.125 6.470588,2.5 6.470588,2.5 Z"
      id="path2566" />
 </svg>

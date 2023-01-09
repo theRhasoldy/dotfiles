@@ -49,11 +49,11 @@ beautiful.wibar_fg = "#eeeeee"
 -- Taglist
 theme.taglist_font = "Symbols Nerd Font 7"
 local taglist_square_size = dpi(3)
+theme.taglist_fg_occupied = "#ffbdbf"
+theme.taglist_fg_focus = "#e5759b"
 theme.taglist_fg_urgent = "#cda9e0"
 theme.taglist_fg_volatile = "#cda9e0"
-theme.taglist_fg_focus = "#e5759b"
-theme.taglist_fg_empty = "#eeeeee20"
-theme.taglist_fg_occupied = "#cd94b7"
+theme.taglist_fg_empty = "#FFD5CD20"
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.taglist_fg_empty)
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.taglist_fg_empty)
 -- }}}

@@ -1,6 +1,8 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
+--[[ local xresources = require("beautiful.xresources")
 local gears = require("gears")
+local dpi = xresources.apply_dpi ]]
 
 require("awful.autofocus")
 require("lua.wibar")
@@ -9,7 +11,7 @@ require("lua.wibar")
 awful.mouse.snap.edge_enabled = false
 awful.mouse.snap.client_enabled = false
 
-local border_radius = 10
+--[[ local border_radius = dpi(13)
 
 local function rounded_borders(c)
 	if c.fullscreen then
@@ -21,7 +23,7 @@ local function rounded_borders(c)
 			gears.shape.rounded_rect(cr, w, h, border_radius)
 		end
 	end
-end
+end ]]
 
 client.connect_signal("manage", function(c)
 	-- Priotrize master client when splitting
@@ -33,8 +35,6 @@ client.connect_signal("manage", function(c)
 		-- Prevent clients from being unreachable after screen count changes.
 		awful.placement.no_offscreen(c)
 	end
-
-	rounded_borders(c)
 end)
 
 -- Hide wibox full fullscreen clients
@@ -44,7 +44,6 @@ local function adjust(c)
 	else
 		mouse.screen.mywibox.visible = true
 	end
-
 	-- No border for maximized clients
 	--[[
 	if c.maximized then -- no borders if only 1 client visible
@@ -59,7 +58,7 @@ client.connect_signal("focus", adjust)
 client.connect_signal("property::maximized", adjust)
 client.connect_signal("property::fullscreen", adjust)
 client.connect_signal("unfocus", function(c)
-	c.border_color = beautiful.border_normal
+	-- c.border_color = beautiful.border_normal
 	mouse.screen.mywibox.visible = true
 end)
 

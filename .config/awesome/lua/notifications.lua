@@ -13,8 +13,8 @@ naughty.config.defaults.margin = dpi(10)
 
 -- Presets
 naughty.config.presets.low.timeout = 5
-naughty.config.presets.normal.timeout = 6
-naughty.config.presets.critical.timeout = 12
+naughty.config.presets.normal.timeout = 5
+naughty.config.presets.critical.timeout = 5
 
 naughty.config.presets.critical.bg = beautiful.highlight
 naughty.config.presets.critical.fg = beautiful.bg_normal
@@ -145,9 +145,9 @@ local function notif_template(n)
 		notification = n,
 		type = "notification",
 		spacing = 200,
-		shape = function(cr, w, h)
-			gears.shape.rounded_rect(cr, w, h, dpi(20))
-		end,
+		--[[ shape = function(cr, w, h)
+			gears.shape.rounded_rect(cr, w, h, 20)
+		end, ]]
 		widget_template = {
 			{
 				{
