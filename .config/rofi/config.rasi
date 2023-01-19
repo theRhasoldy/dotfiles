@@ -60,7 +60,7 @@ window {
 
 	location:       center;
 	width:          620;
-	border-radius:  20;
+	/* border-radius:  20; */
 
 }
 
