@@ -86,6 +86,9 @@ awful.rules.rules = {
 			class = {
 				"Sxiv",
 				"Arandr",
+				"pop",
+				"spad",
+				"Spotify",
 			},
 			name = {
 				"Event Tester", -- xev.
@@ -103,18 +106,13 @@ awful.rules.rules = {
 
 	-- Sticky Clients
 	{
-		rule_any = { name = { "Picture in picture" } },
+		rule_any = { name = { "Picture in picture" }, class = { "pop", "spad", "Spotify" } },
 		properties = { sticky = true },
-	},
-
-	{
-		rule_any = { role = { "menu" } },
-		properties = { border_width = false },
 	},
 
 	-- onTop Clients
 	{
-		rule_any = { name = { "Picture in picture", "Emulator" } },
+		rule_any = { name = { "Picture in picture", "Emulator" }, class = { "pop", "spad", "Spotify" } },
 		properties = { ontop = true },
 	},
 

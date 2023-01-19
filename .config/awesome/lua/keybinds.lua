@@ -259,8 +259,9 @@ clientkeys = gears.table.join(
 	end, { description = "Close client with focus", group = "client" }),
 
 	awful.key({ modkey, ctrl }, "t", function(c)
+		c.ontop = not c.ontop
 		c.sticky = not c.sticky
-	end, { description = "Make window sticky", group = "client" }),
+	end, { description = "Make window sticky and ontop", group = "client" }),
 
 	awful.key({ modkey, ctrl }, "f", function(c)
 		c.floating = not c.floating
