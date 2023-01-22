@@ -34,6 +34,7 @@ opt.wrap = true
 vim.opt.backspace = { 'start', 'eol', 'indent' }
 
 -- Relative line numbers
+opt.number = true
 opt.rnu = true
 
 -- Nvim files
@@ -43,7 +44,7 @@ opt.backup = false
 -- Undo
 opt.history = 10000
 opt.undofile = true -- Undo history
-opt.undodir = os.getenv("XDG_CACHE_HOME") .. "nvim/undo"
+opt.undodir = os.getenv("XDG_CACHE_HOME") .. "/nvim/undo"
 
 -- Seach
 opt.hlsearch = false
@@ -55,4 +56,3 @@ opt.autoread = true
 
 -- Cursor 
 opt.cursorline = true
-
