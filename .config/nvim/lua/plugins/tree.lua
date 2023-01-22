@@ -6,8 +6,9 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     name = "neo-tree",
     dependencies = {
-      "nvim-tree/nvim-web-devicons",
+      "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
+      "nvim-tree/nvim-web-devicons",
     },
     opts = {
       close_if_last_window = true,
@@ -22,7 +23,6 @@ return {
         },
         follow_current_file = true,
         hijack_netrw_behavior = "open_current",
-        follow_current_file = true,
         use_libuv_file_watcher = true, -- This will use the OS level file watchers to detect changes
       },
       buffers = {
@@ -55,7 +55,11 @@ return {
       },
     },
     config = function(_, opts)
-      require("neo-tree").setup(opts)
+      local present, tree = pcall(require, "neo-tree")
+      if not present then
+        return
+      end
+      tree.setup(opts)
       vim.keymap.set("n", "<Leader>n", "<cmd>:Neotree float<CR>")
     end,
   }

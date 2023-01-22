@@ -26,7 +26,10 @@ return {
       },
     },
     config = function(_, opts)
-      local telescope = require("telescope")
+      local present, telescope = pcall(require, "telescope")
+      if not present then
+        return
+      end
       telescope.setup(opts)
     end,
     keys = {
