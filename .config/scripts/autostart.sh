@@ -11,6 +11,7 @@ xremap $HOME/.config/xremap.yml &
 run_once "xbanish" " -t 10"
 run_once "greenclip" "daemon"
 run_once "lxsession" ""
+run_once "syncthing" ""
 
 run_once "bash /home/rhasoldy/.config/scripts/notif_log.sh /home/rhasoldy/.cache/notif_log.txt" ""
 
