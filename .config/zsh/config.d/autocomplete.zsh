@@ -8,6 +8,8 @@ source /usr/share/fzf/key-bindings.zsh
 autoload -Uz compinit
 _comp_options+=(globdots)
 
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump
+
 zstyle ':completion:*' menu select
 zstyle ':completion:*:*:git:*' script ~/.config/zsh/config.d/git-completion.bash
 
