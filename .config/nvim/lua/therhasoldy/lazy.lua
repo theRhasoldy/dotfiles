@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local present, lazy = pcall(require, "lazy")
 if not present then
-	return
+  return
 end
 
 lazy.setup("plugins")

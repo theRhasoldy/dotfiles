@@ -7,13 +7,14 @@ cmd([[au WinEnter * setlocal cursorline]])
 cmd([[au WinLeave * setlocal nocursorline]])
 
 return {
-  {
-    "theRhasoldy/nvim-dahlia",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme("dahlia")
-    end
-  },
+	{
+		name = "dahlia",
+		lazy = false,
+		priority = 1000,
+		dev = true,
+		dir = "~/Projects/Lua/nvim-dahlia/",
+		config = function()
+			vim.cmd.colorscheme("dahlia")
+		end,
+	},
 }
-

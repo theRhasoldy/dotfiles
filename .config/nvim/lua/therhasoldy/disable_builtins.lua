@@ -1,11 +1,11 @@
 local api = vim.api
 
 -- Disable netrw autostart
-local Builtins = api.nvim_create_augroup("Builtins", {clear = true}) 
+local Builtins = api.nvim_create_augroup("Builtins", { clear = true })
 api.nvim_clear_autocmds({ group = Builtins })
 api.nvim_create_autocmd("VimEnter", {
-  command = "silent! au! FileExplorer *", 
-  group = Builtins
+  command = "silent! au! FileExplorer *",
+  group = Builtins,
 })
 
 local g = vim.g

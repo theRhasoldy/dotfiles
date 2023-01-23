@@ -31,7 +31,7 @@ opt.ai = true -- Auto indent
 
 opt.wrap = true
 
-vim.opt.backspace = { 'start', 'eol', 'indent' }
+vim.opt.backspace = { "start", "eol", "indent" }
 
 -- Relative line numbers
 opt.number = true
@@ -54,5 +54,8 @@ opt.incsearch = true
 opt.confirm = true
 opt.autoread = true
 
--- Cursor 
+-- Cursor
 opt.cursorline = true
+
+-- StatusColumn
+opt.signcolumn = "yes"
