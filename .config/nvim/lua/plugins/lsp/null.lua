@@ -12,10 +12,10 @@ return {
 
 		null.setup({
 			sources = {
+				formatting.prettierd,
 				formatting.stylua,
-				formatting.prettier.with({
-					extra_args = { "--double-quote", "--jsx-double-quote", "--tab-width 2", "--use-tabs" },
-				}),
+				formatting.fixjson,
+				formatting.xmlformatter,
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then
@@ -24,7 +24,7 @@ return {
 						group = augroup,
 						buffer = bufnr,
 						callback = function()
-							vim.lsp.buf.format({ bufnr = bufnr })
+							vim.lsp.buf.format({ async = false })
 						end,
 					})
 				end

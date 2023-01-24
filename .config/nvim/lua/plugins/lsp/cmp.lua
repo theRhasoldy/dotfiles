@@ -45,16 +45,24 @@ return {
 			mapping = cmp.mapping.preset.insert({
 				["<C-c>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(),
-				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+				["<CR>"] = cmp.mapping.confirm({ select = true }),
 			}),
 
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "nvim_lsp_signature_help" },
 				{ name = "luasnip" },
-				{ name = "buffer", keyword_length = 5 },
+				{ name = "buffer", keyword_length = 5, max_item_count = 10 },
 				{ name = "path" },
 			}),
+
+			formatting = {
+				format = require("lspkind").cmp_format({
+					mode = "symbol",
+					maxwidth = 100,
+					ellipsis_char = "...",
+				}),
+			},
 
 			experimental = {
 				ghost_text = {
