@@ -1,9 +1,8 @@
-local api = vim.api
 local opt = vim.opt
 
 -- Ensure that the cwd is the project's directory
 if vim.fn.isdirectory(vim.v.argv[2]) == 1 then
-  vim.api.nvim_set_current_dir(vim.v.argv[2])
+	vim.api.nvim_set_current_dir(vim.v.argv[2])
 end
 
 opt.termguicolors = true
@@ -54,8 +53,8 @@ opt.incsearch = true
 opt.confirm = true
 opt.autoread = true
 
--- Cursor
 opt.cursorline = true
 
--- StatusColumn
 opt.signcolumn = "yes"
+opt.laststatus = 3 -- Global Statusline
+opt.showmode = false
