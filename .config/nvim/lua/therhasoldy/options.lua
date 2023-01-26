@@ -53,8 +53,6 @@ opt.incsearch = true
 opt.confirm = true
 opt.autoread = true
 
-opt.cursorline = true
-
 opt.signcolumn = "yes"
 opt.laststatus = 3 -- Global Statusline
 opt.showmode = false
