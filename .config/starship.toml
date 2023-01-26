@@ -1,7 +1,7 @@
 format = "$directory $all$git_branch$git_commit$git_state$git_status$character"
 right_format = "$package$cmd_duration$sudo"
-
 add_newline = false
+command_timeout = 2000
 
 [character]
 success_symbol = "[ ](bright-green)" 
