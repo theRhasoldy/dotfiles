@@ -1,5 +1,6 @@
-local cmd = vim.cmd
-cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+return {}
+--[[ local cmd = vim.cmd
+cmd([[ let g:neo_tree_remove_legacy_commands = 1 
 
 return {
   "nvim-neo-tree/neo-tree.nvim",
@@ -15,18 +16,23 @@ return {
     enable_git_status = true,
     enable_diagnostics = true,
     filesystem = {
+      bind_to_cwd = false, -- //FIXME breaks running Neotree for some reason
       filtered_items = {
         visible = true, -- when true, they will just be displayed differently than normal items
         hide_dotfiles = false,
         hide_gitignored = false,
       },
-      follow_current_file = true,
-      hijack_netrw_behavior = "open_current",
+      hijack_netrw_behavior = "open_default",
       use_libuv_file_watcher = true, -- This will use the OS level file watchers to detect changes
+    },
+    window = {
+      follow_current_file = true,
+      position = "current",
     },
     buffers = {
       follow_current_file = true,
-      show_unloaded = true,
+      position = "float",
+      -- time the current file is changed while the tree is open.
     },
     default_component_configs = {
       icon = {
@@ -55,4 +61,4 @@ return {
     tree.setup(opts)
     vim.keymap.set("n", "<Leader>n", "<cmd>:Neotree float<CR>")
   end,
-}
+} ]]

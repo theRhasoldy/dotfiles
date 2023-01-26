@@ -15,7 +15,6 @@ return {
 				formatting.prettierd,
 				formatting.stylua,
 				formatting.fixjson,
-				formatting.xmlformatter,
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then

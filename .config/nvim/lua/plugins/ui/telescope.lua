@@ -1,10 +1,13 @@
 return {
   "nvim-telescope/telescope.nvim",
   name = "telescope",
+  event = "VimEnter",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-live-grep-args.nvim",
+    "nvim-telescope/telescope-file-browser.nvim",
   },
+
   opts = {
     defaults = {
       mappings = {
@@ -27,8 +30,7 @@ return {
       dynamic_preview_title = true,
       wrap_results = true,
       selection_caret = "  ",
-      prompt_prefix = "   ",
-      path_display = "truncate",
+      prompt_prefix = "    ",
       preview = {
         treesitter = true,
       },
@@ -50,15 +52,33 @@ return {
         auto_quoting = true, -- enable/disable auto-quoting
       },
       file_browser = {
+        cwd_to_path = true,
+        grouped = true,
+        auto_depth = true,
+        initial_mode = "normal",
         theme = "ivy",
+        hijack_netrw = true,
       },
     },
   },
+
+  config = function(_, opts)
+    require("telescope").setup(opts)
+    require("telescope").load_extension("file_browser")
+    require("telescope").extensions.file_browser.file_browser()
+  end,
+
   keys = {
     {
       "<leader>ff",
       function()
         require("telescope.builtin").find_files()
+      end,
+    },
+    {
+      "<leader>n",
+      function()
+        require("telescope").extensions.file_browser.file_browser()
       end,
     },
     {
