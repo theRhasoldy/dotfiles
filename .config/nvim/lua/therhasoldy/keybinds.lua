@@ -7,8 +7,8 @@ vim.g.mapleader = " "
 key("n", "<Leader>r", "<cmd>source<CR>")
 
 -- Fast horizontal movement
-key("x", "H", "^")
-key("x", "L", "$")
+key("", "H", "^")
+key("", "L", "$")
 
 key("n", "<C-a>", "gg<S-v>G") -- Select all
 

@@ -1,5 +1,4 @@
 return {
-	require("plugins.ui.telescope"),
-	require("plugins.ui.tree"),
-	require("plugins.ui.heirline"),
+  require("plugins.ui.telescope"),
+  require("plugins.ui.heirline"),
 }

@@ -4,7 +4,7 @@ return {
 		name = "treesitter",
 		run = ":TSUpdate",
 		lazy = true,
-		event = "BufRead",
+		event = "BufReadPre",
 		opts = {
 			auto_install = true,
 			ensure_installed = {
