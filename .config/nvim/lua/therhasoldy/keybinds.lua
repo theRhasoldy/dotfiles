@@ -25,10 +25,10 @@ key("n", "<Leader>k", "<C-W>K")
 key("n", "<Leader>l", "<C-W>L")
 
 -- Switch lines
-key("n", "<A-j>", ":m .+1<CR>==")
-key("n", "<A-k>", ":m .-2<CR>==")
-key("v", "<A-j>", ":m '>+1<CR>gv=gv")
-key("v", "<A-k>", ":m '<-2<CR>gv=gv")
+key("n", "<A-j>", ":m .+1<CR>==", { silent = true })
+key("n", "<A-k>", ":m .-2<CR>==", { silent = true })
+key("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true })
+key("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true })
 
 -- Add newline
 key("n", "<CR>", "o<Esc>")
