@@ -27,5 +27,3 @@ g.loaded_tutor_mode_plugin = 1
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 g.loaded_netrwSettings = 1
-
-g.did_load_filetypes = 1
