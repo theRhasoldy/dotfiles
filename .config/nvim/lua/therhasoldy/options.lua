@@ -45,8 +45,10 @@ opt.history = 10000
 opt.undofile = true -- Undo history
 opt.undodir = os.getenv("XDG_CACHE_HOME") .. "/nvim/undo"
 
--- Seach
+-- Search
 opt.hlsearch = false
+opt.ignorecase = true
+opt.smartcase = true
 opt.incsearch = true
 
 -- Files
@@ -56,3 +58,5 @@ opt.autoread = true
 opt.signcolumn = "yes"
 opt.laststatus = 3 -- Global Statusline
 opt.showmode = false
+
+opt.showbreak = "﬌ "
