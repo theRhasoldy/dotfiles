@@ -69,7 +69,7 @@ return {
 		require("telescope").setup(opts)
 		require("telescope").load_extension("noice")
 		require("telescope").load_extension("file_browser")
-		require("telescope").extensions.file_browser.file_browser()
+		-- require("telescope").extensions.file_browser.file_browser()
 	end,
 
 	keys = {
@@ -82,7 +82,9 @@ return {
 		{
 			"<leader>n",
 			function()
-				require("telescope").extensions.file_browser.file_browser()
+				require("telescope").extensions.file_browser.file_browser({
+					path = "%:p:h",
+				})
 			end,
 		},
 		{
