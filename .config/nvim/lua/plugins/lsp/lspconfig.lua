@@ -1,8 +1,8 @@
 local symbols = {
-  Text = "",
+  Text = "󰊄",
   Method = "",
   Function = "",
-  Constructor = "",
+  Constructor = "󱊈",
   Field = "ﰠ",
   Variable = "",
   Class = "ﴯ",
@@ -13,16 +13,16 @@ local symbols = {
   Value = "",
   Enum = "",
   Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
+  Snippet = "󰆐",
+  Color = "󰌁",
+  File = "󰈔",
   Reference = "",
-  Folder = "",
+  Folder = "",
   EnumMember = "",
   Constant = "",
   Struct = "פּ",
   Event = "",
-  Operator = "",
+  Operator = "󱌣",
   TypeParameter = "",
 }
 
@@ -147,7 +147,7 @@ return {
           normal_bg = "#141313",
         },
       },
-      kind = { symbols },
+      kind = symbols,
     },
     keys = {
       {
@@ -187,13 +187,14 @@ return {
     lazy = true,
     event = "BufReadPre",
     config = function()
-      local present, kind = pcall(require, "kind")
+      local present, kind = pcall(require, "lspkind")
       if not present then
         return
       end
       kind.init({
         mode = "symbol",
-        symbol_map = { symbols },
+        preset = "codicons",
+        symbol_map = symbols,
       })
     end,
   },
