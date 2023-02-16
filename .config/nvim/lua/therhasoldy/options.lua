@@ -1,10 +1,5 @@
 local opt = vim.opt
 
--- Ensure that the cwd is the project's directory
-if vim.fn.isdirectory(vim.v.argv[2]) == 1 then
-	vim.api.nvim_set_current_dir(vim.v.argv[2])
-end
-
 opt.termguicolors = true
 opt.shell = "zsh"
 opt.clipboard = "unnamedplus" -- System clipboard
@@ -30,7 +25,9 @@ opt.ai = true -- Auto indent
 
 opt.wrap = true
 
-vim.opt.backspace = { "start", "eol", "indent" }
+opt.backspace = { "start", "eol", "indent" }
+
+opt.formatoptions = "cro"
 
 -- Relative line numbers
 opt.number = true
