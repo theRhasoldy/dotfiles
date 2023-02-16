@@ -38,6 +38,7 @@ return {
 		},
 		pickers = {
 			find_files = {
+				file_ignore_patterns = { "node_modules", "git" },
 				no_ignore = false,
 				hidden = true,
 			},
@@ -50,9 +51,10 @@ return {
 		},
 		extensions = {
 			live_grep_args = {
-				auto_quoting = true, -- enable/disable auto-quoting
+				auto_quoting = true,
 			},
 			file_browser = {
+				path = "%:p:h",
 				cwd_to_path = true,
 				hidden = true,
 				dir_icon = " ",
@@ -69,7 +71,6 @@ return {
 		require("telescope").setup(opts)
 		require("telescope").load_extension("noice")
 		require("telescope").load_extension("file_browser")
-		-- require("telescope").extensions.file_browser.file_browser()
 	end,
 
 	keys = {
@@ -82,9 +83,7 @@ return {
 		{
 			"<leader>n",
 			function()
-				require("telescope").extensions.file_browser.file_browser({
-					path = "%:p:h",
-				})
+				require("telescope").extensions.file_browser.file_browser({})
 			end,
 		},
 		{
