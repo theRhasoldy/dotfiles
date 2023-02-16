@@ -5,6 +5,12 @@ return {
     run = ":TSUpdate",
     lazy = true,
     event = "BufReadPre",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-context",
+      opts = {
+        separator = "",
+      },
+    },
     opts = {
       auto_install = true,
       ensure_installed = {
