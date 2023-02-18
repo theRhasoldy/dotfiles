@@ -6,9 +6,20 @@ return {
 		lazy = true,
 		event = "BufReadPre",
 		dependencies = {
-			"nvim-treesitter/nvim-treesitter-context",
-			opts = {
-				separator = "",
+			{
+				"nvim-treesitter/nvim-treesitter-context",
+				opts = {
+					separator = "",
+				},
+			},
+			{
+
+				"tzachar/local-highlight.nvim",
+				config = function()
+					require("local-highlight").setup({
+						hlgroup = "Visual",
+					})
+				end,
 			},
 		},
 		opts = {
