@@ -31,6 +31,7 @@
   "nvim-web-devicons": { "branch": "master", "commit": "bb6d4fd1e010300510172b173ab5205d37af084f" },
   "playground": { "branch": "master", "commit": "c046acba262adc71337de021f814be7477668a2e" },
   "plenary.nvim": { "branch": "master", "commit": "9a0d3bf7b832818c042aaf30f692b081ddd58bd9" },
+  "refactoring.nvim": { "branch": "master", "commit": "57c32c6b7a211e5a3a5e4ddc4ad2033daff5cf9a" },
   "reticle.nvim": { "branch": "main", "commit": "7290f2649684415a9d3da98957ea44f5421f4f2a" },
   "stay-centered.nvim": { "branch": "main", "commit": "68ef23c4dd7f515140bf20650845e2211a7c64ea" },
   "surround": { "branch": "main", "commit": "9739e85547cb97d2f0497d2aedbab7d6f5c6654d" },
