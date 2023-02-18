@@ -8,7 +8,6 @@ return {
 		"nvim-telescope/telescope-live-grep-args.nvim",
 		"nvim-telescope/telescope-file-browser.nvim",
 	},
-
 	opts = {
 		defaults = {
 			mappings = {
@@ -31,7 +30,7 @@ return {
 			dynamic_preview_title = true,
 			wrap_results = true,
 			selection_caret = "  ",
-			prompt_prefix = "    ",
+			prompt_prefix = "   ",
 			preview = {
 				treesitter = true,
 			},
@@ -50,29 +49,28 @@ return {
 			},
 		},
 		extensions = {
+			extensions_list = { "themes", "terms", "live_grep_args", "noice", "file_browser" },
 			live_grep_args = {
 				auto_quoting = true,
 			},
 			file_browser = {
+				hijack_netrw = true,
 				path = "%:p:h",
 				cwd_to_path = true,
 				hidden = true,
-				dir_icon = " ",
+				dir_icon = "",
 				use_fd = true,
 				grouped = true,
-				initial_mode = "normal",
 				theme = "ivy",
-				hijack_netrw = true,
+				initial_mode = "normal",
 			},
 		},
 	},
-
 	config = function(_, opts)
 		require("telescope").setup(opts)
 		require("telescope").load_extension("noice")
 		require("telescope").load_extension("file_browser")
 	end,
-
 	keys = {
 		{
 			"<leader>ff",
