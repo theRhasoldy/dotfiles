@@ -12,20 +12,20 @@ return {
           view = "cmdline",
           filter = { event = "msg_showmode" },
         },
-        -- override markdown rendering so that **cmp** and other plugins use Treesitter
+      },
+      lsp = {
+        progress = {
+          enabled = false,
+        },
         override = {
+          -- override the default lsp markdown formatter with Noice
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          -- override the lsp markdown formatter with Noice
           ["vim.lsp.util.stylize_markdown"] = true,
+          -- override cmp documentation with Noice (needs the other options to work)
           ["cmp.entry.get_documentation"] = true,
         },
-        progress = {
-          enabled = true,
-          -- Lsp Progress is formatted using the builtins for lsp_progress
-          throttle = 2000 / 30, -- frequency to update lsp progress message
-          format = "lsp_progress",
-          format_done = "lsp_progress_done",
-          view = "notify",
-        },
+        -- defaults for hover and signature help
       },
       presets = {
         bottom_search = true,
@@ -42,5 +42,13 @@ return {
       fps = 60,
       render = "compact",
     },
+  },
+  {
+    "mrded/nvim-lsp-notify",
+    config = function()
+      require("lsp-notify").setup({
+        notify = require("notify"),
+      })
+    end,
   },
 }
