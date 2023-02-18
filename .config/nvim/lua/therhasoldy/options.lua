@@ -23,11 +23,7 @@ opt.shiftround = true
 opt.si = true -- Smart indent
 opt.ai = true -- Auto indent
 
-opt.wrap = true
-
 opt.backspace = { "start", "eol", "indent" }
-
-opt.formatoptions = "cro"
 
 -- Relative line numbers
 opt.number = true
@@ -56,4 +52,5 @@ opt.signcolumn = "yes"
 opt.laststatus = 3 -- Global Statusline
 opt.showmode = false
 
+opt.wrap = true
 opt.showbreak = "﬌ "

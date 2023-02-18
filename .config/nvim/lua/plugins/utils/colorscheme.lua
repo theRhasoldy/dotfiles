@@ -9,11 +9,12 @@ return {
 			vim.cmd.colorscheme("dahlia")
 		end,
 	},
---	{
---		"unarvim/horizon.nvim",
---  },
+	--	{
+	--		"unarvim/horizon.nvim",
+	--  },
 	{
 		"catppuccin/nvim",
+		lazy = true,
 		name = "catppuccin",
 		opts = {
 			transparent_background = true,
