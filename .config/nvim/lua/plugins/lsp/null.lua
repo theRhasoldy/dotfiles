@@ -11,6 +11,7 @@ return {
 		local formatting = null.builtins.formatting
 
 		null.setup({
+			debounce = 150,
 			sources = {
 				formatting.prettierd,
 				formatting.stylua,
