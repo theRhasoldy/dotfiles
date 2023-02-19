@@ -7,7 +7,7 @@ run_once () {
 	fi
 }
 
-xremap $HOME/.config/xremap.yml &
+#xremap $HOME/.config/xremap.yml & #Breaks stuff
 run_once "xbanish" " -t 10"
 run_once "greenclip" "daemon"
 run_once "lxsession" ""

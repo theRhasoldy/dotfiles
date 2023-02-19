@@ -1,33 +1,38 @@
 return {
 	"knubie/vim-kitty-navigator",
+	event = "UIEnter",
 	keys = {
 		{
-			"<Left>",
+			"<C-h>",
 			"<cmd>KittyNavigateLeft<CR>",
 			{
 				silent = true,
+				noremap = true,
 			},
 		},
 		{
-			"<Right>",
+			"<C-l>",
 			"<cmd>KittyNavigateRight<CR>",
 			{
 				silent = true,
+				noremap = true,
 			},
 		},
 
 		{
-			"<Up>",
+			"<C-k>",
 			"<cmd>KittyNavigateUp<CR>",
 			{
 				silent = true,
+				noremap = true,
 			},
 		},
 		{
-			"<Down>",
+			"<C-j>",
 			"<cmd>KittyNavigateDown<CR>",
 			{
 				silent = true,
+				noremap = true,
 			},
 		},
 	},
