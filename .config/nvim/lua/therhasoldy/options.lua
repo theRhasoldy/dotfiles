@@ -54,3 +54,5 @@ opt.showmode = false
 
 opt.wrap = true
 opt.showbreak = "﬌ "
+
+vim.g.did_load_filetypes = 1
