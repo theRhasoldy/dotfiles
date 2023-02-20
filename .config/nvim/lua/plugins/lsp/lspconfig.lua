@@ -32,7 +32,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		name = "lspconfig",
-		lazy = true,
 		event = "BufReadPre",
 		opts = {
 			-- Global settings
@@ -136,7 +135,6 @@ return {
 	{
 		"glepnir/lspsaga.nvim",
 		name = "lspsaga",
-		lazy = true,
 		event = "BufRead",
 		opts = {
 			diagnostic = {
@@ -199,7 +197,6 @@ return {
 	{
 		"onsails/lspkind.nvim",
 		name = "lspkind",
-		lazy = true,
 		event = "BufReadPre",
 		config = function()
 			local present, kind = pcall(require, "lspkind")

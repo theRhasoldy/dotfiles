@@ -1,5 +1,11 @@
 return {
 	{
+		"LazyVim/LazyVim",
+		opts = {
+			colorscheme = "dahlia",
+		},
+	},
+	{
 		name = "dahlia",
 		lazy = false,
 		priority = 1000,
@@ -14,7 +20,6 @@ return {
 	--  },
 	{
 		"catppuccin/nvim",
-		lazy = true,
 		name = "catppuccin",
 		opts = {
 			transparent_background = true,

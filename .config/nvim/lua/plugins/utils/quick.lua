@@ -2,7 +2,6 @@ return {
 	{
 		"numToStr/Comment.nvim",
 		name = "Comment",
-		lazy = true,
 		event = "BufReadPre",
 		config = function()
 			local present, comment = pcall(require, "Comment")
@@ -15,12 +14,10 @@ return {
 	{
 		"windwp/nvim-ts-autotag",
 		name = "autotag",
-		lazy = true,
 		event = "BufReadPre",
 	},
 	{
 		"hrsh7th/nvim-insx",
-		lazy = true,
 		event = "BufReadPre",
 		dependencies = {
 			"andymass/vim-matchup",
@@ -35,7 +32,6 @@ return {
 	{
 		"kylechui/nvim-surround",
 		name = "surround",
-		lazy = true,
 		event = "BufReadPre",
 		config = function()
 			local present, surround = pcall(require, "nvim-surround")

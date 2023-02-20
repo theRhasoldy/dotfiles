@@ -3,7 +3,6 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		name = "treesitter",
 		-- run = ":TSUpdate",
-		lazy = true,
 		event = "BufReadPre",
 		dependencies = {
 			{
@@ -75,7 +74,6 @@ return {
 	},
 	{
 		"nvim-treesitter/playground",
-		lazy = true,
 		cmd = { "TSHighlightCapturesUnderCursor" },
 	},
 }
