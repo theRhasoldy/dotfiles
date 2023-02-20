@@ -2,7 +2,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     name = "treesitter",
-    -- run = ":TSUpdate",
+    build = ":TSUpdate",
     event = "BufReadPre",
     dependencies = {
       {
@@ -23,6 +23,7 @@ return {
           })
         end,
       },
+      -- "David-Kunz/markid", -- Interesting but too much hassle
     },
     opts = {
       auto_install = true,
@@ -47,6 +48,9 @@ return {
       highlight = { enable = true, additional_vim_regex_highlighting = false },
       indent = { enable = true },
       autotag = { enable = true },
+      matchup = {
+        enable = true,
+      },
       refactor = {
         highlight_current_scope = { enable = true },
         clear_on_cursor_move = false,
