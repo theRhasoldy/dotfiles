@@ -13,6 +13,8 @@ return {
 			mappings = {
 				i = {
 					["<C-q>"] = "close",
+					["<C-j>"] = "move_selection_next",
+					["<C-k>"] = "move_selection_previous",
 				},
 				n = {
 					["q"] = "close",
