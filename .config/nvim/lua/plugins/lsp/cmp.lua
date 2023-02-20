@@ -8,6 +8,8 @@ return {
     },
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lua",
+      "ray-x/cmp-treesitter",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
@@ -65,8 +67,10 @@ return {
         sources = cmp.config.sources({
           { name = "luasnip" },
           { name = "nvim_lsp" },
+          { name = "nvim_lua" },
           { name = "nvim_lsp_signature_help" },
           { name = "path" },
+          { name = "treesitter",             keyword_length = 5, max_item_count = 10 },
           { name = "buffer",                 keyword_length = 5, max_item_count = 10 },
         }),
         formatting = {
