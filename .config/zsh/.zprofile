@@ -35,6 +35,8 @@ export GRADLE_USER_HOME=$XDG_DATA_HOME/dev/gradle
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export CARGO_HOME=$XDG_DATA_HOME/cargo
 export GOPATH=$XDG_DATA_HOME/go
+export GEM_HOME=$XDG_DATA_HOME/gem/
+export PATH="$PATH:$XDG_DATA_HOME/gem/ruby/3.0.0/bin"
 #}}}
 
 export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
