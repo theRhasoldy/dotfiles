@@ -56,3 +56,5 @@ opt.wrap = true
 opt.showbreak = "﬌ "
 
 vim.g.did_load_filetypes = 1
+
+vim.g.perl_host_prog = "$XDG_DATA_HOME/perl5/"
