@@ -45,7 +45,21 @@ return {
       -- Server specific settings
       servers = {
         tsserver = {},
+        bashls = {},
+        html = {},
+        cssls = {},
+        yamlls = {},
         -- eslint = {},
+        omnisharp = {
+          filetypes = { "cs" },
+          --[[ cmd = {
+						"/home/rhasoldy/.local/share/nvim/mason/packages/omnisharp/run",
+						"--languageserver",
+						"--hostPID",
+						tostring(vim.fn.getpid()),
+					}, ]]
+          -- root_dir = require("lspconfig").util.root_pattern("*.csproj", "*.sln"),
+        },
         lua_ls = {
           single_file_support = true,
           settings = {
