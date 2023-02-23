@@ -8,6 +8,7 @@ run_once () {
 }
 
 #xremap $HOME/.config/xremap.yml & #Breaks stuff
+run_once "setxkbmap" " -option caps:swapescape"
 run_once "xbanish" " -t 10"
 run_once "greenclip" "daemon"
 run_once "lxsession" ""
