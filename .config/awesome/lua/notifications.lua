@@ -5,11 +5,7 @@ local wibox = require("wibox")
 local naughty = require("naughty")
 local gears = require("gears")
 
--- Default config
--- naughty.config.defaults.position = "bottom_right"
-naughty.config.defaults.spacing = dpi(10)
-naughty.config.defaults.padding = dpi(10)
-naughty.config.defaults.margin = dpi(10)
+naughty.config.defaults.position = "bottom_right"
 
 -- Presets
 naughty.config.presets.low.timeout = 5
