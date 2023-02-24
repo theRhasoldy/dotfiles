@@ -1,4 +1,5 @@
 local wibox = require("wibox")
+
 local awful = require("awful")
 local gears = require("gears")
 local beautiful = require("beautiful")
@@ -6,13 +7,6 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
 local space = dpi(20)
-
--- Left and right bounds {{{
-local bound = wibox.widget({
-	widget = wibox.widget.seperator,
-	forced_width = dpi(8),
-})
--- }}}
 
 -- Uptime {{{
 local uptime_text = wibox.widget.textbox()
@@ -31,8 +25,8 @@ local layoutbox = awful.widget.layoutbox(s)
 local timepanel = wibox.widget({
 	{
 		layout = wibox.layout.margin,
-		left = dpi(15),
-		right = dpi(15),
+		left = dpi(10),
+		right = dpi(10),
 		{
 			layout = wibox.layout.fixed.horizontal,
 			spacing = space,
@@ -69,22 +63,21 @@ local mediapanel = wibox.widget({
 	type = "normal",
 	{
 		layout = wibox.layout.margin,
-		left = dpi(15),
-		right = dpi(15),
+		left = space,
 		{
 			layout = wibox.layout.fixed.horizontal,
 			forced_height = 22,
 			spacing = space,
+			Volume_widget({
+				widget_type = "icon",
+				device = "pipewire",
+			}),
 			spotify_widget({
 				font = beautiful.wibar_font,
 				dim_when_paused = true,
 				dim_opacity = 0.50,
 				max_length = 100,
 				timeout = 0,
-			}),
-			Volume_widget({
-				widget_type = "icon",
-				device = "pipewire",
 			}),
 		},
 	},
@@ -138,8 +131,8 @@ awful.screen.connect_for_each_screen(function(s)
 		type = "normal",
 		{
 			layout = wibox.layout.margin,
-			left = dpi(15),
-			right = dpi(15),
+			left = dpi(10),
+			right = dpi(10),
 			{
 				layout = wibox.layout.fixed.horizontal,
 				s.mytaglist,
@@ -152,7 +145,7 @@ awful.screen.connect_for_each_screen(function(s)
 
 	-- Create the wibox
 	s.mywibox = awful.wibar({
-		position = "top",
+		position = "bottom",
 		screen = s,
 		height = dpi(32),
 		ontop = false,
@@ -164,22 +157,18 @@ awful.screen.connect_for_each_screen(function(s)
 	s.mywibox:setup({
 		layout = wibox.layout.margin,
 		valign = "center",
-		top = dpi(6),
 		{
 			layout = wibox.layout.stack,
 			{
 				layout = wibox.layout.align.horizontal,
 				{ -- Left widgets
 					layout = wibox.layout.fixed.horizontal,
-					bound,
 					mediapanel,
 				},
 				nil,
 				{ -- Right widgets
 					layout = wibox.layout.fixed.horizontal,
-					bound,
 					timepanel,
-					bound,
 				},
 			},
 			{

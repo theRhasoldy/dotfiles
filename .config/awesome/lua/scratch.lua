@@ -24,7 +24,7 @@ Spotify_scratch = modules.module.scratchpad({
 	command = "spotify",
 	rule = { instance = "spotify" },
 	sticky = true,
-	autoclose = false,
+	autoclose = true,
 	floating = true,
 	geometry = { x = 360, y = 90, height = 900, width = 1200 },
 	reapply = true,

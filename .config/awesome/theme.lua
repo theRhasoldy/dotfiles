@@ -41,13 +41,13 @@ beautiful.tooltip_fg = "#eeeeee"
 
 -- Wibox
 beautiful.wibar_font = "Ubuntu 8"
-beautiful.wibar_panel_bg = "#2E221C42"
-beautiful.wibar_bg = "#00000000"
+beautiful.wibar_panel_bg = "#00000000"
+beautiful.wibar_bg = "#2E221C42"
 beautiful.wibar_fg = "#eeeeee"
 -- }}}
 
 -- Taglist
-theme.taglist_font = "Symbols Nerd Font 7"
+theme.taglist_font = "Symbols Nerd Font 7.5"
 local taglist_square_size = dpi(3)
 theme.taglist_fg_occupied = "#ffbdbf"
 theme.taglist_fg_focus = "#e5759b"
