@@ -17,7 +17,7 @@ alias matrix="unimatrix -c magenta -s 96 -a -l s"
 
 alias update-android="paru -Syu android-emulator android-google-apis android-ndk android-platform android-sdk android-sdk-build-tools android-google-apis-x86-64-system-image"
 
-alias git-token='echo "$(cat $HOME/Documents/protected/tokens.md)" | xclip -selection clipboard && echo "Git token copied to clipboard :)"'
+alias git-token="bash $HOME/Documents/protected/gittoken.sh"
 
 alias rm="rm -vI"
 alias cp="rsync -ahv --info=progress2"
