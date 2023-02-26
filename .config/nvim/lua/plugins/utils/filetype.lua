@@ -1,6 +1,6 @@
 return {
 	"nathom/filetype.nvim",
-  lazy = false,
+	lazy = false,
 	opts = {
 		overrides = {
 			extensions = {
