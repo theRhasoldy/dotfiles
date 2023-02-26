@@ -37,6 +37,7 @@ export CARGO_HOME=$XDG_DATA_HOME/cargo
 export GOPATH=$XDG_DATA_HOME/go
 export GEM_HOME=$XDG_DATA_HOME/gem/
 export PATH="$PATH:$XDG_DATA_HOME/gem/ruby/3.0.0/bin"
+export PATH="$PATH":"$XDG_CACHE_HOME/flutter/pub/bin"
 #}}}
 
 export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
