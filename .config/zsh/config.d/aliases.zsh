@@ -1,9 +1,9 @@
 #ls --> exa
-alias ls="exa --icons -x"
+alias ls="exa --icons --group-directories-first"
 alias lsa="ls -a"
-alias ll="exa -l --icons"
+alias ll="ls -l@ --git --time=accessed --no-permissions"
 alias lla="ll -a"
-alias llt="exa -l -T --icons"
+alias llt="lla -T"
 
 #../.. --> ...
 alias ...="../.."
@@ -22,8 +22,6 @@ alias git-token="bash $HOME/Documents/protected/gittoken.sh"
 alias rm="rm -vI"
 alias cp="rsync -ahv --info=progress2"
 alias mv="mv -vi"
-
-alias grep="grep --color=auto"
 
 # Nvim 
 alias vim="nvim"

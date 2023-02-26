@@ -12,11 +12,9 @@ export LC_CTYPE=en_US.UTF-8
 export XAUTHORITY=$XDG_CONFIG_HOME/X11/Xauthority
 export XINITRC=$XDG_CONFIG_HOME/X11/xinitrc
 
-# less {{{
-export PAGER="less"
-export LESSHISTFILE=$XDG_CACHE_HOME/history
+# Pager {{{
+export PAGER="nvimpager"
 # }}}
-
 
 # XDG {{{
 export XDG_DATA_HOME=$HOME/.local/share
@@ -42,9 +40,15 @@ export PATH="$PATH":"$XDG_CACHE_HOME/flutter/pub/bin"
 
 export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
 export GNUPGHOME=$XDG_DATA_HOME/gnupg/
-export BFETCH_CLASSIC_MODE=true
 
 export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer 
 export WINEPREFIX=$XDG_DATA_HOME/wine
 
 export _Z_DATA="$XDG_DATA_HOME/z"
+
+export BFETCH_CLASSIC_MODE=true
+
+# Exa {{{
+export LS_COLORS="di=35"
+export EXA_COLORS="da=30"
+#}}}

@@ -29,7 +29,7 @@ zstyle ':completion:*:*:-command-:*:*' group-order alias builtins functions comm
 # Sorting and listing
 zstyle ':autocomplete:*' fzf-completion yes
 zstyle ':completion:*' file-sort access reverse
-zstyle ':completion:*' file-list all
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} 
 
 zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*' complete-options true
