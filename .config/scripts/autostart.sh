@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-picom --experimental-backends &
+mplayer -fs /usr/share/backgrounds/splash.mp4 &
 
 run_once () {
 	if ! pgrep -x "$1" > /dev/null
@@ -15,4 +15,5 @@ run_once "setxkbmap" " -option caps:swapescape"
 run_once "xset" " r rate 200 40"
 run_once "xbanish" " -t 10"
 
+picom --experimental-backends &
 feh --bg-fill --no-fehbg /usr/share/backgrounds/background.jpg &
