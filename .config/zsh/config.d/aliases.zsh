@@ -28,6 +28,11 @@ alias vim="nvim"
 alias vi="nvim"
 alias nano="nvim"
 
+# Legacy
+alias cat="bat"
+alias find="fd"
+alias sed="sd"
+
 # Dotfiles
 alias dot="/usr/bin/git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME"
 alias dots="dot status"
