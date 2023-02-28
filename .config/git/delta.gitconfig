@@ -29,9 +29,3 @@
   line-numbers-zero-style = black
   whitespace-error-style = black
   # }}}
-
-[merge]
-  conflictstyle = diff3
-
-[diff]
-  colorMoved = default

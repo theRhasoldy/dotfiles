@@ -1,0 +1,29 @@
+[user]
+  name = Nour El Din Shady
+  username = theRhasoldy
+  email = rhasoldy@gmail.com
+
+[init]
+	defaultBranch = main
+
+[core]
+	editor = nvim
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+[color]
+	ui = auto
+
+[web]
+	browser = firefox-developer-edition
+
+[safe]
+  directory = /opt/flutter
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
+
+[include]
+  path = ./delta.gitconfig
