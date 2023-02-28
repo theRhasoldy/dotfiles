@@ -49,20 +49,6 @@ return {
         html = {},
         cssls = {},
         yamlls = {},
-
-        omnisharp = {
-          filetypes = { "cs" },
-          cmd = {
-            "/home/rhasoldy/.local/share/nvim/mason/packages/omnisharp/run",
-            "--languageserver",
-            "--hostPID",
-            tostring(vim.fn.getpid()),
-          },
-          root_dir = function()
-            require("lspconfig.util").root_pattern("*.csproj", "*.sln")
-          end,
-        },
-
         lua_ls = {
           single_file_support = true,
           settings = {
@@ -135,6 +121,19 @@ return {
               end,
             })
           end
+        end,
+      })
+
+      require("lspconfig")["omnisharp"].setup({
+        filetypes = { "cs" },
+        cmd = {
+          "/home/rhasoldy/.local/share/nvim/mason/packages/omnisharp/run",
+          "--languageserver",
+          "--hostPID",
+          tostring(vim.fn.getpid()),
+        },
+        root_dir = function()
+          require("lspconfig.util").root_pattern("*.csproj", "*.sln")
         end,
       })
 
