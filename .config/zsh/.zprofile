@@ -13,7 +13,7 @@ export XAUTHORITY=$XDG_CONFIG_HOME/X11/Xauthority
 export XINITRC=$XDG_CONFIG_HOME/X11/xinitrc
 
 # Pager {{{
-export PAGER="nvimpager"
+export PAGER="less"
 # }}}
 
 # XDG {{{
