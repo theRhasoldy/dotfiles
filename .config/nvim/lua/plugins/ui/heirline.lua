@@ -1,7 +1,7 @@
 return {
   "rebelot/heirline.nvim",
   name = "heirline",
-  event = "VeryLazy",
+  event = "UIEnter",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
@@ -31,25 +31,20 @@ return {
     }
 
     local Diagnostics = {
-
       condition = conditions.has_diagnostics,
-
       static = {
         error_icon = " ",
         warn_icon = " ",
         info_icon = " ",
         hint_icon = " ",
       },
-
       init = function(self)
         self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
         self.warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
         self.hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
         self.info = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
       end,
-
       update = { "DiagnosticChanged", "BufEnter" },
-
       {
         provider = " [ ",
         hl = { fg = colors.gray },
@@ -88,7 +83,6 @@ return {
     local LSPActive = {
       condition = conditions.lsp_attached,
       update = { "LspAttach", "LspDetach" },
-
       provider = function()
         local names = {}
         for i, server in pairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
@@ -192,7 +186,7 @@ return {
         local filename = self.filename
         local extension = vim.fn.fnamemodify(filename, ":e")
         self.icon, self.icon_color =
-        require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
+            require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
       end,
       provider = function(self)
         return self.icon and (self.icon .. " ")
@@ -247,7 +241,7 @@ return {
       FileIcon,
       utils.insert(FileNameModifer, FileName),
       FileFlags,
-      { provider = "%<" }-- this means that the statusline is cut here when there's not enough space
+      { provider = "%<" } -- this means that the statusline is cut here when there's not enough space
     )
 
     local WorkDir = {
