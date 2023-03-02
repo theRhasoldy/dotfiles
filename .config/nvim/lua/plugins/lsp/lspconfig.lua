@@ -40,43 +40,7 @@ return {
         update_in_insert = true,
         severity_sort = true,
       },
-      autoformat = true,
-
-      -- Server specific settings
-      servers = {
-        tsserver = {},
-        bashls = {},
-        html = {},
-        cssls = {},
-        yamlls = {},
-        lua_ls = {
-          single_file_support = true,
-          settings = {
-            Lua = {
-              runtime = {
-                version = "LuaJIT",
-                -- Setup your lua path
-                path = path,
-              },
-              workspace = {
-                library = vim.api.nvim_get_runtime_file("", true),
-                maxPreload = 2000,
-                preloadFileSize = 50000,
-                checkThirdParty = false,
-              },
-              completion = {
-                workspaceWord = true,
-                callSnippet = "Both",
-              },
-              telemetry = {
-                enable = false,
-              },
-            },
-          },
-        },
-      },
-
-      setup = {},
+      autoformat = false,
     },
 
     config = function(_, opts)
@@ -87,29 +51,69 @@ return {
         vim.fn.sign_define(hl, { text = icon, texthl = hl })
       end
 
-      local servers = opts.servers
       local capabilities =
           require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-      local function setup(server)
-        local server_opts = servers[server] or {}
-
-        server_opts.capabilities = capabilities
-
-        if opts.setup[server] then
-          if opts.setup[server](server, server_opts) then
-            return
-          end
-        elseif opts.setup["*"] then
-          if opts.setup["*"](server, server_opts) then
-            return
-          end
-        end
-        require("lspconfig")[server].setup(server_opts)
+      local on_attach = function(client)
+        -- Disabled lsp formatting, handled by null-ls
+        client.server_capabilities.document_formatting = false
+        client.server_capabilities.document_range_formatting = false
       end
 
-      -- FIXME: setup in servers tree instead
-      require("lspconfig")["dartls"].setup({
+      local defaults = {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      }
+
+      local lsp = require("lspconfig")
+
+      lsp["lua_ls"].setup({
+        defaults,
+        single_file_support = true,
+        settings = {
+          Lua = {
+            runtime = {
+              version = "LuaJIT",
+              -- Setup your lua path
+              path = path,
+            },
+            workspace = {
+              library = {
+                vim.api.nvim_get_runtime_file("", true),
+                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                [vim.fn.stdpath("config") .. "/lua"] = true,
+              },
+              maxPreload = 2000,
+              preloadFileSize = 50000,
+              checkThirdParty = false,
+            },
+            completion = {
+              workspaceWord = true,
+              callSnippet = "Both",
+            },
+            telemetry = {
+              enable = false,
+            },
+          },
+        },
+      })
+
+      lsp["bashls"].setup(defaults)
+
+      lsp["tsserver"].setup(defaults)
+
+      lsp["html"].setup(defaults)
+
+      lsp["emmet_ls"].setup(defaults)
+
+      lsp["yamlls"].setup(defaults)
+
+      lsp["jsonls"].setup(defaults)
+
+      lsp["cssls"].setup(defaults)
+
+      lsp["dartls"].setup({
+        capabilities = capabilities,
         on_attach = function(client)
           -- Disable Lsp provided highlighting
           client.server_capabilities.semanticTokensProvider = nil
@@ -123,41 +127,6 @@ return {
           end
         end,
       })
-
-      require("lspconfig")["omnisharp"].setup({
-        filetypes = { "cs" },
-        cmd = {
-          "/home/rhasoldy/.local/share/nvim/mason/packages/omnisharp/run",
-          "--languageserver",
-          "--hostPID",
-          tostring(vim.fn.getpid()),
-        },
-        root_dir = function()
-          require("lspconfig.util").root_pattern("*.csproj", "*.sln")
-        end,
-      })
-
-      local present, mason = pcall(require, "mason-lspconfig")
-      if not present then
-        return
-      end
-
-      mason.setup({ ensure_installed = vim.tbl_keys(servers) }) -- Get all servers installed by Mason
-      mason.setup_handlers({
-        function(server)
-          if servers[server] == false then
-            return
-          end
-          local server_opts = servers[server] or {}
-          local exist, lsp = pcall(require, "lspconfig")
-          if not exist then
-            return
-          end
-          lsp[server].setup(server_opts) -- Apply opts to all installed servers and initialize them
-        end,
-      })
-
-      require("mason-lspconfig").setup_handlers({ setup })
 
       -- Disable virtual text
       vim.diagnostic.config({
