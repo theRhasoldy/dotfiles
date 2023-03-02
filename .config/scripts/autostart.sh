@@ -11,7 +11,7 @@ run_once () {
 run_once "lxsession" ""
 run_once "syncthing" ""
 run_once "greenclip" "daemon"
-run_once "setxkbmap" " -option caps:swapescape"
+# run_once "setxkbmap" " -option caps:swapescape"
 run_once "xset" " r rate 200 40"
 run_once "xbanish" " -t 10"
 
