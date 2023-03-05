@@ -4,6 +4,7 @@ return {
     name = "mason",
     event = "BufReadPre",
     opts = {
+      PATH = "prepend",
       ui = {
         check_outdated_packages_on_open = false,
         border = "single",

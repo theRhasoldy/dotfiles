@@ -9,7 +9,6 @@ return {
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lua",
-      "ray-x/cmp-treesitter",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
@@ -65,12 +64,11 @@ return {
           ["<C-e>"] = cmp.mapping.abort(),
         }),
         sources = cmp.config.sources({
-          { name = "luasnip" },
           { name = "nvim_lsp" },
           { name = "nvim_lua" },
           { name = "nvim_lsp_signature_help" },
+          { name = "luasnip" },
           { name = "path" },
-          { name = "treesitter",             keyword_length = 5, max_item_count = 10 },
           { name = "buffer",                 keyword_length = 5, max_item_count = 10 },
         }),
         formatting = {
@@ -116,8 +114,10 @@ return {
     "L3MON4D3/LuaSnip",
     event = "InsertEnter",
     opts = {
-      history = true,
-      delete_check_events = "TextChanged",
+      history = false,
+      delete_check_events = "TextChanged,TextChangedI",
+      updateevents = "TextChanged,TextChangedI",
+      enable_autosnippets = true,
     },
     dependencies = {
       "rafamadriz/friendly-snippets",

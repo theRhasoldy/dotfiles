@@ -98,7 +98,11 @@ return {
         },
       })
 
-      lsp["bashls"].setup(defaults)
+      lsp["bashls"].setup({
+        single_file_support = true,
+        cmd = { "bash-language-server", "start" },
+        filetypes = { "sh" },
+      })
 
       lsp["tsserver"].setup(defaults)
 
