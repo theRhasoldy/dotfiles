@@ -53,8 +53,8 @@ return {
         enable = true,
       },
       refactor = {
-        highlight_current_scope = { enable = true },
-        clear_on_cursor_move = false,
+        highlight_current_scope = { enable = false },
+        clear_on_cursor_move = true,
         highlight_definitions = { enable = true },
       },
       pairs = {
@@ -87,6 +87,15 @@ return {
         return
       end
       treesitter_config.setup(opts)
+
+      -- Fix legacy regex highlighting
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "tex",
+        callback = function(args)
+          vim.treesitter.start(args.buf, "latex")
+          vim.bo[args.buf].syntax = "on" -- only if additional legacy syntax is needed
+        end,
+      })
     end,
   },
   {
