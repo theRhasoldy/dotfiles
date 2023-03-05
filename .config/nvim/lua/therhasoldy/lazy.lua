@@ -40,6 +40,7 @@ lazy.setup({
         "netrw",
         "netrwSettings",
         "netrwPlugin",
+        "netrwFileHandlers",
         "tar",
         "tarPlugin",
         "tohtml",

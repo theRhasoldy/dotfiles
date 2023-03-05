@@ -63,9 +63,9 @@ return {
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
           ["<C-e>"] = cmp.mapping.abort(),
         }),
+        -- General soucres
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
-          { name = "nvim_lua" },
           { name = "nvim_lsp_signature_help" },
           { name = "luasnip" },
           { name = "path" },
@@ -100,14 +100,16 @@ return {
         }),
       })
 
-      -- cmp.setup.filetype("html", {
-      --   sources = cmp.config.sources({
-      --     { name = "nvim_lsp" },
-      --     { name = "nvim_lsp_signature_help" },
-      --     { name = "path" },
-      --     { name = "buffer", keyword_length = 5, max_item_count = 10 },
-      --   }),
-      -- })
+      -- Lua specific
+      cmp.setup.filetype("lua", {
+        sources = cmp.config.sources({
+          { name = "nvim_lua" },
+          { name = "nvim_lsp" },
+          { name = "nvim_lsp_signature_help" },
+          { name = "path" },
+          { name = "buffer",                 keyword_length = 5, max_item_count = 10 },
+        }),
+      })
     end,
   },
   {
