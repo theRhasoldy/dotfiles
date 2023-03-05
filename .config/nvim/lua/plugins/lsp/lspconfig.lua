@@ -132,9 +132,9 @@ return {
         end,
       })
 
-      -- Disable virtual text
       vim.diagnostic.config({
-        virtual_text = false,
+        virtual_text = false, -- Disable virtual text
+        severity_sort = true, -- sorts diagnostics by severity (errors first)
       })
     end,
   },
