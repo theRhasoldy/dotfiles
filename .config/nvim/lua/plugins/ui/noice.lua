@@ -6,6 +6,9 @@ return {
       "MunifTanjim/nui.nvim",
     },
     opts = {
+      cmdline = {
+        view = "cmdline",
+      },
       -- Macros message
       routes = {
         {
