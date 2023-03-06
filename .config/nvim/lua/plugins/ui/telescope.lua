@@ -22,6 +22,7 @@ return {
       layout_strategy = "vertical",
       vimgrep_arguments = {
         "rg",
+        "--no-heading",
         "--with-filename",
         "--line-number",
         "--smart-case",
@@ -32,13 +33,11 @@ return {
       wrap_results = true,
       selection_caret = "  ",
       prompt_prefix = "   ",
-      preview = {
-        treesitter = true,
-      },
     },
     pickers = {
       find_files = {
         file_ignore_patterns = { "node_modules", "git" },
+        find_command = { "fd", vim.fn.expand("<cword>") },
         no_ignore = false,
         hidden = true,
       },
@@ -100,7 +99,7 @@ return {
       "<leader>fn",
       function()
         require("telescope").extensions.noice.noice({
-          previewer = false,
+          previewer = true,
           initial_mode = "normal",
         })
       end,
