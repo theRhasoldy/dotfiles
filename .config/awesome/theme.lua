@@ -27,20 +27,20 @@ theme.border_marked = "#2f283acc" ]]
 
 -- Notification
 theme.notification_info_font = "Ubuntu bold 8"
-theme.notification_header_font = "Ubuntu Bold 9"
+theme.notification_header_font = "Ubuntu bold 9"
 theme.notification_font = "Ubuntu 9"
 theme.notification_bg = "#2E221C42"
 theme.notification_fg = "#eeeeee"
 -- }}}
 
 -- Tooltip
-beautiful.tooltip_font = "Ubuntu 9"
+beautiful.tooltip_font = "Ubuntu 8"
 beautiful.tooltip_bg = "#2E221C42"
 beautiful.tooltip_fg = "#eeeeee"
 -- }}}
 
 -- Wibox
-beautiful.wibar_font = "Ubuntu 8"
+beautiful.wibar_font = "Ubuntu semi-bold 8"
 beautiful.wibar_panel_bg = "#00000000"
 beautiful.wibar_bg = "#2E221C42"
 beautiful.wibar_fg = "#eeeeee"
