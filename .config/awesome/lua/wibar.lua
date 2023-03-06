@@ -21,10 +21,14 @@ end)
 -- Memory {{{
 local memory_widget = wibox.widget.textbox()
 memory_widget.font = beautiful.wibar_font
-awful.widget.watch("mem", 15, function(_, stdout) -- fetchutils https://github.com/kiedtl/fetchutils
-  local out = stdout:gsub("^%s*(.-)%s*$", "%1")
-  memory_widget.text = out
-end)
+awful.widget.watch(
+  "mem '${gb_used}GB 󰧞 ${gb_total}GB'",
+  15,
+  function(_, stdout) -- fetchutils https://github.com/kiedtl/fetchutils
+    local out = stdout:gsub("^%s*(.-)%s*$", "%1")
+    memory_widget.text = out
+  end
+)
 -- }}}
 
 local function create_icon(symbol)
