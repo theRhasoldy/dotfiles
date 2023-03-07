@@ -1,5 +1,8 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
+local client = require("client")
+local awesome = require("awesome")
+local mouse = require("mouse")
 --[[ local xresources = require("beautiful.xresources")
 local gears = require("gears")
 local dpi = xresources.apply_dpi ]]

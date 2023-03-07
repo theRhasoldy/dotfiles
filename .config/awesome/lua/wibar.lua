@@ -22,7 +22,7 @@ end)
 local memory_widget = wibox.widget.textbox()
 memory_widget.font = beautiful.wibar_font
 awful.widget.watch(
-  "mem '${gb_used}GB 󰧞 ${gb_total}GB'",
+  "mem '${gb_used}GB │ ${gb_total}GB'",
   15,
   function(_, stdout) -- fetchutils https://github.com/kiedtl/fetchutils
     local out = stdout:gsub("^%s*(.-)%s*$", "%1")
@@ -33,13 +33,13 @@ awful.widget.watch(
 
 local function create_icon(symbol)
   local icon = wibox.widget.textbox()
-  icon.font = "Symbols Nerd Font 9"
+  icon.font = beautiful.symbols_font
   icon.text = symbol
   return icon
 end
 
 -- Layout box {{{
-local layoutbox = awful.widget.layoutbox(s)
+local layoutbox = awful.widget.layoutbox()
 -- }}}
 
 -- Time Panel {{{
