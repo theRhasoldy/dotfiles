@@ -46,8 +46,6 @@ local layoutbox = awful.widget.layoutbox()
 local timepanel = wibox.widget({
   {
     layout = wibox.layout.margin,
-    left = dpi(10),
-    right = dpi(10),
     {
       layout = wibox.layout.fixed.horizontal,
       spacing = space,
@@ -106,7 +104,7 @@ local mediapanel = wibox.widget({
   type = "normal",
   {
     layout = wibox.layout.margin,
-    left = space,
+    left = dpi(10),
     {
       layout = wibox.layout.fixed.horizontal,
       forced_height = 22,
@@ -132,9 +130,6 @@ local mediapanel = wibox.widget({
 
 -- Create a promptbox for each screen {{{
 awful.screen.connect_for_each_screen(function(s)
-  s.mypromptbox = awful.widget.prompt()
-
-  -- Create an imagebox widget which will contain an icon indicating which layout we're using.
   s.mylayoutbox = awful.widget.layoutbox(s)
   s.mylayoutbox:buttons(gears.table.join(
     awful.button({}, 1, function()
@@ -146,7 +141,7 @@ awful.screen.connect_for_each_screen(function(s)
     awful.button({}, 4, function()
       awful.layout.inc(1)
     end),
-    awful.button({}, small_space, function()
+    awful.button({}, 5, function()
       awful.layout.inc( -1)
     end)
   ))
@@ -173,13 +168,8 @@ awful.screen.connect_for_each_screen(function(s)
   local tagpanel = wibox.widget({
     type = "normal",
     {
-      layout = wibox.layout.margin,
-      left = dpi(10),
-      right = dpi(10),
-      {
-        layout = wibox.layout.fixed.horizontal,
-        s.mytaglist,
-      },
+      layout = wibox.layout.fixed.horizontal,
+      s.mytaglist,
     },
     bg = beautiful.wibar_panel_bg,
     shape = gears.shape.rounded_bar,
