@@ -1,5 +1,5 @@
 return {
-  {
+  --[[ {
     "knubie/vim-kitty-navigator",
     event = "VeryLazy",
     keys = {
@@ -37,6 +37,10 @@ return {
         },
       },
     },
+  }, ]]
+  {
+    "christoomey/vim-tmux-navigator",
+    event = "VeryLazy",
   },
   {
     "folke/which-key.nvim",
