@@ -1,16 +1,20 @@
 local beautiful = require("beautiful")
-local xresources = require("beautiful.xresources")
-local dpi = xresources.apply_dpi
+local dpi = beautiful.xresources.apply_dpi
 local wibox = require("wibox")
+
 local naughty = require("naughty")
 local gears = require("gears")
 
+-- Default config
 naughty.config.defaults.position = "bottom_right"
+naughty.config.defaults.spacing = dpi(10)
+naughty.config.defaults.padding = dpi(10)
+naughty.config.defaults.margin = dpi(10)
 
 -- Presets
 naughty.config.presets.low.timeout = 5
-naughty.config.presets.normal.timeout = 5
-naughty.config.presets.critical.timeout = 5
+naughty.config.presets.normal.timeout = 6
+naughty.config.presets.critical.timeout = 12
 
 naughty.config.presets.critical.bg = beautiful.highlight
 naughty.config.presets.critical.fg = beautiful.bg_normal
@@ -21,22 +25,56 @@ local function notif_template(n)
     forced_width = dpi(20),
   })
 
+  local icon_visibility
   local time = os.date("%H:%M")
   local header_color = "#eeeeee80"
 
-  local time_widget = wibox.widget.textbox({
+  local time_widget = wibox.widget({
+    widget = wibox.widget.textbox,
     markup = "<span foreground = " .. "'" .. header_color .. "'>" .. time .. "</span>",
     font = beautiful.notification_info_font,
     align = "right",
   })
 
-  local app = wibox.widget.textbox({
+  local app = wibox.widget({
+    widget = wibox.widget.textbox,
     markup = "<span foreground = " .. "'" .. header_color .. "'>" .. n.app_name .. "</span>",
     font = beautiful.notification_info_font,
     align = "left",
   })
 
-  local icon_visibility
+  local title = wibox.widget({
+    widget = wibox.widget.textbox,
+    font = beautiful.notification_header_font,
+    align = "left",
+    markup = n.title,
+  })
+
+  local message = wibox.widget({
+    widget = wibox.widget.textbox,
+    font = beautiful.notification_font,
+    align = "left",
+    markup = n.message,
+  })
+
+  local icon = wibox.widget({
+    nil,
+    {
+      {
+        image = n.icon,
+        visible = icon_visibility,
+        widget = wibox.widget.imagebox,
+        shape = gears.shape.rounded_bar,
+      },
+      strategy = "max",
+      width = dpi(48),
+      height = dpi(48),
+      widget = wibox.container.constraint,
+    },
+    expand = "none",
+    layout = wibox.layout.align.vertical,
+  })
+  -- }}}
 
   if n.icon == nil then
     icon_visibility = false
@@ -69,38 +107,6 @@ local function notif_template(n)
     }),
     widget_template = action_widget,
     widget = naughty.list.actions,
-  })
-  -- }}}
-
-  -- Make other widgets
-  local title = wibox.widget.textbox({
-    font = beautiful.notification_header_font,
-    align = "left",
-    markup = n.title,
-  })
-
-  local message = wibox.widget.textbox({
-    font = beautiful.notification_font,
-    align = "left",
-    markup = n.message,
-  })
-
-  local icon = wibox.widget({
-    nil,
-    {
-      {
-        image = n.icon,
-        visible = icon_visibility,
-        widget = wibox.widget.imagebox,
-        shape = gears.shape.rounded_bar,
-      },
-      strategy = "max",
-      width = dpi(48),
-      height = dpi(48),
-      widget = wibox.container.constraint,
-    },
-    expand = "none",
-    layout = wibox.layout.align.vertical,
   })
   -- }}}
 
