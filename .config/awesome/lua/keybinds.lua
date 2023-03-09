@@ -114,28 +114,39 @@ local globalkeys = gears.table.join(
     if client.focus then
       client.focus:raise()
     end
-  end, { description = "Focus down", group = "client" }),
+  end, { description = "Swap down", group = "client" }),
 
   awful.key({ modkey, shift }, "k", function()
     awful.client.swap.global_bydirection("up")
     if client.focus then
       client.focus:raise()
     end
-  end, { description = "Focus up", group = "client" }),
+  end, { description = "Swap up", group = "client" }),
 
   awful.key({ modkey, shift }, "h", function()
     awful.client.swap.global_bydirection("left")
     if client.focus then
       client.focus:raise()
     end
-  end, { description = "Focus left", group = "client" }),
+  end, { description = "Swap left", group = "client" }),
 
   awful.key({ modkey, shift }, "l", function()
     awful.client.swap.global_bydirection("right")
     if client.focus then
       client.focus:raise()
     end
-  end, { description = "Focus right", group = "client" }),
+  end, { description = "Swap right", group = "client" }),
+  -- }}}
+
+  -- Resize Window {{{
+  awful.key({ modkey, ctrl }, "l", function()
+    awful.tag.incmwfact(0.04)
+  end, { description = "Increase window size by 0.4", group = "layout" }),
+
+  awful.key({ modkey, ctrl }, "h", function()
+    awful.tag.incmwfact( -0.04)
+  end, { description = "Decrease window size by 0.4", group = "layout" }),
+  -- }}}
 
   -- }}}
 
