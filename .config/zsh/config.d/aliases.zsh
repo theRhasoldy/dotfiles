@@ -33,9 +33,23 @@ alias cat="bat"
 alias find="fd"
 alias sed="sd"
 
+# Git
+alias g="git"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m"
+alias gd="git diff"
+alias gbc="git checkout"
+alias gpl="git pull"
+alias gps="git push"
+
 # Dotfiles
 alias dot="/usr/bin/git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME"
 alias dots="dot status"
 alias dota="dot add"
 alias dotc="dot commit -m"
+alias dotd="dot diff"
+alias dotps="dot push"
 
+# zoxide with tmux
+export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
