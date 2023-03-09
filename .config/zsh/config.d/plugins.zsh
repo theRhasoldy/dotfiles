@@ -1,7 +1,5 @@
 source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
 
-source /usr/share/zsh/plugins/zsh-z/zsh-z.plugin.zsh
-
 source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
 source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 

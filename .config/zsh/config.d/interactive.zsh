@@ -2,6 +2,7 @@
 if [[ -o INTERACTIVE && -t 2 ]]; then
 
 	eval "$(starship init zsh)"
-	bfetch
+  eval "$(zoxide init zsh)"
+	# bfetch
 
 fi >&2

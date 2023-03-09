@@ -44,8 +44,6 @@ export GNUPGHOME=$XDG_DATA_HOME/gnupg/
 export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer 
 export WINEPREFIX=$XDG_DATA_HOME/wine
 
-export _Z_DATA="$XDG_DATA_HOME/z"
-
 export BFETCH_CLASSIC_MODE=true
 
 # Exa {{{
