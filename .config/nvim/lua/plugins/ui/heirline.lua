@@ -22,12 +22,11 @@ return {
       green = utils.get_highlight("Constant").fg,
       blue = utils.get_highlight("Special").fg,
       orange = utils.get_highlight("Exception").fg,
-      purple = utils.get_highlight("Function").fg,
+      purple = utils.get_highlight("Keyword").fg,
       cyan = utils.get_highlight("Identifier").fg,
-      diag_warn = utils.get_highlight("Warning").fg,
-      diag_error = utils.get_highlight("Error").fg,
-      diag_hint = utils.get_highlight("Info").fg,
-      diag_info = utils.get_highlight("Hint").fg,
+      git_add = utils.get_highlight("GitGutterAdd").fg,
+      git_del = utils.get_highlight("GitSignsDelete").fg,
+      git_change = utils.get_highlight("GitSignsChange").fg,
     }
 
     local Diagnostics = {
@@ -91,6 +90,56 @@ return {
         return " [ " .. table.concat(names, " ") .. " ]"
       end,
       hl = { fg = colors.gray },
+    }
+
+    local Git = {
+      condition = conditions.is_git_repo,
+      init = function(self)
+        self.status_dict = vim.b.gitsigns_status_dict
+        self.has_changes = self.status_dict.added ~= 0
+            or self.status_dict.removed ~= 0
+            or self.status_dict.changed ~= 0
+      end,
+      { -- git branch name
+        provider = function(self)
+          return " " .. self.status_dict.head .. " "
+        end,
+        hl = { fg = colors.purple, bold = true },
+      },
+      -- You could handle delimiters, icons and counts similar to Diagnostics
+      {
+        condition = function(self)
+          return self.has_changes
+        end,
+        provider = "[ ",
+      },
+      {
+        provider = function(self)
+          local count = self.status_dict.added or 0
+          return count > 0 and (" " .. count .. " ")
+        end,
+        hl = "GitSignsAdd",
+      },
+      {
+        provider = function(self)
+          local count = self.status_dict.removed or 0
+          return count > 0 and (" " .. count .. " ")
+        end,
+        hl = "GitSignsDelete",
+      },
+      {
+        provider = function(self)
+          local count = self.status_dict.changed or 0
+          return count > 0 and (" " .. count .. " ")
+        end,
+        hl = "GitSignsChange",
+      },
+      {
+        condition = function(self)
+          return self.has_changes
+        end,
+        provider = "]",
+      },
     }
 
     -- Statusline
@@ -248,7 +297,7 @@ return {
       provider = function()
         local icon = (vim.fn.haslocaldir(0) == 1 and " " or " ")
         local cwd = vim.fn.getcwd(0)
-        cwd = vim.fn.fnamemodify(cwd, ":~")
+        cwd = vim.fn.fnamemodify(cwd, ":h:t") .. "/" .. vim.fn.fnamemodify(cwd, ":t")
         if not conditions.width_percent_below(#cwd, 0.25) then
           cwd = vim.fn.pathshorten(cwd)
         end
@@ -292,6 +341,8 @@ return {
         WorkDir,
         Space,
         FileNameBlock,
+        Align,
+        Git,
         Align,
         Ruler,
         Space,
