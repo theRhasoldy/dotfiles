@@ -17,6 +17,7 @@ return {
         formatting.stylua,
         formatting.fixjson,
         formatting.csharpier,
+        null.builtins.code_actions.gitsigns,
       },
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
