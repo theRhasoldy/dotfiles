@@ -16,8 +16,11 @@ return {
     {
       "<Leader>m",
       function()
-        require("telescope").extensions.harpoon.marks()
+        require("telescope").extensions.harpoon.marks({
+          initial_mode = "normal",
+        })
       end,
+      desc = "List harpoon marks in current project",
     },
   },
 }
