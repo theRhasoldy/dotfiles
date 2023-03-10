@@ -3,12 +3,14 @@ return {
   name = "telescope",
   event = "UIEnter",
   dependencies = {
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-live-grep-args.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
   },
   opts = {
     defaults = {
+      file_ignore_patterns = { "node_modules", ".git/" },
       mappings = {
         i = {
           ["<C-q>"] = "close",
@@ -32,12 +34,11 @@ return {
       dynamic_preview_title = true,
       wrap_results = true,
       selection_caret = "  ",
-      prompt_prefix = "   ",
+      prompt_prefix = "    ",
     },
     pickers = {
       find_files = {
-        file_ignore_patterns = { "node_modules", "git" },
-        find_command = { "fd", vim.fn.expand("<cword>") },
+        find_command = { "rg", "--files" },
         no_ignore = false,
         hidden = true,
       },
@@ -49,11 +50,12 @@ return {
       },
     },
     extensions = {
-      extensions_list = { "themes", "terms", "live_grep_args", "noice", "file_browser", "harpoon" },
       live_grep_args = {
+        find_command = { "rg", "--files" },
         auto_quoting = true,
       },
       file_browser = {
+        initial_mode = "normal",
         hijack_netrw = true,
         path = "%:p:h",
         cwd_to_path = true,
@@ -62,7 +64,6 @@ return {
         use_fd = true,
         grouped = true,
         theme = "ivy",
-        initial_mode = "normal",
       },
     },
   },
@@ -106,4 +107,15 @@ return {
       desc = "Show notifications",
     },
   },
+  config = function(_, opts)
+    local present, telescope = pcall(require, "telescope")
+    if not present then
+      return
+    end
+    telescope.setup(opts)
+    telescope.load_extension("fzf")
+    telescope.load_extension("notify")
+    telescope.load_extension("harpoon")
+    telescope.load_extension("live_grep_args")
+  end,
 }
