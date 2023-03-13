@@ -6,7 +6,10 @@ export VISUAL="nvim"
 
 export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
 
-export LC_CTYPE=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_TYPE=en_US.UTF-8
 
 # export XRESOURCES="$XDG_CONFIG_HOME"/X11/Xresources
 export XAUTHORITY=$XDG_CONFIG_HOME/X11/Xauthority
