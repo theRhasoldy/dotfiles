@@ -16,7 +16,7 @@ return {
         formatting.prettierd,
         formatting.stylua,
         formatting.fixjson,
-        formatting.csharpier,
+        formatting.black,
         null.builtins.code_actions.gitsigns,
       },
       on_attach = function(client, bufnr)

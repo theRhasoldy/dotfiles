@@ -105,6 +105,8 @@ return {
         filetypes = { "sh" },
       })
 
+      lsp["pylsp"].setup(defaults)
+
       lsp["tsserver"].setup(defaults)
 
       lsp["html"].setup(defaults)
