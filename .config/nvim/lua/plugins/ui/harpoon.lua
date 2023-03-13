@@ -17,6 +17,7 @@ return {
       "<Leader>m",
       function()
         require("telescope").extensions.harpoon.marks({
+          previewer = false,
           initial_mode = "normal",
         })
       end,
