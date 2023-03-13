@@ -10,7 +10,21 @@ return {
   },
   opts = {
     defaults = {
+      dynamic_preview_title = true,
+      path_display = { "smart" },
+      layout_strategy = "vertical",
+      prompt_prefix = "    ",
+      selection_caret = "  ",
+
+      -- Optimizations
+      cache_picker = false,
       file_ignore_patterns = { "node_modules", ".git/" },
+
+      preview = {
+        filesize_limit = 2,
+        treesitter = true,
+      },
+
       mappings = {
         i = {
           ["<C-q>"] = "close",
@@ -21,52 +35,45 @@ return {
           ["q"] = "close",
         },
       },
-      layout_strategy = "vertical",
-      vimgrep_arguments = {
-        "rg",
-        "--no-heading",
-        "--with-filename",
-        "--line-number",
-        "--smart-case",
-        "--column",
-      },
-      sorting_strategy = "ascending",
-      dynamic_preview_title = true,
-      wrap_results = true,
-      selection_caret = "  ",
-      prompt_prefix = "    ",
     },
-    pickers = {
+
+    builtin = {
       find_files = {
         find_command = { "rg", "--files" },
-        no_ignore = false,
         hidden = true,
       },
+
       diagnostics = {
-        theme = "cursor",
-        layout_config = {
-          width = 0.9,
-        },
+        theme = "ivy",
       },
     },
+
     extensions = {
+      fzf = {
+        override_generic_sorter = true,
+        override_file_sorter = true,
+      },
       live_grep_args = {
         find_command = { "rg", "--files" },
         auto_quoting = true,
       },
+
       file_browser = {
         initial_mode = "normal",
         hijack_netrw = true,
-        path = "%:p:h",
         cwd_to_path = true,
         hidden = true,
+        path = "%:p:h",
         dir_icon = "",
-        use_fd = true,
         grouped = true,
         theme = "ivy",
       },
     },
   },
+  config = function(_, opts)
+    require("telescope").setup(opts)
+    require("telescope").load_extension("fzf")
+  end,
   keys = {
     {
       "<leader>ff",
@@ -85,7 +92,9 @@ return {
     {
       "<leader>fg",
       function()
-        require("telescope").extensions.live_grep_args.live_grep_args()
+        require("telescope").extensions.live_grep_args.live_grep_args({
+          previewer = true,
+        })
       end,
       desc = "Search keyword",
     },
@@ -100,22 +109,10 @@ return {
       "<leader>fn",
       function()
         require("telescope").extensions.noice.noice({
-          previewer = true,
           initial_mode = "normal",
         })
       end,
       desc = "Show notifications",
     },
   },
-  config = function(_, opts)
-    local present, telescope = pcall(require, "telescope")
-    if not present then
-      return
-    end
-    telescope.setup(opts)
-    telescope.load_extension("fzf")
-    telescope.load_extension("notify")
-    telescope.load_extension("harpoon")
-    telescope.load_extension("live_grep_args")
-  end,
 }
