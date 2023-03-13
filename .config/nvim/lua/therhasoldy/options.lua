@@ -52,8 +52,8 @@ opt.signcolumn = "yes"
 opt.laststatus = 3 -- Global Statusline
 opt.showmode = false
 
-opt.wrap = true
-opt.showbreak = "﬌ "
+opt.wrap = false
+-- opt.showbreak = "﬌ "
 
 opt.equalalways = true
 

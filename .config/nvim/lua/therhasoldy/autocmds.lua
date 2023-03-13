@@ -16,3 +16,14 @@ api.nvim_create_autocmd("BufEnter", {
     vim.opt.formatoptions = vim.opt.formatoptions - { "c", "r", "o" }
   end,
 })
+
+-- Telescope on startup
+local HarpoonStartup = api.nvim_create_augroup("HarpoonStartup", { clear = true })
+api.nvim_clear_autocmds({ group = HarpoonStartup })
+api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    require("telescope").extensions.harpoon.marks({
+      initial_mode = "normal",
+    })
+  end,
+})
