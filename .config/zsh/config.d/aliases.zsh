@@ -15,7 +15,7 @@ alias pacman="sudo pacman"
 
 alias matrix="unimatrix -c magenta -s 96 -a -l s"
 
-alias update-android="paru -Syu android-emulator android-google-apis android-ndk android-platform android-sdk android-sdk-build-tools android-google-apis-x86-64-system-image"
+alias update-android="paru -Syu android-emulator android-google-apis android-platform android-sdk android-sdk-build-tools android-google-apis-x86-64-system-image"
 
 alias git-token="bash $HOME/Documents/protected/gittoken.sh"
 
@@ -30,8 +30,8 @@ alias nano="nvim"
 
 # Legacy
 alias cat="bat"
-alias find="fd"
-alias sed="sd"
+# alias find="fd"
+# alias sed="sd"
 
 # Git
 alias g="git"

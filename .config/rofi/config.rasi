@@ -2,16 +2,15 @@ configuration {
 	display-drun: "";
 	display-window: "";
 	drun-display-format: "{icons} {name}";
-	font: "Dejavu Sans 8";
+	font: "Ubuntu 8";
 	modi: "drun,run,window,emoji";
 	show-icons: true;
-	icon-theme: "Delight";
 	kb-remove-to-eol: "";
 	kb-accept-entry: "Return";
 
   timeout {
-      action: "kb-cancel";
-      delay:  5;
+    action: "kb-cancel";
+    delay:  5;
   }
 
 	drun {
@@ -38,13 +37,13 @@ configuration {
 * {
 	font:   "Ubuntu 11";
 
-	bg0:    #141313CC;
-	bg1:    #14131CCC;
-	bg2:    #e5759b44;
+	bg0:    #2C2A39CC;
+	bg1:    #2C2A39CC;
+	bg2:    #ffbdbf44;
 
-	fg0:    #eeeeee;
-	fg1:    #eeeeee;
-	fg2:    #eeeeee80;
+	fg0:    #e4e0f9;
+	fg1:    #e4e0f9;
+	fg2:    #e4e0f980;
 
 	background-color:   transparent;
 	text-color:         @fg0;
@@ -57,7 +56,6 @@ configuration {
 
 window {
 	background-color:   @bg0;
-
 	location:       center;
 	width:          620;
 	/* border-radius:  20; */

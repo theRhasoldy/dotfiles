@@ -1,1 +1,5 @@
-colors = ["#2E221C42", ""]  # Background
+colors = {
+    "background": "#2E221C00",
+    "foreground": "#EEEEEE",
+    "accent": "",
+}

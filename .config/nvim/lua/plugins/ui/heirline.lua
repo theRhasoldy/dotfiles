@@ -16,7 +16,7 @@ return {
     -- Winbar
     local colors = {
       gray = utils.get_highlight("NonText").fg,
-      dark_gray = utils.get_highlight("Border").fg,
+      dark_gray = utils.get_highlight("NonText").fg,
       pink = utils.get_highlight("Operator").fg,
       red = utils.get_highlight("Define").fg,
       green = utils.get_highlight("Constant").fg,
@@ -24,9 +24,9 @@ return {
       orange = utils.get_highlight("Exception").fg,
       purple = utils.get_highlight("Keyword").fg,
       cyan = utils.get_highlight("Identifier").fg,
-      git_add = utils.get_highlight("GitGutterAdd").fg,
-      git_del = utils.get_highlight("GitSignsDelete").fg,
-      git_change = utils.get_highlight("GitSignsChange").fg,
+      git_add = utils.get_highlight("NonText").fg,
+      git_del = utils.get_highlight("NonText").fg,
+      git_change = utils.get_highlight("NonText").fg,
     }
 
     local Diagnostics = {
@@ -53,25 +53,25 @@ return {
           -- 0 is just another output, we can decide to print it or not!
           return self.errors > 0 and (self.error_icon .. self.errors .. " ")
         end,
-        hl = "Error",
+        hl = "NonText",
       },
       {
         provider = function(self)
           return self.warnings > 0 and (self.warn_icon .. self.warnings .. " ")
         end,
-        hl = "Warning",
+        hl = "NonText",
       },
       {
         provider = function(self)
           return self.info > 0 and (self.info_icon .. self.info .. " ")
         end,
-        hl = "Info",
+        hl = "NonText",
       },
       {
         provider = function(self)
           return self.hints > 0 and (self.hint_icon .. self.hints)
         end,
-        hl = "Hint",
+        hl = "NonText",
       },
       {
         provider = "]",

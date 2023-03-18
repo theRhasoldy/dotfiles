@@ -1,34 +1,21 @@
-local gears = require("gears")
-local awful = require("awful")
-local beautiful = require("beautiful")
-local theme = require("theme")
-
+-- WARNING: This config only works with awesome-git
 pcall(require, "luarocks.loader")
 
-home_path = os.getenv("HOME") .. "/"
-scripts_path = home_path .. ".config/scripts/"
+local beautiful = require("beautiful")
+local gears = require("gears")
 
--- Load Modules {{{
-require("lua.autostart")
-require("lua.wibar")
-require("lua.keybinds")
-require("lua.clients")
-require("lua.notifications")
-require("awful.hotkeys_popup.keys")
--- }}}
+-- Error handling
+local naughty = require("naughty")
+naughty.connect_signal("request::display_error", function(message, startup)
+  naughty.notification({
+    urgency = "critical",
+    title = "Oops, an error happened" .. (startup and " during startup!" or "!"),
+    message = message,
+  })
+end)
 
--- Theme {{{
-beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
--- }}}
+beautiful.init(gears.filesystem.get_configuration_dir() .. "lua/utils/theme.lua")
 
--- Layouts
-awful.layout.layouts = {
-  awful.layout.suit.tile,
-  awful.layout.suit.fair,
-  awful.layout.suit.max,
-}
--- }}}
-
--- Tags {{{
-awful.tag({ "", "", "", "", "", "", "" }, s, awful.layout.layouts[1])
--- }}}
+require("lua.utils")
+require("lua.options")
+require("lua.ui")

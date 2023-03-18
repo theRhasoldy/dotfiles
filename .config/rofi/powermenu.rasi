@@ -1,0 +1,39 @@
+@theme "~/.config/rofi/config.rasi"
+
+window {
+  fullscreen: true;
+	background-color: #2C2A39cc;
+}
+
+inputbar {
+	children: [ prompt ];
+}
+
+prompt {
+  margin: 10%;
+  font: "Ubuntu bold 100";
+	background-color: inherit;
+}
+
+element {
+  spacing: 8em;
+  children: [element-text];
+}
+
+element-text {
+  font: "Symbols Nerd Font 100";
+	text-color: inherit;
+  padding: 5em;
+}
+
+element selected normal, element selected active {
+  text-color: #ffbdbf;
+  background-color: transparent;
+}
+
+#listview {
+  margin: 10%;
+  layout: horizontal;
+  background-color: transparent;
+}
+

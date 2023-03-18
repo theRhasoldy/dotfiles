@@ -58,6 +58,7 @@ return {
         -- Disabled lsp formatting, handled by null-ls
         client.server_capabilities.document_formatting = false
         client.server_capabilities.document_range_formatting = false
+        -- client.server_capabilities.semanticTokensProvider = nil
       end
 
       local defaults = {
@@ -73,20 +74,19 @@ return {
         settings = {
           Lua = {
             runtime = {
-              version = "LuaJIT",
+              version = "luajit",
               -- Setup your lua path
               path = path,
             },
             workspace = {
               library = {
-                [vim.fn.expand("$XDG_CONFIG_HOME/awesome")] = true,
                 vim.api.nvim_get_runtime_file("", true),
                 [vim.fn.expand("$VIMRUNTIME/lua")] = true,
                 [vim.fn.stdpath("config") .. "/lua"] = true,
               },
-              maxPreload = 2000,
-              preloadFileSize = 50000,
-              checkThirdParty = false,
+              -- maxPreload = 2000,
+              -- preloadFileSize = 50000,
+              checkThirdParty = true,
             },
             completion = {
               workspaceWord = true,
@@ -105,8 +105,6 @@ return {
         filetypes = { "sh" },
       })
 
-      lsp["pylsp"].setup(defaults)
-
       lsp["tsserver"].setup(defaults)
 
       lsp["html"].setup(defaults)
@@ -122,8 +120,6 @@ return {
       lsp["dartls"].setup({
         capabilities = capabilities,
         on_attach = function(client)
-          -- Disable Lsp provided highlighting
-          client.server_capabilities.semanticTokensProvider = nil
           -- Formatting
           if client.server_capabilities.documentFormattingProvider then
             vim.api.nvim_create_autocmd("BufWritePre", {
