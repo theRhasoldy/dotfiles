@@ -39,7 +39,7 @@ return {
   },
   {
     "rcarriga/nvim-notify",
-    event = "BufEnter",
+    event = "VeryLazy",
     opts = {
       top_down = false,
       fps = 60,

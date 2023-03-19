@@ -1,5 +1,6 @@
 return {
   "ThePrimeagen/harpoon",
+  lazy = true,
   opts = {
     global_settings = {
       excluded_filetypes = { "harpoon", "TelescopePrompt", "cmp_docs", "cmp_menu", "noice", "notify" },

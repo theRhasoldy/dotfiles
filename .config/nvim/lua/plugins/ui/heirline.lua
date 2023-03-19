@@ -1,7 +1,7 @@
 return {
   "rebelot/heirline.nvim",
   name = "heirline",
-  event = "UIEnter",
+  event = "VeryLazy",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
