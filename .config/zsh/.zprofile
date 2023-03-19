@@ -5,7 +5,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
 #}}}
 
-export TERM="kitty"
+# export TERM="kitty"
 export BROWSER="vivaldi-snapshot"
 
 export EDITOR="nvim"
@@ -27,7 +27,7 @@ export DART_SDK=$XDG_DATA_HOME/dev/dart/sdk
 
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 
-# export GRADLE_USER_HOME=$XDG_DATA_HOME/gradle 
+export GRADLE_USER_HOME=$XDG_DATA_HOME/gradle 
 
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export CARGO_HOME=$XDG_DATA_HOME/cargo
@@ -52,3 +52,5 @@ export BFETCH_CLASSIC_MODE=true
 export LS_COLORS="di=35"
 export EXA_COLORS="da=30"
 #}}}
+
+export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
