@@ -1,16 +1,17 @@
 local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
+local theme = require("lua.utils.theme")
 
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
 local space = dpi(18)
 
-local function create_icon(symbol)
+local function create_icon(symbol, color)
   return wibox.widget({
     widget = wibox.widget.background,
-    fg = beautiful.taglist_fg_occupied,
+    fg = color,
     {
       widget = wibox.widget.textbox,
       valign = "center",
@@ -82,19 +83,19 @@ awful.screen.connect_for_each_screen(function(s)
         {
           layout = wibox.layout.fixed.horizontal,
           spacing = space / 2,
-          create_icon("󰓅"),
+          create_icon("󰓅", theme.icon_color_1),
           uptime_text,
         },
         {
           layout = wibox.layout.fixed.horizontal,
           spacing = space / 2,
-          create_icon("󱓼"),
+          create_icon("󱓼", theme.icon_color_2),
           date,
         },
         {
           layout = wibox.layout.fixed.horizontal,
           spacing = space / 2,
-          create_icon("󰔟"),
+          create_icon("󰔟", theme.icon_color_3),
           time,
         },
       },
