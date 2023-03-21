@@ -66,6 +66,6 @@ case $selected in
     pkill awesome
     ;;
   "${lock}")
-    cinnamon-screensaver-command --lock || ( xflock4 || mate-screensaver-command -l )
+    betterlockscreen -l
     ;;
 esac
