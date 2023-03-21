@@ -28,6 +28,7 @@ ruled.client.connect_signal("request::rules", function()
         "Arandr",
         "Sxiv",
         "Xarchiver",
+        "Spotify",
       },
       name = {
         "Picture in picture",
@@ -46,6 +47,18 @@ ruled.client.connect_signal("request::rules", function()
       },
     },
     properties = { floating = true },
+  })
+
+  ruled.client.append_rule({
+    id = "ontop",
+    rule_any = {
+      class = {
+        "spad",
+        "pop",
+        "Spotify",
+      },
+    },
+    properties = { ontop = true },
   })
 
   -- ruled.client.append_rule {

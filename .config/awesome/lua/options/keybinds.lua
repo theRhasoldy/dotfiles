@@ -3,7 +3,7 @@ local gears = require("gears")
 local naughty = require("naughty")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
-local terminal = os.getenv("TERM")
+local terminal = "kitty"
 local config = os.getenv("XDG_CONFIG_HOME")
 
 -- Modifiers {{{
