@@ -23,10 +23,6 @@ return {
       blue = utils.get_highlight("Special").fg,
       orange = utils.get_highlight("Exception").fg,
       purple = utils.get_highlight("Keyword").fg,
-      cyan = utils.get_highlight("Identifier").fg,
-      git_add = utils.get_highlight("NonText").fg,
-      git_del = utils.get_highlight("NonText").fg,
-      git_change = utils.get_highlight("NonText").fg,
     }
 
     local Diagnostics = {

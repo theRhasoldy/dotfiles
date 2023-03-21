@@ -6,7 +6,7 @@ opt.clipboard = "unnamedplus" -- System clipboard
 opt.hidden = true
 opt.updatetime = 50
 
---  Encoding
+-- Encoding
 vim.scriptencoding = "utf-8"
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
