@@ -29,11 +29,4 @@ return {
       },
     },
   },
-  {
-    "redve-dev/CommitReminder",
-    event = "BufReadPre",
-    opts = {
-      required_changes = 20,
-    },
-  },
 }

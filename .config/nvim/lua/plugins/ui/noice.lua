@@ -44,6 +44,7 @@ return {
       top_down = false,
       fps = 60,
       render = "compact",
+      background_colour = "Normal",
     },
   },
 }

@@ -29,10 +29,10 @@ return {
         end,
         window = {
           documentation = cmp.config.window.bordered({
-            winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None,PmenuThumb:BorderBG",
+            winhighlight = "Normal:Normal,CursorLine:PmenuSel,Search:None",
           }),
           completion = cmp.config.window.bordered({
-            winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+            winhighlight = "Normal:Normal,CursorLine:PmenuSel,Search:None",
           }),
         },
         snippet = {

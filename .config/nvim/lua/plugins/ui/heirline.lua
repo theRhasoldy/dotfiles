@@ -15,7 +15,7 @@ return {
 
     -- Winbar
     local colors = {
-      gray = utils.get_highlight("NonText").fg,
+      gray = utils.get_highlight("Title").fg,
       dark_gray = utils.get_highlight("NonText").fg,
       pink = utils.get_highlight("Operator").fg,
       red = utils.get_highlight("Define").fg,
@@ -108,6 +108,7 @@ return {
           return self.has_changes
         end,
         provider = "[ ",
+        hl = { fg = colors.gray },
       },
       {
         provider = function(self)
@@ -135,6 +136,7 @@ return {
           return self.has_changes
         end,
         provider = "]",
+        hl = { fg = colors.gray },
       },
     }
 
