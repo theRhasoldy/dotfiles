@@ -54,6 +54,12 @@ return {
       local capabilities =
           require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+      -- Folding
+      capabilities.textDocument.foldingRange = {
+        dynamicRegistration = false,
+        lineFoldingOnly = true,
+      }
+
       local on_attach = function(client)
         -- Disabled lsp formatting, handled by null-ls
         client.server_capabilities.document_formatting = false

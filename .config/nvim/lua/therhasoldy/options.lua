@@ -60,3 +60,8 @@ opt.equalalways = true
 vim.g.did_load_filetypes = 1
 
 vim.g.perl_host_prog = "$XDG_DATA_HOME/perl5/"
+
+-- Folding
+opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+opt.foldlevelstart = 99
+opt.foldenable = true

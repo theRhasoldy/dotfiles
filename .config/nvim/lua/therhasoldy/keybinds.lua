@@ -33,3 +33,5 @@ key("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true })
 -- Add newline
 key("n", "<CR>", "o<Esc>")
 key("n", "<S-CR>", "O<Esc>")
+
+-- UFO
