@@ -61,10 +61,15 @@ ruled.client.connect_signal("request::rules", function()
     properties = { ontop = true },
   })
 
-  -- ruled.client.append_rule {
-  --     rule       = { class = "Firefox"     },
-  --     properties = { screen = 1, tag = "2" }
-  -- }
+  ruled.client.append_rule({
+    rule = { class = "Vivaldi-snapshot" },
+    properties = { screen = 1, tag = "" },
+  })
+
+  ruled.client.append_rule({
+    rule = { class = "obsidian" },
+    properties = { screen = 1, tag = "" },
+  })
 end)
 -- }}}
 

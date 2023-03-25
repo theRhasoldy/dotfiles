@@ -191,14 +191,13 @@ global_keybinds({
         tag:view_only()
       end
     end,
-    description = "only view tag",
+    description = "Switch tag",
     group = "tag",
   }),
 
   key({
     modifiers = { mod, "Control" },
     keygroup = "numrow",
-    description = "toggle tag",
     group = "tag",
     on_press = function(index)
       local screen = awful.screen.focused()
@@ -207,12 +206,30 @@ global_keybinds({
         awful.tag.viewtoggle(tag)
       end
     end,
+    description = "Toggle tag",
   }),
 
   key({
     modifiers = { mod, "Shift" },
     keygroup = "numrow",
-    description = "move focused client to tag",
+    group = "tag",
+    on_press = function(index)
+      if client.focus then
+        local tag = client.focus.screen.tags[index]
+        if tag then
+          client.focus:move_to_tag(tag)
+          local screen = awful.screen.focused()
+          local tag2 = screen.tags[index]
+          tag2:view_only()
+        end
+      end
+    end,
+    description = "Move focused client to tag and switch to the tag",
+  }),
+
+  key({
+    modifiers = { mod, "Control", "Shift" },
+    keygroup = "numrow",
     group = "tag",
     on_press = function(index)
       if client.focus then
@@ -222,34 +239,7 @@ global_keybinds({
         end
       end
     end,
-  }),
-
-  key({
-    modifiers = { mod, "Control", "Shift" },
-    keygroup = "numrow",
-    description = "toggle focused client on tag",
-    group = "tag",
-    on_press = function(index)
-      if client.focus then
-        local tag = client.focus.screen.tags[index]
-        if tag then
-          client.focus:toggle_tag(tag)
-        end
-      end
-    end,
-  }),
-
-  key({
-    modifiers = { mod },
-    keygroup = "numpad",
-    description = "select layout directly",
-    group = "layout",
-    on_press = function(index)
-      local t = awful.screen.focused().selected_tag
-      if t then
-        t.layout = t.layouts[index] or t.layout
-      end
-    end,
+    description = "Just move focused client to tag",
   }),
 })
 
