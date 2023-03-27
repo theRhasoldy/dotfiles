@@ -61,9 +61,9 @@ return {
       }
 
       local on_attach = function(client)
-        -- Disabled lsp formatting, handled by null-ls
-        client.server_capabilities.document_formatting = false
-        client.server_capabilities.document_range_formatting = false
+        -- Disabled built-in lsp formatting, handled by null-ls
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
         -- client.server_capabilities.semanticTokensProvider = nil
       end
 
