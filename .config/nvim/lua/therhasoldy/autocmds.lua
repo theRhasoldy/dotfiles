@@ -27,3 +27,12 @@ api.nvim_create_autocmd("UIEnter", {
     })
   end,
 })
+
+-- Lazy load clipboard
+local LoadClipboard = api.nvim_create_augroup("LoadClipboard", { clear = true })
+api.nvim_clear_autocmds({ group = LoadClipboard })
+api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    vim.opt.clipboard = "unnamedplus"
+  end,
+})

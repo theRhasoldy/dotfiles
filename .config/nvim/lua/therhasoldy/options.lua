@@ -2,7 +2,6 @@ local opt = vim.opt
 
 opt.termguicolors = true
 opt.shell = "zsh"
-opt.clipboard = "unnamedplus" -- System clipboard
 opt.hidden = true
 opt.updatetime = 50
 
