@@ -55,7 +55,7 @@ naughty.connect_signal("request::display", function(n)
         shape = gears.shape.rounded_bar,
       },
       strategy = "max",
-      width = dpi(48),
+      width = dpi(58),
       height = dpi(48),
       widget = wibox.container.constraint,
     },

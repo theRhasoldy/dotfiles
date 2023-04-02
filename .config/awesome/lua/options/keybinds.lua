@@ -113,10 +113,33 @@ global_keybinds({
   end, { description = "focus next by index", group = "client" }),
   -- }}}
 
-  key({ mod }, "Left", awful.tag.viewprev, { description = "view previous", group = "tag" }),
-  key({ mod }, "Right", awful.tag.viewnext, { description = "view next", group = "tag" }),
+  -- Resizing
+  awful.key({ mod, ctrl }, "l", function()
+    awful.tag.incmwfact(0.05)
+  end, { description = "increase master width factor", group = "layout" }),
+  awful.key({ mod, ctrl }, "h", function()
+    awful.tag.incmwfact( -0.05)
+  end, { description = "decrease master width factor", group = "layout" }),
 
-  -- Layout manipulation {{{
+  -- Directional swap
+  key({ mod, shift }, "j", function()
+    awful.client.swap.global_bydirection("up")
+  end, { description = "Swap up", group = "client" }),
+
+  key({ mod, shift }, "k", function()
+    awful.client.swap.global_bydirection("down")
+  end, { description = "Swap down", group = "client" }),
+
+  key({ mod, shift }, "h", function()
+    awful.client.swap.global_bydirection("left")
+  end, { description = "Swap left", group = "client" }),
+
+  key({ mod, shift }, "l", function()
+    awful.client.swap.global_bydirection("right")
+  end, { description = "Swap right", group = "client" }),
+  -- }}}
+
+  -- Layout manipulation
   key({ mod, shift }, "j", function()
     awful.client.swap.byidx(1)
   end, { description = "swap with next client by index", group = "client" }),
@@ -139,7 +162,6 @@ global_keybinds({
       client.focus:raise()
     end
   end, { description = "go back", group = "client" }),
-  -- }}}
 
   -- Launchers {{{
   key({ mod }, "Return", function()
@@ -176,11 +198,23 @@ global_keybinds({
   key({ mod }, "i", function()
     awful.spawn("vivaldi-snapshot")
   end, { description = "Launch Browser", group = "Applications" }),
+
+  key({ mod }, "s", function()
+    awful.spawn.with_shell("flameshot gui")
+  end, { description = "Take a screenshot", group = "Applications" }),
+
+  key({ mod }, "c", function()
+    awful.spawn.with_shell("bash ~/.config/scripts/colorpick.sh")
+  end, { description = "Pick Color", group = "Applications" }),
   -- }}}
 })
 
 -- This should map on the top row of your keyboard, usually 1 to 9.
 global_keybinds({
+
+  key({ mod }, "Left", awful.tag.viewprev, { description = "view previous", group = "tag" }),
+  key({ mod }, "Right", awful.tag.viewnext, { description = "view next", group = "tag" }),
+
   key({
     modifiers = { mod },
     keygroup = "numrow",
