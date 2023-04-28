@@ -77,6 +77,10 @@ naughty.connect_signal("request::display", function(n)
 
   -- Actions body
   local action_widget = {
+    widget = wibox.container.margin,
+    left = dpi(24),
+    right = dpi(24),
+    top = dpi(16),
     {
       {
         id = "text_role",
@@ -90,7 +94,6 @@ naughty.connect_signal("request::display", function(n)
       forced_height = 30,
       widget = wibox.container.background,
     },
-    widget = wibox.container.margin,
   }
 
   local actions = wibox.widget({
@@ -163,7 +166,7 @@ naughty.connect_signal("request::display", function(n)
         height = dpi(80),
         widget = wibox.container.constraint,
       },
-      border_width = 2,
+      border_width = 1,
       border_color = beautiful.notification_border_color,
 
       widget = wibox.container.background,
