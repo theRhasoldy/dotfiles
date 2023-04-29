@@ -23,10 +23,6 @@ return {
       end,
     },
     -- "David-Kunz/markid", -- Interesting but too much hassle
-    {
-      "nvim-treesitter/playground",
-      cmd = { "TSHighlightCapturesUnderCursor" },
-    },
   },
   opts = {
     auto_install = true,
@@ -49,6 +45,7 @@ return {
       "markdown",
       -- Mobile
       "dart",
+      "vimdoc",
     },
     highlight = { enable = true, additional_vim_regex_highlighting = false },
     indent = { enable = true },
