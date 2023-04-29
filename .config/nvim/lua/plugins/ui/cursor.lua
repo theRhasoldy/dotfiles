@@ -15,11 +15,4 @@ return {
       require("reticle").setup(opts)
     end,
   },
-  {
-    "arnamak/stay-centered.nvim",
-    event = "BufReadPre",
-    config = function()
-      require("stay-centered")
-    end,
-  },
 }
