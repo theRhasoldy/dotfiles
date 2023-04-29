@@ -30,8 +30,9 @@ alias nano="nvim"
 
 # Legacy
 alias cat="bat"
-# alias find="fd"
-# alias sed="sd"
+alias man="batman"
+alias diff="batdiff"
+alias find="fd"
 
 # Git
 alias g="git"
