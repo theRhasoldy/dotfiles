@@ -4,28 +4,28 @@ add_newline = false
 command_timeout = 1000
 
 [character]
-success_symbol = "[ ](bright-green)" 
-error_symbol = "[ ](bright-red)"
+success_symbol = "[󰏫 ](bright-green)" 
+error_symbol = "[! ](bright-red)"
 vimcmd_symbol = "[󰹇 ](cyan)"
 # Only fish
 # vimcmd_replace_one_symbol = "[ ](blue)" 
 # vimcmd_replace_symbol = "[ ](blue)"
 
 [sudo]
-format = "[  ](bright-yellow)"
+format = "[ 󰆥 ](bright-yellow)"
 disabled = false
 
 [directory]
 truncation_length = 3
-home_symbol = " "
+home_symbol = "󰋞 "
 read_only = " "
 format = "[$read_only](bright-yellow)[$path](bright-purple)"
 
 [cmd_duration]
-format = "[ 神 $duration](bright-black)"
+format = "[ 󰔟 $duration](bright-black)"
 
 [package]
-format = "[  $version](bright-black) "
+format = "[󰏗  $version](bright-black) "
 disabled = false
 
 [line_break]
@@ -35,7 +35,7 @@ disabled = false
 disabled = false
 
 [git_status]
-modified = "柳"
+modified = ""
 deleted = ""
 renamed = ""
 untracked = ""
@@ -53,7 +53,7 @@ format = "via [ $version](bold blue) "
 format = "via [ $version](bold red) "
 
 [nodejs]
-format = "via [ $version](bold green) "
+format = "via [ $version](bold green) "
 
 [java]
 format = "via [ $version](bold orange) "
