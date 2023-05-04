@@ -22,7 +22,7 @@ show_usage() {
 # Options as unicode characters of
 # the custom-compiled version of Feather icons
 poweroff=$(echo -ne "⏻");
-reboot=$(echo -ne "ﯩ");
+reboot=$(echo -ne "");
 sleep=$(echo -ne "󰤄");
 logout=$(echo -ne "󰍃");
 lock=$(echo -ne "");
