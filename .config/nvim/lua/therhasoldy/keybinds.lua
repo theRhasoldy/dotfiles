@@ -18,6 +18,8 @@ key("n", "<Leader>=", "<cmd>vsplit<CR>")
 key("n", "<C-q>", "<cmd>q<CR>")
 key("n", "<Space>+", "<C-w>=")
 
+key("n", "<C-w>", "<C-W>W") -- Focus window
+
 -- Resize splits
 key("n", "<Leader>h", "<C-W>H")
 key("n", "<Leader>j", "<C-W>J")
@@ -34,4 +36,9 @@ key("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true })
 key("n", "<CR>", "o<Esc>")
 key("n", "<S-CR>", "O<Esc>")
 
--- UFO
+key("n", "<Leader>zz", "<cmd>autocmd! StayCentered<CR>")
+
+-- Yanking
+key("x", "<leader>p", [["_dP]])
+key({ "n", "v" }, "<leader>y", [["+y]])
+key("n", "<leader>Y", [["+Y]])
