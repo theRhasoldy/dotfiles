@@ -9,6 +9,7 @@ return {
   },
   opts = {
     defaults = {
+      winblend = 10,
       dynamic_preview_title = true,
       path_display = { "smart" },
       layout_strategy = "vertical",

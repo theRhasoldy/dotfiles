@@ -1,10 +1,11 @@
 return {
   {
+    "MunifTanjim/nui.nvim",
+    event = "VeryLazy",
+  },
+  {
     "folke/noice.nvim",
     event = "VeryLazy",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-    },
     opts = {
       cmdline = {
         view = "cmdline",
