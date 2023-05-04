@@ -30,7 +30,7 @@ return {
   -- },
   {
     "catppuccin/nvim",
-    lazy = false,
+    -- lazy = false,
     name = "catppuccin",
     config = function()
       -- vim.cmd.colorscheme("catppuccin-mocha")
