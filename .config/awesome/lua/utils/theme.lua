@@ -7,11 +7,13 @@ local bold_font = "Ubuntu bold 9"
 
 local colors = {
   foreground = "#e4e0f9",
-  background = "#2c2a39",
+  -- background = "#2c2a39",
+  background = "#232323",
   pumpkin = "#ffbdbf",
   plump = "#e5759b",
   violet = "#cda9e0",
-  faded = "#625E77",
+  -- faded = "#625E77",
+  faded = "#626262",
 }
 
 local theme = {
@@ -20,7 +22,7 @@ local theme = {
   useless_gap = dpi(3),
   -- Colors
   fg_normal = colors.foreground,
-  bg_normal = colors.background,
+  bg_normal = colors.background .. "ee",
   -- wibar
   icon_color_1 = colors.violet,
   icon_color_2 = colors.pumpkin,
