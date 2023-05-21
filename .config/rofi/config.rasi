@@ -30,15 +30,17 @@ configuration {
 	}
 
 	clipboard {
-		display-name: "";
+		display-name: "󰨸";
 	}
 }
 
 * {
 	font:   "Ubuntu 11";
 
-	bg0:    #2C2A39CC;
-	bg1:    #2C2A39CC;
+	/* bg0:    #2C2A39CC; */
+	/* bg1:    #2C2A39CC; */
+	bg0:    #232323CC;
+	bg1:    #232323CC;
 	bg2:    #ffbdbf44;
 
 	fg0:    #e4e0f9;
