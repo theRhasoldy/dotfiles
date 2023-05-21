@@ -45,10 +45,15 @@ export GOPATH=$XDG_DATA_HOME/go
 
 export GEM_HOME=$XDG_DATA_HOME/gem/
 
-
 export PATH="$PATH:$XDG_DATA_HOME/gem/ruby/3.0.0/bin"
 export PATH="$PATH":"$XDG_CACHE_HOME/flutter/pub/bin"
 export PATH="$PATH":"/opt/flutter/bin"
+
+# zoxide with tmux
+export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+
+# Add scripts folder to path
+export PATH="$XDG_CONFIG_HOME/scripts:${PATH}"
 
 export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
 export GNUPGHOME=$XDG_DATA_HOME/gnupg/
@@ -63,4 +68,3 @@ export LS_COLORS="di=35"
 export EXA_COLORS="da=30"
 #}}}
 
-export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH

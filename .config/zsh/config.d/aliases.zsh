@@ -51,6 +51,3 @@ alias dota="dot add"
 alias dotc="dot commit -m"
 alias dotd="dot diff"
 alias dotps="dot push"
-
-# zoxide with tmux
-export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
