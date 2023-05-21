@@ -21,7 +21,7 @@ return {
       file_ignore_patterns = { "node_modules", ".git/" },
 
       preview = {
-        filesize_limit = 2,
+        filesize_limit = 1,
         treesitter = true,
       },
 
