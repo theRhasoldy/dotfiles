@@ -1,7 +1,8 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   name = "treesitter",
-  -- build = ":TSUpdate",
+  build = ":TSUpdate",
+  -- lazy = true,
   event = { "BufReadPost", "BufNewFile" },
   dependencies = {
     {
@@ -25,7 +26,7 @@ return {
     -- "David-Kunz/markid", -- Interesting but too much hassle
   },
   opts = {
-    auto_install = true,
+
     ensure_installed = {
       -- Lua
       "lua",
@@ -43,6 +44,7 @@ return {
       "yaml",
       "rasi",
       "markdown",
+      "markdown_inline",
       -- Mobile
       "dart",
       "vimdoc",
