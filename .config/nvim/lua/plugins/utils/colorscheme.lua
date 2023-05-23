@@ -36,4 +36,6 @@ return {
       -- vim.cmd.colorscheme("catppuccin-mocha")
     end,
   },
+  { "junegunn/seoul256.vim" },
+  { "rebelot/kanagawa.nvim" },
 }

@@ -15,6 +15,7 @@ return {
     {
       "nvim-treesitter/nvim-treesitter-refactor",
     },
+    "nvim-treesitter/playground",
     {
       "tzachar/local-highlight.nvim",
       config = function()
