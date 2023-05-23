@@ -55,7 +55,7 @@ export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 # Add scripts folder to path
 export PATH="$XDG_CONFIG_HOME/scripts:${PATH}"
 
-export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export GNUPGHOME=$XDG_DATA_HOME/gnupg/
 
 export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer 
