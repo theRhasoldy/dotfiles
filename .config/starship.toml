@@ -25,16 +25,20 @@ format = "[$read_only](bright-yellow)[$path](bright-purple)"
 format = "[ 󰔟 $duration](bright-black)"
 
 [package]
-format = "[󰏗  $version](bright-black) "
+format = "[󰏗 $version](bright-black) "
 disabled = false
 
 [line_break]
 disabled = false
 
+[git_branch]
+style = "bold bright-blue"
+
 [git_state]
 disabled = false
 
 [git_status]
+disabled = false
 modified = ""
 deleted = ""
 renamed = ""
@@ -42,6 +46,9 @@ untracked = ""
 staged = ""
 conflicted = ""
 style = "bright-black"
+ahead = '󱦲${count}'
+diverged = '⇕󱦲${ahead_count}󱦳${behind_count}'
+behind = '󱦳${count}'
 
 [git_commit]
 disabled = false
@@ -50,7 +57,7 @@ disabled = false
 format = "via [ $version](bold blue) "
 
 [dart]
-format = "via [ $version](bold red) "
+format = "via [ $version](bold blue) "
 
 [nodejs]
 format = "via [ $version](bold green) "
