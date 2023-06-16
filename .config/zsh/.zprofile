@@ -14,7 +14,7 @@ fi
 #}}}
 
 # export TERM="kitty"
-export BROWSER="vivaldi-snapshot"
+export BROWSER="vivaldi-stable"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
