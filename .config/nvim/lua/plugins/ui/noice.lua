@@ -21,6 +21,12 @@ return {
         progress = {
           enabled = false,
         },
+        hover = {
+          enabled = false,
+        },
+        signature = {
+          enabled = false,
+        },
         override = {
           -- override the default lsp markdown formatter with Noice
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,

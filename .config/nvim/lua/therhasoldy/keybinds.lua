@@ -38,6 +38,8 @@ key("n", "<S-CR>", "O<Esc>")
 
 key("n", "<Leader>zz", "<cmd>autocmd! StayCentered<CR>")
 
+key("i", "<C-BS>", "<ESC>cvb") -- No BS ctrl-backspace
+
 -- Yanking
 key("x", "<leader>p", [["_dP]])
 key({ "n", "v" }, "<leader>y", [["+y]])

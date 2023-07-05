@@ -13,11 +13,15 @@ return {
     null.setup({
       debounce = 150,
       sources = {
-        formatting.prettierd,
+        null.builtins.formatting.prettierd.with({ extra_filetypes = { "astro" } }),
         formatting.stylua,
         formatting.fixjson,
         formatting.black,
         -- null.builtins.code_actions.gitsigns,
+        null.builtins.diagnostics.eslint_d.with({
+          diagnostics_format = "[eslint] #{m}\n(#{c})",
+          extra_filetypes = { "astro" },
+        }),
       },
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then

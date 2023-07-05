@@ -74,6 +74,13 @@ return {
 
       lsp["tsserver"].setup(defaults)
 
+      lsp["astro"].setup({
+        defaults,
+        format = {
+          indentFrontmatter = true,
+        },
+      })
+
       lsp["html"].setup(defaults)
 
       lsp["emmet_ls"].setup(defaults)
