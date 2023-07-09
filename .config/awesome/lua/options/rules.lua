@@ -62,7 +62,7 @@ ruled.client.connect_signal("request::rules", function()
   })
 
   ruled.client.append_rule({
-    rule = { class = "Vivaldi-snapshot" },
+    rule = { class = "Vivaldi-stable" },
     properties = { screen = 1, tag = "" },
   })
 

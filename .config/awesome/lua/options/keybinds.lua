@@ -196,7 +196,7 @@ global_keybinds({
 
   -- Applications {{{
   key({ mod }, "i", function()
-    awful.spawn.with_shell("vivaldi-snapshot && rm -rf ~/.pki")
+    awful.spawn.with_shell("vivaldi-stable && rm -rf ~/.pki")
   end, { description = "Launch Browser", group = "Applications" }),
 
   key({ mod }, "s", function()
