@@ -6,7 +6,7 @@ local theme = require("lua.utils.theme")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
-local space = dpi(18)
+local space = dpi(16)
 
 local function create_icon(symbol, color)
   return wibox.widget({
@@ -56,7 +56,7 @@ awful.screen.connect_for_each_screen(function(s)
   })
 
   -- Create the wibox
-  s.mywibox = awful.wibar({ height = space * 2, border_width = dpi(7), position = "bottom", screen = s })
+  s.mywibox = awful.wibar({ height = space * 2, border_width = dpi(1.5), position = "bottom", screen = s })
 
   -- Add widgets to the wibox
   s.mywibox:setup({

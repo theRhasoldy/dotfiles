@@ -19,7 +19,7 @@ local colors = {
 local theme = {
   wallpaper = "~/Media/Pictures/AI/background.jpg",
   font = font,
-  useless_gap = dpi(3),
+  useless_gap = dpi(1.5),
   -- Colors
   fg_normal = colors.foreground,
   bg_normal = colors.background .. "ee",
