@@ -5,7 +5,7 @@ Spad = bling.module.scratchpad({
   rule = { class = "spad" },
   sticky = true,
   floating = true,
-  geometry = { x = 360, y = 70, height = 900, width = 1200 },
+  geometry = { x = 250, y = 70, height = 900, width = 1400 },
   reapply = true,
 })
 
@@ -23,6 +23,6 @@ Spot = bling.module.scratchpad({
   rule = { class = "Spotify" },
   sticky = true,
   floating = true,
-  geometry = { x = 360, y = 70, height = 900, width = 1200 },
+  geometry = { x = 250, y = 70, height = 900, width = 1400 },
   reapply = true,
 })
