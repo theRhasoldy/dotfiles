@@ -1,4 +1,5 @@
 #ls --> exa
+
 alias ls="exa --icons --group-directories-first"
 alias lsa="ls -a"
 alias ll="ls -l@ --git --time=accessed --no-permissions"
@@ -33,7 +34,7 @@ alias gps="git push"
 
 # Dotfiles
 alias dot="/usr/bin/git --git-dir=$HOME/.config/dotfiles.git/ --work-tree=$HOME"
-alias dots="dot status"
+alias dots="dot status --untracked-files=no"
 alias dota="dot add"
 alias dotc="dot commit -m"
 alias dotps="dot push"
