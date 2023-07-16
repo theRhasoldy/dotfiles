@@ -8,7 +8,7 @@ local function set_wallpaper(s)
     if type(wallpaper) == "function" then
       wallpaper = wallpaper(s)
     end
-    gears.wallpaper.maximized(wallpaper, s, false, { x = 0, y = -1800 })
+    gears.wallpaper.maximized(wallpaper, s, false, { x = 0, y = 0 })
   end
 end
 

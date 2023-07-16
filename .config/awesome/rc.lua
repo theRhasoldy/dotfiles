@@ -17,5 +17,5 @@ end)
 beautiful.init(gears.filesystem.get_configuration_dir() .. "lua/utils/theme.lua")
 
 require("lua.utils")
-require("lua.options")
 require("lua.ui")
+require("lua.options")

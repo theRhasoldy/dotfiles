@@ -2,8 +2,8 @@ local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
-local font = "Ubuntu semi-bold 9"
-local bold_font = "Ubuntu bold 9"
+local font = "SF Pro 9"
+local bold_font = "SF Pro bold 9"
 
 local colors = {
   foreground = "#e4e0f9",
@@ -17,7 +17,7 @@ local colors = {
 }
 
 local theme = {
-  wallpaper = "/usr/share/backgrounds/background.jpg",
+  wallpaper = "~/Media/Pictures/AI/background.jpg",
   font = font,
   useless_gap = dpi(3),
   -- Colors
