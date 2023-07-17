@@ -18,7 +18,7 @@ create_autocmd("BufEnter", {
 })
 
 -- Telescope on startup
-local HarpoonStartup = create_group("HarpoonStartup", { clear = true })
+--[[ local HarpoonStartup = create_group("HarpoonStartup", { clear = true })
 create_autocmd("UIEnter", {
   group = HarpoonStartup,
   callback = function()
@@ -26,7 +26,7 @@ create_autocmd("UIEnter", {
       initial_mode = "normal",
     })
   end,
-})
+}) ]]
 
 -- Lazy load clipboard
 local LoadClipboard = create_group("LoadClipboard", { clear = true })
