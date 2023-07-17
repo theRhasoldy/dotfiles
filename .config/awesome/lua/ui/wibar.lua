@@ -30,7 +30,7 @@ local date = wibox.widget({
   format = "%a %b %d",
 })
 
-local systray = wibox.widget.systray()
+-- local systray = wibox.widget.systray()
 
 local uptime_text = wibox.widget({
   widget = awful.widget.watch(
@@ -44,7 +44,7 @@ local uptime_text = wibox.widget({
 })
 
 awful.screen.connect_for_each_screen(function(s)
-  s.mylayoutbox = awful.widget.layoutbox(s)
+  -- s.mylayoutbox = awful.widget.layoutbox(s)
 
   s.mytaglist = awful.widget.taglist({
     screen = s,
@@ -56,7 +56,8 @@ awful.screen.connect_for_each_screen(function(s)
   })
 
   -- Create the wibox
-  s.mywibox = awful.wibar({ height = space * 2, border_width = dpi(1.5), position = "bottom", screen = s })
+  s.mywibox =
+      awful.wibar({ bg = "#00000000", height = space * 2, border_width = dpi(1.5), position = "bottom", screen = s })
 
   -- Add widgets to the wibox
   s.mywibox:setup({
@@ -68,18 +69,18 @@ awful.screen.connect_for_each_screen(function(s)
       { -- Left widgets
         layout = wibox.layout.grid,
         homogeneous = false,
-        forced_num_cols = 2,
+        forced_num_cols = 1,
         spacing = space,
-        s.mylayoutbox,
+        -- s.mylayoutbox,
         s.mytaglist,
       },
       nil,
       { -- Right widgets
         layout = wibox.layout.grid,
         homogeneous = false,
-        forced_num_cols = 4,
+        forced_num_cols = 3,
         spacing = space,
-        systray,
+        -- systray,
         {
           layout = wibox.layout.fixed.horizontal,
           spacing = space / 2,

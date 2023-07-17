@@ -6,9 +6,10 @@ local font = "SF Pro 9"
 local bold_font = "SF Pro bold 9"
 
 local colors = {
-  foreground = "#e4e0f9",
+  foreground = "#eeeeee",
   -- background = "#2c2a39",
-  background = "#232323",
+  background = "#121212",
+  -- background = "#232323",
   pumpkin = "#ffbdbf",
   plump = "#e5759b",
   violet = "#cda9e0",
@@ -17,7 +18,7 @@ local colors = {
 }
 
 local theme = {
-  wallpaper = "~/Media/Pictures/AI/background.jpg",
+  wallpaper = "~/Downloads/background.jpg",
   font = font,
   useless_gap = dpi(1.5),
   -- Colors
