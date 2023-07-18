@@ -6,4 +6,5 @@ awful.spawn.with_shell(
   -- list each of your autostart commands, followed by ; inside double quotes, followed by ..
   .. "dex --environment Awesome --autostart;"
   .. "lxsession &"
+  .. "xset r rate 150 60"
 )
