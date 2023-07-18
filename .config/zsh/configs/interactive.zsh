@@ -8,10 +8,14 @@
   zcompile ${ZDOTDIR:-${HOME}}/.zshrc
   zcompile ${ZDOTDIR:-${HOME}}/.zprofile
   zcompile ${ZDOTDIR:-${HOME}}/.zshenv
+
 } &!
 
 # Execute code only if in interactive session
 if [[ -o INTERACTIVE && -t 2 ]]; then
+	source "$HOME/.config/zsh/configs/aliases.zsh"
+	source "$HOME/.config/zsh/configs/completion.zsh"
+
 	eval "$(starship init zsh)"
   eval "$(zoxide init zsh)"
 fi >&2

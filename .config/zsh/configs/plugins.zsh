@@ -2,7 +2,6 @@ PLUGINS="/usr/share/zsh/plugins"
 
 source $PLUGINS/zsh-vi-mode/zsh-vi-mode.zsh
 source $PLUGINS/zsh-you-should-use/you-should-use.plugin.zsh
-source $PLUGINS/zsh-autopair/autopair.zsh
 
 source $PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_STYLES[unknown-token]="fg=9,bold"
