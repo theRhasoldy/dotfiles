@@ -9,6 +9,8 @@ return {
         return
       end
       comment.setup()
+
+      require("Comment.ft").set("astro", { "//%s", "/*%s*/" })
     end,
   },
   {
