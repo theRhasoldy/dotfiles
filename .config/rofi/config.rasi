@@ -14,28 +14,28 @@ configuration {
   }
 
 	drun {
-		display-name: "";
+		display-name: "";
 	}
 
 	run {
-		display-name: "";
+		display-name: "󰧚";
 	}
 
 	window {
-		display-name: "";
+		display-name: "";
 	}
 
 	emoji {
-		display-name: "";
+		display-name: "󰱲";
 	}
 
 	clipboard {
-		display-name: "󰨸";
+		display-name: "󰅍";
 	}
 }
 
 * {
-	font:   "Ubuntu 11";
+	font:   "SF Pro 10";
 
 	/* bg0:    #2C2A39CC; */
 	/* bg1:    #2C2A39CC; */
@@ -65,7 +65,7 @@ window {
 }
 
 inputbar {
-	font:       "Ubuntu Bold 16";
+	font:       "SF Pro Bold 16";
 	padding:    12px;
 	spacing:    12px;
 	children:   [ prompt, entry ];

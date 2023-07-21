@@ -11,7 +11,7 @@ inputbar {
 
 prompt {
   margin: 10%;
-  font: "Ubuntu bold 100";
+  font: "SF Pro bold 100";
 	background-color: inherit;
 }
 
