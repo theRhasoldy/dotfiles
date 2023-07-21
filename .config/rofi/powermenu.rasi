@@ -10,7 +10,7 @@ inputbar {
 }
 
 prompt {
-  margin: 10%;
+  margin: 12%;
   font: "SF Pro bold 100";
 	background-color: inherit;
 }
