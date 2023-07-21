@@ -16,6 +16,16 @@ if [[ -z "$LANG" ]]; then
     export LANGUAGE=en_US.UTF-8
 fi
 
+# Defaults
+export BROWSER=vivaldi-stable
+
+export EDITOR=nvim
+export VISUAL=nvim
+
+export PAGER="less"
+export QT_STYLE_OVERRIDE=kvantum
+
+# Locales
 export LC_COLLATE=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_MESSAGES=en_US.UTF-8
@@ -25,7 +35,12 @@ export LC_TIME=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LESSCHARSET=utf-8
 
-# eliminates duplicates in *paths
+# Env
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+
+# Eliminates duplicates in *paths
 typeset -gU cdpath fpath path
 
 # Zsh search path for executable
