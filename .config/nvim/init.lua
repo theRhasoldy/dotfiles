@@ -1,1 +1,1 @@
-require("therhasoldy")
+require("rhasoldy")

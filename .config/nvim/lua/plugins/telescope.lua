@@ -1,12 +1,16 @@
 return {
-  "nvim-telescope/telescope.nvim",
-  name = "telescope",
-  dependencies = {
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    "nvim-lua/plenary.nvim",
-    "nvim-telescope/telescope-live-grep-args.nvim",
-    "nvim-telescope/telescope-file-browser.nvim",
-  },
+	"nvim-telescope/telescope.nvim",
+	dependencies = {
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
+			config = function()
+				require("telescope").load_extension("fzf")
+			end,
+		},
+		"nvim-telescope/telescope-live-grep-args.nvim",
+		"nvim-telescope/telescope-file-browser.nvim",
+	},
   opts = {
     defaults = {
       winblend = 10,
@@ -17,7 +21,7 @@ return {
       selection_caret = "  ",
 
       -- Optimizations
-      cache_picker = false,
+      cache_picker = true,
       file_ignore_patterns = { "node_modules", ".git/" },
 
       preview = {
@@ -70,10 +74,6 @@ return {
       },
     },
   },
-  config = function(_, opts)
-    require("telescope").setup(opts)
-    require("telescope").load_extension("fzf")
-  end,
   keys = {
     {
       "<leader>ff",
