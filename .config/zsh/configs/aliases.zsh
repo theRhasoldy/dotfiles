@@ -24,6 +24,9 @@ alias nano="nvim" # Nano can suck deez nuts
 
 alias rg="rg --sort path"
 
+# Legacy
+alias cat="bat"
+
 # Git
 alias g="git"
 alias gs="git status"

@@ -16,6 +16,8 @@ if [[ -z "$LANG" ]]; then
     export LANGUAGE=en_US.UTF-8
 fi
 
+export ZDOTDIR="$HOME"/.config/zsh
+
 # Defaults
 export BROWSER=vivaldi-stable
 
@@ -38,7 +40,9 @@ export LESSCHARSET=utf-8
 # Env
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
+
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export XCURSOR_PATH=/usr/share/icons:$XDG_DATA_HOME/icons
 
 # Eliminates duplicates in *paths
 typeset -gU cdpath fpath path
