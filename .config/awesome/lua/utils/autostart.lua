@@ -7,4 +7,5 @@ awful.spawn.with_shell(
 	.. "dex --environment Awesome --autostart;"
 	.. "lxsession &"
 	.. "xset r rate 150 60"
+	.. "greenclip daemon"
 )
