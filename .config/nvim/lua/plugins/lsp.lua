@@ -39,7 +39,7 @@ return {
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-			local on_attach = function(client)
+			local attach_settings = function(client, bufnr)
 				-- Disabled built-in lsp formatting, handled by null-ls
 				client.server_capabilities.documentFormattingProvider = false
 				client.server_capabilities.documentRangeFormattingProvider = false
@@ -47,7 +47,7 @@ return {
 
 			local defaults = {
 				capabilities = capabilities,
-				on_attach = on_attach,
+				on_attach = attach_settings,
 			}
 
 			-- Language server configs
@@ -117,5 +117,63 @@ return {
 				autoformat = false,
 			})
 		end,
+		keys = {
+			{
+				mode = "n",
+				"gtd",
+				function()
+					vim.lsp.buf.definition()
+				end,
+			},
+			{
+				mode = "n",
+				"gd",
+				function()
+					vim.lsp.buf.hover()
+				end,
+			},
+			{
+				mode = "n",
+				"gn",
+				function()
+					vim.diagnostic.goto_next()
+				end,
+			},
+			{
+				mode = "n",
+				"gN",
+				function()
+					vim.diagnostic.goto_prev()
+				end,
+			},
+			{
+				mode = "n",
+				"ga",
+				function()
+					vim.lsp.buf.code_action()
+				end,
+			},
+			{
+				mode = "n",
+				"gR",
+				function()
+					vim.lsp.buf.references()
+				end,
+			},
+			{
+				mode = "n",
+				"gr",
+				function()
+					vim.lsp.buf.rename()
+				end,
+			},
+			{
+				mode = "i",
+				"<C-k>",
+				function()
+					vim.lsp.buf.signature_help()
+				end,
+			},
+		},
 	},
 }
