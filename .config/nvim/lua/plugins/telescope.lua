@@ -1,5 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
+	name = "telescope",
 	dependencies = {
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
@@ -11,108 +12,108 @@ return {
 		"nvim-telescope/telescope-live-grep-args.nvim",
 		"nvim-telescope/telescope-file-browser.nvim",
 	},
-  opts = {
-    defaults = {
-      winblend = 10,
-      dynamic_preview_title = true,
-      path_display = { "smart" },
-      layout_strategy = "vertical",
-      prompt_prefix = "    ",
-      selection_caret = "  ",
+	opts = {
+		defaults = {
+			winblend = 10,
+			dynamic_preview_title = true,
+			path_display = { "smart" },
+			layout_strategy = "vertical",
+			prompt_prefix = "    ",
+			selection_caret = "  ",
 
-      -- Optimizations
-      cache_picker = true,
-      file_ignore_patterns = { "node_modules", ".git/" },
+			-- Optimizations
+			cache_picker = true,
+			file_ignore_patterns = { "node_modules", ".git/" },
 
-      preview = {
-        filesize_limit = 1,
-        treesitter = true,
-      },
+			preview = {
+				filesize_limit = 1,
+				treesitter = true,
+			},
 
-      mappings = {
-        i = {
-          ["<C-q>"] = "close",
-          ["<C-j>"] = "move_selection_next",
-          ["<C-k>"] = "move_selection_previous",
-        },
-        n = {
-          ["q"] = "close",
-        },
-      },
-    },
+			mappings = {
+				i = {
+					["<C-q>"] = "close",
+					["<C-j>"] = "move_selection_next",
+					["<C-k>"] = "move_selection_previous",
+				},
+				n = {
+					["q"] = "close",
+				},
+			},
+		},
 
-    builtin = {
-      find_files = {
-        find_command = { "rg", "--files" },
-        hidden = true,
-      },
+		builtin = {
+			find_files = {
+				find_command = { "rg", "--files" },
+				hidden = true,
+			},
 
-      diagnostics = {
-        theme = "ivy",
-      },
-    },
+			diagnostics = {
+				theme = "ivy",
+			},
+		},
 
-    extensions = {
-      fzf = {
-        override_generic_sorter = true,
-        override_file_sorter = true,
-      },
-      live_grep_args = {
-        find_command = { "rg", "--files" },
-        auto_quoting = true,
-      },
+		extensions = {
+			fzf = {
+				override_generic_sorter = true,
+				override_file_sorter = true,
+			},
+			live_grep_args = {
+				find_command = { "rg", "--files" },
+				auto_quoting = true,
+			},
 
-      file_browser = {
-        initial_mode = "normal",
-        hijack_netrw = true,
-        cwd_to_path = true,
-        hidden = true,
-        path = "%:p:h",
-        dir_icon = "",
-        grouped = true,
-        theme = "ivy",
-      },
-    },
-  },
-  keys = {
-    {
-      "<leader>ff",
-      function()
-        require("telescope.builtin").find_files()
-      end,
-      desc = "Search files",
-    },
-    {
-      "<leader>n",
-      function()
-        require("telescope").extensions.file_browser.file_browser({})
-      end,
-      desc = "Open file browser",
-    },
-    {
-      "<leader>fg",
-      function()
-        require("telescope").extensions.live_grep_args.live_grep_args({
-          previewer = true,
-        })
-      end,
-      desc = "Search keyword",
-    },
-    {
-      "<leader>fd",
-      function()
-        require("telescope.builtin").diagnostics()
-      end,
-      desc = "Show diagnostics",
-    },
-    {
-      "<leader>fn",
-      function()
-        require("telescope").extensions.noice.noice({
-          initial_mode = "normal",
-        })
-      end,
-      desc = "Show notifications",
-    },
-  },
+			file_browser = {
+				initial_mode = "normal",
+				hijack_netrw = true,
+				cwd_to_path = true,
+				hidden = true,
+				path = "%:p:h",
+				dir_icon = "",
+				grouped = true,
+				theme = "ivy",
+			},
+		},
+	},
+	keys = {
+		{
+			"<leader>ff",
+			function()
+				require("telescope.builtin").find_files()
+			end,
+			desc = "Search files",
+		},
+		{
+			"<leader>n",
+			function()
+				require("telescope").extensions.file_browser.file_browser({})
+			end,
+			desc = "Open file browser",
+		},
+		{
+			"<leader>fg",
+			function()
+				require("telescope").extensions.live_grep_args.live_grep_args({
+					previewer = true,
+				})
+			end,
+			desc = "Search keyword",
+		},
+		{
+			"<leader>fd",
+			function()
+				require("telescope.builtin").diagnostics()
+			end,
+			desc = "Show diagnostics",
+		},
+		{
+			"<leader>fn",
+			function()
+				require("telescope").extensions.noice.noice({
+					initial_mode = "normal",
+				})
+			end,
+			desc = "Show notifications",
+		},
+	},
 }

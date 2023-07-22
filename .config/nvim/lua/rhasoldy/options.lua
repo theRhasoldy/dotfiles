@@ -26,7 +26,7 @@ opt.expandtab = false -- Tabs not spaces!
 
 opt.smartindent = true
 
-opt.backspace = {"start", "eol", "indent"}
+opt.backspace = { "start", "eol", "indent" }
 
 -- Useless files
 opt.swapfile = false
