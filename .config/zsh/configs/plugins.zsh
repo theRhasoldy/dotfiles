@@ -1,6 +1,8 @@
 PLUGINS="/usr/share/zsh/plugins"
 
 source $PLUGINS/zsh-vi-mode/zsh-vi-mode.zsh
+ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
+
 source $PLUGINS/zsh-you-should-use/you-should-use.plugin.zsh
 
 source $PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -14,4 +16,4 @@ ZSH_HIGHLIGHT_STYLES[autodirectory]="fg=13"
 ZSH_HIGHLIGHT_STYLES[line]='bg=6'
 
 source $PLUGINS/zsh-system-clipboard/zsh-system-clipboard.zsh
-ZSH_SYSTEM_CLIPBOARD_METHOD="xsc"
+ZSH_SYSTEM_CLIPBOARD_METHOD="xcc"

@@ -17,9 +17,12 @@ if [[ -z "$LANG" ]]; then
 fi
 
 export ZDOTDIR="$HOME"/.config/zsh
+export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
+export VIMRUNTIME="/usr/share/nvim/runtime"
 
 # Defaults
 export BROWSER=vivaldi-stable
+export TERM=xterm-kitty
 
 export EDITOR=nvim
 export VISUAL=nvim
