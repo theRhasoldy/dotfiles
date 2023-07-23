@@ -18,6 +18,11 @@ opt.autoread = true
 opt.rnu = true
 opt.nu = true
 
+-- Statusline
+opt.signcolumn = "yes"
+opt.laststatus = 3 -- Global Statusline
+opt.showmode = false
+
 -- Tabs
 opt.tabstop = 2
 opt.softtabstop = 2

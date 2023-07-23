@@ -3,7 +3,7 @@ local path = vim.split(package.path, ";")
 return {
 	{
 		"williamboman/mason.nvim",
-		event = { "BufReadPost", "BufNewFile" },
+		event = "BufReadPre",
 		opts = {
 			ui = {
 				check_outdated_packages_on_open = true,
@@ -18,7 +18,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-		event = { "BufReadPost", "BufNewFile" },
+		event = "BufReadPre",
 		init = function()
 			-- disable lsp watcher. Too slow on linux
 			local ok, wf = pcall(require, "vim.lsp._watchfiles")
@@ -191,7 +191,7 @@ return {
 	},
 	{
 		"kosayoda/nvim-lightbulb",
-		event = { "BufReadPost", "BufNewFile" },
+		event = "BufReadPre",
 		opts = {
 			priority = 100,
 			sign = {
