@@ -3,7 +3,6 @@ local path = vim.split(package.path, ";")
 return {
 	{
 		"williamboman/mason.nvim",
-		name = "mason",
 		event = { "BufReadPost", "BufNewFile" },
 		opts = {
 			ui = {
@@ -39,7 +38,7 @@ return {
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-			local attach_settings = function(client, bufnr)
+			local attach_settings = function(client)
 				-- Disabled built-in lsp formatting, handled by null-ls
 				client.server_capabilities.documentFormattingProvider = false
 				client.server_capabilities.documentRangeFormattingProvider = false
@@ -112,18 +111,35 @@ return {
 			lsp["cssls"].setup(defaults)
 
 			vim.diagnostic.config({
-				virtual_text = true, -- Disable virtual text
-				severity_sort = true, -- sorts diagnostics by severity (errors first)
-				autoformat = false,
+				underline = false,
+				update_in_insert = true,
+				virtual_text = {
+					spacing = 12,
+					source = "if_many",
+					prefix = "●",
+					-- this will set set the prefix to a function that returns the diagnostics icon based on the severity
+					-- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
+					-- prefix = "icons",
+					severity_sort = true,
+				},
 			})
 		end,
 		keys = {
 			{
 				mode = "n",
+				"<Leader><Leader>",
+				function()
+					vim.diagnostic.open_float()
+				end,
+				desc = "Line Diagnostics",
+			},
+			{
+				mode = "n",
 				"gtd",
 				function()
-					vim.lsp.buf.definition()
+					require("telescope.builtin").lsp_definitions({ reuse_win = true })
 				end,
+				desc = "Go to definition",
 			},
 			{
 				mode = "n",
@@ -131,6 +147,7 @@ return {
 				function()
 					vim.lsp.buf.hover()
 				end,
+				desc = "Hover details",
 			},
 			{
 				mode = "n",
@@ -147,18 +164,12 @@ return {
 				end,
 			},
 			{
-				mode = "n",
+				mode = { "n", "v" },
 				"ga",
 				function()
 					vim.lsp.buf.code_action()
 				end,
-			},
-			{
-				mode = "n",
-				"gR",
-				function()
-					vim.lsp.buf.references()
-				end,
+				desc = "Code actions provided by LSP",
 			},
 			{
 				mode = "n",
@@ -166,6 +177,7 @@ return {
 				function()
 					vim.lsp.buf.rename()
 				end,
+				desc = "Rename under cursor",
 			},
 			{
 				mode = "i",
@@ -173,6 +185,32 @@ return {
 				function()
 					vim.lsp.buf.signature_help()
 				end,
+				desc = "Signature Help",
+			},
+		},
+	},
+	{
+		"kosayoda/nvim-lightbulb",
+		event = { "BufReadPost", "BufNewFile" },
+		opts = {
+			priority = 100,
+			sign = {
+				enabled = true,
+				text = "💡",
+				hl = "Special",
+			},
+
+			-- 5. Number column.
+			number = {
+				enabled = false,
+				hl = "Special",
+			},
+			autocmd = {
+				-- Whether or not to enable autocmd creation.
+				enabled = true,
+				updatetime = 200,
+				events = { "CursorHold", "CursorHoldI" },
+				pattern = { "*" },
 			},
 		},
 	},

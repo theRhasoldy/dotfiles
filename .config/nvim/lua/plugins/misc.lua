@@ -1,11 +1,9 @@
 return {
 	{
 		"nvim-lua/plenary.nvim",
-		name = "plenary",
 	},
 	{
 		"nathom/filetype.nvim",
-		name = "filetype",
 		lazy = false,
 		opts = {
 			overrides = {

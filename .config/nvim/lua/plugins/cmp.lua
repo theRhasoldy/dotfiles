@@ -28,7 +28,6 @@ local symbols = {
 
 return {
 	"hrsh7th/nvim-cmp",
-	name = "cmp",
 	event = {
 		"InsertEnter",
 		"CmdlineEnter",
@@ -42,7 +41,6 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		{
 			"onsails/lspkind.nvim",
-			name = "lspkind",
 			event = "BufReadPre",
 			config = function()
 				require("lspkind").init({
