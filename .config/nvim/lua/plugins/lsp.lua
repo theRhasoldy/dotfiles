@@ -114,7 +114,7 @@ return {
 				underline = false,
 				update_in_insert = true,
 				virtual_text = {
-					spacing = 12,
+					spacing = 4,
 					source = "if_many",
 					prefix = "●",
 					-- this will set set the prefix to a function that returns the diagnostics icon based on the severity
