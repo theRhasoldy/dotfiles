@@ -6,10 +6,10 @@ local font = "SF Pro 9"
 local bold_font = "SF Pro bold 9"
 
 local colors = {
-	foreground = "#121212",
+	foreground = "#eeeeee",
 	-- foreground = "#eeeeee",
 	-- background = "#2c2a39",
-	background = "#eeeeee",
+	background = "#121212",
 	-- background = "#232323",
 	pumpkin = "#ffbdbf",
 	plump = "#e5759b",
@@ -39,10 +39,9 @@ local theme = {
 	-- Wibar
 	systray_icon_spacing = dpi(8),
 	-- Notifications
-	notification_bg = colors.foreground .. "99",
-	notification_fg = colors.background,
+	notification_bg = colors.background .. "99",
 	notification_header_font = bold_font,
-	notification_border_color = colors.foreground,
+	notification_border_color = colors.background,
 }
 
 return theme
