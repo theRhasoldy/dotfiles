@@ -5,7 +5,7 @@ local beautiful = require("beautiful")
 local theme = require("lua.utils.theme")
 local dpi = beautiful.xresources.apply_dpi
 
-naughty.config.defaults.position = "top_right"
+naughty.config.defaults.position = "bottom_right"
 naughty.notification_closed_reason.too_many_on_screen = 5
 
 naughty.connect_signal("request::display", function(n)
