@@ -30,7 +30,7 @@ return {
 		end,
 		config = function()
 			-- Set Custom Icons
-			local signs = { Error = " ", Warn = " ", Hint = "?", Info = " " }
+			local signs = { Error = " ", Warn = " ", Hint = "󰌵 ", Info = " " }
 			for type, icon in pairs(signs) do
 				local hl = "DiagnosticSign" .. type
 				vim.fn.sign_define(hl, { text = icon, texthl = hl })
@@ -116,7 +116,7 @@ return {
 				virtual_text = {
 					spacing = 4,
 					source = "if_many",
-					prefix = "●",
+					prefix = "󰊠",
 					-- this will set set the prefix to a function that returns the diagnostics icon based on the severity
 					-- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
 					-- prefix = "icons",
@@ -196,7 +196,7 @@ return {
 			priority = 100,
 			sign = {
 				enabled = true,
-				text = "💡",
+				text = " ",
 				hl = "Special",
 			},
 

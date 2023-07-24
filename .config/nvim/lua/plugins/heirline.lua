@@ -28,7 +28,7 @@ return {
 				error_icon = " ",
 				warn_icon = " ",
 				info_icon = " ",
-				hint_icon = " ",
+				hint_icon = "󰌵 ",
 			},
 			init = function(self)
 				self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
@@ -331,9 +331,11 @@ return {
 				FileNameBlock,
 				Space,
 				Diagnostics,
+
 				Align,
 				Git,
 				Align,
+
 				Ruler,
 				Space,
 				ScrollBar,
