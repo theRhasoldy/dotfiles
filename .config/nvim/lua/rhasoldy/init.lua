@@ -42,10 +42,9 @@ lazy.setup("plugins", {
 	performance = {
 		reset_packpath = true, -- reset the package path to improve startup time
 		rtp = {
-			paths = {},        -- add any custom paths here that you want to includes in the rtp
+			paths = {}, -- add any custom paths here that you want to includes in the rtp
 			---@type string[] list any plugins you want to disable here
 			disabled_plugins = {
-				"filetype",
 				"editorconfig",
 				"gzip",
 				"matchit",
@@ -58,6 +57,7 @@ lazy.setup("plugins", {
 				"tarPlugin",
 				"tohtml",
 				"2html_plugin",
+				"filetype",
 				"tutor",
 				"tutor_mode_plugin",
 				"zip",

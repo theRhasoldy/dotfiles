@@ -14,4 +14,8 @@ return {
 			})
 		end,
 	},
+	{
+		"monaqa/dial.nvim",
+		event = "VeryLazy",
+	},
 }

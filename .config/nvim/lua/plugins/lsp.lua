@@ -84,8 +84,6 @@ return {
 						},
 						library = {
 							vim.api.nvim_get_runtime_file("", true),
-							-- [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-							-- [vim.fn.stdpath("config") .. "/lua"] = true,
 						},
 						-- maxPreload = 2000,
 						-- preloadFileSize = 50000,
@@ -93,7 +91,7 @@ return {
 					},
 					completion = {
 						workspaceWord = true,
-						callSnippet = "Both",
+						callSnippet = "Replace",
 					},
 					format = {
 						enable = false,
@@ -119,7 +117,11 @@ return {
 				},
 			})
 
-			lsp["html"].setup(defaults)
+			lsp["html"].setup({
+				defaults,
+				single_file_support = true,
+				filetypes = { "html" },
+			})
 
 			lsp["emmet_ls"].setup(defaults)
 

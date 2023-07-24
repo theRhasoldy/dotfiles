@@ -129,13 +129,23 @@ return {
 				{ name = "nvim_lsp_signature_help" },
 				{ name = "luasnip" }, -- For luasnip users.
 				{ name = "path" },
-				{ name = "buffer",                 keyword_length = 5, max_item_count = 10 },
+				{ name = "buffer", keyword_length = 5, max_item_count = 10 },
 			}),
 			formatting = {
 				format = require("lspkind").cmp_format({
 					mode = "symbol",
 				}),
 			},
+		})
+
+		cmp.setup.filetype("lua", {
+			sources = cmp.config.sources({
+				{ name = "nvim_lua" },
+				{ name = "nvim_lsp" },
+				{ name = "nvim_lsp_signature_help" },
+				{ name = "path" },
+				{ name = "buffer", keyword_length = 5, max_item_count = 10 },
+			}),
 		})
 
 		-- Set configuration for specific filetype.

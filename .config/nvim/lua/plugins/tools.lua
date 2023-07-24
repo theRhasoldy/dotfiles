@@ -1,17 +1,11 @@
 return {
+	-- lazy.nvim
 	{
-		"axkirillov/hbac.nvim",
-		event = "BufEnter",
+		"chrisgrieser/nvim-early-retirement",
+		event = "VeryLazy",
 		opts = {
-			autoclose = true,
-			threshold = 20,
-		},
-		keys = {
-			{
-				"<leader>fb",
-				"<cmd>Hbac telescope<CR>",
-				desc = "Browse Open Buffers",
-			},
+			ignoreSpecialBuftypes = false,
+			notificationOnAutoClose = true,
 		},
 	},
 	{
