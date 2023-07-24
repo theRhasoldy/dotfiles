@@ -49,6 +49,25 @@ return {
 				on_attach = attach_settings,
 			}
 
+			local border = {
+				{ "╭", "FloatBorder" },
+				{ "─", "FloatBorder" },
+				{ "╮", "FloatBorder" },
+				{ "│", "FloatBorder" },
+				{ "╯", "FloatBorder" },
+				{ "─", "FloatBorder" },
+				{ "╰", "FloatBorder" },
+				{ "│", "FloatBorder" },
+			}
+
+			-- To instead override globally
+			local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+			function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+				opts = opts or {}
+				opts.border = opts.border or border
+				return orig_util_open_floating_preview(contents, syntax, opts, ...)
+			end
+
 			-- Language server configs
 			local lsp = require("lspconfig")
 
@@ -113,10 +132,13 @@ return {
 			vim.diagnostic.config({
 				underline = false,
 				update_in_insert = true,
+				float = {
+					source = "if_many",
+				},
 				virtual_text = {
 					spacing = 4,
-					source = "if_many",
-					prefix = "󰊠",
+					-- source = "if_many",
+					prefix = "󰊠 ",
 					-- this will set set the prefix to a function that returns the diagnostics icon based on the severity
 					-- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
 					-- prefix = "icons",
