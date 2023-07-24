@@ -228,7 +228,7 @@ return {
 				local filename = self.filename
 				local extension = vim.fn.fnamemodify(filename, ":e")
 				self.icon, self.icon_color =
-						require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
+					require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
 			end,
 			provider = function(self)
 				return self.icon and (self.icon .. " ")
@@ -323,14 +323,17 @@ return {
 
 		-- Final heirline layout
 		local heir = {
+			winbar = {
+				Diagnostics,
+				Align,
+				LSPActive,
+			},
 			statusline = {
 				ViMode,
 				Space,
 				WorkDir,
 				Space,
 				FileNameBlock,
-				Space,
-				Diagnostics,
 
 				Align,
 				Git,
@@ -339,8 +342,16 @@ return {
 				Ruler,
 				Space,
 				ScrollBar,
-				Space,
-				LSPActive,
+			},
+			opts = {
+				-- if the callback returns true, the winbar will be disabled for that window
+				-- the args parameter corresponds to the table argument passed to autocommand callbacks. :h nvim_lua_create_autocmd()
+				disable_winbar_cb = function(args)
+					return conditions.buffer_matches({
+						buftype = { "nofile", "prompt", "help", "quickfix" },
+						filetype = { "^git.*", "fugitive", "Trouble", "dashboard" },
+					}, args.buf)
+				end,
 			},
 		}
 
