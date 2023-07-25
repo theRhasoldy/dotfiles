@@ -9,7 +9,7 @@ local colors = {
 	foreground = "#eeeeee",
 	-- foreground = "#eeeeee",
 	-- background = "#2c2a39",
-	background = "#121212",
+	background = "#232323",
 	-- background = "#232323",
 	pumpkin = "#ffbdbf",
 	plump = "#e5759b",
@@ -24,7 +24,7 @@ local theme = {
 	useless_gap = dpi(1.5),
 	-- Colors
 	fg_normal = colors.foreground,
-	bg_normal = colors.background .. "ee",
+	bg_normal = colors.background .. "cc",
 	-- wibar
 	icon_color_1 = colors.violet,
 	icon_color_2 = colors.pumpkin,
@@ -39,7 +39,7 @@ local theme = {
 	-- Wibar
 	systray_icon_spacing = dpi(8),
 	-- Notifications
-	notification_bg = colors.background .. "99",
+	notification_bg = colors.background .. "cc",
 	notification_header_font = bold_font,
 	notification_border_color = colors.background,
 }
