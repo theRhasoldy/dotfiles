@@ -2,7 +2,7 @@
 
 window {
   fullscreen: true;
-	background-color: #2C2A39cc;
+	background-color: #121212cc;
 }
 
 inputbar {
