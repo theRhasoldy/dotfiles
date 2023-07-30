@@ -6,7 +6,7 @@ local theme = require("lua.utils.theme")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
-local space = dpi(18)
+local space = dpi(22)
 
 local function create_icon(symbol, color)
 	return wibox.widget({
@@ -30,7 +30,7 @@ local date = wibox.widget({
 	format = "%a %b %d",
 })
 
--- local systray = wibox.widget.systray()
+local systray = wibox.widget.systray()
 
 local uptime_text = wibox.widget({
 	widget = awful.widget.watch(
@@ -57,7 +57,7 @@ awful.screen.connect_for_each_screen(function(s)
 
 	-- Create the wibox
 	s.mywibox =
-			awful.wibar({ bg = "#00000000", height = space * 1.5, border_width = 0, position = "bottom", screen = s })
+		awful.wibar({ bg = "#00000000", height = space * 1.5, border_width = 0, position = "bottom", screen = s })
 
 	-- Add widgets to the wibox
 	s.mywibox:setup({
@@ -78,9 +78,14 @@ awful.screen.connect_for_each_screen(function(s)
 			{ -- Right widgets
 				layout = wibox.layout.grid,
 				homogeneous = false,
-				forced_num_cols = 3,
+				forced_num_cols = 4,
 				spacing = space,
-				-- systray,
+				{
+					layout = wibox.layout.fixed.horizontal,
+					spacing = space / 2,
+					systray,
+					create_icon("│", theme.icon_color_2),
+				},
 				{
 					layout = wibox.layout.fixed.horizontal,
 					spacing = space / 2,

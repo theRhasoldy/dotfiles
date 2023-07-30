@@ -30,15 +30,17 @@ global_keybinds({
 
 	-- Volume
 	key({ mod }, "9", function()
-		awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")
+		awful.spawn.with_shell("amixer set Master 5%-")
 	end, { description = "Decrease Volume", group = "Volume" }),
 
 	key({ mod }, "0", function()
-		awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")
+		awful.spawn.with_shell("amixer set Master 5%+")
 	end, { description = "Increase Volume", group = "Volume" }),
 
 	key({ mod }, "-", function()
-		awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
+		awful.spawn.with_shell(
+			'amixer set Master toggle; if amixer get Master | grep -Fq "[off]"; then volnoti-show -m; else volnoti-show $(amixer get Master | grep -Po "[0-9]+(?=%)" | tail -1); fi'
+		)
 	end, { description = "Mute", group = "Volume" }),
 
 	-- Spotify
@@ -188,8 +190,8 @@ global_keybinds({
 	key({ mod }, "v", function()
 		awful.spawn(
 			"rofi -config "
-			.. config
-			.. "/rofi/clipboard.rasi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
+				.. config
+				.. "/rofi/clipboard.rasi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
 		)
 	end, { description = "Launch Rofi clipboard selector", group = "Launchers" }),
 	-- }}}
