@@ -6,10 +6,12 @@ return {
 			build = "make",
 			config = function()
 				require("telescope").load_extension("fzf")
+				require("telescope").load_extension("refactoring")
 			end,
 		},
 		"nvim-telescope/telescope-live-grep-args.nvim",
 		"nvim-telescope/telescope-file-browser.nvim",
+		"ThePrimeagen/refactoring.nvim",
 	},
 	opts = {
 		defaults = {
@@ -28,7 +30,6 @@ return {
 				filesize_limit = 1,
 				treesitter = true,
 			},
-
 			mappings = {
 				i = {
 					["<C-q>"] = "close",
@@ -46,7 +47,6 @@ return {
 				find_command = { "rg", "--files" },
 				hidden = true,
 			},
-
 			diagnostics = {
 				theme = "ivy",
 			},
@@ -61,7 +61,10 @@ return {
 				find_command = { "rg", "--files" },
 				auto_quoting = true,
 			},
-
+			refactors = {
+				initial_mode = "normal",
+				theme = "ivy",
+			},
 			file_browser = {
 				initial_mode = "normal",
 				hijack_netrw = true,
@@ -85,7 +88,7 @@ return {
 		{
 			"<leader>n",
 			function()
-				require("telescope").extensions.file_browser.file_browser({})
+				require("telescope").extensions.file_browser.file_browser()
 			end,
 			desc = "Open file browser",
 		},
@@ -113,6 +116,14 @@ return {
 				})
 			end,
 			desc = "Show notifications",
+		},
+		{
+			"gs",
+			mode = { "n", "x" },
+			function()
+				require("telescope").extensions.refactoring.refactors()
+			end,
+			desc = "Refactor code",
 		},
 	},
 }

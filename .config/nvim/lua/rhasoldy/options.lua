@@ -28,8 +28,10 @@ opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = false -- Tabs not spaces!
+opt.shiftround = true
 
 opt.smartindent = true
+opt.autoindent = true
 
 opt.backspace = { "start", "eol", "indent" }
 
@@ -52,8 +54,3 @@ opt.incsearch = true
 -- Editing
 opt.wrap = false
 opt.equalalways = true
-
--- Folding
-opt.foldlevel = 99 -- Using ufo provider need a large value
-opt.foldlevelstart = 99
-opt.foldenable = true

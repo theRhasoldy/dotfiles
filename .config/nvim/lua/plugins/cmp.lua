@@ -125,11 +125,11 @@ return {
 				["<C-e>"] = cmp.mapping.abort(),
 			}),
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp" },
-				{ name = "nvim_lsp_signature_help" },
 				{ name = "luasnip" }, -- For luasnip users.
+				{ name = "nvim_lsp_signature_help" },
+				{ name = "nvim_lsp" },
 				{ name = "path" },
-				{ name = "buffer", keyword_length = 5, max_item_count = 10 },
+				{ name = "buffer",                 keyword_length = 5, max_item_count = 10 },
 			}),
 			formatting = {
 				format = require("lspkind").cmp_format({
@@ -140,11 +140,11 @@ return {
 
 		cmp.setup.filetype("lua", {
 			sources = cmp.config.sources({
-				{ name = "nvim_lua" },
-				{ name = "nvim_lsp" },
 				{ name = "nvim_lsp_signature_help" },
+				{ name = "nvim_lsp" },
+				{ name = "nvim_lua" },
 				{ name = "path" },
-				{ name = "buffer", keyword_length = 5, max_item_count = 10 },
+				{ name = "buffer",                 keyword_length = 5, max_item_count = 10 },
 			}),
 		})
 
