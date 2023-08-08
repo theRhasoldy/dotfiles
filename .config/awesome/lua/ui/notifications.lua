@@ -25,10 +25,10 @@ naughty.connect_signal("request::display", function(n)
 
 	if n.app_name == "Spotify" then
 		symbol = "  "
-	end
-
-	if n.app_name == "Vivaldi" then
+	elseif n.app_name == "vivaldi" then
 		symbol = "󰣠  "
+	elseif n.app_name == "Colorpick" then
+		symbol = "󰏘  "
 	end
 
 	local app = wibox.widget({

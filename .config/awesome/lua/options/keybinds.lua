@@ -190,8 +190,8 @@ global_keybinds({
 	key({ mod }, "v", function()
 		awful.spawn(
 			"rofi -config "
-				.. config
-				.. "/rofi/clipboard.rasi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
+			.. config
+			.. "/rofi/clipboard.rasi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
 		)
 	end, { description = "Launch Rofi clipboard selector", group = "Launchers" }),
 	-- }}}
@@ -206,7 +206,7 @@ global_keybinds({
 	end, { description = "Take a screenshot", group = "Applications" }),
 
 	key({ mod }, "c", function()
-		awful.spawn.with_shell("bash ~/.config/scripts/colorpick.sh")
+		awful.spawn.with_shell("colorpick.sh")
 	end, { description = "Pick Color", group = "Applications" }),
 	-- }}}
 })
