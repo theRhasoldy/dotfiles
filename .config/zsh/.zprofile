@@ -63,3 +63,6 @@ path=(
 
 # t
 export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+
+# Add all scripts in scripts/ executable
+export PATH="$XDG_CONFIG_HOME/scripts:$PATH"

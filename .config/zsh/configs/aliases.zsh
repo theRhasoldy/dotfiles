@@ -31,9 +31,10 @@ alias cat="bat"
 alias g="git"
 alias gs="git status"
 alias ga="git add"
-alias gc="git commit -m"
+alias gc="git commit -m && gitleaks detect"
+alias gcz="git cz && gitleaks detect"
 alias gpl="git pull"
-alias gps="git push"
+alias gps="gitleaks detect && git push"
 
 # Dotfiles
 alias dot="/usr/bin/git --git-dir=$HOME/.config/dotfiles.git/ --work-tree=$HOME"
