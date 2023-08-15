@@ -62,6 +62,11 @@ ruled.client.connect_signal("request::rules", function()
 	})
 
 	ruled.client.append_rule({
+		rule = { name = "Steam" },
+		properties = { screen = 1, tag = "󰛞" },
+	})
+
+	ruled.client.append_rule({
 		rule = { class = "Vivaldi-stable" },
 		properties = { screen = 1, tag = "󰬸" },
 	})
