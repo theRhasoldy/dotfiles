@@ -1,5 +1,3 @@
-print("Hi rhasoldy")
-
 require("rhasoldy.map")
 require("rhasoldy.options")
 require("rhasoldy.autocmds")
@@ -45,7 +43,6 @@ lazy.setup("plugins", {
 			paths = {}, -- add any custom paths here that you want to includes in the rtp
 			---@type string[] list any plugins you want to disable here
 			disabled_plugins = {
-				"editorconfig",
 				"gzip",
 				"matchit",
 				"matchparen",

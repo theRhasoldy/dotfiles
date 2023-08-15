@@ -54,3 +54,5 @@ opt.incsearch = true
 -- Editing
 opt.wrap = false
 opt.equalalways = true
+
+vim.g.markdown_fenced_languages = { "javascript", "typescript", "scss", "css", "html" }

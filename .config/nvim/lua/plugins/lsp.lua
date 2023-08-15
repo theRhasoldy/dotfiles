@@ -108,6 +108,8 @@ return {
 				filetypes = { "sh" },
 			})
 
+			lsp["marksman"].setup(defaults)
+
 			lsp["tsserver"].setup(defaults)
 
 			lsp["astro"].setup({

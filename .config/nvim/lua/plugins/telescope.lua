@@ -12,6 +12,21 @@ return {
 		"nvim-telescope/telescope-live-grep-args.nvim",
 		"nvim-telescope/telescope-file-browser.nvim",
 		"ThePrimeagen/refactoring.nvim",
+		{
+			"luckasRanarison/nvim-devdocs",
+			opts = {
+				telescope_alt = {
+					theme = "dropdown",
+				},
+				float_win = { -- passed to nvim_open_win(), see :h api-floatwin
+					relative = "editor",
+					height = 50,
+					width = 150,
+					border = "single",
+				},
+				ensure_installed = { "html", "css", "javascript", "typescript" },
+			},
+		},
 	},
 	opts = {
 		defaults = {
@@ -116,6 +131,11 @@ return {
 				})
 			end,
 			desc = "Show notifications",
+		},
+		{
+			"<leader>fq",
+			"<cmd>DevdocsOpenFloat<CR>",
+			desc = "Open floating window of documentation",
 		},
 		{
 			"gs",
