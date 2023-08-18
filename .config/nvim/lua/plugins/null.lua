@@ -17,6 +17,9 @@ return {
 				null.builtins.diagnostics.eslint_d.with({
 					diagnostics_format = "[eslint] #{m}\n(#{c})",
 					extra_filetypes = { "astro" },
+					condition = function(utils)
+						return utils.root_has_file({ ".eslintrc.cjs" or ".eslintrc" })
+					end,
 				}),
 			},
 			on_attach = function(client, bufnr)
