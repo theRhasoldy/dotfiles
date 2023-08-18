@@ -65,20 +65,27 @@ return {
 			keys = {
 				{
 					"<Tab>",
+					mode = { "i", "s" },
 					function()
-						return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next"
+						if require("luasnip").expand_or_jumpable() then
+							require("luasnip").expand_or_jump()
+						else
+							return "<Tab>"
+						end
 					end,
 					expr = true,
 					silent = true,
-
-					mode = { "i", "s" },
 				},
 				{
 					"<s-Tab>",
-					function()
-						require("luasnip").jump(-1)
-					end,
 					mode = { "i", "s" },
+					function()
+						if require("luasnip").jumpable(-1) then
+							require("luasnip").jump(-1)
+						end
+					end,
+					expr = true,
+					silent = true,
 				},
 			},
 		},
@@ -127,11 +134,11 @@ return {
 				["<S-Tab>"] = nil,
 			}),
 			sources = cmp.config.sources({
-				{ name = "luasnip" }, -- For luasnip users.
-				{ name = "nvim_lsp_signature_help" },
 				{ name = "nvim_lsp" },
+				{ name = "nvim_lsp_signature_help" },
+				{ name = "luasnip" }, -- For luasnip users.
 				{ name = "path" },
-				{ name = "buffer",                 keyword_length = 5, max_item_count = 10 },
+				{ name = "buffer", keyword_length = 5, max_item_count = 10 },
 			}),
 			formatting = {
 				format = require("lspkind").cmp_format({
@@ -142,11 +149,12 @@ return {
 
 		cmp.setup.filetype("lua", {
 			sources = cmp.config.sources({
+				{ name = "nvim_lua" },
 				{ name = "nvim_lsp_signature_help" },
 				{ name = "nvim_lsp" },
-				{ name = "nvim_lua" },
+				{ name = "luasnip" }, -- For luasnip users.
 				{ name = "path" },
-				{ name = "buffer",                 keyword_length = 5, max_item_count = 10 },
+				{ name = "buffer", keyword_length = 5, max_item_count = 10 },
 			}),
 		})
 
