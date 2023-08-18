@@ -123,6 +123,8 @@ return {
 				["<C-s>"] = cmp.mapping.abort(),
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
 				["<C-e>"] = cmp.mapping.abort(),
+				["<Tab>"] = nil,
+				["<S-Tab>"] = nil,
 			}),
 			sources = cmp.config.sources({
 				{ name = "luasnip" }, -- For luasnip users.
