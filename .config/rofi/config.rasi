@@ -2,8 +2,8 @@ configuration {
 	display-drun: "";
 	display-window: "";
 	drun-display-format: "{icons} {name}";
-	font: "Ubuntu 8";
-	modi: "drun,run,window,emoji";
+	font: "SF Pro Display 10";
+	modi: "drun,run,window";
 	show-icons: true;
 	kb-remove-to-eol: "";
 	kb-accept-entry: "Return";
@@ -25,92 +25,11 @@ configuration {
 		display-name: "";
 	}
 
-	emoji {
-		display-name: "󰱲";
-	}
-
-	clipboard {
-		display-name: "󰅍";
-	}
+	// emoji {
+	// 	display-name: "󰱲";
+	// }
 }
 
-* {
-	font:   "SF Pro 10";
-
-	/* bg0:    #2C2A39CC; */
-	/* bg1:    #2C2A39CC; */
-	bg0:    #232323CC;
-	bg1:    #232323CC;
-	bg2:    #ffbdbf44;
-
-	fg0:    #e4e0f9;
-	fg1:    #e4e0f9;
-	fg2:    #e4e0f980;
-
-	background-color:   transparent;
-	text-color:         @fg0;
-
-	margin:     0;
-	padding:    0;
-	spacing:    0;
-
-}
-
-window {
-	background-color:   @bg0;
-	location:       center;
-	width:          620;
-	/* border-radius:  20; */
-
-}
-
-inputbar {
-	font:       "SF Pro Bold 16";
-	padding:    12px;
-	spacing:    12px;
-	children:   [ prompt, entry ];
-}
-
-prompt {
-	text-color: @fg1;
-	font: "Symbols Nerd Font 18";
-	background-color: inherit;
-	padding: 10px 5px;
-}
-
-entry {
-	font:   inherit;
-	placeholder-color   : @fg2;
-	padding: 10px;
-
-}
-
-message {
-	border-color:       @bg1;
-	background-color:   @bg1;
-}
-
-element {
-	padding:            14px 16px;
-	spacing:            16px;
-	background-color:   transparent;
-}
-
-element normal active {
-	text-color: @bg2;
-}
-
-element selected normal, element selected active {
-	background-color:   @bg2;
-	text-color:         #eeeeee;
-}
-
-element-icon {
-	size:   1.8em;
-}
-
-element-text {
-	background-color: #00000000;
-	text-color: inherit;
-	padding: 10px 0px;
-}
+/* Style blocks were moved to tahoe.rasi. rofi 2.0 only applies theme
+ * elements that are imported via @theme after the configuration block. */
+@theme "/home/rhasoldy/.config/rofi/tahoe.rasi"

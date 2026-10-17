@@ -1,39 +1,38 @@
 @theme "~/.config/rofi/config.rasi"
 
+configuration {
+  show-icons: true;
+  location: 5;
+}
+
 window {
   fullscreen: true;
-	background-color: #121212cc;
+  background-color: #090909e6;
+  width: 100%;
+  height: 100%;
+	border-radius: 0;
+  border: 0;
 }
 
-inputbar {
-	children: [ prompt ];
-}
+prompt, entry { enabled: false; }
 
-prompt {
-  margin: 12%;
-  font: "SF Pro bold 100";
-	background-color: inherit;
+listview {
+  layout: horizontal;
+  margin: 30% 5% 0 5%;
 }
 
 element {
-  spacing: 8em;
-  children: [element-text];
+  orientation: vertical;
+}
+
+element selected normal, element selected active {
+  text-color: #E253E1;
+  background-color: transparent;
 }
 
 element-text {
   font: "Symbols Nerd Font 100";
 	text-color: inherit;
   padding: 5em;
-}
-
-element selected normal, element selected active {
-  text-color: #ffbdbf;
-  background-color: transparent;
-}
-
-#listview {
-  margin: 10%;
-  layout: horizontal;
-  background-color: transparent;
 }
 

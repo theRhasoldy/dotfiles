@@ -1,3 +1,0 @@
-return {
-	scratchpad = require(... .. ".scratchpad"),
-}

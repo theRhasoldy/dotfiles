@@ -19,7 +19,7 @@ disabled = false
 truncation_length = 3
 home_symbol = "󰋞 "
 read_only = " "
-format = "[$read_only](bright-yellow)[$path](bright-purple)"
+format = "[$read_only](bright-green)[$path](bright-yellow)"
 
 [cmd_duration]
 format = "[ 󰔟 $duration](bright-black)"

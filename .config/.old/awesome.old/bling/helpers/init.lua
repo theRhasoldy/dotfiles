@@ -1,3 +1,0 @@
-return {
-	client = require(... .. ".client"),
-}
