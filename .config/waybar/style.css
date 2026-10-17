@@ -1,0 +1,160 @@
+* {
+  font-family:
+    SF Pro Display,
+    Avenir,
+    Symbols Nerd Font,
+    sans-serif;
+  font-size: 0.9rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+
+/* macOS Tahoe menu bar: dark at the top, fading to fully transparent at
+ * the bottom; no borders. */
+window#waybar {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.32) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  color: #ececec;
+}
+
+tooltip {
+  background: rgba(28, 28, 30, 0.92);
+  border-radius: 8px;
+}
+tooltip label {
+  color: white;
+}
+
+#workspaces * {
+  font-size: 1.1rem;
+}
+
+#workspaces button {
+  padding: 0 0.5rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 1.5rem;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  transition: color 0.15s ease;
+}
+
+#workspaces button:hover {
+  color: #ffffff;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  color: #ffffff;
+}
+
+#workspaces button.urgent {
+  color: #ff453a;
+}
+
+#mode,
+#clock,
+#battery {
+  padding: 0 10px;
+}
+
+#mode {
+  color: #ffd60a;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd {
+  margin: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#battery icon {
+  color: red;
+}
+
+/* macOS signal colors: text only, no background blocks */
+#battery.charging,
+#battery.plugged {
+  color: #30d158;
+}
+
+@keyframes blink {
+  to {
+    color: #ff453a;
+  }
+}
+
+#battery.warning:not(.charging) {
+  color: #ffd60a;
+}
+
+#battery.critical:not(.charging) {
+  color: #ff453a;
+  animation-name: blink;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  color: #ffffff;
+}
+
+#network.disconnected {
+  color: #ff453a;
+}
+
+#temperature.critical {
+  color: #ff453a;
+}
+
+#idle_inhibitor.activated {
+  color: #ffd60a;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
+}
+
+#custom-launcher {
+  font-size: 1.125rem;
+  margin-right: 0.5rem;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#custom-os_button:hover {
+  color: #ffffff;
+}

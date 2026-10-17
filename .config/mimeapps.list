@@ -1,0 +1,18 @@
+[Default Applications]
+text/html=vivaldi-stable.desktop
+x-scheme-handler/http=vivaldi-stable.desktop
+x-scheme-handler/https=vivaldi-stable.desktop
+x-scheme-handler/about=vivaldi-stable.desktop
+x-scheme-handler/unknown=vivaldi-stable.desktop
+x-scheme-handler/mailto=vivaldi-stable.desktop
+x-scheme-handler/figma=figma-linux.desktop
+x-scheme-handler/webcal=vivaldi-stable.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+x-scheme-handler/postman=Postman.desktop
+
+[Added Associations]
+image/jpeg=gimp.desktop;
+font/otf=com.github.FontManager.FontViewer.desktop;
+font/ttf=com.github.FontManager.FontViewer.desktop;
+image/png=gimp.desktop;
+image/svg+xml=org.inkscape.Inkscape.desktop;
