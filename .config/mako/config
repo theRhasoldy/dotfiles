@@ -6,24 +6,24 @@ sort=-time
 layer=top
 anchor=top-right
 
-# Style settings
-font=sans-serif 10
-background-color=#1e1e1ee6
-text-color=#ffffff
+# Style settings (aligned with rofi tahoe.rasi palette/metrics)
+font=SF Pro Display 10
+background-color=#1a1a1a99
+text-color=#eeeeee
 width=350
 height=120
 margin=20
-padding=15
-border-size=1
-border-color=#323232ff
-border-radius=15
-progress-color=over #007affff
+padding=14
+border-size=2
+border-color=#232323ff
+border-radius=12
+progress-color=over #31e2ccff
 
 # Icon settings
 icons=1
 max-icon-size=48
 icon-location=left
-icon-border-radius=10
+icon-border-radius=8
 
 # Text settings
 markup=1
@@ -33,10 +33,10 @@ group-by=app-name
 
 # Urgency overrides
 [urgency=low]
-border-color=#323232ff
+border-color=#232323ff
 
 [urgency=normal]
-border-color=#323232ff
+border-color=#232323ff
 
 [urgency=critical]
 border-color=#ff3b30ff
