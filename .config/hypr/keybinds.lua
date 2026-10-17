@@ -42,14 +42,14 @@ hl.bind("SUPER + T", hl.dsp.exec_cmd("bash " .. config .. "/scripts/rofitab.sh")
 hl.bind("CTRL + SHIFT + KP_END", hl.dsp.focus({ workspace = "previous" }))
 hl.bind("CTRL + SHIFT + KP_DOWN", hl.dsp.exec_cmd("kitty"))
 
--- Volume
-hl.bind("SUPER + 0", hl.dsp.exec_cmd("bash " .. config .. "/scripts/volume.sh --inc"), { repeating = true })
-hl.bind("SUPER + 9", hl.dsp.exec_cmd("bash " .. config .. "/scripts/volume.sh --dec"), { repeating = true })
-hl.bind("SUPER + minus", hl.dsp.exec_cmd("bash " .. config .. "/scripts/volume.sh --toggle"), { repeating = true })
+-- Volume (swayosd OSD)
+hl.bind("SUPER + 0", hl.dsp.exec_cmd("swayosd-client --output-volume raise --max-volume 150"), { repeating = true })
+hl.bind("SUPER + 9", hl.dsp.exec_cmd("swayosd-client --output-volume lower --max-volume 150"), { repeating = true })
+hl.bind("SUPER + minus", hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"), { repeating = true })
 
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("bash " .. config .. "/scripts/volume.sh --inc"), { repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("bash " .. config .. "/scripts/volume.sh --dec"), { repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("bash " .. config .. "/scripts/volume.sh --toggle"), { repeating = true })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("swayosd-client --output-volume raise --max-volume 150"), { repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("swayosd-client --output-volume lower --max-volume 150"), { repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"), { repeating = true })
 
 hl.bind("SUPER + F", hl.dsp.layout("colresize +conf"), { repeating = true })
 
@@ -62,8 +62,8 @@ hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { repeating = true }
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { repeating = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { repeating = true })
 
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl s +10%"), { repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 10%-"), { repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("swayosd-client --brightness raise"), { repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("swayosd-client --brightness lower"), { repeating = true })
 
 -- Laptop Keyboard
 -- `hyprctl keyword` no longer exists in the Lua era; use `hyprctl eval`.
