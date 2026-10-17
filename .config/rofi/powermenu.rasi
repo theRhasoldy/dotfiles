@@ -18,15 +18,16 @@ prompt, entry { enabled: false; }
 
 listview {
   layout: horizontal;
-  margin: 30% 5% 0 5%;
+  margin: 30% 5% 0 7.5%;
 }
 
 element {
   orientation: vertical;
+  text-color: @red;
 }
 
 element selected normal, element selected active {
-  text-color: #E253E1;
+  text-color: @orange;
   background-color: transparent;
 }
 

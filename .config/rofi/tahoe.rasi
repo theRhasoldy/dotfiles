@@ -13,7 +13,10 @@
 
     bg0: rgba(26, 26, 26, 60%);
     bg1: rgba(26, 26, 26, 60%);
-    bg2: rgba(49, 226, 204, 35%);
+    bg2: rgba(120, 58, 26, 14%);
+
+    orange: #ff8a3d;
+    red: #e5484d;
 
     fg0: #eeeeee;
     fg1: #eeeeee;
@@ -80,7 +83,7 @@ element {
 }
 
 element normal active {
-    text-color: @bg2;
+    text-color: @red;
 }
 
 element selected normal, element selected active {
