@@ -1,6 +1,6 @@
 -- Monitors, misc display servers, env (was display.conf)
 hl.monitor({ output = "eDP-1", mode = "preferred", position = "0x640", scale = 1, bitdepth = 10 })
-hl.monitor({ output = "HDMI-A-1", mode = "preferred", position = "1920x0", scale = 1, bitdepth = 10 })
+hl.monitor({ output = "HDMI-A-1", mode = "1920x1080@75", position = "1920x0", scale = 1, bitdepth = 10 })
 
 hl.config({
 	xwayland = {
@@ -25,3 +25,6 @@ hl.env("XCURSOR_SIZE", "16")
 hl.env("GDK_SCALE", "1")
 
 hl.env("LIBVA_DRIVER_NAME", "iHD")
+
+hl.env("QT_QPA_PLATFORMTHEME", "qt5ct:qt6ct")
+hl.env("QT_STYLE_OVERRIDE", "kvantum")

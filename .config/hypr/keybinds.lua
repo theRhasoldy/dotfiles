@@ -21,7 +21,7 @@ hl.bind("switch:on:[Lid Switch]", hl.dsp.exec_cmd("swaylock"), { locked = true }
 hl.bind("SUPER + Return", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
 hl.bind("SUPER + I", hl.dsp.exec_cmd("vivaldi && rm -rf ~/.pki/"))
-hl.bind("SUPER + O", hl.dsp.exec_cmd("obsidian"))
+hl.bind("SUPER + O", hl.dsp.exec_cmd("/usr/bin/obsidian"))
 
 -- Rofi
 hl.bind("SUPER + R", hl.dsp.exec_cmd("rofi -config " .. config .. "/rofi/app.rasi -show drun"))
@@ -30,6 +30,12 @@ hl.bind("SUPER + V", hl.dsp.exec_cmd("bash " .. config .. "/scripts/clipboard.sh
 hl.bind("SUPER + S", hl.dsp.exec_cmd("bash " .. config .. "/scripts/grimchoice.sh"))
 
 hl.bind("SUPER + P", hl.dsp.exec_cmd("bash " .. config .. "/scripts/colorpick.sh"))
+
+-- Screenshots
+-- Dedicated screenshot-icon key: firmware emits Super+Shift+S (verified via evdev)
+hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("grimshot --notify copy area"))
+-- Prt Sc key (emits keysym `Print`): white flash first, then full desktop to clipboard
+hl.bind("Print", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.local/bin/screenshot-flash; grimshot --notify copy screen"))
 
 hl.bind("SUPER + SHIFT + Q", hl.dsp.exec_cmd("bash " .. config .. "/scripts/powermenu.sh"))
 
@@ -50,6 +56,11 @@ hl.bind("SUPER + minus", hl.dsp.exec_cmd("swayosd-client --output-volume mute-to
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("swayosd-client --output-volume raise --max-volume 150"), { repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("swayosd-client --output-volume lower --max-volume 150"), { repeating = true })
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"), { repeating = true })
+
+-- Microphone: the mic-icon key (Fn+F4) emits evdev 185 / xkb keycode 193.
+-- Its xkb keymap entry has no usable keysym, so bind by keycode ("code:193").
+-- LED follows the mute state via micmute-led.service.
+hl.bind("code:193", hl.dsp.exec_cmd("swayosd-client --input-volume mute-toggle"))
 
 hl.bind("SUPER + F", hl.dsp.layout("colresize +conf"), { repeating = true })
 

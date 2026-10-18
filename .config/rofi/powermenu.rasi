@@ -34,6 +34,6 @@ element selected normal, element selected active {
 element-text {
   font: "Symbols Nerd Font 100";
 	text-color: inherit;
-  padding: 5em;
+  padding: 4em;
 }
 

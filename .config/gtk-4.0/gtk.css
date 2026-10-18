@@ -1,0 +1,71 @@
+/* ── Adwaita-AMOLED libadwaita overrides (theme's gtk-modern.css) ──────────
+ * libadwaita apps (file-roller, GNOME apps) ignore gtk-theme-name — it is
+ * forced to 'Adwaita-empty'. These overrides re-map the palette instead.
+ * Re-copy after updating the theme: ~/.local/share/themes/Adwaita-AMOLED/extra/libadwaita/
+ * ---------------------------------------------------------------------- */
+/* GTK 4.16+ / libadwaita 1.6+: keep standalone text colors readable even
+ * when an application requests light mode over the AMOLED surfaces.
+ * Keep gtk-dark.css beside this file when installing it as gtk.css.
+ */
+@import url('gtk-dark.css');
+
+:root {
+  --accent-color: @accent_color;
+  --destructive-color: @destructive_color;
+  --success-color: @success_color;
+  --warning-color: @warning_color;
+  --error-color: @error_color;
+}
+
+/* ── user overrides (unchanged) ──────────────────────────────────────── */
+/* User GTK4 overrides — translucent "glass" context menus / popovers.
+ *
+ * Palette matches the rest of the desktop (rofi/tahoe.rasi, swayosd/style.css):
+ *   panel : rgba(26, 26, 26, 0.7)
+ *   fg    : #eeeeee
+ *   accent: rgba(120, 58, 26, 0.55)  (rofi's selected row)
+ *   border: hairline white @ 8%
+ *
+ * GTK4 has no GtkMenu; menus are popovers (GtkPopoverMenu / libadwaita), so
+ * everything is styled through the `popover` node. Read by plain GTK4 apps
+ * (pavucontrol) and libadwaita apps alike.
+ * Blur behind the popover comes from Hyprland (decoration:blur:popups = true). */
+
+popover > contents,
+popover.background > contents,
+popover.menu > contents {
+    background-color: rgba(26, 26, 26, 0.7);
+    background-image: none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 6px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* the little pointer triangle: drop the theme's flat fill */
+popover > arrow {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+}
+
+popover.menu modelbutton,
+popover modelbutton {
+    color: #eeeeee;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+popover.menu modelbutton:hover,
+popover modelbutton:hover,
+popover modelbutton:selected {
+    background-color: rgba(120, 58, 26, 0.55);
+    color: #ffffff;
+}
+
+popover.menu separator,
+popover separator {
+    background-color: rgba(255, 255, 255, 0.10);
+    min-height: 1px;
+    margin: 4px 8px;
+}

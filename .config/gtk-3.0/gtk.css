@@ -1,0 +1,56 @@
+/* User GTK3 overrides — translucent "glass" context menus.
+ *
+ * Palette matches the rest of the desktop (rofi/tahoe.rasi, swayosd/style.css):
+ *   panel : rgba(26, 26, 26, 0.7)
+ *   fg    : #eeeeee
+ *   accent: rgba(120, 58, 26, 0.55)  (rofi's selected row)
+ *   border: hairline white @ 8%
+ *
+ * Loaded by GTK3 after the theme (Adwaita-AMOLED), so these win.
+ * Blur behind the menu comes from Hyprland (decoration:blur:popups = true);
+ * the menu only has to be translucent for it to show. */
+
+menu,
+.menu,
+.context-menu,
+popover.background {
+    background-color: rgba(26, 26, 26, 0.7);
+    background-image: none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 6px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+
+menuitem {
+    color: #eeeeee;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+menuitem:hover,
+menuitem:selected,
+menu menuitem:hover {
+    background-color: rgba(120, 58, 26, 0.55);
+    color: #ffffff;
+}
+
+menuitem:disabled {
+    color: rgba(238, 238, 238, 0.45);
+}
+
+menu separator,
+.menu separator,
+popover separator {
+    background-color: rgba(255, 255, 255, 0.10);
+    min-height: 1px;
+    margin: 4px 8px;
+}
+
+/* Arrow of GTK3 popovers: keep it transparent so the panel shape reads clean */
+popover.background > arrow,
+popover.background > contents {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}

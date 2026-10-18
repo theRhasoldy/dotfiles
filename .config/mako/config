@@ -7,7 +7,7 @@ layer=top
 anchor=top-right
 
 # Style settings (aligned with rofi tahoe.rasi palette/metrics)
-font=SF Pro Display 10
+font=SF Pro Display Medium 11
 background-color=#1a1a1a99
 text-color=#eeeeee
 width=350

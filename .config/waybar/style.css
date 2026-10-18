@@ -79,11 +79,20 @@ tooltip label {
 #tray,
 #mode,
 #idle_inhibitor,
-#scratchpad,
-#mpd {
+#scratchpad {
   margin: 2px;
   padding-left: 4px;
   padding-right: 4px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Center media pill: semi-transparent black, light text,
+ * artist regular weight, title bold. */
+#mpris {
+  margin: 3px 6px;
+  padding: 0 0.75rem;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.5);
   color: rgba(255, 255, 255, 0.9);
 }
 

@@ -18,6 +18,6 @@ hl.config({
 		vfr = true, -- was `misc.vfr`
 	},
 	render = {
-		direct_scanout = 1, -- was `misc.direct_scanout`
+		direct_scanout = 0, -- was `misc.direct_scanout`; 0 = fixes brief laptop-panel black blinks on fullscreen/OSD plane switches (i915 eDP)
 	},
 })

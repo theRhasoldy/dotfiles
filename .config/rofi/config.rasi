@@ -2,7 +2,7 @@ configuration {
 	display-drun: "";
 	display-window: "";
 	drun-display-format: "{icons} {name}";
-	font: "SF Pro Display 10";
+	font: "SF Pro Display Medium 12";
 	modi: "drun,run,window";
 	show-icons: true;
 	kb-remove-to-eol: "";

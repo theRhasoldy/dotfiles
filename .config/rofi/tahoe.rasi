@@ -9,7 +9,7 @@
  * (powermenu, clipboard, ...) reference them. */
 
 * {
-    font: "SF Pro Display, Avenir 11";
+    font: "SF Pro Display Medium, Avenir Medium 12";
 
     bg0: rgba(26, 26, 26, 60%);
     bg1: rgba(26, 26, 26, 60%);
@@ -40,7 +40,7 @@ window {
 }
 
 inputbar {
-    font: "SF Pro Display, Avenir Medium 15";
+    font: "SF Pro Display Medium, Avenir Medium 12";
     padding: 12px 16px;
     spacing: 10px;
     children: [ prompt, entry ];
@@ -48,8 +48,9 @@ inputbar {
 
 prompt {
     text-color: @fg1;
-    font: "Symbols Nerd Font 16";
-    padding: 0 2px 0 0;
+    font: "Symbols Nerd Font 12";
+    padding: 4px 2px 4px 0;
+    vertical-align: 0.5;
 }
 
 entry {
