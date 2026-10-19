@@ -1,8 +1,8 @@
 -- Animations (was animations.conf)
 hl.config({
-    animations = {
-        enabled = true,
-    },
+  animations = {
+    enabled = true,
+  },
 })
 
 -- Snappy cubic-bezier curves with instant initial response

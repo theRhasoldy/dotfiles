@@ -141,6 +141,10 @@ label:focus {
   color: #ff453a;
 }
 
+#network.disabled {
+  color: #ff453a;
+}
+
 #temperature.critical {
   color: #ff453a;
 }

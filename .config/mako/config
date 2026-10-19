@@ -41,3 +41,13 @@ border-color=#232323ff
 [urgency=critical]
 border-color=#ff3b30ff
 default-timeout=0
+
+# Instagram's web app sends a generic "You have unseen notifications." push
+# alongside the real one (e.g. "Sent a reel", a DM) - hide the generic duplicate.
+[body~="You have unseen notifications"]
+invisible=1
+
+# Vivaldi stages updates silently, then notifies "Vivaldi has been updated in
+# the background. Please restart now to complete the update." - skip it.
+[body~="updated in the background"]
+invisible=1

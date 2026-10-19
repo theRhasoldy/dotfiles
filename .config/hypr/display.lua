@@ -3,20 +3,20 @@ hl.monitor({ output = "eDP-1", mode = "preferred", position = "0x640", scale = 1
 hl.monitor({ output = "HDMI-A-1", mode = "1920x1080@75", position = "1920x0", scale = 1, bitdepth = 10 })
 
 hl.config({
-	xwayland = {
-		force_zero_scaling = true,
-		use_nearest_neighbor = true,
-	},
-	opengl = {
-		nvidia_anti_flicker = false,
-	},
-	cursor = {
-		no_hardware_cursors = 0, -- was `false`
-		enable_hyprcursor = true,
-		sync_gsettings_theme = true,
-		warp_on_change_workspace = 1,
-		warp_on_toggle_special = 1,
-	},
+  xwayland = {
+    force_zero_scaling = true,
+    use_nearest_neighbor = true,
+  },
+  opengl = {
+    nvidia_anti_flicker = false,
+  },
+  cursor = {
+    no_hardware_cursors = 0, -- was `false`
+    enable_hyprcursor = true,
+    sync_gsettings_theme = true,
+    warp_on_change_workspace = 1,
+    warp_on_toggle_special = 1,
+  },
 })
 
 hl.env("XCURSOR_THEME", "BreezeX-RosePineDawn")

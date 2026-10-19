@@ -125,7 +125,9 @@
       "tooltip-format-ethernet": "{ifname} via {gwaddr} ",
       "tooltip-format-disconnected": "Disconnected",
       "format-linked": "{ifname} (No IP) ",
-      "format-disconnected": "󰤮  Disconnected"
+      "format-disconnected": "󰤮  Disconnected",
+      "format-disabled": "󰤭  Off",
+      "tooltip-format-disabled": "Wi-Fi disabled"
     },
     "pulseaudio": {
       "scroll-step": 5, // %, can be a float

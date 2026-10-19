@@ -1,5 +1,5 @@
 -- Autostart (was autostart.conf: exec-once)
 hl.on("hyprland.start", function()
-	hl.exec_cmd("wl-paste --watch cliphist store")
-	hl.exec_cmd("wl-clip-persist --clipboard both")
+  hl.exec_cmd("wl-paste --watch cliphist store")
+  hl.exec_cmd("wl-clip-persist --clipboard both")
 end)
