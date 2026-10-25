@@ -26,6 +26,9 @@ if hl.plugin.hyprglass then
   -- rofi: mask_feather 0.55 ramps the glass in over the panel's own 60%
   -- antialiased corner ramp -> smooth, high-fidelity glass edges (no steps).
   hg.layer("rofi", { preset = "tahoe", mask_threshold = 0.05, mask_feather = 0.55 })
+  -- vinyl: GTK4 requests a bg-effect region that can resolve empty -> no glass
+  -- under mask_mode="auto", same as swayosd. Force the alpha mask.
+  hg.layer("vinyl", { preset = "tahoe", mask_mode = "alpha", mask_threshold = 0.02, mask_feather = 0.55 })
   -- swayosd: force the alpha mask — GTK may request a bg-effect region that
   -- yields no glass under mask_mode="auto"
   hg.layer("swayosd", { preset = "tahoe", mask_mode = "alpha", mask_threshold = 0.16, mask_feather = 0.55 })

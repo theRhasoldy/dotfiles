@@ -76,6 +76,7 @@ tooltip label {
 #pulseaudio,
 #wireplumber,
 #custom-media,
+#custom-opencode,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -170,4 +171,13 @@ label:focus {
 
 #custom-os_button:hover {
   color: #ffffff;
+}
+
+/* opencode quota mirror: yellow ≥75 %, red ≥90 % of the monthly allowance */
+#custom-opencode.warning {
+  color: #ffd60a;
+}
+
+#custom-opencode.critical {
+  color: #ff453a;
 }

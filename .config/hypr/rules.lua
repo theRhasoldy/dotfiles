@@ -92,12 +92,13 @@ hl.window_rule({
   opacity = "0.95 override",
 })
 
--- Main Vivaldi window: Opaque and no blur to protect Intel VA-API decoding
+-- Main Vivaldi window: Opaque, no blur, and no inactive dim
 hl.window_rule({
   name = "vivaldi-hardware-decode",
   match = { class = "^(Vivaldi-stable|vivaldi-stable)$" },
   opaque = true,
   no_blur = true,
+  no_dim = true,
 })
 
 -- Bitwarden extension popup: floats as its own window (Vivaldi extension popup)

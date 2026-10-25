@@ -16,6 +16,7 @@
       "tray",
       "network",
       "memory",
+      "custom/opencode",
       "temperature",
       "battery",
       "backlight",
@@ -60,12 +61,15 @@
     },
     "mpris": {
       "format": "{status_icon}  {artist} – <b>{title}</b>",
+      // keep the bar compact: truncate the whole output to 30 chars
+      // (full artist/title stay available in the tooltip)
+      "max-length": 30,
       "status-icons": {
         "paused": "",
         "playing": ""
       },
       "format-stopped": "Stopped",
-      "tooltip-format": "{player} ({status})",
+      "tooltip-format": "{player} ({status})\n{artist} – {title}",
       "on-click": "playerctl play-pause",
       "on-click-middle": "playerctl previous",
       "on-click-right": "playerctl next",
@@ -90,6 +94,13 @@
     },
     "memory": {
       "format": "󰎓  {used}GB | {total}GB"
+    },
+    "custom/opencode": {
+      "exec": "$HOME/.config/scripts/opencode-usage.sh",
+      "interval": 300,
+      "return-type": "json",
+      "tooltip": true,
+      "on-click": "bash -c 'notify-send -a opencode \"opencode usage\" \"$($HOME/.config/scripts/opencode-usage.sh 0 | jq -r .tooltip)\"'"
     },
     "temperature": {
       "thermal-zone": 2,

@@ -68,6 +68,7 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd("swayosd-client --output-volume mute-to
 -- Its xkb keymap entry has no usable keysym, so bind by keycode ("code:193").
 -- LED follows the mute state via micmute-led.service.
 hl.bind("code:193", hl.dsp.exec_cmd("swayosd-client --input-volume mute-toggle"))
+hl.bind("SUPER + ALT + K", hl.dsp.exec_cmd("swayosd-client --input-volume mute-toggle"))
 
 hl.bind("SUPER + F", hl.dsp.layout("colresize +conf"), { repeating = true })
 
@@ -82,6 +83,9 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { repeating = 
 
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("swayosd-client --brightness raise"), { repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("swayosd-client --brightness lower"), { repeating = true })
+
+hl.bind("SUPER + ALT + UP", hl.dsp.exec_cmd("swayosd-client --brightness raise"), { repeating = true })
+hl.bind("SUPER + ALT + DOWN", hl.dsp.exec_cmd("swayosd-client --brightness lower"), { repeating = true })
 
 -- Laptop Keyboard
 -- `hyprctl keyword` no longer exists in the Lua era; use `hyprctl eval`.
